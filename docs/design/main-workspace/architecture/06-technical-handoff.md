@@ -13,7 +13,7 @@
 | `02-floor-plan-architecture.md` | Plan diagram, 7 department footprints with projected corners, sign anchors and walls, atrium, walkways and clearances, slab edges, hidden extents, partitions and balustrades, elevations |
 | `03-camera-architecture.md` | Solved HOME camera (position, target, FOV, yaw/pitch/roll with 90% intervals), Three.js config, solve procedure, Q-3D-04 status, perspective vs orthographic, responsive strategy, camera modes |
 | `04-scene-hierarchy.md` | Scene graph, component boundaries, lighting architecture, performance budgets, camera mode controller, frontend↔scene API proposal, asset pipeline |
-| `05-greybox-validation.md` | Greybox specification (G-01…G-20), validation results with independent vs by-construction labels, VAC status, unmatched / occluded / uncertain / unavoidable list, errata E-01…E-04 |
+| `05-greybox-validation.md` | Greybox specification (G-01…G-20), validation results with independent vs by-construction labels, VAC status, unmatched / occluded / uncertain / unavoidable list, errata E-01…E-05 |
 | `06-technical-handoff.md` | This file |
 | `data/scene-architecture.json` | Machine-readable camera, scale, building, atrium, departments, robot floor positions, validation summary, assumptions (schema `wora-main-workspace-architecture/v1`) |
 
@@ -48,7 +48,7 @@ The greybox prototype would then be:
 
 Follow these steps in order. Do not skip validation.
 
-1. **Verify the reference** (P-1): `sha256sum -c docs/design/main-workspace/reference/wora-main-workspace.png.sha256` must print `OK`. If it does not, stop.
+1. **Verify the reference** (P-1): `cd docs/design/main-workspace/reference && sha256sum -c wora-main-workspace.png.sha256` must print `wora-main-workspace.png: OK`. If it does not, stop. Run it **from the `reference/` directory**: the `.sha256` file lists a bare filename, so running it from another directory reports `FAILED open or read` even when the file is intact (erratum E-05).
 2. **Set up units and axes.** In your DCC tool and the runtime use metres, +Y up, right-handed, origin at the plinth's floor centre, with walls on the X/Z grid. Export glTF in world coordinates (`04 §8`).
 3. **Create the HOME camera** with exactly `03 §2`: vFOV 12.0006°, position (60.675, 46.538, 61.964), target (−2.186, 0, −0.089), up +Y, aspect 1672/941. In a DCC tool, use either focal length 114.2 mm with sensor fit = vertical and sensor height 24 mm, or 96.4 mm with sensor fit = horizontal and sensor width 36 mm (same FOV). No lens shift.
 4. **Build the greybox** G-01…G-20 (`05 §1`) from the JSON:
@@ -86,7 +86,7 @@ Follow these steps in order. Do not skip validation.
 | Q-3D-03 / Q-ARCH-04 | S2 | Perspective (f 4476 px) vs orthographic | Perspective (`03 §5.3`) |
 | Q-ARCH-05 | S2 | Lower-right slab edge skew (3–9° in world terms) | Grid-aligned edge at x = 14.6; accept the residual |
 | Q-ARCH-06 | S2 | Extents of hidden regions (−X, −Z edges; Marketing/Creative left; Engineering right; Executive back; near corner) | Minimal continuity geometry that stays hidden in HOME |
-| Q-ARCH-07 | S3 | Apply errata E-01…E-04 to `analysis/03` (as its §9.3 asks)? | Owner's choice. The architecture docs already use the corrected facts |
+| Q-ARCH-07 | S3 | Apply errata E-01…E-05 to `analysis/03`, `analysis/06` and `DESIGN-SOURCE.md` (as `analysis/03 §9.3` asks for the camera values)? | Owner's choice. The architecture docs already use the corrected facts |
 | Q-RESP-01 | S2 | Supported aspect ratios | `03 §6` rule. Portrait is not supported without a new design |
 | Q-3D-01 | S2 | Doors / openings | None in the greybox |
 | Q-3D-02 | S2 | Level change at the balustrades between the atrium and rooms | Single level |

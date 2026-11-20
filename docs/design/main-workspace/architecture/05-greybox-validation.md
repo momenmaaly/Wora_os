@@ -175,11 +175,12 @@ These statuses apply to the **architecture** (geometry and camera). The full VAC
 | Uncertain | Partition / balustrade thickness | ND | 0.05 m placeholder |
 | Unavoidable | A generated image is not one exact pinhole projection | Residuals above | Reported, **not hidden by moving the layout** |
 
-## 6. Errata found in the Mission 002 analysis (not edited; owner decision Q-ARCH-07)
+## 6. Errata found in the Mission 001/002 documents (not edited; owner decision Q-ARCH-07)
 
 | ID | Location | Statement | Finding |
 |---|---|---|---|
 | E-01 | `analysis/03 §4` (intro) and §2.2 | Sign plates are "mounted above each room's atrium-facing glass" | The side signs are on each room's **far, camera-facing wall** (−X or −Z). Evidence: robot containment fails 39/39 with atrium-facing walls; crops show the Marketing sign above the back-wall displays. The Executive sign is mounted further back or higher than the front facet |
 | E-02 | `analysis/03 §2.1`, `06 VAC-GEO-02` | Lower-left slab edge from (237,597) to (480,826), ≈43° | The visible slab edge runs at about 30–33° on screen, e.g. (235,630)→(560,820). The 43° line does not follow it. The 43° value fed the "41–68° elevation" cue in Q-3D-04 |
 | E-03 | `analysis/03 §9.1` | Camera elevation 27°–60° (Low) | Solved 27.78° (27.56–28.01°) |
+| E-05 | `DESIGN-SOURCE.md` rule 9, `analysis/06` P-1 | `sha256sum -c reference/…sha256` / `sha256sum -c docs/design/main-workspace/reference/…sha256` | The `.sha256` file lists the bare filename, so these commands only work when run from `reference/` (as in `DESIGN-SOURCE.md` line 50). Run elsewhere, they report `FAILED open or read` for an intact file. Verified: from `reference/` → `OK` |
 | E-04 | `analysis/03 §9.3` | "Record the solved values back into this spec" | Not done, to keep the Mission 002 analysis unchanged. The values live in `architecture/03` and the JSON. Owner decides whether to amend `analysis/03` |
