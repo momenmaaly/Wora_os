@@ -38,6 +38,7 @@ export interface EnvironmentModel {
   partitionStrips: BoxSpec[];
   edgeStrips: BoxSpec[];
   backdropCity: BoxSpec[];
+  backdropDecks: BoxSpec[];
   backdropParapet: RibbonSpec[];
   backdropParapetStrips: RibbonSpec[];
   backdropTrees: DiscSpec[];
@@ -239,7 +240,7 @@ function plinthDetails(): { rim: CylinderSpec; labels: LabelSpec[] } {
   };
   const labels: LabelSpec[] = [
     { key: 'plinth-logo', refId: logo.ref, kind: 'label', text: '', icon: 'wora-mark', center: logo.center_world as [number, number, number], size: [logo.size_m[0], logo.size_m[1]], rotationY: Math.PI / 4, orientation: 'flat' },
-    { key: 'plinth-wordmark', refId: word.ref, kind: 'label', text: 'WORA', center: word.center_world as [number, number, number], size: [word.size_m[0], word.size_m[1]], rotationY: Math.PI / 4, orientation: 'flat' },
+    { key: 'plinth-wordmark', refId: word.ref, kind: 'label', text: 'WORA', color: '#68646B', center: word.center_world as [number, number, number], size: [word.size_m[0], word.size_m[1]], rotationY: Math.PI / 4, orientation: 'flat' },
   ];
   return { rim, labels };
 }
@@ -276,9 +277,26 @@ function signFaces(): LabelSpec[] {
   return out;
 }
 
-/** Backdrop scenery (CR-02): city cards, terrace parapet bands, greenery discs. */
-function backdrop(): { city: BoxSpec[]; parapet: RibbonSpec[]; parapetStrips: RibbonSpec[]; trees: DiscSpec[]; trunks: CylinderSpec[] } {
+/** Backdrop scenery (CR-02): city cards, terrace decks + parapet bands, greenery discs. */
+function backdrop(): { city: BoxSpec[]; decks: BoxSpec[]; parapet: RibbonSpec[]; parapetStrips: RibbonSpec[]; trees: DiscSpec[]; trunks: CylinderSpec[] } {
   const bd = ENV.backdrop;
+  // reset: the reference shows a continuous bright stone terrace outside the balustrades; the
+  // deck extents are EST. between the building edges (CR-01/02) and the assumed parapet planes
+  const decks: BoxSpec[] = [];
+  const td = (ENV as { terrace_decks?: Record<string, { x_range: [number, number]; z_range: [number, number]; top_y: number; thickness: number }> }).terrace_decks;
+  if (td) {
+    for (const [name, t] of Object.entries(td)) {
+      decks.push({
+        key: `terrace-deck-${name}`,
+        kind: 'box',
+        material: 'deck',
+        center: [(t.x_range[0] + t.x_range[1]) / 2, t.top_y - t.thickness / 2, (t.z_range[0] + t.z_range[1]) / 2],
+        size: [t.x_range[1] - t.x_range[0], t.thickness, t.z_range[1] - t.z_range[0]],
+        rotationY: 0,
+        refId: 'ENV-016',
+      });
+    }
+  }
   const p = bd.planes;
   const city: BoxSpec[] = [
     {
@@ -306,7 +324,10 @@ function backdrop(): { city: BoxSpec[]; parapet: RibbonSpec[]; parapetStrips: Ri
     const axis = band.ribbon_axis as 'x' | 'z';
     const at = axis === 'x' ? p.back_right_z : p.back_left_x;
     const raw = ((band as { top_pts_world_xy?: number[][]; top_pts_world_zy?: number[][] }).top_pts_world_xy ?? (band as { top_pts_world_zy?: number[][] }).top_pts_world_zy) as [number, number][];
-    const pts = raw.map(([u, y]) => ({ u, yTop: y, yBot: y - band.depth_m }));
+    // reset: the pts' world-y swing (−0.46…−5.5) is a documented artifact of the assumed constant
+    // plane; the reconstruction uses a constant balustrade top over the deck (top_y_reset=1.05)
+    const topY = (band as { top_y_reset?: number }).top_y_reset ?? 1.05;
+    const pts = raw.map(([u]) => ({ u, yTop: topY, yBot: topY - band.depth_m }));
     parapet.push(ribbon(`parapet-${name}`, 'parapet', axis, at, pts, 'ENV-016'));
     parapetStrips.push(
       ribbon(
@@ -331,7 +352,7 @@ function backdrop(): { city: BoxSpec[]; parapet: RibbonSpec[]; parapetStrips: Ri
       trunks.push({ key: `tree-${name}-${i}-trunk`, kind: 'cylinder', material: 'deskwood', center: c, radius: Math.max(0.06, t.r_m * 0.12), height: trunkLen, segments: 10, refId: 'ENV-016' });
     }
   }
-  return { city, parapet, parapetStrips, trees, trunks };
+  return { city, decks, parapet, parapetStrips, trees, trunks };
 }
 
 export function buildEnvironmentModel(): EnvironmentModel {
@@ -354,6 +375,7 @@ export function buildEnvironmentModel(): EnvironmentModel {
     partitionStrips: s.partition,
     edgeStrips: s.edge,
     backdropCity: bd.city,
+    backdropDecks: bd.decks,
     backdropParapet: bd.parapet,
     backdropParapetStrips: bd.parapetStrips,
     backdropTrees: bd.trees,

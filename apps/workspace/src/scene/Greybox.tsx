@@ -21,6 +21,7 @@ import { buildGreyboxModel, type BoxSpec, type CylinderSpec, type DiscSpec, type
 import { buildEnvironmentModel, type EnvironmentModel } from './environment';
 import { buildInteriors, buildStructureCompletion } from './interiors';
 import { buildRobots } from './robots';
+import { displayMaterialFor } from './displayContent';
 import { createDeptMaterials, createFlatMaterial, createMaterials, DEPT_FLAT_COLORS, EDGE_COLOR, SHADOW_EXCLUDE_CAST, SHADOW_EXCLUDE_RECEIVE } from './materials';
 import type { DeptId } from '../config/sceneConfig';
 
@@ -55,10 +56,10 @@ function shadowProps(material: string) {
   return { castShadow: !SHADOW_EXCLUDE_CAST.has(material as never), receiveShadow: !SHADOW_EXCLUDE_RECEIVE.has(material as never) };
 }
 
-function BoxPrimitive({ spec, materials, edges }: { spec: BoxSpec; materials: Record<string, Material>; edges: boolean }) {
+function BoxPrimitive({ spec, materials, edges, materialOverride }: { spec: BoxSpec; materials: Record<string, Material>; edges: boolean; materialOverride?: Material }) {
   return (
     <group position={spec.center} rotation={[0, spec.rotationY, 0]} scale={spec.size} name={spec.key} userData={{ refId: spec.refId }}>
-      <mesh geometry={unitBox} material={materials[spec.material]} renderOrder={spec.material === 'partition' || spec.material === 'balustrade' ? 2 : 0} {...shadowProps(spec.material)} />
+      <mesh geometry={unitBox} material={materialOverride ?? materials[spec.material]} renderOrder={spec.material === 'partition' || spec.material === 'balustrade' ? 2 : 0} {...shadowProps(spec.material)} />
       {edges && (
         <lineSegments geometry={unitBoxEdges}>
           <lineBasicMaterial color={EDGE_COLOR} />
@@ -229,7 +230,7 @@ function drawIcon(ctx: CanvasRenderingContext2D, icon: string, x: number, y: num
 }
 
 function makeLabelTexture(spec: LabelSpec): CanvasTexture {
-  const PX = 110; // canvas px per metre
+  const PX = 220; // canvas px per metre (reset: crisper at 46 px/m reference scale)
   const w = Math.max(64, Math.round(spec.size[0] * PX));
   const h = Math.max(24, Math.round(spec.size[1] * PX));
   const canvas = document.createElement('canvas');
@@ -237,7 +238,9 @@ function makeLabelTexture(spec: LabelSpec): CanvasTexture {
   canvas.height = h;
   const ctx = canvas.getContext('2d')!;
   if (spec.icon === 'wora-mark') {
-    drawIcon(ctx, 'wora-mark', w / 2, h / 2, h * 0.8);
+    // fill the measured plane (the mark's size_m IS its measured extent)
+    // mark plane is wide (measured 1.478 × 0.674) — size the glyph by width, capped by height
+    drawIcon(ctx, 'wora-mark', w / 2, h / 2, Math.min(w * 0.52, h * 0.98));
   } else {
     let iconS = h * 0.62;
     const text = spec.text;
@@ -256,12 +259,34 @@ function makeLabelTexture(spec: LabelSpec): CanvasTexture {
       tw = ctx.measureText(text).width;
       total = (hasIcon ? iconS * 1.3 : 0) + tw;
     }
+    if (!hasIcon) {
+      // text-only label (plaza wordmark): fill the measured plane — grow to width, then stretch
+      // horizontally if the height cap binds (the ref letters fill both extents)
+      const byWidth = fontPx * (w * 0.9) / tw;
+      const grown = Math.round(Math.min(byWidth, h * 0.9));
+      ctx.font = `bold ${grown}px 'Segoe UI', system-ui, sans-serif`;
+      tw = ctx.measureText(text).width;
+      if (tw < w * 0.9) {
+        ctx.save();
+        ctx.translate(w / 2, h / 2);
+        ctx.scale((w * 0.9) / tw, 1);
+        ctx.fillStyle = spec.color ?? '#F2F4FA';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(text, 0, 0);
+        ctx.restore();
+        const tex2 = new CanvasTexture(canvas);
+        tex2.anisotropy = 4;
+        tex2.colorSpace = 'color';
+        return tex2;
+      }
+    }
     let x = (w - total) / 2;
     if (hasIcon) {
       drawIcon(ctx, spec.icon!, x + iconS / 2, h / 2, iconS);
       x += iconS * 1.3;
     }
-    ctx.fillStyle = '#F2F4FA';
+    ctx.fillStyle = spec.color ?? '#F2F4FA';
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
     ctx.font = `bold ${fontPx}px 'Segoe UI', system-ui, sans-serif`;
@@ -286,8 +311,8 @@ function LabelPrimitive({ spec }: { spec: LabelSpec }) {
   );
 }
 
-function Primitive({ spec, materials, edges = true }: { spec: PrimitiveSpec; materials: Record<string, Material>; edges?: boolean }) {
-  if (spec.kind === 'box') return <BoxPrimitive spec={spec} materials={materials} edges={edges} />;
+function Primitive({ spec, materials, edges = true, materialOverride }: { spec: PrimitiveSpec; materials: Record<string, Material>; edges?: boolean; materialOverride?: Material }) {
+  if (spec.kind === 'box') return <BoxPrimitive spec={spec} materials={materials} edges={edges} materialOverride={materialOverride} />;
   if (spec.kind === 'sphere') return <SpherePrimitive spec={spec} materials={materials} />;
   return <CylinderPrimitive spec={spec} materials={materials} edges={edges} />;
 }
@@ -378,7 +403,7 @@ export function Greybox({ layers = DEFAULT_LAYERS, flat = false }: { layers?: Gr
       )}
       {!flat && layers.interiors && (
         <group name="Interiors">
-          {interiorSpecs.map((f) => <Primitive key={f.key} spec={f} materials={materials} edges={false} />)}
+          {interiorSpecs.map((f) => <Primitive key={f.key} spec={f} materials={materials} edges={false} materialOverride={displayMaterialFor(f.refId, f.key) ?? undefined} />)}
         </group>
       )}
       {!flat && layers.robots && (
@@ -388,7 +413,8 @@ export function Greybox({ layers = DEFAULT_LAYERS, flat = false }: { layers?: Gr
       )}
       {layers.backdrop && (
         <group name="Backdrop">
-          {env.backdropCity.map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
+          {env.backdropDecks.map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
+          {env.backdropCity.map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} materialOverride={displayMaterialFor(f.refId, f.key) ?? undefined} />)}
           {env.backdropParapet.map((f) => <RibbonPrimitive key={f.key} spec={f} materials={materials} />)}
           {env.backdropParapetStrips.map((f) => <RibbonPrimitive key={f.key} spec={f} materials={materials} />)}
           {env.backdropTrees.map((f) => <DiscPrimitive key={f.key} spec={f} materials={materials} />)}

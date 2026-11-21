@@ -34,9 +34,10 @@ describe('VF-1 material audit', () => {
       frame: '353a40', // scene.frame #2A2E33–#433D3E
       rim: 'e9e6ea', // scene.plinth-rim #E5E2E6 peak — HDR-boosted ×6.0, asserted in the emitter test
       strip: 'f5f3f0', // HDR-boosted ×5.5, asserted in the emitter test
-      city: '2e3a4c',
+      city: '767a80', // reset audit: ref backdrop band averages RGB(118,117,122); card tone re-pinned (skyline texture via displayContent)
+      planter: '8a7160', // reset audit: ref planter drum ≈ RGB(136,112,97) warm stone (lit); was shadow-side sample
       parapet: 'e8e5e9',
-      foliage: '3e5a3a',
+      foliage: '5e6244', // reset: ref centre canopy ≈ RGB(107,85,73) warm olive (lit)
     };
     for (const [key, hex] of Object.entries(expected)) {
       const mat = m[key as keyof typeof m] as MeshStandardMaterial;

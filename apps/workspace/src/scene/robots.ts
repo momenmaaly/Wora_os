@@ -54,61 +54,74 @@ export function buildRobots(): P[] {
   const out: P[] = [];
   for (const r of ROBOT_VISUAL) {
     const [x, z] = r.floorXZ;
-    const H = r.pose === 'seated' ? 0.95 : 1.2; // M003 assumed_head_h (keeps the floor solve exact)
-    const W = r.sizeM[0];
     const yaw = facingYaw(r.facing, x, z, CAMERA_POS[0], CAMERA_POS[1]);
     const shell = VEST_ROBOTS.has(r.id) ? 'sign' : 'robot-shell'; // vest: dark navy (sign-plate token)
     const group: P[] = [];
 
-    const headR = 0.21 * H; // head ≈ 42 % of total height (§5.1)
-    const headCY = H - headR;
-    const torsoR = 0.16 * H;
-    const base = r.pose === 'seated' ? 0.3 : 0.3; // seated on chair/ottoman base; standing legs below
-    const torsoTop = headCY - headR * 0.55;
+    // Reset re-anchor (see robot_visual prov): head-top heights seated 1.41 m / standing-walking
+    // 1.45 m — the reference shows seated heads clearly above desk-monitor tops, which the M003
+    // 0.95 m assumption contradicted. Floors were re-solved from the same head-px rays.
+    const seated = r.pose === 'seated';
+    const headTop = seated ? 1.41 : 1.45;
+    const headR = seated ? 0.28 : 0.3; // pronounced chibi: head ≈ 0.56–0.6 m across (ref-measured)
+    const headCY = headTop - headR;
+    const torsoR = seated ? 0.21 : 0.22;
+    const torsoBase = seated ? 0.45 : 0.42; // seated hips on the chair seat; standing above legs
+    const torsoTop = 0.85;
 
-    if (r.pose !== 'seated') {
-      // short legs
-      const legH = 0.3 * H;
-      const lx = 0.09 * W;
-      group.push(cyl('robot-shell', [x + Math.cos(yaw) * lx, legH / 2, z - Math.sin(yaw) * lx], 0.055 * H, legH));
-      group.push(cyl('robot-shell', [x - Math.cos(yaw) * lx, legH / 2, z + Math.sin(yaw) * lx], 0.055 * H, legH));
+    if (!seated) {
+      // short legs (standing/walking poses)
+      const legH = 0.42;
+      const lx = 0.12;
+      group.push(cyl('robot-shell', [x + Math.cos(yaw) * lx, legH / 2, z - Math.sin(yaw) * lx], 0.06, legH));
+      group.push(cyl('robot-shell', [x - Math.cos(yaw) * lx, legH / 2, z + Math.sin(yaw) * lx], 0.06, legH));
     }
     // torso
-    const torsoH = torsoTop - base;
-    if (torsoH > 0.05) group.push(cyl(shell, [x, base + torsoH / 2, z], torsoR, torsoH));
+    const torsoH = torsoTop - torsoBase;
+    if (torsoH > 0.05) group.push(cyl(shell, [x, torsoBase + torsoH / 2, z], torsoR, torsoH));
     // torso accent panel (blue) / cravat accent
     if (!VEST_ROBOTS.has(r.id)) {
       const ax = x + Math.sin(yaw) * (torsoR + 0.012);
       const az = z + Math.cos(yaw) * (torsoR + 0.012);
-      group.push(box('screen', [ax, base + torsoH * 0.62, az], [torsoR * 1.1, torsoH * 0.4, 0.02], yaw));
+      group.push(box('screen', [ax, torsoBase + torsoH * 0.62, az], [torsoR * 1.1, torsoH * 0.4, 0.02], yaw));
+    }
+    // arms (small white cylinders at the torso sides; hands as tiny spheres) — EST. simplification
+    for (const side of [-1, 1] as const) {
+      const ax = x + Math.cos(yaw) * side * (torsoR + 0.05);
+      const az = z - Math.sin(yaw) * side * (torsoR + 0.05);
+      const armTop = torsoTop;
+      const armLen = 0.28;
+      group.push(cyl('robot-shell', [ax, armTop - armLen / 2, az], 0.05, armLen, 10));
+      group.push(sphere('robot-shell', [ax, armTop - armLen - 0.03, az], 0.06));
     }
     // head (chibi, wider than tall)
     group.push(sphere('robot-shell', [x, headCY, z], headR));
-    // visor: black glass plate on the front of the head
-    const vx = x + Math.sin(yaw) * (headR * 0.82);
-    const vz = z + Math.cos(yaw) * (headR * 0.82);
-    group.push(box('robot-visor', [vx, headCY - headR * 0.05, vz], [headR * 1.5, headR * 0.95, headR * 0.35], yaw));
-    // emissive eyes on the visor
+    // visor: wraparound black glass plate protruding from the head front (ref visors span most
+    // of the face; the previous recessed plate read as a dot on the enlarged head)
+    const vx = x + Math.sin(yaw) * (headR * 0.72);
+    const vz = z + Math.cos(yaw) * (headR * 0.72);
+    group.push(box('robot-visor', [vx, headCY - headR * 0.02, vz], [headR * 1.3, headR * 0.8, headR * 0.5], yaw));
+    // emissive eyes on the visor front
     for (const side of [-1, 1] as const) {
-      const ex = x + Math.sin(yaw) * (headR * 0.98) + Math.cos(yaw) * side * headR * 0.45;
-      const ez = z + Math.cos(yaw) * (headR * 0.98) - Math.sin(yaw) * side * headR * 0.45;
-      group.push(sphere('robot-eye', [ex, headCY + headR * 0.05, ez], 0.055 * H));
+      const ex = x + Math.sin(yaw) * (headR * 1.0) + Math.cos(yaw) * side * headR * 0.48;
+      const ez = z + Math.cos(yaw) * (headR * 1.0) - Math.sin(yaw) * side * headR * 0.48;
+      group.push(sphere('robot-eye', [ex, headCY + headR * 0.08, ez], 0.075));
     }
     // ear discs (blue; ROBOT-046 orange-red → leather token)
     const earMat = r.id === 'ROBOT-046' ? ('leather' as const) : ('screen' as const);
     for (const side of [-1, 1] as const) {
       const ex = x + Math.cos(yaw) * side * (headR + 0.015);
       const ez = z - Math.sin(yaw) * side * (headR + 0.015);
-      group.push(cyl(earMat, [ex, headCY, ez], 0.07 * H, 0.03, 12));
+      group.push(cyl(earMat, [ex, headCY, ez], 0.075, 0.03, 12));
     }
     // antenna nub (§5.1: visible on ROBOT-046, ND on the others)
-    if (r.id === 'ROBOT-046') group.push(cyl('screen', [x, H + 0.05, z], 0.02, 0.08, 8));
+    if (r.id === 'ROBOT-046') group.push(cyl('screen', [x, headTop + 0.05, z], 0.02, 0.08, 8));
     // tablet with glowing screen (free-roaming robots)
     if (TABLET_ROBOTS.has(r.id)) {
       const tx = x + Math.sin(yaw) * (torsoR + 0.16);
       const tz = z + Math.cos(yaw) * (torsoR + 0.16);
-      group.push(box('frame', [tx, base + torsoH * 0.55, tz], [0.02, 0.26, 0.18], yaw));
-      group.push(box('screen', [tx + Math.sin(yaw) * 0.012, base + torsoH * 0.55, tz + Math.cos(yaw) * 0.012], [0.015, 0.22, 0.15], yaw));
+      group.push(box('frame', [tx, torsoBase + torsoH * 0.55, tz], [0.02, 0.26, 0.18], yaw));
+      group.push(box('screen', [tx + Math.sin(yaw) * 0.012, torsoBase + torsoH * 0.55, tz + Math.cos(yaw) * 0.012], [0.015, 0.22, 0.15], yaw));
     }
     for (const s of group) s.refId = r.id;
     out.push(...group);

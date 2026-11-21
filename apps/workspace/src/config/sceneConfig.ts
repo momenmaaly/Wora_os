@@ -175,6 +175,8 @@ export interface RobotVisual {
   id: string;
   zone: string;
   headPx: [number, number];
+  /** anchored head-top height used to solve floorXZ from headPx (reset re-anchor: 1.41 seated / 1.45 else) */
+  assumedHeadH: number;
   floorXZ: [number, number];
   pose: RobotPose;
   facing: RobotFacing;
@@ -184,11 +186,12 @@ export interface RobotVisual {
 }
 
 export const ROBOT_VISUAL: RobotVisual[] = (architecture.robot_visual as unknown as {
-  rows: { id: string; zone: string; head_px: [number, number]; floor_xz: [number, number]; pose: RobotPose; facing: RobotFacing; px_box: [number, number, number, number]; size_m: [number, number] }[];
+  rows: { id: string; zone: string; head_px: [number, number]; assumed_head_h: number; floor_xz: [number, number]; pose: RobotPose; facing: RobotFacing; px_box: [number, number, number, number]; size_m: [number, number] }[];
 }).rows.map((r) => ({
   id: r.id,
   zone: r.zone,
   headPx: r.head_px,
+  assumedHeadH: r.assumed_head_h,
   floorXZ: r.floor_xz,
   pose: r.pose,
   facing: r.facing,

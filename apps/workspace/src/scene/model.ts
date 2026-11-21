@@ -23,7 +23,7 @@ import {
 export type MaterialKey =
   | 'slab'
   | 'mass'
-  | 'floor'
+  | 'floor' | 'deck'
   | 'partition'
   | 'balustrade'
   | 'plinth'
@@ -112,6 +112,8 @@ export interface LabelSpec {
   refId?: string;
   kind: 'label';
   text: string;
+  /** text colour override (default near-white; plaza wordmark is dark on the bright dais) */
+  color?: string;
   /** icon glyph key drawn left of the text (see Greybox sign-face painter) */
   icon?: string;
   center: Vec3;

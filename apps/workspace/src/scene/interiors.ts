@@ -188,17 +188,25 @@ function buildItem(it: InteriorItem): P[] {
       out.push(cyl('rug', [x, 0.011, z], Math.max(pxW, d) / 2, 0.022, 28, 'RG'));
       break;
     case 'plant': {
+      // reset: the reference plants are lush multi-cluster canopies filling their measured extent
       const potH = Math.min(0.42, h * 0.28);
-      out.push(cyl('parapet', [x, potH / 2, z], Math.min(pxW * 0.32, 0.35), potH, 16, 'PL'));
-      out.push(sphere('foliage', [x, potH + (h - potH) * 0.55, z], Math.min(pxW * 0.42, h * 0.4), 'PL'));
-      out.push(sphere('foliage', [x + pxW * 0.1, potH + (h - potH) * 0.85, z - pxW * 0.05], Math.min(pxW * 0.3, h * 0.28), 'PL'));
+      const potR = Math.min(pxW * 0.32, 0.35);
+      out.push(cyl('parapet', [x, potH / 2, z], potR, potH, 16, 'PL'));
+      const canopy = h - potH;
+      const rMain = Math.min(pxW * 0.55, canopy * 0.42);
+      out.push(sphere('foliage', [x, potH + canopy * 0.52, z], rMain, 'PL'));
+      for (const [dx, dy, dz, k] of [[0.55, 0.22, 0.1, 0.72], [-0.5, 0.3, -0.15, 0.66], [0.15, 0.5, -0.5, 0.6], [-0.3, 0.6, 0.45, 0.55], [0.1, -0.15, 0.4, 0.5]] as const) {
+        out.push(sphere('foliage', [x + dx * rMain, potH + canopy * (0.5 + dy), z + dz * rMain], rMain * k, 'PL'));
+      }
       break;
     }
     case 'tree': {
       const trunkH = h * 0.45;
       out.push(cyl('deskwood', [x, trunkH / 2, z], Math.max(0.08, pxW * 0.05), trunkH, 10, 'TR'));
-      out.push(sphere('foliage', [x, trunkH + h * 0.3, z], pxW * 0.5, 'TR'));
-      out.push(sphere('foliage', [x + pxW * 0.14, trunkH + h * 0.48, z - pxW * 0.08], pxW * 0.34, 'TR'));
+      out.push(sphere('foliage', [x, trunkH + h * 0.28, z], pxW * 0.52, 'TR'));
+      for (const [dx, dy, dz, k] of [[0.6, 0.35, 0.1, 0.6], [-0.55, 0.3, -0.2, 0.55], [0.1, 0.55, -0.5, 0.5], [-0.2, 0.5, 0.45, 0.45]] as const) {
+        out.push(sphere('foliage', [x + dx * pxW * 0.5, trunkH + h * (0.28 + dy * 0.4), z + dz * pxW * 0.5], pxW * 0.5 * k, 'TR'));
+      }
       break;
     }
     case 'planter-cyl': {
@@ -216,7 +224,8 @@ function buildItem(it: InteriorItem): P[] {
       break;
     case 'rack': {
       out.push(box('frame', [x, h / 2, z], [pxW, h, d], yaw, 'RK'));
-      out.push(box('screen', [x, h * 0.62, z], [pxW * 0.7, 0.06, 0.02], yaw, 'RK'));
+      // reset: the reference server banks glow blue across the whole front face
+      out.push(box('screen', [x + Math.sin(yaw) * (d / 2 + 0.005), h * 0.55, z + Math.cos(yaw) * (d / 2 + 0.005)], [pxW * 0.88, h * 0.66, 0.015], yaw, 'RK'));
       break;
     }
     case 'shelf-stand': {
@@ -230,15 +239,25 @@ function buildItem(it: InteriorItem): P[] {
       break;
     }
     case 'shelf-wall': {
-      out.push(box('deskwood', [x, mount + h * 0.3, z], [pxW, 0.04, d], yaw, 'SW'));
-      out.push(box('deskwood', [x, mount + h * 0.75, z], [pxW * 0.8, 0.04, d], yaw, 'SW'));
+      // reset: §3 shelves carry small plants/objects — decor pieces EST. within the shelf extents
+      for (const [fy, fw] of [[0.3, 1], [0.62, 1], [0.9, 0.8]] as const) {
+        out.push(box('deskwood', [x, mount + h * fy, z], [pxW * fw, 0.04, d], yaw, 'SW'));
+        const n = 3;
+        for (let i = 0; i < n; i++) {
+          const ox = (i - (n - 1) / 2) * pxW * 0.22;
+          const oy = mount + h * fy + 0.09;
+          if (i % 2 === 0) out.push(cyl('foliage', [x + Math.cos(yaw) * ox, oy, z - Math.sin(yaw) * ox], 0.055, 0.1, 10, 'SW'));
+          else out.push(box('leather', [x + Math.cos(yaw) * ox, oy - 0.02, z - Math.sin(yaw) * ox], [0.07, 0.14, 0.07], yaw, 'SW'));
+        }
+      }
       break;
     }
     case 'display-wall':
     case 'display-stand': {
       const cy = mount + h / 2;
       out.push(box('frame', [x, cy, z], [pxW, h, 0.06], yaw, 'DP'));
-      out.push(box('screen', [x + Math.sin(yaw) * 0.05, cy, z + Math.cos(yaw) * 0.05], [pxW * 0.96, h * 0.94, 0.02], yaw, 'DP'));
+      // reset: the reference shows display screens glowing from both sides — slab proud of the frame
+      out.push(box('screen', [x, cy, z], [pxW * 0.96, h * 0.94, 0.07], yaw, 'DP'));
       if (it.kind === 'display-stand') out.push(box('frame', [x, mount / 2, z], [0.08, mount, 0.08], yaw, 'DP'));
       break;
     }
@@ -251,13 +270,15 @@ function buildItem(it: InteriorItem): P[] {
     case 'laptop': {
       const y = it.centre_y ?? 0.75;
       out.push(box('frame', [x, y + 0.01, z], [0.34, 0.02, 0.24], yaw, 'LP'));
-      out.push(box('screen', [x - Math.sin(yaw) * 0.1, y + 0.12, z - Math.cos(yaw) * 0.1], [0.32, 0.22, 0.015], yaw, 'LP'));
+      out.push(box('screen', [x - Math.sin(yaw) * 0.1, y + 0.12, z - Math.cos(yaw) * 0.1], [0.32, 0.22, 0.035], yaw, 'LP'));
       break;
     }
     case 'monitor': {
       out.push(box('frame', [x, 0.75 + 0.12, z], [0.06, 0.24, 0.05], yaw, 'MO'));
       out.push(box('frame', [x, 0.75 + 0.3, z], [0.55, 0.36, 0.04], yaw, 'MO'));
-      out.push(box('screen', [x + Math.sin(yaw) * 0.028, 0.75 + 0.3, z + Math.cos(yaw) * 0.028], [0.5, 0.31, 0.015], yaw, 'MO'));
+      // reset audit: the reference renders every desk monitor as a bright blue panel from both
+      // sides — the screen slab protrudes past the frame on both faces (was recessed → dark backs)
+      out.push(box('screen', [x, 0.75 + 0.3, z], [0.5, 0.31, 0.052], yaw, 'MO'));
       break;
     }
     default:

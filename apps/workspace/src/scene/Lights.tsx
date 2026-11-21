@@ -5,15 +5,18 @@
  * VF-1 (owner-approved): the key light casts soft shadows (VAC-LGT-02 contact shadows to the
  * lower-left; softness/radius EST. — reference shows soft, short contact shadows, no hard long
  * shadows). Light colours and intensities are unchanged from 006-A.
+ * Reset: elevation steepened ([35,50,-15] → [25,75,-12], same azimuth family) — the shallower sun
+ * cast the building shadow across the whole west terrace, which the reference shows sunlit; the
+ * steeper sun restores the reference's short contact shadows (VAC-LGT-02).
  */
 export function Lights() {
   return (
     <>
       <hemisphereLight args={['#D6E4F0', '#A3938A', 1.5]} />
       <directionalLight
-        position={[35, 50, -15]}
-        intensity={1.5}
-        color="#FFF1E0"
+        position={[25, 75, -12]}
+        intensity={1.55}
+        color="#FFDFB4"
         castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
@@ -27,6 +30,9 @@ export function Lights() {
         shadow-normalBias={0.03}
         shadow-radius={4}
       />
+      {/* Executive Office warm interior glow: the reference room reads warmly lit from inside
+          (lamps/warm cladding, analysis/03 §4). Position = DEPT-01 centre; intensity/radius EST. */}
+      <pointLight position={[-2.2, 2.6, -8.6]} intensity={6} distance={15} decay={2} color="#FFC98A" />
     </>
   );
 }

@@ -35,6 +35,7 @@ const spec: Record<MaterialKey, Spec> = {
   slab: { color: '#B4A1A5', map: 'marble', mapRepeat: [4, 4], roughness: 0.16, metalness: 0, clearcoat: 0.5, clearcoatRoughness: 0.25, envIntensity: 0.35 },
   mass: { color: '#4E5260', roughness: 0.95, metalness: 0 }, // exterior facade mass (scene.facade)
   floor: { color: '#C6C2C4', roughness: 0.85, metalness: 0 }, // neutral floor; per-dept tones in DEPT_FLOOR_COLORS
+  deck: { color: '#C9C4C6', roughness: 0.85, metalness: 0 }, // terrace decking (scenery; shadow-receive exempt — the ref terrace reads evenly sunlit)
   partition: { color: '#D6DADC', opacity: 0.35, roughness: 0.06, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.08, envIntensity: 0.5 }, // clear glass, white specular streaks
   balustrade: { color: '#D6DADC', opacity: 0.35, roughness: 0.06, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.08, envIntensity: 1.2 },
   // Plinth dais: same marble family (ENV-002 floor-coloured; treatment EST.)
@@ -47,17 +48,17 @@ const spec: Record<MaterialKey, Spec> = {
   frame: { color: '#353A40', roughness: 0.5, metalness: 0.55, envIntensity: 0.8 }, // anthracite mullions/rails/posts (scene.frame)
   rim: { color: '#E9E6EA', unlit: true, boost: 6.0 }, // plinth glow rim — HDR emitter, blooms (VAC-LGT-03)
   strip: { color: '#F5F3F0', unlit: true, boost: 5.5 }, // linear light strips — HDR emitters
-  city: { color: '#2E3A4C', unlit: true }, // backdrop city cards (scenery, CR-02) — no bloom
+  city: { color: '#767A80', unlit: true }, // backdrop city cards — ref band averages RGB(118,117,122) (reset audit; texture via displayContent)
   parapet: { color: '#E8E5E9', roughness: 0.7, metalness: 0, envIntensity: 0.25 }, // terrace parapet band (scenery)
-  foliage: { color: '#3E5A3A', roughness: 0.9, metalness: 0 }, // greenery canopy discs (scenery)
+  foliage: { color: '#5E6244', roughness: 0.9, metalness: 0, envIntensity: 1.2 }, // greenery canopies (reset: ref centre canopy ≈ RGB(107,85,73) warm olive, textured)
   // VF-2/VF-3/VF-4 (catalogued; analysis/03 §6-§7, analysis/05 §1.5):
   walnut: { color: '#897047', roughness: 0.6, metalness: 0, envIntensity: 0.25 }, // DEPT-01 slat back wall (MEASURED sample)
-  screen: { color: '#1A55C0', unlit: true, boost: 2.2 }, // emissive displays/monitors/tablets (#134AB0–#1A55C0) — blooms
+  screen: { color: '#1A55C0', unlit: true, boost: 4.5 }, // emissive displays/monitors/tablets — reference screens read bright blue (reset render audit)
   deskwood: { color: '#805E4C', roughness: 0.65, metalness: 0 }, // work desks / shelves / trunks (warm wood)
-  leather: { color: '#966B61', roughness: 0.7, metalness: 0 }, // sofas/upholstery (MEASURED sample)
-  rug: { color: '#4E4F63', roughness: 0.95, metalness: 0 }, // rugs / dark chairs / ottoman (MEASURED sample)
+  leather: { color: '#8F5A32', roughness: 0.7, metalness: 0 }, // sofas/upholstery (reset: ref ottoman ≈ RGB(96,62,34) cognac)
+  rug: { color: '#82818F', roughness: 0.95, metalness: 0 }, // rugs / chairs / ottoman (reset: ref lounge rug ≈ RGB(116,113,125) lit)
   bench: { color: '#665D68', roughness: 0.8, metalness: 0 }, // curved bench / grey lounge chairs (MEASURED sample)
-  planter: { color: '#4B536A', roughness: 0.85, metalness: 0 }, // concrete planters (MEASURED shadow-side sample)
+  planter: { color: '#8A7160', roughness: 0.85, metalness: 0 }, // planter drums (reset: ref ≈ RGB(136,112,97) warm stone, lit) // concrete planters (MEASURED shadow-side sample)
   'robot-shell': { color: '#F2F4FA', roughness: 0.3, metalness: 0, clearcoat: 0.8, clearcoatRoughness: 0.25, envIntensity: 0.5 }, // glossy white shells (est. token)
   'robot-visor': { color: '#05080F', roughness: 0.15, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.1, envIntensity: 0.5 }, // black glass visor (est. token)
   'robot-eye': { color: '#2FD2FF', unlit: true, boost: 3.5 }, // emissive cyan eyes (#19C6FF–#3FD8FF) — blooms
@@ -80,7 +81,7 @@ export const DEPT_FLOOR_COLORS: Partial<Record<DeptId, { color: string; provenan
 
 /** Glass, backdrop and emissive surfaces never cast or receive shadows. */
 export const SHADOW_EXCLUDE_CAST = new Set<MaterialKey>(['partition', 'balustrade', 'glazing', 'city', 'rim', 'strip', 'screen', 'robot-eye']);
-export const SHADOW_EXCLUDE_RECEIVE = new Set<MaterialKey>(['partition', 'balustrade', 'glazing', 'city', 'rim', 'strip', 'screen', 'robot-eye']);
+export const SHADOW_EXCLUDE_RECEIVE = new Set<MaterialKey>(['partition', 'balustrade', 'glazing', 'city', 'rim', 'strip', 'screen', 'robot-eye', 'deck']);
 
 /** Flat, unlit ID colours for the dev "flat" mode (pixel measurement of the rendered frame).
  *  VF-1 rule: byte-identical to Mission 006-A so flat-mode measurements stay comparable. */
@@ -88,6 +89,7 @@ export const FLAT_COLORS: Record<MaterialKey, string> = {
   slab: '#808080',
   mass: '#202020',
   floor: '#ffffff',
+  deck: '#d8d4d6',
   partition: '#00ff00',
   balustrade: '#00ffff',
   plinth: '#ff0000',
