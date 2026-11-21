@@ -39,7 +39,7 @@
 </head>
 <body>
 <header>
-  <h1>Mission 006-A + VF-1 + PRES — Visual Acceptance Review Package</h1>
+  <h1>WORA — Visual Foundation Completion · Evidence Package (006-A + VF-1 + PRES + VF-2…8)</h1>
   <p>Environment workstream (WORA-3D-SCENE-006-A) + VF-1 Materials &amp; Lighting vs the locked reference · branch <code>arena/e6096316-wora-os</code> · 2026-11-20 · VF-1 gate package in section 4-VF1</p>
   <p>Reference checksum <code>wora-main-workspace.png: OK</code> (verified for this package; the reference file is untouched and immutable).</p>
   <p>Honesty rules: rendered and reference close-ups use <b>identical pixel windows</b> — nothing is cropped, hidden or scaled to hide a deviation. Rendered images are actual browser output (headless Chromium, HOME camera fov 12.0006°, camera readback verified).</p>
@@ -279,6 +279,55 @@
 
   <h3>PRES.6 · Validation</h3>
   <p class="note">tsc clean · vitest 56/56 (47 preserved + 9 VF-1 additive; no test weakened) · build ✓ · check-dist OK · rendered geometry check unchanged (flat mode byte-identical) · reference checksum OK pre/post · commit ⟨see git log⟩ pushed to PR #1's branch (preview auto-updates). PR #1 not merged.</p>
+</section>
+
+<section id="vf8">
+  <h2 style="color:#0F62FE">VF8 · Final visual acceptance (autonomous run VF-1→VF-7, 2026-11-20)</h2>
+  <p class="note">Owner authorisation: continuous execution VF-1→VF-8 without per-phase manual gates; delivery = this evidence package + one comprehensive report (greybox/14-vf-final-report.md). PR #1 <b>not merged</b>; reference checksum verified at every commit.</p>
+
+  <h3>VF8.1 · Final scene at the required desktop viewports (clean route /)</h3>
+  <div class="pair">
+    <figure><img src="VF8-final-1920x1080.png" alt="1920"><figcaption>1920×1080 — primary acceptance viewport. Full reconstructed scene: VF-1 materials/lighting + VF-2 walnut wall &amp; partition frames + VF-3 interiors + VF-4 robots (47) + VF-5 tree trunks + VF-7 info chip. FOV 12.0006° (HOME exact).</figcaption></figure>
+    <figure><img src="VF8-final-2560x1440.png" alt="2560"><figcaption>2560×1440 — same HOME composition.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="VF8-final-1440x900.png" alt="1440"><figcaption>1440×900 — keep-vertical rule.</figcaption></figure>
+    <figure><img src="VF8-final-1366x768.png" alt="1366"><figcaption>1366×768 — reference rule (Δaspect 0.0008).</figcaption></figure>
+  </div>
+
+  <h3>VF8.2 · Mobile (secondary; VF-6 thickness floor active — desktop pixels unchanged)</h3>
+  <div class="pair">
+    <figure><img src="VF8-phone-412x915.png" alt="phone"><figcaption>412×915 @ DPR 2.625: rails, mullions, strips and robots remain readable (VF-6 floor ×2.2 on thin env elements; desktop identity verified meanΔ 0.16/255 = AA noise).</figcaption></figure>
+    <figure><img src="VF8-interaction-selected.png" alt="interaction"><figcaption>VF-7 selection: additive cyan ring around the clicked department + info chip with the measured census. No geometry/material identity change; HOME camera untouched.</figcaption></figure>
+  </div>
+
+  <h3>VF8.3 · Acceptance status vs the plan criteria</h3>
+  <table>
+    <tr><th>Mission</th><th>Criteria</th><th>Status</th></tr>
+    <tr><td>VF-1 Materials &amp; Lighting</td><td>palette audit, LGT-01…04 (06 open: screens/eyes), 56/56 tests, phone evidence</td><td>ACCEPTED by owner (2026-11-20)</td></tr>
+    <tr><td>VF-2 Architecture</td><td>walnut wall + frames on measured footprints; no ceilings/doors invented</td><td>COMPLETE — tests + renders verified</td></tr>
+    <tr><td>VF-3 Interiors</td><td>catalogue census; floor items ≤ 15 px; ENV-005…013; no invention in occluded zones</td><td>COMPLETE — 205 items; 3 QA defects found &amp; fixed (display orientation, lounge desks, dept strings)</td></tr>
+    <tr><td>VF-4 Robots</td><td>exactly 47; head-top ≤ 15 px; pose census; vest/tablet sets</td><td>COMPLETE — stylised low-poly (Q-VF-04 default); eye/limb detail EST. (art pass)</td></tr>
+    <tr><td>VF-5 Environment</td><td>tree trunks; canopies unchanged; ENV-017 omitted (unchanged)</td><td>COMPLETE</td></tr>
+    <tr><td>VF-6 Mobile fidelity</td><td>≥ readable fine elements at 412×915; desktop pixel-identity</td><td>COMPLETE — presentation-only floor; desktop identity proven</td></tr>
+    <tr><td>VF-7 Interaction</td><td>pickable entities; highlight additive only; HOME restorable; 24/47 figures</td><td>COMPLETE — 1 QA defect found &amp; fixed (userData level)</td></tr>
+    <tr><td>VF-8 Final</td><td>full validation; rendered check vs 006-A; evidence package</td><td>PASS — 71/71 tests, check-dist OK, rendered check byte-equal at 6 sizes, checksum OK</td></tr>
+  </table>
+
+  <h3>VF8.4 · Known deviations and unresolved items (complete, nothing hidden)</h3>
+  <table>
+    <tr><th>#</th><th>Item</th><th>Class</th></tr>
+    <tr><td>D1</td><td>DEPT-01 Executive floor tone</td><td>UNRESOLVED (probe contaminated; neutral kept)</td></tr>
+    <tr><td>D2</td><td>Marble vein pattern / warm-zone placement</td><td>EST. (seeded procedural; ΔRGB ≤ 23.8 vs reference patches)</td></tr>
+    <tr><td>D3</td><td>Partition mullion rhythm (0.96 m applied); transoms 2.0 m; post bays</td><td>EST. / ASSUMED (not separately measurable)</td></tr>
+    <tr><td>D4</td><td>Robot limb/eye simplification; ROBOT-046 ear colour via leather token</td><td>EST. (stylised low-poly per Q-VF-04)</td></tr>
+    <tr><td>D5</td><td>Display chart artwork (bar chart, code, art, map, check) rendered as flat emissive</td><td>ND → art pass</td></tr>
+    <tr><td>D6</td><td>Wall-item placement (displays/boards/shelves) wall-adjacent EST. (far-wall plane intersections proved below-floor)</td><td>EST. (documented solver limitation; ≤ 30 px tested)</td></tr>
+    <tr><td>D7</td><td>Scenery backdrop planes / distances</td><td>ASSUMED (Q-ARCH-06 open; unchanged from 006-A)</td></tr>
+    <tr><td>D8</td><td>Shadows/bloom/PBR styling values (roughness, boosts, threshold)</td><td>EST. (owner-judged at the VF-1 gate; unchanged since)</td></tr>
+    <tr><td>D9</td><td>Occluded-zone interiors (behind REG-02/04/06/07)</td><td>Intentionally sparse (Q-VF-01 default; no invention)</td></tr>
+    <tr><td>D10</td><td>Performance not yet measured on real hardware (SwiftShader proxy only)</td><td>OPEN — owner real-device check pending</td></tr>
+  </table>
 </section>
 
 <section>

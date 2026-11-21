@@ -1,7 +1,7 @@
 {
   "schema": "wora-greybox-rendered-check/v1",
   "method": "Headless Chromium (SwiftShader WebGL2), dev route ?dev&flat=1&frame=fill&partitions=0&balustrades=0&markers=0&edges=0&panel=0, DPR 1, window.__WORA_RENDERED_CHECK__() \u2014 rendered ID-colour pixels vs three.js projection of the same model. Floor corners hidden behind sign plates are flagged 'occluded' and excluded; corners outside the canvas are flagged inFrame=false. In 006-A flat mode the rim ring, labels and backdrop are measurement-neutral (rim/labels skipped, backdrop flat colour #020202 distinct from scanned IDs).",
-  "note": "Numbers only; no screenshots are committed. Regenerated for Mission VF-1 (2026-11-20): summaries and occlusion sets are byte-equal to the 006-A run \u2014 geometry untouched by the materials/lighting mission; flat measurement mode unchanged.",
+  "note": "Numbers only; no screenshots are committed. Regenerated for the VF-8 final acceptance run (2026-11-20): summaries and occlusion sets are byte-equal to the 006-A run \u2014 VF-1..VF-7 added appearance/content only, and all VF content groups are skipped in flat measurement mode. Flat check URL now uses the #/dev?... hash form (the ?dev query activation was removed in the presentation correction).",
   "results": {
     "1672x941": {
       "canvas": [
