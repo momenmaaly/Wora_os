@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WORA 006-A — Visual Acceptance Review Package</title>
+<style>
+  :root { --ink:#141A22; --paper:#F4F5F7; --card:#FFFFFF; --line:#D8DCE2; --mut:#5B6472; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.45 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; color:var(--ink); background:var(--paper); }
+  header { padding:20px 16px 12px; background:#10151C; color:#EEF1F5; }
+  header h1 { margin:0 0 4px; font-size:19px; }
+  header p { margin:2px 0; color:#AAB4C0; font-size:13px; }
+  header code { color:#7FD1E8; }
+  main { padding:16px; max-width:1280px; margin:0 auto; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; margin:14px 0; }
+  h2 { margin:0 0 8px; font-size:16px; }
+  h3 { margin:14px 0 6px; font-size:15px; }
+  p.note { color:var(--mut); font-size:13px; margin:6px 0; }
+  .pair { display:flex; flex-wrap:wrap; gap:10px; align-items:flex-start; }
+  .pair figure { margin:0; flex:1 1 320px; max-width:640px; }
+  .pair img { width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:6px; background:#DDD; }
+  figcaption { font-size:12px; color:var(--mut); margin-top:4px; }
+  .tags { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0; }
+  .tag { font-size:11px; font-weight:700; letter-spacing:.03em; padding:2px 8px; border-radius:999px; color:#fff; }
+  .t-meas { background:#1D7A46; } .t-fit { background:#0E7490; } .t-est { background:#B45309; } .t-assumed { background:#B91C1C; } .t-constr { background:#1D4ED8; }
+  .dev { border-left:3px solid #B91C1C; padding:6px 10px; background:#FEF2F2; font-size:13px; margin:8px 0; }
+  .live a { display:inline-block; margin:4px 8px 4px 0; padding:8px 12px; border-radius:8px; background:#0F62FE; color:#fff; text-decoration:none; font-weight:600; font-size:14px; }
+  .live a.alt { background:#3D4450; }
+  .slider { width:100%; height:34px; accent-color:#0F62FE; }
+  .ovwrap { position:relative; max-width:960px; border:1px solid var(--line); border-radius:6px; overflow:hidden; }
+  .ovwrap img { width:100%; display:block; }
+  .ovwrap .top { position:absolute; inset:0; }
+  table { border-collapse:collapse; width:100%; font-size:13px; }
+  th, td { border:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top; }
+  th { background:#EDF0F3; }
+  footer { color:var(--mut); font-size:12px; padding:10px 16px 26px; max-width:1280px; margin:0 auto; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Mission 006-A — Visual Acceptance Review Package</h1>
+  <p>Environment workstream (WORA-3D-SCENE-006-A) vs the locked reference · branch <code>arena/e6096316-wora-os</code> · commit <code>47542bb</code> + review artifacts · 2026-11-20</p>
+  <p>Reference checksum <code>wora-main-workspace.png: OK</code> (verified for this package; the reference file is untouched and immutable).</p>
+  <p>Honesty rules: rendered and reference close-ups use <b>identical pixel windows</b> — nothing is cropped, hidden or scaled to hide a deviation. Rendered images are actual browser output (headless Chromium, HOME camera fov 12.0006°, camera readback verified).</p>
+</header>
+<main>
+
+<section class="live">
+  <h2>1 · Live previews (phone and desktop)</h2>
+  <p class="note">Both servers bind 0.0.0.0 and are exposed by the Arena preview panel. On your Android phone open the public preview host of this sandbox: <code>https://&lt;port&gt;-&lt;sandbox-id&gt;.e2b.app</code> (the exact links are shown next to the two live processes in Arena).</p>
+  <a href="http://localhost:5173/">5173 · 3D workspace (home view)</a>
+  <a class="alt" href="http://localhost:5173/?dev&overlay=0.5&panel=1">5173 · inspector with live opacity slider</a>
+  <a class="alt" href="http://localhost:8080/greybox/review/">8080 · this review package</a>
+  <p class="note">Phone tips: <code>/</code> renders the full-bleed 3D scene (pinch-zoom via browser). <code>/?dev&amp;overlay=0.5&amp;panel=1</code> adds the reference overlay with the <b>live opacity slider</b>, markers and layer toggles (panel is desktop-oriented; on a small screen prefer <code>panel=0</code> and the slider here in section 3). Desktop previews: same URLs. Responsive framing renders: <code>V-responsive-006A-*</code> in section 7.</p>
+</section>
+
+<section>
+  <h2>2 · Full frame — reference vs rendered scene (side by side)</h2>
+  <div class="pair">
+    <figure><img src="../../reference/wora-main-workspace.png" alt="Locked reference"><figcaption>Locked reference (1672×941) — immutable original.</figcaption></figure>
+    <figure><img src="E02-clean-scene-006A.png" alt="Rendered 006-A scene"><figcaption>Rendered scene, Mission 006-A (actual browser output, HOME camera, no debug overlays).</figcaption></figure>
+  </div>
+  <p class="note">Expected differences (by design): no robots (006-B), no furniture (006-C), greybox-level materials, no bloom, background scenery simplified. Structural layout, camera framing, room ring, plinth, signs, fascia and back walls should align — check the overlay below.</p>
+</section>
+
+<section>
+  <h2>3 · Overlay comparison — adjustable opacity</h2>
+  <p class="note">The rendered scene is stacked over the reference. Move the slider: 0 % = reference only, 100 % = render only. This uses the same committed pair as the app's dev inspector (which also has a live slider — see section 1).</p>
+  <div class="ovwrap">
+    <img src="../../reference/wora-main-workspace.png" alt="reference base">
+    <img class="top" id="ov" src="E02-clean-scene-006A.png" alt="rendered overlay" style="opacity:0.5">
+  </div>
+  <input class="slider" type="range" min="0" max="100" value="50" oninput="document.getElementById('ov').style.opacity=(this.value/100).toFixed(2)">
+  <p class="note">A fixed 50 % blend is also committed as <code>E03-reference-overlay-50-006A.png</code>; the marker/edge alignment view is <code>E04-camera-sign-alignment-006A.png</code>.</p>
+</section>
+
+<section>
+  <h2>4 · Close-up comparisons</h2>
+  <p class="note">Left: reference at the stated pixel window. Right: the 006-A render at the <b>same</b> window. Tags state the provenance of every visible element: <span class="tag t-meas">MEASURED</span> <span class="tag t-fit">FIT</span> <span class="tag t-est">EST.</span> <span class="tag t-assumed">ASSUMED</span> <span class="tag t-constr">BY&nbsp;CONSTRUCTION</span></p>
+
+  <h3>4.1 Building facade and curved parapet (window 1050,40 → 1470,360)</h3>
+  <div class="tags"><span class="tag t-fit">fascia bottom FIT (LS rms 0.007 / 0.013 m)</span><span class="tag t-meas">mullion bay 0.96 m MEASURED</span><span class="tag t-est">transoms 2.0 m EST.</span><span class="tag t-assumed">parapet plane ASSUMED</span><span class="tag t-est">parapet depth 0.9 m EST.</span></div>
+  <div class="pair">
+    <figure><img src="X-facade-parapet-ref.png" alt="ref"><figcaption>Reference.</figcaption></figure>
+    <figure><img src="X-facade-parapet-render.png" alt="render"><figcaption>006-A render. The parapet band + strip sit on an assumed backdrop plane (CR-02) and project onto their reference pixels in HOME by construction; its world heights are not measurements.</figcaption></figure>
+  </div>
+  <div class="dev">Known deviation: the reference's perceived lower-edge lines are 3–10° steeper than the model (CR-01 — accepted by owner; no artificial distortion introduced). The fascia <i>wedge bottom</i> follows the measured band bottom; the structural +X edge stays grid-aligned at x = 14.6.</div>
+
+  <h3>4.2 Facade band, lower-left +Z (window 200,540 → 700,941)</h3>
+  <div class="tags"><span class="tag t-fit">fascia profile FIT</span><span class="tag t-meas">bay MEASURED</span><span class="tag t-est">rail + posts EST. (2.4 m bays)</span><span class="tag t-meas">balustrade height 1.27 m MEASURED</span></div>
+  <div class="pair">
+    <figure><img src="X-facade-band-plusZ-ref.png" alt="ref"><figcaption>Reference.</figcaption></figure>
+    <figure><img src="X-facade-band-plusZ-render.png" alt="render"><figcaption>006-A render: fascia wedge, curtain wall, balustrade rail.</figcaption></figure>
+  </div>
+
+  <h3>4.3 Facade band, lower-right +X (window 1230,520 → 1672,941)</h3>
+  <div class="tags"><span class="tag t-fit">fascia FIT (vanishes z ≤ −6.114, measured)</span><span class="tag t-meas">bay MEASURED</span><span class="tag t-assumed">edge-angle residual ACCEPTED (CR-01)</span></div>
+  <div class="pair">
+    <figure><img src="X-facade-band-plusX-ref.png" alt="ref"><figcaption>Reference.</figcaption></figure>
+    <figure><img src="X-facade-band-plusX-render.png" alt="render"><figcaption>006-A render. The band bottom tapers to nothing towards the right, as measured; the steep reference edge line is the documented, accepted residual — shown here uncorrected.</figcaption></figure>
+  </div>
+
+  <h3>4.4 Glass partitions and balustrades (window 163,380 → 676,760 — Creative Studio)</h3>
+  <div class="tags"><span class="tag t-meas">footprints MEASURED</span><span class="tag t-meas">partition height 2.07 m MEASURED (provisional scale)</span><span class="tag t-est">glass tone/opacity EST.</span><span class="tag t-assumed">no doors (Q-3D-01)</span></div>
+  <div class="pair">
+    <figure><img src="X-partitions-balustrades-ref.png" alt="ref"><figcaption>Reference (furniture, robots and screens are 006-B/006-C scope — intentionally absent).</figcaption></figure>
+    <figure><img src="X-partitions-balustrades-render.png" alt="render"><figcaption>006-A render: glazed partitions on the measured footprint lines, balustrade at the slab edge.</figcaption></figure>
+  </div>
+
+  <h3>4.5 Atrium and walkways (window 560,300 → 1260,620)</h3>
+  <div class="tags"><span class="tag t-meas">room positions MEASURED</span><span class="tag t-meas">marble tone SAMPLED (#B4A1A5)</span><span class="tag t-assumed">walkway boundaries ND — nothing invented</span></div>
+  <div class="pair">
+    <figure><img src="X-atrium-walkways-ref.png" alt="ref"><figcaption>Reference.</figcaption></figure>
+    <figure><img src="X-atrium-walkways-render.png" alt="render"><figcaption>006-A render: open atrium floor; walkway geometry is not separately invented (ND), the slab between rooms is the walkway surface.</figcaption></figure>
+  </div>
+
+  <h3>4.6 Plinth rim, logo and wordmark (window 740,410 → 1070,600)</h3>
+  <div class="tags"><span class="tag t-constr">centre/width BY CONSTRUCTION (fit anchors)</span><span class="tag t-meas">drum height MEASURED box (±5 px)</span><span class="tag t-est">rim emissive, no bloom EST.</span><span class="tag t-meas">label positions back-projected MEASURED</span><span class="tag t-est">logo/word artwork EST.</span></div>
+  <div class="pair">
+    <figure><img src="X-plinth-ref.png" alt="ref"><figcaption>Reference: glowing rim, gradient W mark, WORA wordmark.</figcaption></figure>
+    <figure><img src="X-plinth-render.png" alt="render"><figcaption>006-A render: rim ring (unlit emissive; bloom is art-pass), canvas-drawn mark + wordmark at the measured positions. Overlay80 comparison: <code>P-plinth-006A-overlay80.png</code>.</figcaption></figure>
+  </div>
+
+  <h3>4.7–4.13 · All seven department signs</h3>
+  <div class="tags"><span class="tag t-meas">plate anchors MEASURED</span><span class="tag t-fit">lengths FIT to measured box widths</span><span class="tag t-est">height 0.93 m EST. (CR-06)</span><span class="tag t-constr">angles SOLVED — residuals preserved (CR-05)</span><span class="tag t-est">typography/icons EST.</span></div>
+  <div class="dev">Known deviations: SIGN-02 renders +3.5° and SIGN-03 −5.1° off the measured plate angle (documented, kept by owner decision CR-05 — they sit at the frame's upper periphery where the reference itself deviates from a pinhole projection).</div>
+  <div class="pair"><figure><img src="X-sign-01-ref.png" alt="ref"><figcaption>SIGN-01 Executive Office — reference.</figcaption></figure><figure><img src="X-sign-01-render.png" alt="render"><figcaption>SIGN-01 — render (angle residual 0.1°).</figcaption></figure></div>
+  <div class="pair"><figure><img src="X-sign-02-ref.png" alt="ref"><figcaption>SIGN-02 Marketing — reference.</figcaption></figure><figure><img src="X-sign-02-render.png" alt="render"><figcaption>SIGN-02 — render (angle residual +3.5°, kept).</figcaption></figure></div>
+  <div class="pair"><figure><img src="X-sign-03-ref.png" alt="ref"><figcaption>SIGN-03 Engineering — reference.</figcaption></figure><figure><img src="X-sign-03-render.png" alt="render"><figcaption>SIGN-03 — render (angle residual −5.1°, kept).</figcaption></figure></div>
+  <div class="pair"><figure><img src="X-sign-04-ref.png" alt="ref"><figcaption>SIGN-04 Creative Studio — reference.</figcaption></figure><figure><img src="X-sign-04-render.png" alt="render"><figcaption>SIGN-04 — render (1.2°).</figcaption></figure></div>
+  <div class="pair"><figure><img src="X-sign-05-ref.png" alt="ref"><figcaption>SIGN-05 Management — reference.</figcaption></figure><figure><img src="X-sign-05-render.png" alt="render"><figcaption>SIGN-05 — render (0.4°).</figcaption></figure></div>
+  <div class="pair"><figure><img src="X-sign-06-ref.png" alt="ref"><figcaption>SIGN-06 Research — reference.</figcaption></figure><figure><img src="X-sign-06-render.png" alt="render"><figcaption>SIGN-06 — render (2.2°).</figcaption></figure></div>
+  <div class="pair"><figure><img src="X-sign-07-ref.png" alt="ref"><figcaption>SIGN-07 QA &amp; Testing — reference.</figcaption></figure><figure><img src="X-sign-07-render.png" alt="render"><figcaption>SIGN-07 — render (0.9°).</figcaption></figure></div>
+
+  <h3>4.14 Lighting and environmental background</h3>
+  <div class="tags"><span class="tag t-est">LGT-01/02 tone approx. EST.</span><span class="tag t-assumed">city cards + planes ASSUMED</span><span class="tag t-assumed">canopy discs APPROX.</span><span class="tag t-est">parapet strip EST.</span></div>
+  <div class="pair">
+    <figure><img src="X-backdrop-left-ref.png" alt="ref"><figcaption>Reference, upper-left band: exterior glazing, city bokeh, terrace trees and the curved parapet.</figcaption></figure>
+    <figure><img src="X-backdrop-left-render.png" alt="render"><figcaption>006-A render: back exterior wall + mullions, city backdrop card, parapet band + strip, canopy discs — simplified scenery by design (CR-02).</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="../../reference/wora-main-workspace.png" style="max-width:49%" alt="ref"><figcaption>Reference, full frame (mood reference).</figcaption></figure>
+    <figure><img src="E01-main-camera-view-006A.png" style="max-width:49%" alt="render"><figcaption>006-A render, full frame: lighting mood (cool sky / warm ground, key from upper-right), dark backdrop.</figcaption></figure>
+  </div>
+  <p class="note">Right-side backdrop comparison: section 4.1. The large outdoor tree at the bottom-right frame edge is modelled as a simple canopy disc; the right-terrace greenery cluster (ENV-017) is <b>omitted</b> — its screen ray cannot be placed at a consistent 3D location (documented, not invented).</p>
+</section>
+
+<section>
+  <h2>5 · Measured vs estimated vs assumed — provenance summary</h2>
+  <table>
+    <tr><th>Element</th><th>Provenance</th><th>Source</th></tr>
+    <tr><td>Camera, footprints, plinth centre/radius, sign anchors, robot-marker data</td><td><span class="tag t-meas">MEASURED</span> / <span class="tag t-constr">BY CONSTRUCTION</span></td><td>Mission 003 solve; unchanged in 006-A</td></tr>
+    <tr><td>Fascia band bottom (+Z / +X)</td><td><span class="tag t-fit">FIT</span></td><td>Least-squares of the 2026-11-20 reference probe (rms 0.007 / 0.013 m)</td></tr>
+    <tr><td>Curtain-wall bay 0.96 m; plinth label boxes; material tone samples</td><td><span class="tag t-meas">MEASURED</span></td><td>Reference probe (scratch, image read-only)</td></tr>
+    <tr><td>Transoms 2.0 m; balustrade rail/posts (2.4 m bays); glass tones; sign typography and icons; logo/word artwork; lighting tone</td><td><span class="tag t-est">EST.</span></td><td>Styled after the reference; marked est. in the JSON</td></tr>
+    <tr><td>Scenery planes (city, parapet, canopy discs); −X/−Z fascia thickness 0.45 m; back-wall height</td><td><span class="tag t-assumed">ASSUMED</span></td><td>Q-ARCH-06 open; positions by construction in HOME</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>6 · Known deviations and unresolved items (complete list — nothing hidden)</h2>
+  <table>
+    <tr><th>#</th><th>Item</th><th>Status</th></tr>
+    <tr><td>1</td><td>+X lower-edge angle: reference 3–10° steeper</td><td>Accepted by owner (CR-01); edge grid-aligned at x = 14.6; fascia follows the measured band bottom</td></tr>
+    <tr><td>2</td><td>SIGN-02 +3.5°, SIGN-03 −5.1° angle residuals</td><td>Kept by owner (CR-05); visible in 4.7–4.13</td></tr>
+    <tr><td>3</td><td>Scenery plane distances</td><td>Assumptions (Q-ARCH-06); scenery lands below y = 0 on distant planes (all in-frame rays point below the horizon); invisible in HOME, visible in free orbit</td></tr>
+    <tr><td>4</td><td>−X/−Z mullions, transoms, post bays, fascia thickness</td><td>Styling estimates (no measurable reference lines there)</td></tr>
+    <tr><td>5</td><td>Sign typography/icons, logo/wordmark artwork</td><td>Greybox-level glyphs; exact artwork = art pass</td></tr>
+    <tr><td>6</td><td>Bloom / glow around rim, strips, screens</td><td>Deferred to the art pass (Q-3D-07 decided: emissive now)</td></tr>
+    <tr><td>7</td><td>LGT-01/02 mood and shadow direction</td><td>Approximate tone-only lighting; owner visual judgement requested in this review</td></tr>
+    <tr><td>8</td><td>ENV-017 right-terrace greenery</td><td>Omitted (ray cannot be placed consistently); can be re-scoped into 006-C</td></tr>
+    <tr><td>9</td><td>Robots (47), furniture, plants, screens, doors</td><td>Intentionally absent — 006-B / 006-C scope, not started</td></tr>
+    <tr><td>10</td><td>Executive Office interior/plan</td><td>Square greybox only (CR-07: final geometry unresolved, not confirmed)</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>7 · Responsive framing renders (desktop sizes; phone = live link)</h2>
+  <div class="pair">
+    <figure><img src="V-responsive-006A-1920x1080.png" alt="1920"><figcaption>1920×1080 — reference rule (Δaspect &lt; 0.001).</figcaption></figure>
+    <figure><img src="V-responsive-006A-2560x1080.png" alt="2560"><figcaption>2560×1080 — fit-width rule.</figcaption></figure>
+    <figure><img src="V-responsive-006A-1440x900.png" alt="1440"><figcaption>1440×900 — keep-vertical rule.</figcaption></figure>
+    <figure><img src="V-responsive-006A-1024x768.png" alt="1024"><figcaption>1024×768 — fit-safe-width rule (reveals ~19 % extra height, documented).</figcaption></figure>
+  </div>
+</section>
+
+</main>
+<footer>
+  Package contents: 14 reference/render close-up pairs (<code>X-*-ref.png</code> / <code>X-*-render.png</code>), full-frame and overlay renders (<code>E01–E06</code>), facade/backdrop/plinth/sign sets from the mission run (<code>F-*</code>, <code>D-backdrop-*</code>, <code>P-plinth-006A-*</code>, <code>S-SIGN-*-006A</code>), responsive renders. Reference crops are read-only derivations of the locked original, committed as review artifacts per the owner's storage decision (2026-11-20) — the original file is untouched (checksum re-verified). Rendered check data: <code>greybox/data/rendered-check.json</code> · metrics: <code>greybox/data/greybox-metrics.json</code> · specialist report: <code>greybox/06-scene-006-a-report.md</code>. PR #1 remains open and unmerged; no implementation change was made for this review.
+</footer>
+</body>
+</html>
