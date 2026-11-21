@@ -10,7 +10,7 @@
  * avatar disc with a light ring stands in (documented deviation). Robot avatars are SVG glyphs.
  * Icon glyphs are hand-drawn SVG approximations of the catalogued icons (analysis/04 icon notes).
  */
-import { useEffect, useState, type CSSProperties, type ReactNode } from 'react';
+import { Fragment, useEffect, useState, type CSSProperties, type ReactNode } from 'react';
 import { ACTIVITY_ROWS, NAV_ITEMS, REF_FRAME, STATUS_METRICS, UI_STRINGS, VIEW_TABS, uiBox } from './uiSpec';
 
 export function useUiScale(): number {
@@ -252,8 +252,9 @@ export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
       <div style={{ position: 'absolute', left: px(270), top: px(31) }}><Icon kind="chevRight" size={10 * s} color="#A3A6B0" /></div>
 
       {/* ── Search (UI-040) — centre, top-anchored ── */}
-      <div style={{ ...panel, left: '50%', transform: 'translateX(-50%)', top: px(10), width: px(562), height: px(47), background: '#141C2A', borderRadius: px(14), pointerEvents: 'auto' }}>
-        <div style={{ position: 'absolute', left: px(12), top: px(8), width: px(543), height: px(33), background: '#141E2F', border: `${px(1)} solid #4A5568`, borderRadius: px(12), display: 'flex', alignItems: 'center' }}>
+      {/* ref: one dark pill — the outer shell IS the field (no inner border box) */}
+      <div style={{ ...panel, left: '50%', transform: 'translateX(-50%)', top: px(10), width: px(562), height: px(47), background: '#151B28', border: `${px(1)} solid #2E3947`, borderRadius: px(14), pointerEvents: 'auto' }}>
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center' }}>
           <div style={{ marginLeft: px(11) }}><Icon kind="magnifier" size={15 * s} color="#C8CDD5" /></div>
           <input
             value={search}
@@ -272,15 +273,22 @@ export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
         <div style={{ position: 'absolute', left: px(118), top: px(38) }}><Icon kind="cycle" size={9 * s} color="#12DB76" /></div>
         <div style={{ position: 'absolute', left: px(175), top: px(19), width: px(1), height: px(30), background: '#2A3547' }} />
         {STATUS_METRICS.map((m, i) => (
+          <Fragment key={`d${m.id}`}>
+            {i > 0 && <div style={{ position: 'absolute', left: px(203 + i * 105 - 12), top: px(14), width: px(1), height: px(34), background: '#2A3547' }} />}
+
           <div key={m.id} style={{ position: 'absolute', left: px(203 + i * 105), top: px(15), width: px(100), pointerEvents: 'auto' }}>
+            {/* ref: value row = coloured badge (people glyph on the first metric, solid disc on the
+                state metrics) + big white number; label row = coloured dot + light-grey label */}
             <div style={{ display: 'flex', alignItems: 'center', gap: px(6) }}>
-              <Icon kind={m.icon} size={14 * s} color={m.color} />
+              {i === 0 ? <Icon kind={m.icon} size={15 * s} color={m.color} /> : <span style={{ width: px(12), height: px(12), borderRadius: '50%', background: m.color, display: 'inline-block' }} />}
               <span style={{ fontSize: px(18), fontWeight: 700, color: '#FFFFFF' }}>{m.value}</span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', marginTop: px(4) }}>
-              <span style={{ fontSize: px(12), color: i === 0 ? '#C3CAD3' : m.color }}>{m.label}</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: px(5), marginTop: px(4) }}>
+              <span style={{ width: px(8), height: px(8), borderRadius: '50%', background: m.color, display: 'inline-block' }} />
+              <span style={{ fontSize: px(12), color: '#C9CFD8' }}>{m.label}</span>
             </div>
           </div>
+          </Fragment>
         ))}
       </div>
 

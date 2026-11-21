@@ -70,8 +70,26 @@ rendered only the scene. Rebuilt as real DOM components (`apps/workspace/src/ui/
 | UI font family | Roboto/Inter-like EST. (unresolvable); sizes follow measured text boxes |
 | Profile avatar photo | NOT REPRODUCIBLE → neutral disc (documented; no invention) |
 | 6 robots clamped to rooms; head round-trip ≤18 px for those 6 | MEASURED constraint + documented solve deviation |
-| Exec Office interior detail (bookshelf contents, rug pattern) | Simplified vs reference (further pass possible) |
+| Exec Office / dept interior micro-detail (book spines, marble veining, tilt-shift DOF, warm cove light, furniture styling) | Simplified vs reference — the largest remaining |Δ| driver; structure/positions/count align |
 | DEPT-01 floor tone | UNRESOLVED (unchanged, neutral — prior report 08) |
+
+## 4.1 Verification sweep (post-loop re-audit)
+
+A second audit pass over the final render re-checked every region against the reference and found
+two UI defects, both fixed and re-rendered (`reset-ui-final*`):
+
+1. Status strip labels were coloured; the reference uses **light-grey labels with coloured dots**,
+   coloured value badges (people glyph / solid discs) and thin dividers between blocks — rebuilt.
+2. Search field had an invented inner border box; the reference is a **single dark pill** — rebuilt.
+
+Final region deltas (mean |ΔRGB| per region, ref upscaled to 1920×1080; dominated by the
+reference's stylised detail density — book contents, marble veining, tilt-shift depth-of-field,
+warm cove light, furniture micro-detail — rather than by structure): switcher 0.4 · command 2.0 ·
+profile 6.2 · activity 6.3 · sidebar-bottom 6.8 · qa-testing 11.8 · management 12.6 · header 15.0 ·
+sidebar-top 15.5 · engineering 18.1 · plaza 21.4 · research 21.8 · search-status 30.8 (scene
+behind the translucent panels differs) · creative 38.6 · exec-office 43.8 · marketing 58.4.
+Evidence: `greybox/review/reset/final2-region-*.png`, `side-by-side-final.png`,
+`status-final-check.png`.
 
 ## 5. Next (§6 review package)
 
