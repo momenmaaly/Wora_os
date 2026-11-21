@@ -61,3 +61,23 @@ export const RING_OFFSETS_PX: Record<DeptId, [number, number]> = {
 
 /** Plinth centre in the reference (ENV-002 box centre). */
 export const PLINTH_CENTRE_PX: [number, number] = [903, 500];
+
+/* ── Mission 006-A measured fascia steps (scratch luminance probe, 2026-11-20) ── */
+/**
+ * Strongest bright→dark step below the slab edge = bottom of the bright fascia band.
+ * [screenX, stepY] pairs, original reference px, 1672×941. Used only for validation.
+ */
+export const FASCIA_STEP_PX: { edge: '+Z' | '+X'; u: number; px: [number, number] }[] = [
+  // +Z: strongest bright→dark step below the model edge, sx 250..450 (u = x on the edge plane,
+  // solved exactly with the HOME projector; sx 350 had a tracker glitch and is excluded)
+  ...([
+    [250, 656, -5.3606], [270, 670, -4.6925], [290, 683, -4.0304], [310, 696, -3.3743], [330, 709, -2.7241],
+    [370, 736, -1.4407], [390, 749, -0.8075], [410, 762, -0.1799], [430, 776, 0.4423], [450, 789, 1.0591],
+  ] as [number, number, number][]).map(([sx, sy, u]) => ({ edge: '+Z' as const, u, px: [sx, sy] as [number, number] })),
+  // +X: sx 1350..1570 (u = z on the edge plane, solved exactly with the HOME projector)
+  ...([
+    [1350, 847, 2.3189], [1370, 831, 1.7038], [1390, 815, 1.0832], [1410, 799, 0.4572], [1430, 783, -0.1743],
+    [1450, 767, -0.8114], [1470, 752, -1.4542], [1490, 737, -2.1027], [1510, 721, -2.7571], [1530, 706, -3.4173],
+    [1550, 691, -4.0836], [1570, 675, -4.7559],
+  ] as [number, number, number][]).map(([sx, sy, u]) => ({ edge: '+X' as const, u, px: [sx, sy] as [number, number] })),
+];

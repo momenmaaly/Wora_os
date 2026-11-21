@@ -20,7 +20,24 @@ import {
   type Vec3,
 } from '../config/sceneConfig';
 
-export type MaterialKey = 'slab' | 'mass' | 'floor' | 'partition' | 'balustrade' | 'plinth' | 'sign';
+export type MaterialKey =
+  | 'slab'
+  | 'mass'
+  | 'floor'
+  | 'partition'
+  | 'balustrade'
+  | 'plinth'
+  | 'sign'
+  // Mission 006-A environment keys (all catalogued in the reference; see scene-architecture.json `environment`)
+  | 'fascia'
+  | 'facade'
+  | 'glazing'
+  | 'frame'
+  | 'rim'
+  | 'strip'
+  | 'city'
+  | 'parapet'
+  | 'foliage';
 
 export interface BoxSpec {
   key: string;
@@ -43,6 +60,44 @@ export interface CylinderSpec {
   segments: number;
 }
 export type PrimitiveSpec = BoxSpec | CylinderSpec;
+
+/** Vertical ribbon in a plane parallel to one axis: runs along `axis` at fixed `at`, from yTop(u) down to yBot(u). */
+export interface RibbonSpec {
+  key: string;
+  refId?: string;
+  kind: 'ribbon';
+  material: MaterialKey;
+  axis: 'x' | 'z';
+  /** fixed coordinate of the ribbon plane (z when axis='x', x when axis='z') */
+  at: number;
+  pts: { u: number; yTop: number; yBot: number }[];
+}
+/** Vertical circular canopy disc (backdrop scenery). */
+export interface DiscSpec {
+  key: string;
+  refId?: string;
+  kind: 'disc';
+  material: MaterialKey;
+  center: Vec3;
+  radius: number;
+  /** disc normal direction: 'z' faces ±Z, 'x' faces ±X */
+  normal: 'x' | 'z';
+}
+/** Flat textured plane carrying canvas-drawn text (sign faces, plinth wordmark/logo). */
+export interface LabelSpec {
+  key: string;
+  refId?: string;
+  kind: 'label';
+  text: string;
+  /** icon glyph key drawn left of the text (see Greybox sign-face painter) */
+  icon?: string;
+  center: Vec3;
+  /** [width, height] in m */
+  size: [number, number];
+  rotationY: number;
+  /** 'flat' lies on the ground plane (plinth labels); 'upright' faces the plate normal (sign faces) */
+  orientation: 'flat' | 'upright';
+}
 
 /** Greybox placeholders that are NOT measured (architecture/02 §7, 05 §1). */
 export const PLACEHOLDER = {

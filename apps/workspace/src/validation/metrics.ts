@@ -7,6 +7,8 @@ import { PerspectiveCamera, Raycaster, Vector2, Vector3, Plane } from 'three';
 import {
   ARCHITECTURE,
   DEPARTMENTS,
+  fasciaPlusXBot,
+  fasciaPlusZBot,
   MEASURED,
   PLINTH,
   REFERENCE,
@@ -17,10 +19,12 @@ import {
 } from '../config/sceneConfig';
 import {
   DIGITISED_CORNERS,
+  FASCIA_STEP_PX,
   RING_OFFSETS_PX,
   SIGN_ANGLES_DEG,
   SLAB_EDGE_LINES,
 } from '../config/referencePoints';
+import { buildEnvironmentModel } from '../scene/environment';
 import { createHomeCamera, fovForAspect, applyHomeCamera, projectToPixels, REFERENCE_ASPECT } from '../scene/camera';
 import { boxCorners, buildGreyboxModel, footprintCorners, slabFootprint, type BoxSpec } from '../scene/model';
 
@@ -411,6 +415,7 @@ export function allMetrics() {
     robots: robotMetrics(cam),
     slabEdges: slabEdgeMetrics(cam),
     occlusion: occlusionMetrics(cam),
+    environment: environmentMetrics(cam),
     slabFootprint: slabFootprint(),
     responsive: responsiveMetrics([
       [1672, 941],
@@ -423,5 +428,49 @@ export function allMetrics() {
       [1366, 768],
       [1024, 768],
     ]),
+  };
+}
+
+/* ── Mission 006-A environment metrics ───────────────────────────────────────── */
+
+/**
+ * Fascia-bottom check: the fitted fascia profile (scene-architecture.json `environment`, measured
+ * from the reference) is projected at each measured sample and compared with the measured step pixel.
+ */
+export function environmentMetrics(cam: PerspectiveCamera) {
+  const env = buildEnvironmentModel();
+  const samples = FASCIA_STEP_PX.map((s) => {
+    const yBot = s.edge === '+Z' ? fasciaPlusZBot(s.u) : fasciaPlusXBot(s.u);
+    const world: Vec3 = s.edge === '+Z' ? [s.u, yBot, 13.91] : [14.6, yBot, s.u];
+    const p = projectToPixels(cam, world);
+    const err = Math.hypot(p.x - s.px[0], p.y - s.px[1]);
+    return { edge: s.edge, u: r2(s.u), measuredPx: s.px, projectedPx: [r1(p.x), r1(p.y)], errPx: r1(err) };
+  });
+  const byEdge = (e: string) => samples.filter((s) => s.edge === e);
+  return {
+    note: 'Fascia bottom profile vs the measured reference step (sample u values are the edge-plane world coordinate).',
+    fasciaSamples: samples,
+    fasciaMaxPx: { '+Z': Math.max(...byEdge('+Z').map((s) => s.errPx)), '+X': Math.max(...byEdge('+X').map((s) => s.errPx)) },
+    fasciaMeanPx: {
+      '+Z': r1(byEdge('+Z').reduce((a, s) => a + s.errPx, 0) / byEdge('+Z').length),
+      '+X': r1(byEdge('+X').reduce((a, s) => a + s.errPx, 0) / byEdge('+X').length),
+    },
+    elementCounts: {
+      fasciaRibbons: env.fascia.length,
+      facadePanes: env.facadePanes.length,
+      facadeMullions: env.facadeMullions.length,
+      facadeTransoms: env.facadeTransoms.length,
+      backGlazingPanes: env.backGlazingPanes.length,
+      backGlazingMullions: env.backGlazingMullions.length,
+      balustradeFrames: env.balustradeFrames.length,
+      plinthLabels: env.plinthLabels.length,
+      signFaces: env.signFaces.length,
+      partitionStrips: env.partitionStrips.length,
+      edgeStrips: env.edgeStrips.length,
+      backdropCity: env.backdropCity.length,
+      backdropParapet: env.backdropParapet.length,
+      backdropTrees: env.backdropTrees.length,
+    },
+    sceneryNote: 'Backdrop scenery is by-construction on assumed planes (CR-02); no independent numeric check is claimed.',
   };
 }

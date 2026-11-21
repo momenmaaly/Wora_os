@@ -1,7 +1,7 @@
 {
  "schema": "wora-greybox-rendered-check/v1",
- "method": "Headless Chromium (SwiftShader WebGL2), dev route ?dev&flat=1&frame=fill&partitions=0&balustrades=0&markers=0&edges=0&panel=0, DPR 1, window.__WORA_RENDERED_CHECK__() \u2014 rendered ID-colour pixels vs three.js projection of the same model. Floor corners hidden behind sign plates are flagged 'occluded' and excluded; corners outside the canvas are flagged inFrame=false.",
- "note": "Numbers only; no screenshots are committed.",
+ "method": "Headless Chromium (SwiftShader WebGL2), dev route ?dev&flat=1&frame=fill&partitions=0&balustrades=0&markers=0&edges=0&panel=0, DPR 1, window.__WORA_RENDERED_CHECK__() \u2014 rendered ID-colour pixels vs three.js projection of the same model. Floor corners hidden behind sign plates are flagged 'occluded' and excluded; corners outside the canvas are flagged inFrame=false. In 006-A flat mode the rim ring, labels and backdrop are measurement-neutral (rim/labels skipped, backdrop flat colour #020202 distinct from scanned IDs).",
+ "note": "Numbers only; no screenshots are committed. Regenerated for Mission 006-A (2026-11-20).",
  "results": {
   "1672x941": {
    "canvas": [
@@ -1681,7 +1681,7 @@
       {
        "rendered": [
         126.5,
-        324.5
+        325.5
        ],
        "projected": [
         126,
@@ -1748,7 +1748,7 @@
     },
     {
      "id": "DEPT-04",
-     "maxCornerErrPx": 0.6,
+     "maxCornerErrPx": 0.4,
      "corners": [
       {
        "rendered": [
@@ -1784,7 +1784,7 @@
         678.3
        ],
        "inFrame": true,
-       "occluded": false
+       "occluded": true
       },
       {
        "rendered": [

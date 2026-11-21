@@ -1210,6 +1210,322 @@
    "hiddenBy": null
   }
  ],
+ "environment": {
+  "note": "Fascia bottom profile vs the measured reference step (sample u values are the edge-plane world coordinate).",
+  "fasciaSamples": [
+   {
+    "edge": "+Z",
+    "u": -5.36,
+    "measuredPx": [
+     250,
+     656
+    ],
+    "projectedPx": [
+     251.2,
+     657
+    ],
+    "errPx": 1.5
+   },
+   {
+    "edge": "+Z",
+    "u": -4.69,
+    "measuredPx": [
+     270,
+     670
+    ],
+    "projectedPx": [
+     271.3,
+     670.3
+    ],
+    "errPx": 1.3
+   },
+   {
+    "edge": "+Z",
+    "u": -4.03,
+    "measuredPx": [
+     290,
+     683
+    ],
+    "projectedPx": [
+     291.3,
+     683.6
+    ],
+    "errPx": 1.5
+   },
+   {
+    "edge": "+Z",
+    "u": -3.37,
+    "measuredPx": [
+     310,
+     696
+    ],
+    "projectedPx": [
+     311.4,
+     696.9
+    ],
+    "errPx": 1.7
+   },
+   {
+    "edge": "+Z",
+    "u": -2.72,
+    "measuredPx": [
+     330,
+     709
+    ],
+    "projectedPx": [
+     331.5,
+     710.2
+    ],
+    "errPx": 1.9
+   },
+   {
+    "edge": "+Z",
+    "u": -1.44,
+    "measuredPx": [
+     370,
+     736
+    ],
+    "projectedPx": [
+     371.6,
+     736.8
+    ],
+    "errPx": 1.8
+   },
+   {
+    "edge": "+Z",
+    "u": -0.81,
+    "measuredPx": [
+     390,
+     749
+    ],
+    "projectedPx": [
+     391.6,
+     750.1
+    ],
+    "errPx": 1.9
+   },
+   {
+    "edge": "+Z",
+    "u": -0.18,
+    "measuredPx": [
+     410,
+     762
+    ],
+    "projectedPx": [
+     411.6,
+     763.3
+    ],
+    "errPx": 2.1
+   },
+   {
+    "edge": "+Z",
+    "u": 0.44,
+    "measuredPx": [
+     430,
+     776
+    ],
+    "projectedPx": [
+     431.6,
+     776.6
+    ],
+    "errPx": 1.7
+   },
+   {
+    "edge": "+Z",
+    "u": 1.06,
+    "measuredPx": [
+     450,
+     789
+    ],
+    "projectedPx": [
+     451.6,
+     789.9
+    ],
+    "errPx": 1.9
+   },
+   {
+    "edge": "+X",
+    "u": 2.32,
+    "measuredPx": [
+     1350,
+     847
+    ],
+    "projectedPx": [
+     1346.6,
+     848.1
+    ],
+    "errPx": 3.5
+   },
+   {
+    "edge": "+X",
+    "u": 1.7,
+    "measuredPx": [
+     1370,
+     831
+    ],
+    "projectedPx": [
+     1366.8,
+     832.5
+    ],
+    "errPx": 3.5
+   },
+   {
+    "edge": "+X",
+    "u": 1.08,
+    "measuredPx": [
+     1390,
+     815
+    ],
+    "projectedPx": [
+     1386.9,
+     816.8
+    ],
+    "errPx": 3.5
+   },
+   {
+    "edge": "+X",
+    "u": 0.46,
+    "measuredPx": [
+     1410,
+     799
+    ],
+    "projectedPx": [
+     1407.1,
+     801.1
+    ],
+    "errPx": 3.6
+   },
+   {
+    "edge": "+X",
+    "u": -0.17,
+    "measuredPx": [
+     1430,
+     783
+    ],
+    "projectedPx": [
+     1427.3,
+     785.4
+    ],
+    "errPx": 3.6
+   },
+   {
+    "edge": "+X",
+    "u": -0.81,
+    "measuredPx": [
+     1450,
+     767
+    ],
+    "projectedPx": [
+     1447.5,
+     769.7
+    ],
+    "errPx": 3.7
+   },
+   {
+    "edge": "+X",
+    "u": -1.45,
+    "measuredPx": [
+     1470,
+     752
+    ],
+    "projectedPx": [
+     1467.8,
+     754
+    ],
+    "errPx": 3
+   },
+   {
+    "edge": "+X",
+    "u": -2.1,
+    "measuredPx": [
+     1490,
+     737
+    ],
+    "projectedPx": [
+     1488,
+     738.2
+    ],
+    "errPx": 2.3
+   },
+   {
+    "edge": "+X",
+    "u": -2.76,
+    "measuredPx": [
+     1510,
+     721
+    ],
+    "projectedPx": [
+     1508.3,
+     722.5
+    ],
+    "errPx": 2.2
+   },
+   {
+    "edge": "+X",
+    "u": -3.42,
+    "measuredPx": [
+     1530,
+     706
+    ],
+    "projectedPx": [
+     1528.6,
+     706.7
+    ],
+    "errPx": 1.6
+   },
+   {
+    "edge": "+X",
+    "u": -4.08,
+    "measuredPx": [
+     1550,
+     691
+    ],
+    "projectedPx": [
+     1548.9,
+     690.9
+    ],
+    "errPx": 1.1
+   },
+   {
+    "edge": "+X",
+    "u": -4.76,
+    "measuredPx": [
+     1570,
+     675
+    ],
+    "projectedPx": [
+     1569.3,
+     675.1
+    ],
+    "errPx": 0.7
+   }
+  ],
+  "fasciaMaxPx": {
+   "+Z": 2.1,
+   "+X": 3.7
+  },
+  "fasciaMeanPx": {
+   "+Z": 1.7,
+   "+X": 2.7
+  },
+  "elementCounts": {
+   "fasciaRibbons": 4,
+   "facadePanes": 2,
+   "facadeMullions": 63,
+   "facadeTransoms": 10,
+   "backGlazingPanes": 2,
+   "backGlazingMullions": 63,
+   "balustradeFrames": 27,
+   "plinthLabels": 2,
+   "signFaces": 7,
+   "partitionStrips": 28,
+   "edgeStrips": 2,
+   "backdropCity": 2,
+   "backdropParapet": 2,
+   "backdropTrees": 7
+  },
+  "sceneryNote": "Backdrop scenery is by-construction on assumed planes (CR-02); no independent numeric check is claimed."
+ },
  "slabFootprint": {
   "x0": -17.18,
   "x1": 14.6,

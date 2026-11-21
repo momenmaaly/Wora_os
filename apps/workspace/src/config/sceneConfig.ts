@@ -40,7 +40,7 @@ export interface CameraConfig {
 /** Reference frame of the locked image (1672 × 941). */
 export const REFERENCE = { width: 1672, height: 941, sha256: architecture.reference.sha256 } as const;
 
-const EXPECTED_SCHEMA = 'wora-main-workspace-architecture/v1';
+const EXPECTED_SCHEMA = 'wora-main-workspace-architecture/v2';
 if (architecture.schema !== EXPECTED_SCHEMA) {
   throw new Error(`scene-architecture.json schema mismatch: ${architecture.schema} (expected ${EXPECTED_SCHEMA})`);
 }
@@ -124,3 +124,26 @@ export const MEASURED: Record<string, MeasuredElement> = Object.fromEntries(
 export const UI_OCCLUDERS = ['REG-01', 'REG-02', 'REG-04', 'REG-05', 'REG-06', 'REG-07', 'REG-08'].map((id) => MEASURED[id]);
 
 export const ARCHITECTURE = architecture;
+
+/* ── Mission 006-A environment (schema v2 `environment` section) ─────────────── */
+
+export const ENV = architecture.environment;
+
+/**
+ * Fascia-bottom profiles (scene-architecture.json `environment.fascia`, least-squares fits of the
+ * 2026-11-20 probe). Each edge: 0 before the vanish point, the fitted line over the measured range,
+ * then a linear blend to the shared corner depth −2.3 m (occluded by REG-07; mean of the two
+ * edge-fit extrapolations to the corner).
+ */
+export function fasciaPlusXBot(z: number): number {
+  if (z <= -6.114) return 0;
+  if (z <= 3.4) return -0.8983 - 0.1469 * z;
+  const t = (z - 3.4) / (13.91 - 3.4);
+  return -1.3978 + t * (-2.3 + 1.3978);
+}
+export function fasciaPlusZBot(x: number): number {
+  if (x <= -11.589) return 0;
+  if (x <= 4.4) return -0.7492 - 0.0646 * x;
+  const t = (x - 4.4) / (14.6 - 4.4);
+  return -1.0334 + t * (-2.3 + 1.0334);
+}

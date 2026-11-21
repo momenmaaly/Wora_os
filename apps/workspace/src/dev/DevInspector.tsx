@@ -7,7 +7,7 @@
  *  - layer toggles and a free-orbit mode with "Reset to HOME".
  *
  * URL params (for scripted checks): overlay=<0..1>, markers=0|1, panel=0|1, frame=reference|fill,
- * robots=0|1, ui=0|1, edges=0|1, flat=0|1 (unlit ID colours), mass|partitions|signs|balustrades=0|1.
+ * robots=0|1, ui=0|1, edges=0|1, flat=0|1 (unlit ID colours), mass|partitions|signs|balustrades|fascia|strips|backdrop=0|1.
  */
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { WorkspaceCanvas } from '../scene/WorkspaceCanvas';
@@ -60,6 +60,9 @@ export function DevInspector() {
     partitions: flag('partitions', DEFAULT_LAYERS.partitions),
     signs: flag('signs', DEFAULT_LAYERS.signs),
     balustrades: flag('balustrades', DEFAULT_LAYERS.balustrades),
+    fascia: flag('fascia', DEFAULT_LAYERS.fascia),
+    strips: flag('strips', DEFAULT_LAYERS.strips),
+    backdrop: flag('backdrop', DEFAULT_LAYERS.backdrop),
   }));
   const [flat, setFlat] = useState(flag('flat', false));
   const [orbit, setOrbit] = useState(false);

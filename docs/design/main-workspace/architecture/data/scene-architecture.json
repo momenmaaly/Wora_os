@@ -1,1541 +1,1974 @@
 {
- "schema": "wora-main-workspace-architecture/v1",
- "reference": {
-  "path": "docs/design/main-workspace/reference/wora-main-workspace.png",
-  "sha256": "6f91ff3d27f1d69d7189b6d1a599088086bb50048d1c0b492e3ebcdb718036a1",
-  "size_px": [
-   1672,
-   941
-  ]
- },
- "inputs": [
-  "analysis/data/measurements.json (wora-main-workspace-measurements/v1)"
- ],
- "coordinate_system": {
-  "handedness": "right-handed",
-  "up": "+Y",
-  "units": "metre (scale from assumption A-SCALE-01: desk height 0.75 m)",
-  "origin": "floor level (Y=0) directly below the centre of the WORA plinth top (screen (903,500))",
-  "axes": {
-   "+X": "along the building/partition grid; on screen points right-down (towards Management/QA side)",
-   "+Z": "along the building/partition grid; on screen points left-down (towards Creative Studio/Research side)",
-   "-X-Z": "towards the far corner (Executive Office)",
-   "+X+Z": "towards the camera / near corner"
+  "schema": "wora-main-workspace-architecture/v2",
+  "reference": {
+    "path": "docs/design/main-workspace/reference/wora-main-workspace.png",
+    "sha256": "6f91ff3d27f1d69d7189b6d1a599088086bb50048d1c0b492e3ebcdb718036a1",
+    "size_px": [
+      1672,
+      941
+    ]
   },
-  "screen_vectors_px_per_m_at_origin": [
-   [
-    32.61,
-    15.39
-   ],
-   [
-    -32.17,
-    15.19
-   ]
-  ]
- },
- "camera": {
-  "type": "perspective",
-  "position": [
-   60.675,
-   46.538,
-   61.964
+  "inputs": [
+    "analysis/data/measurements.json (wora-main-workspace-measurements/v1)"
   ],
-  "target": [
-   -2.186,
-   0.0,
-   -0.089
+  "coordinate_system": {
+    "handedness": "right-handed",
+    "up": "+Y",
+    "units": "metre (scale from assumption A-SCALE-01: desk height 0.75 m)",
+    "origin": "floor level (Y=0) directly below the centre of the WORA plinth top (screen (903,500))",
+    "axes": {
+      "+X": "along the building/partition grid; on screen points right-down (towards Management/QA side)",
+      "+Z": "along the building/partition grid; on screen points left-down (towards Creative Studio/Research side)",
+      "-X-Z": "towards the far corner (Executive Office)",
+      "+X+Z": "towards the camera / near corner"
+    },
+    "screen_vectors_px_per_m_at_origin": [
+      [
+        32.61,
+        15.39
+      ],
+      [
+        -32.17,
+        15.19
+      ]
+    ]
+  },
+  "camera": {
+    "type": "perspective",
+    "position": [
+      60.675,
+      46.538,
+      61.964
+    ],
+    "target": [
+      -2.186,
+      0.0,
+      -0.089
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "fov_vertical_deg": 12.0006,
+    "fov_horizontal_deg": 21.158,
+    "aspect": 1.776833,
+    "focal_px_at_941": 4476.3,
+    "focal_mm_35mm_equiv_vertical24": 114.2,
+    "yaw_deg": 225.37,
+    "pitch_down_deg": 27.783,
+    "roll_deg": 0.0,
+    "principal_point_px": [
+      836,
+      470.5
+    ],
+    "near": 1.0,
+    "far": 400.0,
+    "distance_to_origin": 98.42,
+    "fit": {
+      "method": "robust least-squares on vanishing directions of 270 Hough segments (X:170, Z:90, Y:10)",
+      "bootstrap_90pct": {
+        "yaw": [
+          223.88,
+          227.114
+        ],
+        "pitch": [
+          27.563,
+          28.011
+        ],
+        "roll": [
+          -1.075,
+          1.462
+        ],
+        "f": [
+          3975.614,
+          5025.97
+        ]
+      }
+    }
+  },
+  "camera_alternative_orthographic": {
+    "note": "Q-3D-03 alternative; same orientation; differs from perspective by median 30.4 px / max 62.0 px over room corners",
+    "px_per_m": 45.513,
+    "frustum_m": {
+      "left": -19.841,
+      "right": 16.896,
+      "top": 10.986,
+      "bottom": -9.69
+    },
+    "centre_on": "plinth top centre (0,0.12,0)"
+  },
+  "scale": {
+    "assumption": "A-SCALE-01 desk working height = 0.75 m",
+    "desk_px": [
+      35,
+      32,
+      31,
+      32
+    ],
+    "desk_implied_m": [
+      0.801,
+      0.738,
+      0.722,
+      0.739
+    ],
+    "derived": {
+      "partition_height_m": 2.07,
+      "balustrade_height_m": 1.27,
+      "plinth_radius_m": 2.383,
+      "plinth_height_m": 0.12,
+      "px_per_m": {
+        "top_y150": 39.59263854326787,
+        "mid_y470": 45.80962983352697,
+        "bottom_y800": 52.22090210160718,
+        "left_x300_y600": 48.3352825451949,
+        "right_x1600_y600": 48.33528254519524
+      }
+    }
+  },
+  "building": {
+    "floor_level_y": 0.0,
+    "levels_in_floor": 1,
+    "roof": "none (cutaway)",
+    "slab_edges": {
+      "+Z (lower-left on screen)": {
+        "z": 13.91,
+        "visible_x": [
+          -5.9,
+          4.4
+        ],
+        "deviation_from_axis_deg": 0.5,
+        "conf": "Medium"
+      },
+      "+X (lower-right on screen)": {
+        "x_range": [
+          14.3,
+          15.8
+        ],
+        "visible_z": [
+          -9.4,
+          3.4
+        ],
+        "deviation_from_axis_deg": [
+          -3.1,
+          -9.0
+        ],
+        "conf": "Low (residual, see Q-3D-04)"
+      },
+      "-X (left, behind sidebar)": "ND; must be <= -17.18 (Marketing x0)",
+      "-Z (far, behind status strip / Live Activity)": "ND; must be <= -15.30 (Engineering z0)"
+    }
+  },
+  "atrium": {
+    "plinth": {
+      "centre": [
+        0,
+        0,
+        0
+      ],
+      "radius": 2.383,
+      "top_y": 0.12,
+      "projected_px": [
+        794.5,
+        449.9,
+        217.0,
+        102.4
+      ],
+      "measured_px": [
+        795,
+        450,
+        217,
+        100
+      ]
+    },
+    "reference_points": {
+      "ENV-005 planter centre (floor, est.)": [
+        -4.301,
+        0.0,
+        -1.107
+      ],
+      "ENV-006 sofa": [
+        -6.504,
+        0.0,
+        0.414
+      ],
+      "ENV-008 rug": [
+        -4.379,
+        0.0,
+        1.552
+      ],
+      "ENV-009 sofa": [
+        -3.57,
+        0.0,
+        -3.637
+      ],
+      "ENV-010 bench": [
+        -1.373,
+        0.0,
+        -3.719
+      ],
+      "ENV-011 planters": [
+        4.749,
+        0.0,
+        -5.13
+      ],
+      "ENV-012 near-corner tree": [
+        9.062,
+        0.0,
+        8.99
+      ],
+      "ENV-013 cabinets": [
+        10.429,
+        0.0,
+        7.605
+      ]
+    },
+    "note": "Atrium = open floor inside the ring of rooms; no explicit boundary is visible (ENV-001 Low). Reference points are floor projections of the bottom-centre of each object (est.); furniture is NOT part of the greybox."
+  },
+  "departments": {
+    "DEPT-01": {
+      "name": "Executive Office",
+      "footprint": {
+        "x0": -13.9,
+        "x1": -6.8,
+        "z0": -12.69,
+        "z1": -5.59
+      },
+      "size_m": [
+        7.1,
+        7.1
+      ],
+      "centre_xz": [
+        -10.35,
+        -9.14
+      ],
+      "partition_height": 2.07,
+      "sign": {
+        "id": "SIGN-01",
+        "wall": "front facet (normal ≈ +X+Z)",
+        "anchor_world": [
+          -10.397,
+          2.072,
+          -9.575
+        ],
+        "screen_px": [
+          876.0,
+          158.5
+        ]
+      },
+      "occluded_sides": [
+        "top"
+      ],
+      "projected_floor_corners_px": [
+        [
+          864.8,
+          158.7
+        ],
+        [
+          1068.0,
+          241.5
+        ],
+        [
+          864.5,
+          330.0
+        ],
+        [
+          661.5,
+          240.4
+        ]
+      ],
+      "projected_envelope_px": [
+        660.0,
+        84.2,
+        1070.0,
+        330.0
+      ],
+      "measured_envelope_px": [
+        660.0,
+        120.0,
+        1070.0,
+        330.0
+      ],
+      "envelope_residual_px": [
+        0.0,
+        -35.8,
+        -0.0,
+        0.0
+      ],
+      "digitised_corner_residual_px": {},
+      "robots_inside": 1,
+      "robots_expected": 1,
+      "notes": "Front corners are angled in the reference (chamfer size ND). The sign floor anchor at partition-top height falls near the room centre, so the sign is not on the front facet; mounting ND (Q-ARCH-03)."
+    },
+    "DEPT-02": {
+      "name": "Marketing",
+      "footprint": {
+        "x0": -17.18,
+        "x1": -11.4,
+        "z0": -3.15,
+        "z1": 5.71
+      },
+      "size_m": [
+        5.77,
+        8.86
+      ],
+      "centre_xz": [
+        -14.29,
+        1.28
+      ],
+      "partition_height": 2.07,
+      "sign": {
+        "id": "SIGN-02",
+        "wall": "x0",
+        "anchor_world": [
+          -17.133,
+          2.072,
+          1.261
+        ],
+        "screen_px": [
+          358.5,
+          206.0
+        ]
+      },
+      "occluded_sides": [
+        "left"
+      ],
+      "projected_floor_corners_px": [
+        [
+          499.8,
+          229.9
+        ],
+        [
+          657.3,
+          301.5
+        ],
+        [
+          370.9,
+          419.7
+        ],
+        [
+          215.0,
+          340.3
+        ]
+      ],
+      "projected_envelope_px": [
+        209.3,
+        153.4,
+        657.3,
+        419.7
+      ],
+      "measured_envelope_px": [
+        236.0,
+        150.0,
+        656.0,
+        420.0
+      ],
+      "envelope_residual_px": [
+        -26.7,
+        3.4,
+        1.3,
+        -0.3
+      ],
+      "digitised_corner_residual_px": {
+        "Marketing near floor corner": 0.3
+      },
+      "robots_inside": 8,
+      "robots_expected": 8,
+      "notes": "Left extreme is hidden behind the sidebar (REG-02); true left extent ND (minimum shown)."
+    },
+    "DEPT-03": {
+      "name": "Engineering",
+      "footprint": {
+        "x0": -5.04,
+        "x1": 5.26,
+        "z0": -15.3,
+        "z1": -10.44
+      },
+      "size_m": [
+        10.31,
+        4.86
+      ],
+      "centre_xz": [
+        0.11,
+        -12.87
+      ],
+      "partition_height": 2.07,
+      "sign": {
+        "id": "SIGN-03",
+        "wall": "z0",
+        "anchor_world": [
+          -0.561,
+          2.072,
+          -15.238
+        ],
+        "screen_px": [
+          1333.5,
+          209.5
+        ]
+      },
+      "occluded_sides": [
+        "right"
+      ],
+      "projected_floor_corners_px": [
+        [
+          1191.4,
+          231.6
+        ],
+        [
+          1523.3,
+          363.1
+        ],
+        [
+          1391.3,
+          430.0
+        ],
+        [
+          1058.1,
+          290.8
+        ]
+      ],
+      "projected_envelope_px": [
+        1058.1,
+        155.0,
+        1529.7,
+        430.0
+      ],
+      "measured_envelope_px": [
+        1060.0,
+        150.0,
+        1440.0,
+        430.0
+      ],
+      "envelope_residual_px": [
+        -1.9,
+        5.0,
+        89.7,
+        -0.0
+      ],
+      "digitised_corner_residual_px": {},
+      "robots_inside": 10,
+      "robots_expected": 10,
+      "notes": "Right extreme is hidden behind Live Activity (REG-06); measured envelope right edge is the clip line, so its envelope centre is biased."
+    },
+    "DEPT-04": {
+      "name": "Creative Studio",
+      "footprint": {
+        "x0": -6.55,
+        "x1": -1.5,
+        "z0": 6.57,
+        "z1": 14.03
+      },
+      "size_m": [
+        5.04,
+        7.46
+      ],
+      "centre_xz": [
+        -4.02,
+        10.3
+      ],
+      "partition_height": 2.07,
+      "sign": {
+        "id": "SIGN-04",
+        "wall": "x0",
+        "anchor_world": [
+          -6.547,
+          2.072,
+          10.67
+        ],
+        "screen_px": [
+          330.5,
+          482.0
+        ]
+      },
+      "occluded_sides": [
+        "left"
+      ],
+      "projected_floor_corners_px": [
+        [
+          481.3,
+          503.8
+        ],
+        [
+          636.0,
+          583.6
+        ],
+        [
+          363.5,
+          710.0
+        ],
+        [
+          210.4,
+          622.0
+        ]
+      ],
+      "projected_envelope_px": [
+        203.9,
+        420.0,
+        636.0,
+        710.0
+      ],
+      "measured_envelope_px": [
+        236.0,
+        420.0,
+        636.0,
+        710.0
+      ],
+      "envelope_residual_px": [
+        -32.1,
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "digitised_corner_residual_px": {},
+      "robots_inside": 5,
+      "robots_expected": 5,
+      "notes": "Left extreme is hidden behind the sidebar (REG-02); true left extent ND (minimum shown)."
+    },
+    "DEPT-05": {
+      "name": "Management",
+      "footprint": {
+        "x0": 6.56,
+        "x1": 13.44,
+        "z0": -8.69,
+        "z1": -4.24
+      },
+      "size_m": [
+        6.89,
+        4.45
+      ],
+      "centre_xz": [
+        10.0,
+        -6.46
+      ],
+      "partition_height": 2.07,
+      "sign": {
+        "id": "SIGN-05",
+        "wall": "z0",
+        "anchor_world": [
+          9.827,
+          2.072,
+          -8.505
+        ],
+        "screen_px": [
+          1505.0,
+          442.5
+        ]
+      },
+      "occluded_sides": [
+        "right"
+      ],
+      "projected_floor_corners_px": [
+        [
+          1386.5,
+          474.3
+        ],
+        [
+          1638.7,
+          581.7
+        ],
+        [
+          1509.7,
+          655.4
+        ],
+        [
+          1256.1,
+          541.7
+        ]
+      ],
+      "projected_envelope_px": [
+        1256.1,
+        391.3,
+        1646.9,
+        655.4
+      ],
+      "measured_envelope_px": [
+        1250.0,
+        380.0,
+        1672.0,
+        680.0
+      ],
+      "envelope_residual_px": [
+        6.1,
+        11.3,
+        -25.1,
+        -24.6
+      ],
+      "digitised_corner_residual_px": {
+        "Management left corner post foot": 4.7,
+        "Management near floor corner": 3.0
+      },
+      "robots_inside": 5,
+      "robots_expected": 5,
+      "notes": "Right extreme projects at x=1647 px, inside the frame; a vertical post is visible near x~1660 (y 485-595). The 02 envelope says the room runs off the edge, so the right side is treated as weakly constrained."
+    },
+    "DEPT-06": {
+      "name": "Research",
+      "footprint": {
+        "x0": 0.9,
+        "x1": 6.07,
+        "z0": 6.84,
+        "z1": 12.45
+      },
+      "size_m": [
+        5.17,
+        5.61
+      ],
+      "centre_xz": [
+        3.48,
+        9.65
+      ],
+      "partition_height": 2.07,
+      "sign": {
+        "id": "SIGN-06",
+        "wall": "x0",
+        "anchor_world": [
+          1.075,
+          2.072,
+          10.252
+        ],
+        "screen_px": [
+          585.0,
+          601.0
+        ]
+      },
+      "occluded_sides": [],
+      "projected_floor_corners_px": [
+        [
+          703.8,
+          628.0
+        ],
+        [
+          878.9,
+          718.6
+        ],
+        [
+          675.0,
+          823.3
+        ],
+        [
+          500.4,
+          725.3
+        ]
+      ],
+      "projected_envelope_px": [
+        496.8,
+        541.1,
+        879.4,
+        823.3
+      ],
+      "measured_envelope_px": [
+        490.0,
+        545.0,
+        860.0,
+        810.0
+      ],
+      "envelope_residual_px": [
+        6.8,
+        -3.9,
+        19.4,
+        13.3
+      ],
+      "digitised_corner_residual_px": {
+        "Research right corner post foot": 6.2
+      },
+      "robots_inside": 5,
+      "robots_expected": 5,
+      "notes": "Fully visible; envelope vs digitised corner disagree by up to ~20 px (envelope confidence Medium)."
+    },
+    "DEPT-07": {
+      "name": "QA & Testing",
+      "footprint": {
+        "x0": 6.55,
+        "x1": 13.2,
+        "z0": 1.44,
+        "z1": 5.01
+      },
+      "size_m": [
+        6.65,
+        3.56
+      ],
+      "centre_xz": [
+        9.88,
+        3.22
+      ],
+      "partition_height": 2.07,
+      "sign": {
+        "id": "SIGN-07",
+        "wall": "z0",
+        "anchor_world": [
+          9.254,
+          2.072,
+          1.907
+        ],
+        "screen_px": [
+          1163.5,
+          600.0
+        ]
+      },
+      "occluded_sides": [],
+      "projected_floor_corners_px": [
+        [
+          1077.9,
+          633.5
+        ],
+        [
+          1323.7,
+          751.8
+        ],
+        [
+          1205.7,
+          819.0
+        ],
+        [
+          959.3,
+          694.7
+        ]
+      ],
+      "projected_envelope_px": [
+        959.3,
+        546.4,
+        1329.1,
+        819.0
+      ],
+      "measured_envelope_px": [
+        960.0,
+        545.0,
+        1340.0,
+        810.0
+      ],
+      "envelope_residual_px": [
+        -0.7,
+        1.4,
+        -10.9,
+        9.0
+      ],
+      "digitised_corner_residual_px": {
+        "QA right wall end foot": 2.0
+      },
+      "robots_inside": 6,
+      "robots_expected": 6,
+      "notes": "Fully visible; sign wall z0 offset 0.46 m (sign plate probably mounted higher than partition top)."
+    }
+  },
+  "ring_clearances_m": {
+    "DEPT-02-DEPT-01": 2.44,
+    "DEPT-01-DEPT-03": 1.76,
+    "DEPT-02-DEPT-04": 4.93,
+    "DEPT-03-DEPT-05": 2.18,
+    "DEPT-04-DEPT-06": 2.4,
+    "DEPT-06-DEPT-07": 1.9,
+    "DEPT-07-DEPT-05": 5.68
+  },
+  "robots_floor_positions": [
+    {
+      "id": "ROBOT-001",
+      "zone": "Executive Office",
+      "head_px": [
+        875,
+        210
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -9.998,
+        -9.147
+      ],
+      "in_room": "DEPT-01",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-002",
+      "zone": "Marketing",
+      "head_px": [
+        431,
+        250
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -15.874,
+        0.115
+      ],
+      "in_room": "DEPT-02",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-003",
+      "zone": "Marketing",
+      "head_px": [
+        474,
+        281
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -13.818,
+        0.513
+      ],
+      "in_room": "DEPT-02",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-004",
+      "zone": "Marketing",
+      "head_px": [
+        518,
+        280
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -13.126,
+        -0.268
+      ],
+      "in_room": "DEPT-02",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-005",
+      "zone": "Marketing",
+      "head_px": [
+        363,
+        285
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -15.499,
+        2.53
+      ],
+      "in_room": "DEPT-02",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-006",
+      "zone": "Marketing",
+      "head_px": [
+        320,
+        305
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -15.358,
+        3.945
+      ],
+      "in_room": "DEPT-02",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-007",
+      "zone": "Marketing",
+      "head_px": [
+        338,
+        325
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -14.222,
+        4.324
+      ],
+      "in_room": "DEPT-02",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-008",
+      "zone": "Marketing",
+      "head_px": [
+        395,
+        335
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -12.88,
+        3.719
+      ],
+      "in_room": "DEPT-02",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-009",
+      "zone": "Marketing",
+      "head_px": [
+        433,
+        313
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -13.161,
+        2.335
+      ],
+      "in_room": "DEPT-02",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-010",
+      "zone": "Engineering",
+      "head_px": [
+        1180,
+        235
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -3.764,
+        -13.38
+      ],
+      "in_room": "DEPT-03",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-011",
+      "zone": "Engineering",
+      "head_px": [
+        1230,
+        232
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -3.026,
+        -14.375
+      ],
+      "in_room": "DEPT-03",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-012",
+      "zone": "Engineering",
+      "head_px": [
+        1237,
+        248
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -2.302,
+        -13.797
+      ],
+      "in_room": "DEPT-03",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-013",
+      "zone": "Engineering",
+      "head_px": [
+        1127,
+        267
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -3.444,
+        -11.109
+      ],
+      "in_room": "DEPT-03",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-014",
+      "zone": "Engineering",
+      "head_px": [
+        1175,
+        280
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -2.155,
+        -11.381
+      ],
+      "in_room": "DEPT-03",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-015",
+      "zone": "Engineering",
+      "head_px": [
+        1272,
+        286
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -0.319,
+        -12.768
+      ],
+      "in_room": "DEPT-03",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-016",
+      "zone": "Engineering",
+      "head_px": [
+        1220,
+        313
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -0.217,
+        -10.778
+      ],
+      "in_room": "DEPT-03",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-017",
+      "zone": "Engineering",
+      "head_px": [
+        1310,
+        320
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        1.506,
+        -11.989
+      ],
+      "in_room": "DEPT-03",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-018",
+      "zone": "Engineering",
+      "head_px": [
+        1282,
+        338
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        1.668,
+        -10.793
+      ],
+      "in_room": "DEPT-03",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-019",
+      "zone": "Engineering",
+      "head_px": [
+        1386,
+        305
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        2.239,
+        -13.881
+      ],
+      "in_room": "DEPT-03",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-020",
+      "zone": "Creative Studio",
+      "head_px": [
+        455,
+        512
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -5.289,
+        8.342
+      ],
+      "in_room": "DEPT-04",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-021",
+      "zone": "Creative Studio",
+      "head_px": [
+        473,
+        543
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -3.962,
+        8.97
+      ],
+      "in_room": "DEPT-04",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-022",
+      "zone": "Creative Studio",
+      "head_px": [
+        313,
+        558
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -5.829,
+        11.797
+      ],
+      "in_room": "DEPT-04",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-023",
+      "zone": "Creative Studio",
+      "head_px": [
+        338,
+        558
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -5.459,
+        11.422
+      ],
+      "in_room": "DEPT-04",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-024",
+      "zone": "Creative Studio",
+      "head_px": [
+        378,
+        590
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -3.8,
+        11.701
+      ],
+      "in_room": "DEPT-04",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-025",
+      "zone": "Management",
+      "head_px": [
+        1364,
+        498
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        8.015,
+        -6.043
+      ],
+      "in_room": "DEPT-05",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-026",
+      "zone": "Management",
+      "head_px": [
+        1398,
+        527
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        9.362,
+        -5.54
+      ],
+      "in_room": "DEPT-05",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-027",
+      "zone": "Management",
+      "head_px": [
+        1480,
+        517
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        10.312,
+        -7.141
+      ],
+      "in_room": "DEPT-05",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-028",
+      "zone": "Management",
+      "head_px": [
+        1450,
+        548
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        10.725,
+        -5.595
+      ],
+      "in_room": "DEPT-05",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-029",
+      "zone": "Management",
+      "head_px": [
+        1532,
+        553
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        12.078,
+        -6.654
+      ],
+      "in_room": "DEPT-05",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-030",
+      "zone": "Research",
+      "head_px": [
+        723,
+        642
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        2.813,
+        8.08
+      ],
+      "in_room": "DEPT-06",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-031",
+      "zone": "Research",
+      "head_px": [
+        757,
+        680
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        4.402,
+        8.642
+      ],
+      "in_room": "DEPT-06",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-032",
+      "zone": "Research",
+      "head_px": [
+        695,
+        672
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        3.296,
+        9.31
+      ],
+      "in_room": "DEPT-06",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-033",
+      "zone": "Research",
+      "head_px": [
+        597,
+        705
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        2.876,
+        11.581
+      ],
+      "in_room": "DEPT-06",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-034",
+      "zone": "Research",
+      "head_px": [
+        643,
+        733
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        4.311,
+        11.656
+      ],
+      "in_room": "DEPT-06",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-035",
+      "zone": "QA & Testing",
+      "head_px": [
+        1035,
+        640
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        7.222,
+        3.498
+      ],
+      "in_room": "DEPT-07",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-036",
+      "zone": "QA & Testing",
+      "head_px": [
+        1006,
+        667
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        7.557,
+        4.71
+      ],
+      "in_room": "DEPT-07",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-037",
+      "zone": "QA & Testing",
+      "head_px": [
+        1100,
+        670
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        8.969,
+        3.45
+      ],
+      "in_room": "DEPT-07",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-038",
+      "zone": "QA & Testing",
+      "head_px": [
+        1077,
+        700
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        9.445,
+        4.65
+      ],
+      "in_room": "DEPT-07",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-039",
+      "zone": "QA & Testing",
+      "head_px": [
+        1167,
+        700
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        10.704,
+        3.374
+      ],
+      "in_room": "DEPT-07",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-040",
+      "zone": "QA & Testing",
+      "head_px": [
+        1145,
+        732
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        11.219,
+        4.604
+      ],
+      "in_room": "DEPT-07",
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-041",
+      "zone": "Atrium / walkway (left)",
+      "head_px": [
+        617,
+        347
+      ],
+      "assumed_head_h": 1.2,
+      "floor_xz": [
+        -8.416,
+        0.817
+      ],
+      "in_room": null,
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-042",
+      "zone": "Atrium lounge",
+      "head_px": [
+        707,
+        410
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -5.006,
+        1.191
+      ],
+      "in_room": null,
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-043",
+      "zone": "Atrium lounge",
+      "head_px": [
+        906,
+        360
+      ],
+      "assumed_head_h": 0.95,
+      "floor_xz": [
+        -3.643,
+        -3.782
+      ],
+      "in_room": null,
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-044",
+      "zone": "Atrium / walkway (right)",
+      "head_px": [
+        1065,
+        355
+      ],
+      "assumed_head_h": 1.2,
+      "floor_xz": [
+        -0.918,
+        -6.19
+      ],
+      "in_room": null,
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-045",
+      "zone": "Atrium / walkway (right)",
+      "head_px": [
+        1097,
+        370
+      ],
+      "assumed_head_h": 1.2,
+      "floor_xz": [
+        0.114,
+        -6.143
+      ],
+      "in_room": null,
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-046",
+      "zone": "Atrium (right of plinth)",
+      "head_px": [
+        1073,
+        483
+      ],
+      "assumed_head_h": 1.2,
+      "floor_xz": [
+        3.446,
+        -1.728
+      ],
+      "in_room": null,
+      "consistent": true
+    },
+    {
+      "id": "ROBOT-047",
+      "zone": "Walkway (lower-left of Management)",
+      "head_px": [
+        1380,
+        632
+      ],
+      "assumed_head_h": 1.2,
+      "floor_xz": [
+        12.221,
+        -1.412
+      ],
+      "in_room": null,
+      "consistent": true
+    }
   ],
-  "up": [
-   0,
-   1,
-   0
-  ],
-  "fov_vertical_deg": 12.0006,
-  "fov_horizontal_deg": 21.158,
-  "aspect": 1.776833,
-  "focal_px_at_941": 4476.3,
-  "focal_mm_35mm_equiv_vertical24": 114.2,
-  "yaw_deg": 225.37,
-  "pitch_down_deg": 27.783,
-  "roll_deg": 0.0,
-  "principal_point_px": [
-   836,
-   470.5
-  ],
-  "near": 1.0,
-  "far": 400.0,
-  "distance_to_origin": 98.42,
-  "fit": {
-   "method": "robust least-squares on vanishing directions of 270 Hough segments (X:170, Z:90, Y:10)",
-   "bootstrap_90pct": {
-    "yaw": [
-     223.88,
-     227.114
-    ],
-    "pitch": [
-     27.563,
-     28.011
-    ],
-    "roll": [
-     -1.075,
-     1.462
-    ],
-    "f": [
-     3975.614,
-     5025.97
-    ]
-   }
+  "validation_summary": {
+    "line_fit_median_deg": {
+      "X": 1.29,
+      "Z": 0.94,
+      "Y": 1.4
+    },
+    "plinth_aspect": {
+      "model": 2.119,
+      "measured": 2.17
+    },
+    "plinth_pitch_only_deg": 27.06,
+    "sign_angles": {
+      "SIGN-01": {
+        "meas": 0,
+        "model": 0.1,
+        "err": 0.1
+      },
+      "SIGN-02": {
+        "meas": -24,
+        "model": -20.5,
+        "err": 3.5
+      },
+      "SIGN-03": {
+        "meas": 26,
+        "model": 20.9,
+        "err": -5.1
+      },
+      "SIGN-04": {
+        "meas": -24,
+        "model": -22.8,
+        "err": 1.2
+      },
+      "SIGN-05": {
+        "meas": 22,
+        "model": 22.4,
+        "err": 0.4
+      },
+      "SIGN-06": {
+        "meas": -27,
+        "model": -24.8,
+        "err": 2.2
+      },
+      "SIGN-07": {
+        "meas": 26,
+        "model": 25.1,
+        "err": -0.9
+      }
+    },
+    "robots_consistent": "47/47",
+    "digitised_corners_loo_px": {
+      "Marketing near floor corner": 26.5,
+      "Management left corner post foot": 13.7,
+      "Management near floor corner": 72.1,
+      "Research right corner post foot": 33.2,
+      "QA right wall end foot": 10.5
+    },
+    "ortho_vs_persp_px": {
+      "median": 30.4149907754389,
+      "p90": 54.8383064696016,
+      "max": 61.96594509727126,
+      "s_px_per_m": 45.5129573678995
+    }
+  },
+  "assumptions": {
+    "A-SCALE-01": "Desk working height = 0.75 m sets the metric scale (4 desks: 31-35 px; implied 0.72-0.80 m). Projection is scale-invariant: changing it rescales every length and the camera distance together.",
+    "A-PP-01": "Principal point = canvas centre (836, 470.5); the 3D canvas is the full 1672x941 frame (REG-03 is full-bleed).",
+    "A-ROLL-01": "Roll fixed at 0 deg (bootstrap 90% interval -1.08..+1.46 deg includes 0).",
+    "A-HEAD-01": "Robot head-centre heights used only for validation: seated 0.95 m, standing 1.20 m (est.).",
+    "A-SIGN-01": "Sign-plate centres are taken at partition-top height (2.07 m) when back-projected; +0.3 m moves walls by about 0.4-0.6 m.",
+    "A-EXEC-SYM": "Executive Office plan taken as square (size_x = size_z) because its envelope leaves one degree of freedom; it is an assumption, see Q-ARCH-03.",
+    "A-DIG-01": "Five partition floor corners were digitised by eye from 2x/4x crops (+-5 px) and used as constraints (variant D)."
+  },
+  "environment": {
+    "note": "Mission 006-A (WORA-3D-SCENE-006-A) environment measurements and scenery conventions. All values below were measured from the locked reference in a scratch probe (2026-11-20) except where marked est./assumed. Scenery (backdrop) is placed by back-projection onto the backdrop planes; its plane distances are assumptions (Q-ARCH-06: true building extents unknown).",
+    "fascia": {
+      "note": "Bright fascia band below the slab edge. Top = slab edge (y=0); bottom fitted (least squares, world m at the edge plane) from the strongest bright-to-dark step tracked under the model edge in the reference (scratch probe 2026-11-20; +Z 10 samples, +X 12 samples, exact edge-plane u solved with the HOME projector).",
+      "plusZ": {
+        "fit": "y_bot(x) = -0.7492 - 0.0646*x",
+        "least_squares": {
+          "max_residual_m": 0.011,
+          "rms_m": 0.007
+        },
+        "x_range": [
+          -17.18,
+          14.6
+        ],
+        "measured_x_range": [
+          -5.36,
+          1.06
+        ],
+        "vanish_x": -11.589,
+        "piecewise": [
+          {
+            "x_range": [
+              -17.18,
+              -11.589
+            ],
+            "y_bot": 0.0,
+            "note": "no band (extrapolated fit crosses the floor plane in the occluded zone)"
+          },
+          {
+            "x_range": [
+              -11.589,
+              4.4
+            ],
+            "fit": "y_bot(x) = -0.7492 - 0.0646*x",
+            "measured": true,
+            "note": "measured to x=1.06; visible JSON range to 4.4"
+          },
+          {
+            "x_range": [
+              4.4,
+              14.6
+            ],
+            "blend": "linear from -1.0334 to -2.3",
+            "note": "occluded by REG-07 near the corner; corner depth = mean of the two edge-fit extrapolations"
+          }
+        ]
+      },
+      "plusX": {
+        "least_squares": {
+          "max_residual_m": 0.021,
+          "rms_m": 0.013
+        },
+        "piecewise": [
+          {
+            "z_range": [
+              -15.3,
+              -6.114
+            ],
+            "y_bot": 0.0,
+            "note": "no fascia (band vanishes; consistent with the M004 crossing near x_px 1630)"
+          },
+          {
+            "z_range": [
+              -6.114,
+              3.4
+            ],
+            "fit": "y_bot(z) = -0.8983 - 0.1469*z",
+            "measured": true,
+            "note": "measured to z=-4.76; visible JSON range to 3.4"
+          },
+          {
+            "z_range": [
+              3.4,
+              13.91
+            ],
+            "blend": "linear from -1.3978 to -2.3",
+            "note": "occluded by REG-07 near the corner; corner depth = mean of the two edge-fit extrapolations"
+          }
+        ]
+      },
+      "minusX": {
+        "thickness_m": 0.45,
+        "note": "est.: straight band, styled after the +Z measured thickness range; no reference line measurable"
+      },
+      "minusZ": {
+        "thickness_m": 0.45,
+        "note": "est.: straight band, styled after the +Z measured thickness range; no reference line measurable"
+      }
+    },
+    "facade_glazing": {
+      "mullion_bay_m": 0.96,
+      "transom_spacing_m": 2.0,
+      "bottom_m": -11.3,
+      "note": "Lower-storey curtain wall below the fascia on +Z and +X (ENV-014/015). Bay 0.96 m from dark-column spacing ~50 px at ~52 px/m (ENV-015). Transoms est. Back edges (-X/-Z) reuse the same system above the floor (y 0..2.07, partition-height est.) as the exterior wall; mullion bay assumed identical."
+    },
+    "backdrop": {
+      "note": "Environmental background scenery (CR-02 decision: treated as background, never building). Every element is placed by back-projecting a measured/eyeballed screen point onto an assumed scenery plane, so it projects back to its reference pixels in HOME by construction. All in-frame camera rays point below the horizon, so scenery lands below y=0 on distant planes; there is no ground plane in the scene. Orbit views are dev-only; HOME is the acceptance view.",
+      "planes": {
+        "back_right_z": -21.9,
+        "back_right_trees_z": -21.8,
+        "back_left_x": -23.9,
+        "back_left_trees_x": -23.8,
+        "city_right_z": -26.0,
+        "city_left_x": -30.0,
+        "note": "assumed distances (Q-ARCH-06)"
+      },
+      "terrace_parapet_right": {
+        "plane": "back_right_z",
+        "ribbon_axis": "x",
+        "top_pts_world_xy": [
+          [
+            -12.48,
+            -0.46
+          ],
+          [
+            -11.23,
+            -0.51
+          ],
+          [
+            -9.81,
+            -0.68
+          ],
+          [
+            -8.41,
+            -0.82
+          ],
+          [
+            -7.03,
+            -0.96
+          ],
+          [
+            -5.67,
+            -1.1
+          ],
+          [
+            -4.33,
+            -1.29
+          ],
+          [
+            -3.0,
+            -1.48
+          ],
+          [
+            -2.08,
+            -1.6
+          ]
+        ],
+        "depth_m": 0.9,
+        "provenance_px": [
+          [
+            1145,
+            92
+          ],
+          [
+            1180,
+            107
+          ],
+          [
+            1220,
+            128
+          ],
+          [
+            1260,
+            148
+          ],
+          [
+            1300,
+            168
+          ],
+          [
+            1340,
+            188
+          ],
+          [
+            1380,
+            210
+          ],
+          [
+            1420,
+            232
+          ],
+          [
+            1448,
+            247
+          ]
+        ],
+        "note": "white parapet band of the rooftop terrace behind Engineering (ENV-016 region); top-edge px read visually, +/-4 px"
+      },
+      "terrace_parapet_left": {
+        "plane": "back_left_x",
+        "ribbon_axis": "z",
+        "top_pts_world_zy": [
+          [
+            -0.75,
+            2.18
+          ],
+          [
+            -3.9,
+            0.79
+          ],
+          [
+            -7.2,
+            -0.64
+          ],
+          [
+            -10.65,
+            -2.13
+          ],
+          [
+            -14.28,
+            -3.7
+          ],
+          [
+            -18.48,
+            -5.5
+          ]
+        ],
+        "depth_m": 0.9,
+        "provenance_px": [
+          [
+            250,
+            100
+          ],
+          [
+            350,
+            116
+          ],
+          [
+            450,
+            131
+          ],
+          [
+            550,
+            146
+          ],
+          [
+            650,
+            161
+          ],
+          [
+            760,
+            177
+          ]
+        ],
+        "note": "same band behind Marketing; the world-height swing is a construction artifact of the assumed constant-x plane (scenery only)"
+      },
+      "trees": {
+        "right_terrace": [
+          {
+            "c": [
+              -6.91,
+              1.03,
+              -21.8
+            ],
+            "r_m": 1.35
+          },
+          {
+            "c": [
+              -11.21,
+              0.88,
+              -21.8
+            ],
+            "r_m": 0.9
+          },
+          {
+            "c": [
+              -5.45,
+              -0.71,
+              -21.8
+            ],
+            "r_m": 0.72
+          }
+        ],
+        "left_terrace": [
+          {
+            "c": [
+              -23.8,
+              2.57,
+              -2.31
+            ],
+            "r_m": 1.2
+          },
+          {
+            "c": [
+              -23.8,
+              0.57,
+              -7.18
+            ],
+            "r_m": 1.05
+          },
+          {
+            "c": [
+              -23.8,
+              -1.03,
+              -10.61
+            ],
+            "r_m": 0.75
+          }
+        ],
+        "bottom_right": [
+          {
+            "c": [
+              19.53,
+              2.15,
+              0.18
+            ],
+            "r_m": 2.15
+          }
+        ],
+        "note": "greenery canopy discs (ENV-016 scenery + the large outdoor tree at the bottom-right frame edge); centres back-projected (bottom_right onto y=0 ground ray), radius from the plane scale. ENV-017 (right terrace greenery at px 1570,380) is OMITTED: its ray cannot be placed at a consistent 3D location (periphery); documented in the 006-A report.",
+        "provenance_px": {
+          "right_terrace": [
+            [
+              1305,
+              100,
+              45
+            ],
+            [
+              1180,
+              60,
+              30
+            ],
+            [
+              1345,
+              178,
+              24
+            ]
+          ],
+          "left_terrace": [
+            [
+              300,
+              70,
+              40
+            ],
+            [
+              450,
+              90,
+              35
+            ],
+            [
+              550,
+              110,
+              25
+            ]
+          ],
+          "bottom_right": [
+            [
+              1620,
+              850,
+              110
+            ]
+          ]
+        }
+      },
+      "city": {
+        "back_right": {
+          "plane": "city_right_z",
+          "x_range": [
+            -35,
+            30
+          ],
+          "y_range": [
+            -10,
+            4
+          ]
+        },
+        "back_left": {
+          "plane": "city_left_x",
+          "z_range": [
+            -35,
+            20
+          ],
+          "y_range": [
+            -10,
+            2
+          ]
+        },
+        "colour_note": "flat dark blue-grey cards behind the glazing bands; no detail (scenery)"
+      }
+    },
+    "plinth_details": {
+      "logo": {
+        "ref": "ENV-003",
+        "center_world": [
+          -0.608,
+          0.121,
+          -0.553
+        ],
+        "size_m": [
+          1.478,
+          0.674
+        ],
+        "note": "back-projected from (901, 482.5) onto y=0.121 at 46 px/m; size from 68x31 px"
+      },
+      "wordmark": {
+        "ref": "ENV-004",
+        "center_world": [
+          0.359,
+          0.121,
+          0.395
+        ],
+        "size_m": [
+          2.609,
+          0.413
+        ],
+        "note": "back-projected from (902, 511.5); reads along the screen-horizontal diagonal"
+      },
+      "rim": {
+        "note": "glowing rim = emissive ring band around the drum side (scene.plinth-rim #E5E2E6 peak), no bloom (post-processing is art-pass scope). Rendered as a cylinder r=2.393 h=0.118, just under the dais top (0.12) so the top face stays visible (flat-mode measurement requirement)."
+      }
+    },
+    "light_strips": {
+      "note": "Linear white strips along partition tops / floor edges (analysis/03 section 9 emissive sources). Emissive decision for Q-3D-07: strips are emissive (unlit); bloom deferred to the art pass.",
+      "partition_top": {
+        "cross_section_m": [
+          0.04,
+          0.02
+        ]
+      },
+      "slab_edge_base": {
+        "cross_section_m": [
+          0.04,
+          0.02
+        ],
+        "note": "along the two visible slab edges at the balustrade base"
+      }
+    },
+    "balustrade_frame": {
+      "rail_m": 0.05,
+      "post_bay_m": 2.4,
+      "note": "anthracite top rail + slender posts (scene.frame family). Bay 2.4 m est.: the reference balustrades read as glass with a thin rail; posts are sparse. Styling estimate, not a measurement."
+    }
   }
- },
- "camera_alternative_orthographic": {
-  "note": "Q-3D-03 alternative; same orientation; differs from perspective by median 30.4 px / max 62.0 px over room corners",
-  "px_per_m": 45.513,
-  "frustum_m": {
-   "left": -19.841,
-   "right": 16.896,
-   "top": 10.986,
-   "bottom": -9.69
-  },
-  "centre_on": "plinth top centre (0,0.12,0)"
- },
- "scale": {
-  "assumption": "A-SCALE-01 desk working height = 0.75 m",
-  "desk_px": [
-   35,
-   32,
-   31,
-   32
-  ],
-  "desk_implied_m": [
-   0.801,
-   0.738,
-   0.722,
-   0.739
-  ],
-  "derived": {
-   "partition_height_m": 2.07,
-   "balustrade_height_m": 1.27,
-   "plinth_radius_m": 2.383,
-   "plinth_height_m": 0.12,
-   "px_per_m": {
-    "top_y150": 39.59263854326787,
-    "mid_y470": 45.80962983352697,
-    "bottom_y800": 52.22090210160718,
-    "left_x300_y600": 48.3352825451949,
-    "right_x1600_y600": 48.33528254519524
-   }
-  }
- },
- "building": {
-  "floor_level_y": 0.0,
-  "levels_in_floor": 1,
-  "roof": "none (cutaway)",
-  "slab_edges": {
-   "+Z (lower-left on screen)": {
-    "z": 13.91,
-    "visible_x": [
-     -5.9,
-     4.4
-    ],
-    "deviation_from_axis_deg": 0.5,
-    "conf": "Medium"
-   },
-   "+X (lower-right on screen)": {
-    "x_range": [
-     14.3,
-     15.8
-    ],
-    "visible_z": [
-     -9.4,
-     3.4
-    ],
-    "deviation_from_axis_deg": [
-     -3.1,
-     -9.0
-    ],
-    "conf": "Low (residual, see Q-3D-04)"
-   },
-   "-X (left, behind sidebar)": "ND; must be <= -17.18 (Marketing x0)",
-   "-Z (far, behind status strip / Live Activity)": "ND; must be <= -15.30 (Engineering z0)"
-  }
- },
- "atrium": {
-  "plinth": {
-   "centre": [
-    0,
-    0,
-    0
-   ],
-   "radius": 2.383,
-   "top_y": 0.12,
-   "projected_px": [
-    794.5,
-    449.9,
-    217.0,
-    102.4
-   ],
-   "measured_px": [
-    795,
-    450,
-    217,
-    100
-   ]
-  },
-  "reference_points": {
-   "ENV-005 planter centre (floor, est.)": [
-    -4.301,
-    0.0,
-    -1.107
-   ],
-   "ENV-006 sofa": [
-    -6.504,
-    0.0,
-    0.414
-   ],
-   "ENV-008 rug": [
-    -4.379,
-    0.0,
-    1.552
-   ],
-   "ENV-009 sofa": [
-    -3.57,
-    0.0,
-    -3.637
-   ],
-   "ENV-010 bench": [
-    -1.373,
-    0.0,
-    -3.719
-   ],
-   "ENV-011 planters": [
-    4.749,
-    0.0,
-    -5.13
-   ],
-   "ENV-012 near-corner tree": [
-    9.062,
-    0.0,
-    8.99
-   ],
-   "ENV-013 cabinets": [
-    10.429,
-    0.0,
-    7.605
-   ]
-  },
-  "note": "Atrium = open floor inside the ring of rooms; no explicit boundary is visible (ENV-001 Low). Reference points are floor projections of the bottom-centre of each object (est.); furniture is NOT part of the greybox."
- },
- "departments": {
-  "DEPT-01": {
-   "name": "Executive Office",
-   "footprint": {
-    "x0": -13.9,
-    "x1": -6.8,
-    "z0": -12.69,
-    "z1": -5.59
-   },
-   "size_m": [
-    7.1,
-    7.1
-   ],
-   "centre_xz": [
-    -10.35,
-    -9.14
-   ],
-   "partition_height": 2.07,
-   "sign": {
-    "id": "SIGN-01",
-    "wall": "front facet (normal ≈ +X+Z)",
-    "anchor_world": [
-     -10.397,
-     2.072,
-     -9.575
-    ],
-    "screen_px": [
-     876.0,
-     158.5
-    ]
-   },
-   "occluded_sides": [
-    "top"
-   ],
-   "projected_floor_corners_px": [
-    [
-     864.8,
-     158.7
-    ],
-    [
-     1068.0,
-     241.5
-    ],
-    [
-     864.5,
-     330.0
-    ],
-    [
-     661.5,
-     240.4
-    ]
-   ],
-   "projected_envelope_px": [
-    660.0,
-    84.2,
-    1070.0,
-    330.0
-   ],
-   "measured_envelope_px": [
-    660.0,
-    120.0,
-    1070.0,
-    330.0
-   ],
-   "envelope_residual_px": [
-    0.0,
-    -35.8,
-    -0.0,
-    0.0
-   ],
-   "digitised_corner_residual_px": {},
-   "robots_inside": 1,
-   "robots_expected": 1,
-   "notes": "Front corners are angled in the reference (chamfer size ND). The sign floor anchor at partition-top height falls near the room centre, so the sign is not on the front facet; mounting ND (Q-ARCH-03)."
-  },
-  "DEPT-02": {
-   "name": "Marketing",
-   "footprint": {
-    "x0": -17.18,
-    "x1": -11.4,
-    "z0": -3.15,
-    "z1": 5.71
-   },
-   "size_m": [
-    5.77,
-    8.86
-   ],
-   "centre_xz": [
-    -14.29,
-    1.28
-   ],
-   "partition_height": 2.07,
-   "sign": {
-    "id": "SIGN-02",
-    "wall": "x0",
-    "anchor_world": [
-     -17.133,
-     2.072,
-     1.261
-    ],
-    "screen_px": [
-     358.5,
-     206.0
-    ]
-   },
-   "occluded_sides": [
-    "left"
-   ],
-   "projected_floor_corners_px": [
-    [
-     499.8,
-     229.9
-    ],
-    [
-     657.3,
-     301.5
-    ],
-    [
-     370.9,
-     419.7
-    ],
-    [
-     215.0,
-     340.3
-    ]
-   ],
-   "projected_envelope_px": [
-    209.3,
-    153.4,
-    657.3,
-    419.7
-   ],
-   "measured_envelope_px": [
-    236.0,
-    150.0,
-    656.0,
-    420.0
-   ],
-   "envelope_residual_px": [
-    -26.7,
-    3.4,
-    1.3,
-    -0.3
-   ],
-   "digitised_corner_residual_px": {
-    "Marketing near floor corner": 0.3
-   },
-   "robots_inside": 8,
-   "robots_expected": 8,
-   "notes": "Left extreme is hidden behind the sidebar (REG-02); true left extent ND (minimum shown)."
-  },
-  "DEPT-03": {
-   "name": "Engineering",
-   "footprint": {
-    "x0": -5.04,
-    "x1": 5.26,
-    "z0": -15.3,
-    "z1": -10.44
-   },
-   "size_m": [
-    10.31,
-    4.86
-   ],
-   "centre_xz": [
-    0.11,
-    -12.87
-   ],
-   "partition_height": 2.07,
-   "sign": {
-    "id": "SIGN-03",
-    "wall": "z0",
-    "anchor_world": [
-     -0.561,
-     2.072,
-     -15.238
-    ],
-    "screen_px": [
-     1333.5,
-     209.5
-    ]
-   },
-   "occluded_sides": [
-    "right"
-   ],
-   "projected_floor_corners_px": [
-    [
-     1191.4,
-     231.6
-    ],
-    [
-     1523.3,
-     363.1
-    ],
-    [
-     1391.3,
-     430.0
-    ],
-    [
-     1058.1,
-     290.8
-    ]
-   ],
-   "projected_envelope_px": [
-    1058.1,
-    155.0,
-    1529.7,
-    430.0
-   ],
-   "measured_envelope_px": [
-    1060.0,
-    150.0,
-    1440.0,
-    430.0
-   ],
-   "envelope_residual_px": [
-    -1.9,
-    5.0,
-    89.7,
-    -0.0
-   ],
-   "digitised_corner_residual_px": {},
-   "robots_inside": 10,
-   "robots_expected": 10,
-   "notes": "Right extreme is hidden behind Live Activity (REG-06); measured envelope right edge is the clip line, so its envelope centre is biased."
-  },
-  "DEPT-04": {
-   "name": "Creative Studio",
-   "footprint": {
-    "x0": -6.55,
-    "x1": -1.5,
-    "z0": 6.57,
-    "z1": 14.03
-   },
-   "size_m": [
-    5.04,
-    7.46
-   ],
-   "centre_xz": [
-    -4.02,
-    10.3
-   ],
-   "partition_height": 2.07,
-   "sign": {
-    "id": "SIGN-04",
-    "wall": "x0",
-    "anchor_world": [
-     -6.547,
-     2.072,
-     10.67
-    ],
-    "screen_px": [
-     330.5,
-     482.0
-    ]
-   },
-   "occluded_sides": [
-    "left"
-   ],
-   "projected_floor_corners_px": [
-    [
-     481.3,
-     503.8
-    ],
-    [
-     636.0,
-     583.6
-    ],
-    [
-     363.5,
-     710.0
-    ],
-    [
-     210.4,
-     622.0
-    ]
-   ],
-   "projected_envelope_px": [
-    203.9,
-    420.0,
-    636.0,
-    710.0
-   ],
-   "measured_envelope_px": [
-    236.0,
-    420.0,
-    636.0,
-    710.0
-   ],
-   "envelope_residual_px": [
-    -32.1,
-    0.0,
-    0.0,
-    -0.0
-   ],
-   "digitised_corner_residual_px": {},
-   "robots_inside": 5,
-   "robots_expected": 5,
-   "notes": "Left extreme is hidden behind the sidebar (REG-02); true left extent ND (minimum shown)."
-  },
-  "DEPT-05": {
-   "name": "Management",
-   "footprint": {
-    "x0": 6.56,
-    "x1": 13.44,
-    "z0": -8.69,
-    "z1": -4.24
-   },
-   "size_m": [
-    6.89,
-    4.45
-   ],
-   "centre_xz": [
-    10.0,
-    -6.46
-   ],
-   "partition_height": 2.07,
-   "sign": {
-    "id": "SIGN-05",
-    "wall": "z0",
-    "anchor_world": [
-     9.827,
-     2.072,
-     -8.505
-    ],
-    "screen_px": [
-     1505.0,
-     442.5
-    ]
-   },
-   "occluded_sides": [
-    "right"
-   ],
-   "projected_floor_corners_px": [
-    [
-     1386.5,
-     474.3
-    ],
-    [
-     1638.7,
-     581.7
-    ],
-    [
-     1509.7,
-     655.4
-    ],
-    [
-     1256.1,
-     541.7
-    ]
-   ],
-   "projected_envelope_px": [
-    1256.1,
-    391.3,
-    1646.9,
-    655.4
-   ],
-   "measured_envelope_px": [
-    1250.0,
-    380.0,
-    1672.0,
-    680.0
-   ],
-   "envelope_residual_px": [
-    6.1,
-    11.3,
-    -25.1,
-    -24.6
-   ],
-   "digitised_corner_residual_px": {
-    "Management left corner post foot": 4.7,
-    "Management near floor corner": 3.0
-   },
-   "robots_inside": 5,
-   "robots_expected": 5,
-   "notes": "Right extreme projects at x=1647 px, inside the frame; a vertical post is visible near x~1660 (y 485-595). The 02 envelope says the room runs off the edge, so the right side is treated as weakly constrained."
-  },
-  "DEPT-06": {
-   "name": "Research",
-   "footprint": {
-    "x0": 0.9,
-    "x1": 6.07,
-    "z0": 6.84,
-    "z1": 12.45
-   },
-   "size_m": [
-    5.17,
-    5.61
-   ],
-   "centre_xz": [
-    3.48,
-    9.65
-   ],
-   "partition_height": 2.07,
-   "sign": {
-    "id": "SIGN-06",
-    "wall": "x0",
-    "anchor_world": [
-     1.075,
-     2.072,
-     10.252
-    ],
-    "screen_px": [
-     585.0,
-     601.0
-    ]
-   },
-   "occluded_sides": [],
-   "projected_floor_corners_px": [
-    [
-     703.8,
-     628.0
-    ],
-    [
-     878.9,
-     718.6
-    ],
-    [
-     675.0,
-     823.3
-    ],
-    [
-     500.4,
-     725.3
-    ]
-   ],
-   "projected_envelope_px": [
-    496.8,
-    541.1,
-    879.4,
-    823.3
-   ],
-   "measured_envelope_px": [
-    490.0,
-    545.0,
-    860.0,
-    810.0
-   ],
-   "envelope_residual_px": [
-    6.8,
-    -3.9,
-    19.4,
-    13.3
-   ],
-   "digitised_corner_residual_px": {
-    "Research right corner post foot": 6.2
-   },
-   "robots_inside": 5,
-   "robots_expected": 5,
-   "notes": "Fully visible; envelope vs digitised corner disagree by up to ~20 px (envelope confidence Medium)."
-  },
-  "DEPT-07": {
-   "name": "QA & Testing",
-   "footprint": {
-    "x0": 6.55,
-    "x1": 13.2,
-    "z0": 1.44,
-    "z1": 5.01
-   },
-   "size_m": [
-    6.65,
-    3.56
-   ],
-   "centre_xz": [
-    9.88,
-    3.22
-   ],
-   "partition_height": 2.07,
-   "sign": {
-    "id": "SIGN-07",
-    "wall": "z0",
-    "anchor_world": [
-     9.254,
-     2.072,
-     1.907
-    ],
-    "screen_px": [
-     1163.5,
-     600.0
-    ]
-   },
-   "occluded_sides": [],
-   "projected_floor_corners_px": [
-    [
-     1077.9,
-     633.5
-    ],
-    [
-     1323.7,
-     751.8
-    ],
-    [
-     1205.7,
-     819.0
-    ],
-    [
-     959.3,
-     694.7
-    ]
-   ],
-   "projected_envelope_px": [
-    959.3,
-    546.4,
-    1329.1,
-    819.0
-   ],
-   "measured_envelope_px": [
-    960.0,
-    545.0,
-    1340.0,
-    810.0
-   ],
-   "envelope_residual_px": [
-    -0.7,
-    1.4,
-    -10.9,
-    9.0
-   ],
-   "digitised_corner_residual_px": {
-    "QA right wall end foot": 2.0
-   },
-   "robots_inside": 6,
-   "robots_expected": 6,
-   "notes": "Fully visible; sign wall z0 offset 0.46 m (sign plate probably mounted higher than partition top)."
-  }
- },
- "ring_clearances_m": {
-  "DEPT-02-DEPT-01": 2.44,
-  "DEPT-01-DEPT-03": 1.76,
-  "DEPT-02-DEPT-04": 4.93,
-  "DEPT-03-DEPT-05": 2.18,
-  "DEPT-04-DEPT-06": 2.4,
-  "DEPT-06-DEPT-07": 1.9,
-  "DEPT-07-DEPT-05": 5.68
- },
- "robots_floor_positions": [
-  {
-   "id": "ROBOT-001",
-   "zone": "Executive Office",
-   "head_px": [
-    875,
-    210
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -9.998,
-    -9.147
-   ],
-   "in_room": "DEPT-01",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-002",
-   "zone": "Marketing",
-   "head_px": [
-    431,
-    250
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -15.874,
-    0.115
-   ],
-   "in_room": "DEPT-02",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-003",
-   "zone": "Marketing",
-   "head_px": [
-    474,
-    281
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -13.818,
-    0.513
-   ],
-   "in_room": "DEPT-02",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-004",
-   "zone": "Marketing",
-   "head_px": [
-    518,
-    280
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -13.126,
-    -0.268
-   ],
-   "in_room": "DEPT-02",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-005",
-   "zone": "Marketing",
-   "head_px": [
-    363,
-    285
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -15.499,
-    2.53
-   ],
-   "in_room": "DEPT-02",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-006",
-   "zone": "Marketing",
-   "head_px": [
-    320,
-    305
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -15.358,
-    3.945
-   ],
-   "in_room": "DEPT-02",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-007",
-   "zone": "Marketing",
-   "head_px": [
-    338,
-    325
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -14.222,
-    4.324
-   ],
-   "in_room": "DEPT-02",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-008",
-   "zone": "Marketing",
-   "head_px": [
-    395,
-    335
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -12.88,
-    3.719
-   ],
-   "in_room": "DEPT-02",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-009",
-   "zone": "Marketing",
-   "head_px": [
-    433,
-    313
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -13.161,
-    2.335
-   ],
-   "in_room": "DEPT-02",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-010",
-   "zone": "Engineering",
-   "head_px": [
-    1180,
-    235
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -3.764,
-    -13.38
-   ],
-   "in_room": "DEPT-03",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-011",
-   "zone": "Engineering",
-   "head_px": [
-    1230,
-    232
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -3.026,
-    -14.375
-   ],
-   "in_room": "DEPT-03",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-012",
-   "zone": "Engineering",
-   "head_px": [
-    1237,
-    248
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -2.302,
-    -13.797
-   ],
-   "in_room": "DEPT-03",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-013",
-   "zone": "Engineering",
-   "head_px": [
-    1127,
-    267
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -3.444,
-    -11.109
-   ],
-   "in_room": "DEPT-03",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-014",
-   "zone": "Engineering",
-   "head_px": [
-    1175,
-    280
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -2.155,
-    -11.381
-   ],
-   "in_room": "DEPT-03",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-015",
-   "zone": "Engineering",
-   "head_px": [
-    1272,
-    286
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -0.319,
-    -12.768
-   ],
-   "in_room": "DEPT-03",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-016",
-   "zone": "Engineering",
-   "head_px": [
-    1220,
-    313
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -0.217,
-    -10.778
-   ],
-   "in_room": "DEPT-03",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-017",
-   "zone": "Engineering",
-   "head_px": [
-    1310,
-    320
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    1.506,
-    -11.989
-   ],
-   "in_room": "DEPT-03",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-018",
-   "zone": "Engineering",
-   "head_px": [
-    1282,
-    338
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    1.668,
-    -10.793
-   ],
-   "in_room": "DEPT-03",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-019",
-   "zone": "Engineering",
-   "head_px": [
-    1386,
-    305
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    2.239,
-    -13.881
-   ],
-   "in_room": "DEPT-03",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-020",
-   "zone": "Creative Studio",
-   "head_px": [
-    455,
-    512
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -5.289,
-    8.342
-   ],
-   "in_room": "DEPT-04",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-021",
-   "zone": "Creative Studio",
-   "head_px": [
-    473,
-    543
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -3.962,
-    8.97
-   ],
-   "in_room": "DEPT-04",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-022",
-   "zone": "Creative Studio",
-   "head_px": [
-    313,
-    558
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -5.829,
-    11.797
-   ],
-   "in_room": "DEPT-04",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-023",
-   "zone": "Creative Studio",
-   "head_px": [
-    338,
-    558
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -5.459,
-    11.422
-   ],
-   "in_room": "DEPT-04",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-024",
-   "zone": "Creative Studio",
-   "head_px": [
-    378,
-    590
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -3.8,
-    11.701
-   ],
-   "in_room": "DEPT-04",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-025",
-   "zone": "Management",
-   "head_px": [
-    1364,
-    498
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    8.015,
-    -6.043
-   ],
-   "in_room": "DEPT-05",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-026",
-   "zone": "Management",
-   "head_px": [
-    1398,
-    527
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    9.362,
-    -5.54
-   ],
-   "in_room": "DEPT-05",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-027",
-   "zone": "Management",
-   "head_px": [
-    1480,
-    517
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    10.312,
-    -7.141
-   ],
-   "in_room": "DEPT-05",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-028",
-   "zone": "Management",
-   "head_px": [
-    1450,
-    548
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    10.725,
-    -5.595
-   ],
-   "in_room": "DEPT-05",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-029",
-   "zone": "Management",
-   "head_px": [
-    1532,
-    553
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    12.078,
-    -6.654
-   ],
-   "in_room": "DEPT-05",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-030",
-   "zone": "Research",
-   "head_px": [
-    723,
-    642
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    2.813,
-    8.08
-   ],
-   "in_room": "DEPT-06",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-031",
-   "zone": "Research",
-   "head_px": [
-    757,
-    680
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    4.402,
-    8.642
-   ],
-   "in_room": "DEPT-06",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-032",
-   "zone": "Research",
-   "head_px": [
-    695,
-    672
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    3.296,
-    9.31
-   ],
-   "in_room": "DEPT-06",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-033",
-   "zone": "Research",
-   "head_px": [
-    597,
-    705
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    2.876,
-    11.581
-   ],
-   "in_room": "DEPT-06",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-034",
-   "zone": "Research",
-   "head_px": [
-    643,
-    733
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    4.311,
-    11.656
-   ],
-   "in_room": "DEPT-06",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-035",
-   "zone": "QA & Testing",
-   "head_px": [
-    1035,
-    640
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    7.222,
-    3.498
-   ],
-   "in_room": "DEPT-07",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-036",
-   "zone": "QA & Testing",
-   "head_px": [
-    1006,
-    667
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    7.557,
-    4.71
-   ],
-   "in_room": "DEPT-07",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-037",
-   "zone": "QA & Testing",
-   "head_px": [
-    1100,
-    670
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    8.969,
-    3.45
-   ],
-   "in_room": "DEPT-07",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-038",
-   "zone": "QA & Testing",
-   "head_px": [
-    1077,
-    700
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    9.445,
-    4.65
-   ],
-   "in_room": "DEPT-07",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-039",
-   "zone": "QA & Testing",
-   "head_px": [
-    1167,
-    700
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    10.704,
-    3.374
-   ],
-   "in_room": "DEPT-07",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-040",
-   "zone": "QA & Testing",
-   "head_px": [
-    1145,
-    732
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    11.219,
-    4.604
-   ],
-   "in_room": "DEPT-07",
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-041",
-   "zone": "Atrium / walkway (left)",
-   "head_px": [
-    617,
-    347
-   ],
-   "assumed_head_h": 1.2,
-   "floor_xz": [
-    -8.416,
-    0.817
-   ],
-   "in_room": null,
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-042",
-   "zone": "Atrium lounge",
-   "head_px": [
-    707,
-    410
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -5.006,
-    1.191
-   ],
-   "in_room": null,
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-043",
-   "zone": "Atrium lounge",
-   "head_px": [
-    906,
-    360
-   ],
-   "assumed_head_h": 0.95,
-   "floor_xz": [
-    -3.643,
-    -3.782
-   ],
-   "in_room": null,
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-044",
-   "zone": "Atrium / walkway (right)",
-   "head_px": [
-    1065,
-    355
-   ],
-   "assumed_head_h": 1.2,
-   "floor_xz": [
-    -0.918,
-    -6.19
-   ],
-   "in_room": null,
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-045",
-   "zone": "Atrium / walkway (right)",
-   "head_px": [
-    1097,
-    370
-   ],
-   "assumed_head_h": 1.2,
-   "floor_xz": [
-    0.114,
-    -6.143
-   ],
-   "in_room": null,
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-046",
-   "zone": "Atrium (right of plinth)",
-   "head_px": [
-    1073,
-    483
-   ],
-   "assumed_head_h": 1.2,
-   "floor_xz": [
-    3.446,
-    -1.728
-   ],
-   "in_room": null,
-   "consistent": true
-  },
-  {
-   "id": "ROBOT-047",
-   "zone": "Walkway (lower-left of Management)",
-   "head_px": [
-    1380,
-    632
-   ],
-   "assumed_head_h": 1.2,
-   "floor_xz": [
-    12.221,
-    -1.412
-   ],
-   "in_room": null,
-   "consistent": true
-  }
- ],
- "validation_summary": {
-  "line_fit_median_deg": {
-   "X": 1.29,
-   "Z": 0.94,
-   "Y": 1.4
-  },
-  "plinth_aspect": {
-   "model": 2.119,
-   "measured": 2.17
-  },
-  "plinth_pitch_only_deg": 27.06,
-  "sign_angles": {
-   "SIGN-01": {
-    "meas": 0,
-    "model": 0.1,
-    "err": 0.1
-   },
-   "SIGN-02": {
-    "meas": -24,
-    "model": -20.5,
-    "err": 3.5
-   },
-   "SIGN-03": {
-    "meas": 26,
-    "model": 20.9,
-    "err": -5.1
-   },
-   "SIGN-04": {
-    "meas": -24,
-    "model": -22.8,
-    "err": 1.2
-   },
-   "SIGN-05": {
-    "meas": 22,
-    "model": 22.4,
-    "err": 0.4
-   },
-   "SIGN-06": {
-    "meas": -27,
-    "model": -24.8,
-    "err": 2.2
-   },
-   "SIGN-07": {
-    "meas": 26,
-    "model": 25.1,
-    "err": -0.9
-   }
-  },
-  "robots_consistent": "47/47",
-  "digitised_corners_loo_px": {
-   "Marketing near floor corner": 26.5,
-   "Management left corner post foot": 13.7,
-   "Management near floor corner": 72.1,
-   "Research right corner post foot": 33.2,
-   "QA right wall end foot": 10.5
-  },
-  "ortho_vs_persp_px": {
-   "median": 30.4149907754389,
-   "p90": 54.8383064696016,
-   "max": 61.96594509727126,
-   "s_px_per_m": 45.5129573678995
-  }
- },
- "assumptions": {
-  "A-SCALE-01": "Desk working height = 0.75 m sets the metric scale (4 desks: 31-35 px; implied 0.72-0.80 m). Projection is scale-invariant: changing it rescales every length and the camera distance together.",
-  "A-PP-01": "Principal point = canvas centre (836, 470.5); the 3D canvas is the full 1672x941 frame (REG-03 is full-bleed).",
-  "A-ROLL-01": "Roll fixed at 0 deg (bootstrap 90% interval -1.08..+1.46 deg includes 0).",
-  "A-HEAD-01": "Robot head-centre heights used only for validation: seated 0.95 m, standing 1.20 m (est.).",
-  "A-SIGN-01": "Sign-plate centres are taken at partition-top height (2.07 m) when back-projected; +0.3 m moves walls by about 0.4-0.6 m.",
-  "A-EXEC-SYM": "Executive Office plan taken as square (size_x = size_z) because its envelope leaves one degree of freedom; it is an assumption, see Q-ARCH-03.",
-  "A-DIG-01": "Five partition floor corners were digitised by eye from 2x/4x crops (+-5 px) and used as constraints (variant D)."
- }
 }
