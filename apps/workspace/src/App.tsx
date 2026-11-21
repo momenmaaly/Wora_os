@@ -1,14 +1,20 @@
 /**
  * Routes:
- *  - `/`            the greybox, full-bleed, HOME camera with the responsive FOV rule;
- *  - `#/dev`, `?dev` the dev inspect page (overlay, markers, layers, orbit).
+ *  - `/`      the workspace, full-bleed, HOME camera with the responsive FOV rule. Production
+ *             presentation only: no development overlays, no dev-entry link (VF-1 presentation
+ *             correction, 2026-11-20 — dev activation via `?dev` was removed because a query
+ *             parameter survives the preview-auth redirect and can silently put the primary
+ *             route into the inspector view).
+ *  - `#/dev`  the dev inspect page (overlay, markers, layers, orbit). Explicit hash entry only;
+ *             all inspection capabilities preserved there.
+ *
  * No UI panels are drawn: they are DOM overlays for a later phase (architecture/04 §1.4).
  */
 import { useEffect, useState } from 'react';
 import { WorkspaceCanvas } from './scene/WorkspaceCanvas';
 import { DevInspector } from './dev/DevInspector';
 
-const isDevRoute = () => window.location.hash.startsWith('#/dev') || new URLSearchParams(window.location.search).has('dev');
+const isDevRoute = () => window.location.hash.startsWith('#/dev');
 
 export function App() {
   const [dev, setDev] = useState(isDevRoute);
@@ -21,12 +27,6 @@ export function App() {
   return (
     <div style={{ position: 'fixed', inset: 0 }}>
       <WorkspaceCanvas />
-      <a
-        href="#/dev"
-        style={{ position: 'absolute', left: 12, bottom: 12, color: '#e6e8eb', font: '12px system-ui, sans-serif', opacity: 0.75 }}
-      >
-        Structural greybox (WORA-3D-GREYBOX-004) · open dev inspector
-      </a>
     </div>
   );
 }

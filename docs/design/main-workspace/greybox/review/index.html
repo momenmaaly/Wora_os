@@ -39,7 +39,7 @@
 </head>
 <body>
 <header>
-  <h1>Mission 006-A + VF-1 — Visual Acceptance Review Package</h1>
+  <h1>Mission 006-A + VF-1 + PRES — Visual Acceptance Review Package</h1>
   <p>Environment workstream (WORA-3D-SCENE-006-A) + VF-1 Materials &amp; Lighting vs the locked reference · branch <code>arena/e6096316-wora-os</code> · 2026-11-20 · VF-1 gate package in section 4-VF1</p>
   <p>Reference checksum <code>wora-main-workspace.png: OK</code> (verified for this package; the reference file is untouched and immutable).</p>
   <p>Honesty rules: rendered and reference close-ups use <b>identical pixel windows</b> — nothing is cropped, hidden or scaled to hide a deviation. Rendered images are actual browser output (headless Chromium, HOME camera fov 12.0006°, camera readback verified).</p>
@@ -232,6 +232,53 @@
     <tr><td>V5</td><td>Shadows: soft contact shadows to the lower-left</td><td>Key direction per LGT-02 observation (conf. Medium–Low); softness <span class="tag t-est">EST.</span>; glass/backdrop/emissive excluded (test-enforced)</td></tr>
     <tr><td>V6</td><td>Bloom on screens/eyes (VAC-LGT-03)</td><td>Screens/eyes are robot/furniture scope; rim + strips bloom in VF-1</td></tr>
   </table>
+</section>
+
+<section id="pres">
+  <h2 style="color:#0F62FE">PRES · Desktop-first presentation review &amp; correction (2026-11-20, owner-directed)</h2>
+  <p class="note">Desktop (1920×1080) is the primary acceptance viewport; mobile secondary. Scope: the presentation of the primary route <code>/</code> only — no geometry, no camera, no reference change. Root cause, before/after evidence and all four required desktop resolutions below.</p>
+
+  <h3>PRES.1 · Root cause of the red markers / cyan points / green labels / black areas</h3>
+  <p class="note">The screenshot the owner took was of the <b>dev inspector view</b>, not the clean workspace route. It is reached from <code>/</code> in two ways (source: <code>src/App.tsx</code>, <code>src/dev/DevInspector.tsx</code>):
+  <br>1. <b>The bottom-left text link "Structural greybox … · open dev inspector"</b> (production DOM, always rendered on <code>/</code>); clicking set <code>#/dev</code>.
+  <br>2. <b>The <code>?dev</code> query parameter</b> — <code>isDevRoute()</code> accepted <code>location.search</code>. The owner opened the preview through Vercel's SSO authentication redirect, which preserves query strings, so <code>/...?dev</code> (or a share/bookmark containing it) silently loaded the inspector on what the owner believed was the primary route.
+  <br>In that view: <span style="color:#ff3b3b"><b>red ×</b></span> = measured reference pixels (<code>#ff3b3b</code>, MARKERS in <code>markerSets.ts</code>), <span style="color:#21e6c1"><b>teal ● + green ID labels</b></span> = live-projected world points (<code>#21e6c1</code>/<code>#7fdcff</code>), <b>orange dashed lines</b> = measured slab-edge lines, <b>black letterbox bands</b> = the inspector's default "Reference 1672:941" frame letterboxing the stage on wider aspects. None of these existed on the clean <code>/</code> route — but the query-param path made the distinction invisible.</p>
+
+  <h3>PRES.2 · Corrections applied (exact files)</h3>
+  <table>
+    <tr><th>File</th><th>Change</th><th>Why</th></tr>
+    <tr><td><code>apps/workspace/src/App.tsx</code></td><td><code>isDevRoute()</code> now accepts <b>only</b> the explicit <code>#/dev</code> hash — the <code>?dev</code> query path removed; the bottom-left "open dev inspector" link removed; <code>/</code> renders the clean workspace only</td><td>Requirement 1: remove dev overlays from <code>/</code>; the query param could silently activate the inspector through the SSO redirect</td></tr>
+    <tr><td><code>apps/workspace/src/dev/DevInspector.tsx</code></td><td>Header note updated; new <b>"Exit to workspace (/)"</b> button that clears the hash</td><td>Preserve all inspection capabilities on <code>#/dev</code> (requirement: do not disable developer tools) and make the exit path obvious</td></tr>
+    <tr><td colspan="3">No other files changed. Camera, responsive FOV rule, geometry, materials, tests, reference: untouched (no camera change was needed — see PRES.3).</td></tr>
+  </table>
+
+  <h3>PRES.3 · Desktop inspection at the four required viewports (clean route <code>/</code>)</h3>
+  <p class="note">Instrument readback per viewport (before and after identical): <b>1920×1080 → rule "reference", vFOV 12.0006°</b> (the HOME camera exactly, aspect 1.7778 = 1672:941); <b>2560×1440 → same rule, 12.0006°</b>; <b>1440×900 → keep-vertical, 12.0006°</b>; <b>1366×768 → reference rule (Δaspect 0.0008 &lt; 0.001), 11.9885°</b>. The canvas is full-bleed (<code>position:fixed; inset:0</code>) — <b>no letterboxing exists on <code>/</code></b>; the letterbox bands belong to the inspector's reference-frame stage. Composition: complete (all 7 signs, plinth, facades, backdrop); nothing clipped; no stretch (FOV math preserves aspect); scene uses the full workspace area. <b>Cause identified before any change: no camera or framing change was warranted, so none was made.</b></p>
+  <div class="pair">
+    <figure><img src="PRES-after-home-1920x1080.png" alt="1920"><figcaption>1920×1080 — mandatory primary viewport (after; identical to before except the removed bottom-left link). FOV 12.0006°, full-bleed.</figcaption></figure>
+    <figure><img src="PRES-after-home-2560x1440.png" alt="2560"><figcaption>2560×1440 — large desktop (after). Same HOME FOV; larger display area, same composition.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="PRES-after-home-1440x900.png" alt="1440"><figcaption>1440×900 — standard laptop (after; keep-vertical rule, slight top/bottom reveal as designed).</figcaption></figure>
+    <figure><img src="PRES-after-home-1366x768.png" alt="1366"><figcaption>1366×768 — smaller laptop (after; within 0.001 of the reference aspect → HOME FOV).</figcaption></figure>
+  </div>
+  <p class="note">Before counterparts (with the old bottom-left link) are committed as <code>PRES-before-home-*.png</code> for all four sizes — the scene content is identical; the only difference is the removed link.</p>
+
+  <h3>PRES.4 · Before/after — the reported state</h3>
+  <div class="pair">
+    <figure><img src="PRES-before-LEAK-querydev-1920x1080.png" alt="before"><figcaption>BEFORE — production build, <code>/…?dev</code> at 1920×1080: red × markers, teal ● points + green labels, orange slab-edge lines, dev panel (the owner's screenshot state, reproduced from the deployed bundle).</figcaption></figure>
+    <figure><img src="PRES-after-FIX-querydev-1920x1080.png" alt="after"><figcaption>AFTER — the same URL <code>/…?dev</code> at 1920×1080 (fresh production build): clean workspace, no markers/panel/letterbox; instrument readback devPanel=false, markers=false.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="PRES-after-dev-hash-1920x1080.png" alt="dev"><figcaption><code>#/dev</code> preserved: full inspector (panel, all toggles, markers, slab edges, overlay on dev servers) + new "Exit to workspace (/)" button. Measurement data and developer tools untouched.</figcaption></figure>
+    <figure><img src="PRES-after-home-1920x1080.png" alt="clean"><figcaption>Clean screenshot of <code>/</code> at 1920×1080 with no inspection overlays (mandatory acceptance shot).</figcaption></figure>
+  </div>
+
+  <h3>PRES.5 · Mobile (secondary — basic usability only)</h3>
+  <p class="note">No mobile-driven changes were made. The clean <code>/</code> route keeps the responsive FOV rule (safe-rect framing), so the scene renders unbroken on the phone viewport; the VF-1 phone evidence (<code>VF1-phone-portrait-412x915.png</code>, §4-VF1) remains valid. Desktop composition takes precedence per the owner's directive.</p>
+
+  <h3>PRES.6 · Validation</h3>
+  <p class="note">tsc clean · vitest 56/56 (47 preserved + 9 VF-1 additive; no test weakened) · build ✓ · check-dist OK · rendered geometry check unchanged (flat mode byte-identical) · reference checksum OK pre/post · commit ⟨see git log⟩ pushed to PR #1's branch (preview auto-updates). PR #1 not merged.</p>
 </section>
 
 <section>

@@ -1,5 +1,7 @@
 /**
- * Dev inspect route (`#/dev` or `?dev`). Shows the greybox with:
+ * Dev inspect route (`#/dev` only; the `?dev` query activation was removed in the VF-1
+ * presentation correction — a query parameter survives the preview-auth redirect and could put
+ * the primary route into the inspector view). Shows the greybox with:
  *  - frame mode: the reference frame (1672:941, letterboxed) or the full viewport (responsive rule);
  *  - the locked reference as a QA overlay (DEV server only, analysis/06 P-6) with an opacity slider;
  *  - measured reference px (red ×) vs live projected world points (cyan ●) with deviation links;
@@ -212,6 +214,14 @@ export function DevInspector() {
           </Row>
           <button onClick={resetHome} style={{ marginTop: 6, width: '100%' }}>Reset to HOME camera</button>
           <button onClick={() => setPanelOn(false)} style={{ marginTop: 4, width: '100%' }}>Hide panel (press H to toggle)</button>
+          <button
+            onClick={() => {
+              window.location.hash = '';
+            }}
+            style={{ marginTop: 8, width: '100%', background: '#0F62FE', color: '#fff', border: 'none', padding: '8px 0', borderRadius: 6, fontWeight: 600 }}
+          >
+            Exit to workspace (/)
+          </button>
           <div style={{ marginTop: 8, opacity: 0.7, fontSize: 11, lineHeight: 1.4 }}>
             <span style={{ color: '#ff3b3b' }}>×</span> measured reference px · <span style={{ color: '#21e6c1' }}>●</span> projected world point ·
             <span style={{ color: '#ff8c1a' }}> —</span> measured slab-edge lines. Markers compare only in the HOME pose.
