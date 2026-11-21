@@ -6,6 +6,22 @@
 >
 > Legend — Confidence: High / Medium / Low. "Approval" = owner decision required before the change may be made. Evidence references: `review/` screenshots, `greybox/data/*.json`, report `01` sections, `analysis/*`, `architecture/*`.
 
+## 0. Owner decisions recorded (2026-11-20) — Mission 005 ACCEPTED for handoff
+
+The register in §1 is retained as written; this section is the authoritative outcome.
+
+| ID | Decision |
+|---|---|
+| CR-01 | **Accept the lower-right edge residual.** Do not introduce artificial geometry distortion. The edge stays grid-aligned at x = 14.6 |
+| CR-02 | **Keep the minimum evidence-supported building extent.** Remaining visible areas are treated as environmental background |
+| CR-05 | **Keep the solved sign angles.** Preserve and document the known residuals (SIGN-02 +3.5°, SIGN-03 −5.1°) |
+| CR-06 | **Keep the uniform 0.93 m sign height provisionally** (until the art pass supersedes it) |
+| CR-07 | **Square Executive Office allowed in the greybox only.** Final geometry remains unresolved and must not be treated as confirmed |
+| CR-03 / CR-04 | Closed by evidence (no change) — unchanged |
+| CR-08 | Art-pass scope item; taken up by the Environment specialist in Mission 006 |
+
+Standing condition repeated by the owner: **do not modify the original reference image.**
+
 ## 1. Issue register
 
 | ID | Issue | Reference evidence | Current rendered result | Proposed correction | Expected visual impact | Confidence | Approval |
@@ -32,15 +48,15 @@ npm run validate  →  tsc --noEmit OK
 
 The reference image was preserved; its checksum verified OK at review start and before commit.
 
-## 3. Decisions requested from the owner
+## 3. Decisions requested from the owner — RESOLVED (2026-11-20, see §0)
 
-1. **CR-01** — accept the +X edge residual (recommended), or approve the skewed-edge Option B.
-2. **CR-02** — keep the minimum back extents (recommended), or supply/approve continuation extents.
-3. **CR-05** — confirm keeping the solved sign angles (recommended).
-4. **CR-06** — keep the uniform 0.93 m sign height until the art pass (recommended), or approve per-sign fitted heights.
-5. **CR-07** — confirm the square Executive plan for the greybox (recommended); provide a chamfer decision for the art pass.
-6. **Review acceptance** — the art pass may not start until this review is accepted.
+1. **CR-01** — resolved: accept the +X edge residual; no artificial distortion.
+2. **CR-02** — resolved: keep the minimum back extents; remaining visible areas are environmental background.
+3. **CR-05** — resolved: keep the solved sign angles; preserve and document the residuals.
+4. **CR-06** — resolved: keep the uniform 0.93 m sign height provisionally.
+5. **CR-07** — resolved: square Executive plan for the greybox only; final geometry unresolved, not confirmed.
+6. **Review acceptance** — resolved: the review is **accepted for handoff** (2026-11-20).
 
-## 4. Gate
+## 4. Gate — status after acceptance
 
-`03-visual-review.md` §5: **accepted-for-handoff, art pass blocked pending owner acceptance.** When the owner rules on §3, implement only the approved items (each via the `scene-architecture.json` schema-bump route), re-run `npm run validate`, regenerate `greybox-metrics.json`, and update this register's Decision column.
+The Mission 005 review is **accepted**; no correction from this register requires implementation ("keep" decisions only). Mission 006 (3D Scene Building phase) is planned in `05-scene-building-plan.md`, which carries these decisions as binding constraints. Any future geometry change still goes through the `scene-architecture.json` schema-bump route with `npm run validate`, regenerated metrics, and an updated register entry. PR #1 is open and **not merged**; merging is the owner's call.
