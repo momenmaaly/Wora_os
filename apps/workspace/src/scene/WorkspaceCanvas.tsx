@@ -7,6 +7,7 @@ import { CameraRig } from './CameraRig';
 import { Greybox, type GreyboxLayers, DEFAULT_LAYERS } from './Greybox';
 import { Lights } from './Lights';
 import { SceneEnvironment } from './SceneEnvironment';
+import { SceneInteraction, type Selection } from './sceneInteractionBridge';
 import { BACKGROUND_COLOR } from './materials';
 import type { FovRule } from './camera';
 
@@ -21,12 +22,14 @@ export function WorkspaceCanvas({
   flat = false,
   homeToken,
   onRule,
+  onSelection,
   children,
 }: {
   layers?: GreyboxLayers;
   flat?: boolean;
   homeToken?: number;
   onRule?: (rule: FovRule, fovDeg: number) => void;
+  onSelection?: (s: Selection | null) => void;
   children?: ReactNode;
 }) {
   return (
@@ -47,6 +50,7 @@ export function WorkspaceCanvas({
         </>
       )}
       <Greybox layers={layers} flat={flat} />
+      {!flat && onSelection && <SceneInteraction onSelection={onSelection} />}
       {!flat && (
         <EffectComposer multisampling={0}>
           <Bloom mipmapBlur intensity={0.5} luminanceThreshold={3.0} luminanceSmoothing={0.4} radius={0.65} />

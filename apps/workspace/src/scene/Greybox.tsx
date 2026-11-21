@@ -27,6 +27,29 @@ import type { DeptId } from '../config/sceneConfig';
 const unitBox = new BoxGeometry(1, 1, 1);
 const unitBoxEdges = new EdgesGeometry(unitBox);
 
+/**
+ * VF-6 (mobile fidelity, approved default Q-VF-06): presentation-only thickness floor. On narrow
+ * viewports (< 900 CSS px) sub-metre line-like elements (mullions 0.04–0.06 m, posts 0.025 m,
+ * strips 0.03 m) fall below ~1 device pixel and visually vanish. Thin dimensions are multiplied
+ * by a fixed factor at render time — geometry data, HOME composition and desktop rendering
+ * (width >= 900 CSS px: factor 1) are unchanged; flat measurement mode always uses factor 1.
+ * Applied only to the environment line-like groups; furniture/robots/signs are unaffected.
+ */
+const MOBILE_BOOST = 2.2;
+function boostThin<T extends { center: [number, number, number]; size?: [number, number, number]; radius?: number; height?: number }>(specs: readonly T[], k: number): T[] {
+  if (k === 1) return specs as T[];
+  return specs.map((sp) => {
+    const out: T = { ...sp } as T;
+    if (Array.isArray(out.size)) {
+      const s2 = [...out.size] as [number, number, number];
+      for (let i = 0; i < 3; i++) if (s2[i] < 0.08) s2[i] = Math.min(s2[i] * k, 0.09);
+      out.size = s2;
+    }
+    if (typeof out.radius === 'number' && out.radius < 0.04) out.radius = Math.min(out.radius * k, 0.05);
+    return out;
+  });
+}
+
 /** VF-1 shadow participation per material key (glass/backdrop/emissives excluded, VAC-LGT-02). */
 function shadowProps(material: string) {
   return { castShadow: !SHADOW_EXCLUDE_CAST.has(material as never), receiveShadow: !SHADOW_EXCLUDE_RECEIVE.has(material as never) };
@@ -290,6 +313,7 @@ export const DEFAULT_LAYERS: GreyboxLayers = { mass: true, partitions: true, sig
 export function Greybox({ layers = DEFAULT_LAYERS, flat = false }: { layers?: GreyboxLayers; flat?: boolean }) {
   const model = useMemo(() => buildGreyboxModel(), []);
   const env: EnvironmentModel = useMemo(() => buildEnvironmentModel(), []);
+  const mobileK = useMemo(() => (!flat && typeof window !== 'undefined' && Math.min(window.innerWidth, window.innerHeight) < 900 && window.innerWidth < window.innerHeight ? MOBILE_BOOST : 1), [flat]);
   const structureSpecs = useMemo(() => (flat ? [] : buildStructureCompletion()), [flat]);
   const interiorSpecs = useMemo(() => (flat ? [] : buildInteriors()), [flat]);
   const robotSpecs = useMemo(() => (flat ? [] : buildRobots()), [flat]);
@@ -311,16 +335,16 @@ export function Greybox({ layers = DEFAULT_LAYERS, flat = false }: { layers?: Gr
           <group name="Facade">
             {env.fascia.map((f) => <RibbonPrimitive key={f.key} spec={f} materials={materials} />)}
             {env.facadePanes.map((f) => <RibbonPrimitive key={f.key} spec={f} materials={materials} />)}
-            {env.facadeMullions.map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
-            {env.facadeTransoms.map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
+            {boostThin(env.facadeMullions, mobileK).map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
+            {boostThin(env.facadeTransoms, mobileK).map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
             {env.backGlazingPanes.map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
-            {env.backGlazingMullions.map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
+            {boostThin(env.backGlazingMullions, mobileK).map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
           </group>
         )}
         {layers.balustrades && (
           <group name="Balustrades">
             {model.balustrades.map((b) => <Primitive key={b.key} spec={b} materials={materials} edges={edges} />)}
-            {env.balustradeFrames.map((b) => <BoxPrimitive key={b.key} spec={b} materials={materials} edges={false} />)}
+            {boostThin(env.balustradeFrames, mobileK).map((b) => <BoxPrimitive key={b.key} spec={b} materials={materials} edges={false} />)}
           </group>
         )}
       </group>
@@ -341,8 +365,8 @@ export function Greybox({ layers = DEFAULT_LAYERS, flat = false }: { layers?: Gr
       </group>
       {layers.strips && (
         <group name="LightStrips">
-          {env.partitionStrips.map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
-          {env.edgeStrips.map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
+          {boostThin(env.partitionStrips, mobileK).map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
+          {boostThin(env.edgeStrips, mobileK).map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
         </group>
       )}
       {/* VF-2/VF-3/VF-4 content groups. Flat mode skips them: measurement neutrality for the
