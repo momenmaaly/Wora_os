@@ -18,15 +18,21 @@ import {
 } from 'three';
 import { buildGreyboxModel, type BoxSpec, type CylinderSpec, type DiscSpec, type LabelSpec, type PrimitiveSpec, type RibbonSpec } from './model';
 import { buildEnvironmentModel, type EnvironmentModel } from './environment';
-import { createFlatMaterial, createMaterials, DEPT_FLAT_COLORS, EDGE_COLOR } from './materials';
+import { createDeptMaterials, createFlatMaterial, createMaterials, DEPT_FLAT_COLORS, EDGE_COLOR, SHADOW_EXCLUDE_CAST, SHADOW_EXCLUDE_RECEIVE } from './materials';
+import type { DeptId } from '../config/sceneConfig';
 
 const unitBox = new BoxGeometry(1, 1, 1);
 const unitBoxEdges = new EdgesGeometry(unitBox);
 
+/** VF-1 shadow participation per material key (glass/backdrop/emissives excluded, VAC-LGT-02). */
+function shadowProps(material: string) {
+  return { castShadow: !SHADOW_EXCLUDE_CAST.has(material as never), receiveShadow: !SHADOW_EXCLUDE_RECEIVE.has(material as never) };
+}
+
 function BoxPrimitive({ spec, materials, edges }: { spec: BoxSpec; materials: Record<string, Material>; edges: boolean }) {
   return (
     <group position={spec.center} rotation={[0, spec.rotationY, 0]} scale={spec.size} name={spec.key} userData={{ refId: spec.refId }}>
-      <mesh geometry={unitBox} material={materials[spec.material]} renderOrder={spec.material === 'partition' || spec.material === 'balustrade' ? 2 : 0} />
+      <mesh geometry={unitBox} material={materials[spec.material]} renderOrder={spec.material === 'partition' || spec.material === 'balustrade' ? 2 : 0} {...shadowProps(spec.material)} />
       {edges && (
         <lineSegments geometry={unitBoxEdges}>
           <lineBasicMaterial color={EDGE_COLOR} />
@@ -41,7 +47,7 @@ function CylinderPrimitive({ spec, materials, edges }: { spec: CylinderSpec; mat
   const edgeGeometry = useMemo(() => new EdgesGeometry(geometry, 30), [geometry]);
   return (
     <group position={spec.center} name={spec.key} userData={{ refId: spec.refId }}>
-      <mesh geometry={geometry} material={materials[spec.material]} />
+      <mesh geometry={geometry} material={materials[spec.material]} {...shadowProps(spec.material)} />
       {edges && (
         <lineSegments geometry={edgeGeometry}>
           <lineBasicMaterial color={EDGE_COLOR} />
@@ -74,7 +80,7 @@ function RibbonPrimitive({ spec, materials }: { spec: RibbonSpec; materials: Rec
     return g;
   }, [spec]);
   return (
-    <mesh geometry={geometry} material={materials[spec.material]} name={spec.key} userData={{ refId: spec.refId }} />
+    <mesh geometry={geometry} material={materials[spec.material]} name={spec.key} userData={{ refId: spec.refId }} {...shadowProps(spec.material)} />
   );
 }
 
@@ -85,7 +91,7 @@ function DiscPrimitive({ spec, materials }: { spec: DiscSpec; materials: Record<
     return g;
   }, [spec]);
   return (
-    <mesh geometry={geometry} material={materials[spec.material]} position={spec.center} name={spec.key} userData={{ refId: spec.refId }} />
+    <mesh geometry={geometry} material={materials[spec.material]} position={spec.center} name={spec.key} userData={{ refId: spec.refId }} {...shadowProps(spec.material)} />
   );
 }
 
@@ -268,7 +274,10 @@ export function Greybox({ layers = DEFAULT_LAYERS, flat = false }: { layers?: Gr
   const env: EnvironmentModel = useMemo(() => buildEnvironmentModel(), []);
   const materials = useMemo(() => createMaterials(flat), [flat]);
   const deptFloor = useMemo(
-    () => Object.fromEntries(model.departments.map((d) => [d.id, flat ? { ...materials, floor: createFlatMaterial(DEPT_FLAT_COLORS[d.id]) } : materials])),
+    () =>
+      Object.fromEntries(
+        model.departments.map((d) => [d.id as DeptId, flat ? { ...materials, floor: createFlatMaterial(DEPT_FLAT_COLORS[d.id]) } : createDeptMaterials(materials, d.id as DeptId, flat)]),
+      ),
     [model, materials, flat],
   );
   const edges = !flat;

@@ -39,8 +39,8 @@
 </head>
 <body>
 <header>
-  <h1>Mission 006-A — Visual Acceptance Review Package</h1>
-  <p>Environment workstream (WORA-3D-SCENE-006-A) vs the locked reference · branch <code>arena/e6096316-wora-os</code> · commit <code>47542bb</code> + review artifacts · 2026-11-20</p>
+  <h1>Mission 006-A + VF-1 — Visual Acceptance Review Package</h1>
+  <p>Environment workstream (WORA-3D-SCENE-006-A) + VF-1 Materials &amp; Lighting vs the locked reference · branch <code>arena/e6096316-wora-os</code> · 2026-11-20 · VF-1 gate package in section 4-VF1</p>
   <p>Reference checksum <code>wora-main-workspace.png: OK</code> (verified for this package; the reference file is untouched and immutable).</p>
   <p>Honesty rules: rendered and reference close-ups use <b>identical pixel windows</b> — nothing is cropped, hidden or scaled to hide a deviation. Rendered images are actual browser output (headless Chromium, HOME camera fov 12.0006°, camera readback verified).</p>
 </header>
@@ -146,6 +146,94 @@
   <p class="note">Right-side backdrop comparison: section 4.1. The large outdoor tree at the bottom-right frame edge is modelled as a simple canopy disc; the right-terrace greenery cluster (ENV-017) is <b>omitted</b> — its screen ray cannot be placed at a consistent 3D location (documented, not invented).</p>
 </section>
 
+<section id="vf1">
+  <h2 style="color:#0F62FE">4-VF1 · Mission VF-1 (Materials &amp; Lighting) — gate package (2026-11-20, owner-approved)</h2>
+  <p class="note">VF-1 changes <b>appearance only</b> — zero geometry changes (rendered check re-run: all six sizes byte-equal to 006-A; see <code>greybox/data/rendered-check.json</code> note). Flat measurement mode is byte-identical (test-enforced). Existing 47 tests preserved; 9 additive VF-1 audit tests added (56 total). Full-frame and phone evidence below; commit hash in the VF-1 report <code>greybox/08-vf1-materials-lighting-report.md</code>.</p>
+
+  <h3>VF1.1 · Full frame — reference vs VF-1 render (side by side)</h3>
+  <div class="pair">
+    <figure><img src="../../reference/wora-main-workspace.png" alt="Locked reference"><figcaption>Locked reference (1672×941) — immutable original.</figcaption></figure>
+    <figure><img src="VF1-desktop-1672x941.png" alt="VF-1 render"><figcaption>VF-1 render (browser output, HOME camera): PBR marble/glass/metal, per-department floor tones, shadow-mapped key light, HDR emitters + bloom (rim, strips), ACES tone mapping.</figcaption></figure>
+  </div>
+
+  <h3>VF1.2 · Overlay — adjustable opacity (VF-1 render over reference)</h3>
+  <div class="ovwrap">
+    <img src="../../reference/wora-main-workspace.png" alt="reference base">
+    <img class="top" id="ovvf1" src="VF1-desktop-1672x941.png" alt="VF-1 overlay" style="opacity:0.5">
+  </div>
+  <input class="slider" type="range" min="0" max="100" value="50" oninput="document.getElementById('ovvf1').style.opacity=(this.value/100).toFixed(2)">
+
+  <h3>VF1.3 · Material close-ups (identical pixel windows)</h3>
+  <div class="tags"><span class="tag t-meas">marble base MEASURED</span><span class="tag t-meas">floor tones MEASURED (6 of 7)</span><span class="tag t-est">vein pattern EST.</span><span class="tag t-est">roughness/clearcoat/metalness EST.</span><span class="tag t-est">bloom budget EST. (Q-VF-03)</span><span class="tag t-est">soft shadow radius EST.</span></div>
+
+  <h4>Atrium marble (window 560,300 → 1260,620) — VAC-LGT-04</h4>
+  <div class="pair">
+    <figure><img src="Y-atrium-walkways-ref.png" alt="ref"><figcaption>Reference: polished marble, thin veins, warm zones.</figcaption></figure>
+    <figure><img src="Y-atrium-walkways-vf1render.png" alt="VF-1"><figcaption>VF-1: procedural marble from sampled tones (#ACA0AB–#D2B9B0 base MEASURED; vein pattern EST., seeded).</figcaption></figure>
+  </div>
+
+  <h4>Glass partitions + balustrades (window 1050,40 → 1470,360 area; partitions window) — VAC-LGT-06</h4>
+  <div class="pair">
+    <figure><img src="Y-partitions-balustrades-ref.png" alt="ref"><figcaption>Reference: clear glass, white specular streaks, anthracite frames.</figcaption></figure>
+    <figure><img src="Y-partitions-balustrades-vf1render.png" alt="VF-1"><figcaption>VF-1: MeshPhysicalMaterial glass (roughness 0.06, clearcoat 1) + RoomEnvironment reflections; opacity 0.35 unchanged from 006-A.</figcaption></figure>
+  </div>
+
+  <h4>Plinth rim glow + bloom (plinth window) — VAC-LGT-03</h4>
+  <div class="pair">
+    <figure><img src="Y-plinth-ref.png" alt="ref"><figcaption>Reference: glowing rim with bloom halo.</figcaption></figure>
+    <figure><img src="Y-plinth-vf1render.png" alt="VF-1"><figcaption>VF-1: rim HDR ×6.0, strips ×5.5, bloom threshold 3.0 (only true emitters bloom), intensity 0.5 — subtle per approved default Q-VF-03.</figcaption></figure>
+  </div>
+
+  <h4>Fascia + curtain wall (window 1050,40 → 1470,360)</h4>
+  <div class="pair">
+    <figure><img src="Y-facade-parapet-ref.png" alt="ref"><figcaption>Reference.</figcaption></figure>
+    <figure><img src="Y-facade-parapet-vf1render.png" alt="VF-1"><figcaption>VF-1: same geometry as 006-A; fascia/parapet roughness + env reflections added.</figcaption></figure>
+  </div>
+
+  <h4>Facade band lower-left +Z (window 200,540 → 700,941)</h4>
+  <div class="pair">
+    <figure><img src="Y-facade-band-plusZ-ref.png" alt="ref"><figcaption>Reference.</figcaption></figure>
+    <figure><img src="Y-facade-band-plusZ-vf1render.png" alt="VF-1"><figcaption>VF-1: anthracite metal frames (metalness 0.55), curtain-wall glass reflections.</figcaption></figure>
+  </div>
+
+  <h4>Backdrop mood (backdrop window)</h4>
+  <div class="pair">
+    <figure><img src="Y-backdrop-left-ref.png" alt="ref"><figcaption>Reference: cool exterior vs warm interior balance (VAC-LGT-01).</figcaption></figure>
+    <figure><img src="Y-backdrop-left-vf1render.png" alt="VF-1"><figcaption>VF-1: hemisphere light unchanged (#D6E4F0/#A3938A/1.5); ACES tone mapping added; city cards stay unlit (no bloom).</figcaption></figure>
+  </div>
+
+  <h4>Department floors (DEPT-05 Management window) — floor tones</h4>
+  <div class="pair">
+    <figure><img src="Y-dept05-floor-ref.png" alt="ref"><figcaption>Reference: Management warm-wood floor (#805E4C sample) + furniture (furniture itself is VF-3 scope — absent here).</figcaption></figure>
+    <figure><img src="Y-dept05-floor-vf1render.png" alt="VF-1"><figcaption>VF-1: warm-wood floor material (base #805E4C MEASURED; plank grain EST., Q-VF-02 default). All resolved floors: DEPT-02 #927A74, DEPT-03 #8F7F80, DEPT-04 #836B5F, DEPT-05 #805E4C, DEPT-06 #817880 (2026-11-20 probe), DEPT-07 #655B61. <b>DEPT-01 Executive stays UNRESOLVED</b> (probe contaminated by furniture; neutral kept — no invention).</figcaption></figure>
+  </div>
+
+  <h3>VF1.4 · Phone evidence — 412×915 @ DPR 2.625 (actual rendered output)</h3>
+  <div class="pair">
+    <figure><img src="VF1-phone-portrait-412x915.png" alt="phone"><figcaption>Phone portrait at the reference-responsive FOV: floor tones, glow strips and plinth bloom readable; full systematic mobile-fidelity program is VF-6 (per plan). Desktop renders are pixel-comparable to 006-A framing.</figcaption></figure>
+  </div>
+
+  <h3>VF1.5 · Quantitative appearance comparison (same-patch medians, reference frame 1672×941)</h3>
+  <table>
+    <tr><th>Patch</th><th>Reference</th><th>VF-1 render</th><th>ΔRGB (euclidean)</th><th>Reading</th></tr>
+    <tr><td>Marble left of plinth (700,520)</td><td>#B0A2AE</td><td>#B5A8AD</td><td>7.9</td><td>Base tone match</td></tr>
+    <tr><td>Marble below plinth (880,585)</td><td>#B6A6AD</td><td>#BDB0B3</td><td>13.6</td><td>Close; vein/blotch distribution EST.</td></tr>
+    <tr><td>Marble right slab (1150,470)</td><td>#CCB2AC</td><td>#B6A9AD</td><td>23.8</td><td>Warm-zone placement not reproduced (pattern EST. — documented deviation)</td></tr>
+    <tr><td>DEPT-05 floor centre</td><td>#94A0C7 (furniture-contaminated: lit table blue cast)</td><td>#969597</td><td>—</td><td>Comparison invalid vs furniture; albedo #805E4C matches catalogue by construction (test-enforced)</td></tr>
+  </table>
+
+  <h3>VF1.6 · VF-1 deviations and unresolved items (complete)</h3>
+  <table>
+    <tr><th>#</th><th>Item</th><th>Status</th></tr>
+    <tr><td>V1</td><td>Marble vein pattern + warm-zone placement</td><td><span class="tag t-est">EST.</span> — pattern not recoverable at greybox resolution; base tones measured; seeded/reproducible</td></tr>
+    <tr><td>V2</td><td>DEPT-01 Executive floor tone</td><td><b>UNRESOLVED</b> — both 2026-11-20 probes furniture-contaminated (#664732 room median / #433E3E front band); neutral floor kept; owner may resolve with a clean pixel coordinate</td></tr>
+    <tr><td>V3</td><td>PBR roughness/clearcoat/metalness/env intensities; HDR boosts ×6.0/×5.5; bloom threshold 3.0, intensity 0.5; shadow radius 4; tone mapping ACES</td><td><span class="tag t-est">EST.</span> styled after reference mood (Q-VF-02/03 defaults approved in plan); owner judgement requested at this gate</td></tr>
+    <tr><td>V4</td><td>Robot/furniture materials (VAC-LGT-05)</td><td>Not applicable in VF-1 — robots/furniture not started (VF-4/VF-3); robot tokens already catalogued</td></tr>
+    <tr><td>V5</td><td>Shadows: soft contact shadows to the lower-left</td><td>Key direction per LGT-02 observation (conf. Medium–Low); softness <span class="tag t-est">EST.</span>; glass/backdrop/emissive excluded (test-enforced)</td></tr>
+    <tr><td>V6</td><td>Bloom on screens/eyes (VAC-LGT-03)</td><td>Screens/eyes are robot/furniture scope; rim + strips bloom in VF-1</td></tr>
+  </table>
+</section>
+
 <section>
   <h2>5 · Measured vs estimated vs assumed — provenance summary</h2>
   <table>
@@ -187,7 +275,7 @@
 
 </main>
 <footer>
-  Package contents: 14 reference/render close-up pairs (<code>X-*-ref.png</code> / <code>X-*-render.png</code>), full-frame and overlay renders (<code>E01–E06</code>), facade/backdrop/plinth/sign sets from the mission run (<code>F-*</code>, <code>D-backdrop-*</code>, <code>P-plinth-006A-*</code>, <code>S-SIGN-*-006A</code>), responsive renders. Reference crops are read-only derivations of the locked original, committed as review artifacts per the owner's storage decision (2026-11-20) — the original file is untouched (checksum re-verified). Rendered check data: <code>greybox/data/rendered-check.json</code> · metrics: <code>greybox/data/greybox-metrics.json</code> · specialist report: <code>greybox/06-scene-006-a-report.md</code>. PR #1 remains open and unmerged; no implementation change was made for this review.
+  Package contents: 006-A pairs (14 × <code>X-*-ref/render.png</code>) and VF-1 pairs (7 × <code>Y-*-ref/vf1render.png</code>, full-frame <code>VF1-*.png</code>), full-frame and overlay renders (<code>E01–E06</code>), facade/backdrop/plinth/sign sets from the mission run (<code>F-*</code>, <code>D-backdrop-*</code>, <code>P-plinth-006A-*</code>, <code>S-SIGN-*-006A</code>), responsive renders. Reference crops are read-only derivations of the locked original, committed as review artifacts per the owner's storage decision (2026-11-20) — the original file is untouched (checksum re-verified). Rendered check data: <code>greybox/data/rendered-check.json</code> · metrics: <code>greybox/data/greybox-metrics.json</code> · specialist reports: <code>greybox/06-scene-006-a-report.md</code> + <code>greybox/08-vf1-materials-lighting-report.md</code>. PR #1 remains open and unmerged; no implementation change was made for this review.
 </footer>
 </body>
 </html>
