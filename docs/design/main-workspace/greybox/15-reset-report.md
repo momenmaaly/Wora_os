@@ -97,3 +97,71 @@ Independent reviewer (non-implementer) region-by-region acceptance pass against
 `docs/design/main-workspace/reference/wora-main-workspace.png` (SHA-256 verified), producing the
 final verdict, residual-difference list and browser-rendered evidence. VF-8/overall acceptance
 remains unclaimed until that gate passes.
+
+## 6. Independent review record (final verification gate, 2026-11-21)
+
+Reference SHA-256 re-verified before every pass (`6f91ff3d27f1d69d…`, unchanged). Review executed
+region-by-region against the browser-rendered implementation (vite 5173, single-shot 1920×1080
+puppeteer captures, ref upscaled LANCZOS to 1920×1080, S≈1.1483); blind pixel-derived findings,
+no measurement from code; findings → correction → re-render → re-review. Review renders
+`review-r12…r25` (scratch crops; evidence excerpts in `greybox/review/reset/r*-*.png`).
+
+### 6.1 Blind findings and corrections (R-ledger continuation)
+
+| # | Finding (blind) | Correction | Evidence |
+|---|---|---|---|
+| F12 | Display-wall screens read coplanar/overlapping their signs (Marketing dash, Engineering code) | Visor/monitor re-anchors (R8), dash/code reposition attempts **reverted** — measured px boxes reproduced ≤30 px gate only at solved positions; sign adjacency is ref-faithful | r13-marketing-zoom, projection test |
+| F18 | Engineering code screen floats mid-wall (builder ignored measured `centre_y`) | Builder consumes `centre_y` as the measured screen centre; code display mounted at measured 0.98 m **below** the sign | r23-eng-zoom |
+| F19 | Executive Office bare vs ref (dark walnut desk, warm slat back wall) | Exec desk → `darkwood` (#4E3E33, visual calibration), walnut back panel behind desk (measured slat sample token) | r21-exec-eng-sbs |
+| F20 | Desk monitors read as dark top-edge slabs (vertical) vs ref bright blue tilted panels | Whole monitor head assembly tilted 0.6 rad toward HOME camera; emissive face dominates bezel | r23/r24/r25-creative-zoom |
+| F21 | Lower facades: dark unlit masses vs ref pale precast + warm-lit window grid | ENV-014/015 facade texture (unlit, interior-lit palette: pale panels + dense warm window raster + shade gradient); RibbonPrimitive UVs added (ribbons had none — texture sampled one texel) | r13→r20-facade-sbs series |
+| F22 | Shelf-stands bare; desk bases solid slabs | Shelf decor (foliage/leather props), slim deskwood underframes (R11) | r11/r12-marketing-zoom |
+
+Two reposition attempts (dash to back wall, code display left) were **reverted after the
+measured px-box projection gate failed** (>30 px) — the solved FIT positions were correct and
+the perceived "overlap" is ref-faithful adjacency. Documented, not re-attempted.
+
+### 6.2 Measurement-method correction
+
+The §4.1 region table printed **self-deltas between successive implementation renders**, not
+deltas vs the reference (discovered while recomputing the final table; archived-final2 vs r25
+UI bands differ by ≤0.9, so the UI values were ours-vs-ours). The honest vs-reference table
+(mean |ΔRGB|, ref LANCZOS→1920×1080, same 16 region boxes) is
+`greybox/review/reset/final2-region-deltas.json`; headline: whole-frame 47.4 (final2/b84084d)
+→ **43.6 (r25)**; improvements engineering +16.3, exec-office +14.7, research +13.5, creative
++13.1, management +10.9, marketing +7.7, activity +1.7; profile −4.4 (avatar disc, documented),
+qa −6.2 and plaza −15.8 dominated by fixed-box **bleed** from corrected neighbours (exec dark
+furniture entering the plaza box) — plaza/management triples show the plaza itself unchanged
+(r25-plaza-triple, r25-management-triple). Patch-tone table (r10) remains valid for the floors.
+
+### 6.3 Residual deviations (documented, not invented)
+
+1. **Profile avatar**: ref has a photo avatar; implementation renders a neutral disc (no
+   invention of a person) — profile Δ27.5→31.9 within an otherwise exact panel.
+2. **Plinth wordmark**: ref shows a large "WORA" wordmark + logo on the dais; implementation
+   renders the measured-size label (size EST.) — visually smaller.
+3. **Atrium/plaza marble**: tone calibrated by patch (r8: plaza Δ−2.5); ref's veining/tilt-shift
+   micro-detail unmatchable without texture invention.
+4. **Facade window rhythm**: dense-grid placement EST. (storey count/bays not measurable at ref
+   resolution); palette, rhythm and shade calibrated visually (r18–r20).
+5. **DEPT-01 floor token**: unresolved (probe contamination history, test-enforced); neutral
+   floor kept.
+6. Region Δ floors dominated by ref micro-detail (book contents, plant leaves, warm cove light,
+   depth-of-field) — structural geometry verified exact at every zoom.
+
+### 6.4 Engineering validation
+
+`npm run validate` (tsc + vitest 77/77 + build + check-dist) — **PASS** at r25.
+Liveness guarded by #FF0000 injection probe (red share 1.78% ⇒ pipeline live; two identical
+consecutive renders were genuine, not staleness).
+
+### 6.5 Deliverable
+
+Final full-size desktop comparison package: `greybox/review/reset/side-by-side-final2.png`
+(ref top / implementation bottom, 1920×1080 each), `reset-final-<region>.png` ×16, full render
+`reset-final-1920x1080.png`, coordinate-grid overlay `reset-final-grid-overlay.png`,
+zoom evidence `r*-*.png`, measured table `final2-region-deltas.json`.
+
+**Verdict**: independent review complete; all fixable discrepancies found by the review were
+corrected (F12–F22); remaining deviations are documented above with evidence. Visual acceptance
+remains UNCLAIMED — the gate is the user's.

@@ -1,0 +1,82 @@
+{
+ "switcher": {
+  "final2": 23.8,
+  "r25": 23.7,
+  "improvement": 0.1
+ },
+ "command": {
+  "final2": 12.1,
+  "r25": 12.1,
+  "improvement": -0.0
+ },
+ "profile": {
+  "final2": 27.5,
+  "r25": 31.9,
+  "improvement": -4.4
+ },
+ "activity": {
+  "final2": 41.1,
+  "r25": 39.5,
+  "improvement": 1.7
+ },
+ "sidebar-bottom": {
+  "final2": 13.9,
+  "r25": 13.9,
+  "improvement": 0.0
+ },
+ "qa": {
+  "final2": 47.6,
+  "r25": 53.8,
+  "improvement": -6.2
+ },
+ "management": {
+  "final2": 66.3,
+  "r25": 55.4,
+  "improvement": 10.9
+ },
+ "header": {
+  "final2": 33.7,
+  "r25": 34.5,
+  "improvement": -0.8
+ },
+ "sidebar-top": {
+  "final2": 17.9,
+  "r25": 17.8,
+  "improvement": 0.0
+ },
+ "engineering": {
+  "final2": 74.0,
+  "r25": 57.7,
+  "improvement": 16.3
+ },
+ "plaza": {
+  "final2": 37.3,
+  "r25": 53.1,
+  "improvement": -15.8
+ },
+ "research": {
+  "final2": 67.4,
+  "r25": 53.9,
+  "improvement": 13.5
+ },
+ "search-status": {
+  "final2": 33.7,
+  "r25": 34.5,
+  "improvement": -0.8
+ },
+ "creative": {
+  "final2": 70.2,
+  "r25": 57.1,
+  "improvement": 13.1
+ },
+ "exec-office": {
+  "final2": 67.6,
+  "r25": 52.9,
+  "improvement": 14.7
+ },
+ "marketing": {
+  "final2": 64.0,
+  "r25": 56.2,
+  "improvement": 7.7
+ }
+}

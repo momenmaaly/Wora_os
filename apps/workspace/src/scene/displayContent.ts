@@ -159,6 +159,46 @@ function paintSkyline(ctx: CanvasRenderingContext2D, w: number, h: number, seed:
   }
 }
 
+// Lower-storey facade glazing (ENV-014/015, review R13): the reference shows the facades below
+// the terrace as warm-lit window grids. Per-pane treatment: warm dark glass, brighter toward the
+// head (interior light), occasional brighter panes. EST. scenery (layout unresolvable at ref res).
+function paintFacadePane(ctx: CanvasRenderingContext2D, w: number, h: number): void {
+  // review R22: ref facade = pale precast grid with a DENSE regular raster of warm-lit windows
+  // (~4 visible rows x ~5 cols per pane, window ≈55% pitch, thin dark mullions). Rhythm EST.
+  ctx.fillStyle = '#CBC8CC';
+  ctx.fillRect(0, 0, w, h);
+  const rows = 4;
+  const cols = 5;
+  const rowH = h / rows;
+  const colW = w / cols;
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const k = 0.55 + ((r * 7 + c * 13) % 5) * 0.1125; // varied brightness 0.55..1.0
+      const x = c * colW + colW * 0.14;
+      const y = r * rowH + rowH * 0.2;
+      const ww = colW * 0.72;
+      const wh = rowH * 0.6;
+      const g = ctx.createLinearGradient(0, y, 0, y + wh);
+      g.addColorStop(0, `rgba(${238 * k | 0},${206 * k | 0},${162 * k | 0},1)`);
+      g.addColorStop(1, `rgba(${152 * k | 0},${116 * k | 0},${82 * k | 0},1)`);
+      ctx.fillStyle = g;
+      ctx.fillRect(x, y, ww, wh);
+      ctx.fillStyle = `rgba(70,58,50,${0.32 * k})`; // ceiling shadow
+      ctx.fillRect(x, y, ww, wh * 0.16);
+      ctx.strokeStyle = 'rgba(64,62,66,0.95)';
+      ctx.lineWidth = Math.max(1.2, w * 0.012);
+      ctx.strokeRect(x, y, ww, wh);
+    }
+  }
+  // vertical shade: brighter at head, darker toward base (ref facade falls into shadow low)
+  const sh = ctx.createLinearGradient(0, 0, 0, h);
+  sh.addColorStop(0, 'rgba(255,255,255,0.08)');
+  sh.addColorStop(0.45, 'rgba(0,0,0,0)');
+  sh.addColorStop(1, 'rgba(20,18,26,0.42)');
+  ctx.fillStyle = sh;
+  ctx.fillRect(0, 0, w, h);
+}
+
 const cache = new Map<string, Material>();
 
 /** Material for a catalogued display content, or null when the refId is not a display. */
@@ -176,6 +216,20 @@ export function displayMaterialFor(refId: string | undefined, key?: string): Mat
     tex.anisotropy = 4;
     const mat = new MeshBasicMaterial({ map: tex, toneMapped: false });
     cache.set(key, mat);
+    return mat;
+  }
+  if (refId === 'ENV-014' || refId === 'ENV-015') {
+    const hitF = cache.get(refId);
+    if (hitF) return hitF;
+    const canvas = document.createElement('canvas');
+    canvas.width = 128;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d')!;
+    paintFacadePane(ctx, 128, 256);
+    const tex = new CanvasTexture(canvas);
+    tex.colorSpace = SRGBColorSpace;
+    const mat = new MeshBasicMaterial({ map: tex, toneMapped: false }); // interior-lit: unlit
+    cache.set(refId, mat);
     return mat;
   }
   if (!refId) return null;

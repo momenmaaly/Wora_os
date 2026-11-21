@@ -26,11 +26,13 @@ export function createMarbleTexture(size = 512, seed = 20261120): CanvasTexture 
   canvas.width = size;
   canvas.height = size;
   const ctx = canvas.getContext('2d')!;
-  // Base: blend across the sampled marble range (#ACA0AB – #D2B9B0, MEASURED).
+  // Base: sampled marble range (#ACA0AB – #D2B9B0, MEASURED) render-calibrated ×0.82 — review
+  // R7: marble carries the atrium/plaza brightness; at the sampled tones the lit render read
+  // +24 vs the reference patch (probe: flat ID shows the patch is slab, not the floor token).
   const base = ctx.createLinearGradient(0, 0, size * 0.7, size);
-  base.addColorStop(0, '#B9A6AC');
-  base.addColorStop(0.45, '#B4A1A5');
-  base.addColorStop(1, '#ACA0AB');
+  base.addColorStop(0, '#98888D');
+  base.addColorStop(0.45, '#938487');
+  base.addColorStop(1, '#8D838C');
   ctx.fillStyle = base;
   ctx.fillRect(0, 0, size, size);
   const rnd = prng(seed);

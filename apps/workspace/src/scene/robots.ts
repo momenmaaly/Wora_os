@@ -98,14 +98,16 @@ export function buildRobots(): P[] {
     group.push(sphere('robot-shell', [x, headCY, z], headR));
     // visor: wraparound black glass plate protruding from the head front (ref visors span most
     // of the face; the previous recessed plate read as a dot on the enlarged head)
-    const vx = x + Math.sin(yaw) * (headR * 0.72);
-    const vz = z + Math.cos(yaw) * (headR * 0.72);
-    group.push(box('robot-visor', [vx, headCY - headR * 0.02, vz], [headR * 1.3, headR * 0.8, headR * 0.5], yaw));
+    // review R8: the visor front was coplanar with the head sphere (hidden → heads read as plain
+    // eggs); protrude it clearly past the sphere surface like the reference's wraparound visor
+    const vx = x + Math.sin(yaw) * (headR * 0.86);
+    const vz = z + Math.cos(yaw) * (headR * 0.86);
+    group.push(box('robot-visor', [vx, headCY - headR * 0.02, vz], [headR * 1.42, headR * 0.92, headR * 0.6], yaw));
     // emissive eyes on the visor front
     for (const side of [-1, 1] as const) {
-      const ex = x + Math.sin(yaw) * (headR * 1.0) + Math.cos(yaw) * side * headR * 0.48;
-      const ez = z + Math.cos(yaw) * (headR * 1.0) - Math.sin(yaw) * side * headR * 0.48;
-      group.push(sphere('robot-eye', [ex, headCY + headR * 0.08, ez], 0.075));
+      const ex = x + Math.sin(yaw) * (headR * 1.14) + Math.cos(yaw) * side * headR * 0.42;
+      const ez = z + Math.cos(yaw) * (headR * 1.14) - Math.sin(yaw) * side * headR * 0.42;
+      group.push(sphere('robot-eye', [ex, headCY + headR * 0.1, ez], 0.085));
     }
     // ear discs (blue; ROBOT-046 orange-red → leather token)
     const earMat = r.id === 'ROBOT-046' ? ('leather' as const) : ('screen' as const);

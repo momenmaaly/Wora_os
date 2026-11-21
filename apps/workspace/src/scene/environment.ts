@@ -240,7 +240,7 @@ function plinthDetails(): { rim: CylinderSpec; labels: LabelSpec[] } {
   };
   const labels: LabelSpec[] = [
     { key: 'plinth-logo', refId: logo.ref, kind: 'label', text: '', icon: 'wora-mark', center: logo.center_world as [number, number, number], size: [logo.size_m[0], logo.size_m[1]], rotationY: Math.PI / 4, orientation: 'flat' },
-    { key: 'plinth-wordmark', refId: word.ref, kind: 'label', text: 'WORA', color: '#68646B', center: word.center_world as [number, number, number], size: [word.size_m[0], word.size_m[1]], rotationY: Math.PI / 4, orientation: 'flat' },
+    { key: 'plinth-wordmark', refId: word.ref, kind: 'label', text: 'WORA', color: '#55525A', center: word.center_world as [number, number, number], size: [word.size_m[0], word.size_m[1]], rotationY: Math.PI / 4, orientation: 'flat' },
   ];
   return { rim, labels };
 }

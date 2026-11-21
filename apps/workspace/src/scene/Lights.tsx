@@ -12,10 +12,10 @@
 export function Lights() {
   return (
     <>
-      <hemisphereLight args={['#D6E4F0', '#A3938A', 1.5]} />
+      <hemisphereLight args={['#D6E4F0', '#A3938A', 0.55]} />
       <directionalLight
         position={[25, 75, -12]}
-        intensity={1.55}
+        intensity={0.8}
         color="#FFDFB4"
         castShadow
         shadow-mapSize-width={2048}
@@ -32,7 +32,7 @@ export function Lights() {
       />
       {/* Executive Office warm interior glow: the reference room reads warmly lit from inside
           (lamps/warm cladding, analysis/03 §4). Position = DEPT-01 centre; intensity/radius EST. */}
-      <pointLight position={[-2.2, 2.6, -8.6]} intensity={6} distance={15} decay={2} color="#FFC98A" />
+      <pointLight position={[-2.2, 2.6, -8.6]} intensity={3.5} distance={15} decay={2} color="#FFC98A" />
     </>
   );
 }

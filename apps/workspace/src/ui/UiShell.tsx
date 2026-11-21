@@ -161,8 +161,8 @@ function Logo({ size }: { size: number }) {
           <stop offset="1" stopColor="#035A86" />
         </linearGradient>
       </defs>
-      <rect x="3.6" y="6.4" width="13.6" height="13.6" rx="6" transform="rotate(45 10.4 13.2)" fill="none" stroke="#16CBDD" strokeWidth="3.6" />
-      <rect x="11.2" y="8" width="13.6" height="13.6" rx="6" transform="rotate(45 18 14.8)" fill="none" stroke="#0B7FB8" strokeWidth="3.6" opacity="0.95" />
+      <rect x="2.2" y="5.6" width="14.4" height="14.4" rx="6.4" transform="rotate(45 9.4 12.8)" fill="none" stroke="#16CBDD" strokeWidth="3.9" />
+      <rect x="9.6" y="9.4" width="13.2" height="13.2" rx="5.8" transform="rotate(45 16.2 16)" fill="#073B63" stroke="#0B7FB8" strokeWidth="3.2" opacity="0.96" />
     </svg>
   );
 }
@@ -198,7 +198,7 @@ export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
   const [search, setSearch] = useState('');
 
   const px = (n: number) => `${n * s}px`;
-  const panel: CSSProperties = { position: 'absolute', borderRadius: px(12), background: '#0A1422', boxShadow: `0 ${px(10)} ${px(30)} rgba(0,0,0,0.35)` };
+  const panel: CSSProperties = { position: 'absolute', borderRadius: px(12), background: '#0A1422', boxShadow: `0 ${px(6)} ${px(14)} rgba(0,0,0,0.22)` }; // review R1: ref panels show crisp edges, minimal shadow
 
   return (
     <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', fontFamily: "'Inter', 'Roboto', system-ui, sans-serif" }} data-testid="ui-shell">
@@ -317,10 +317,10 @@ export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
               <div style={{ position: 'absolute', left: 0, top: 0 }}><RobotAvatar size={20 * s} visor={r.visor === 'peach' ? '#B8875F' : '#05080F'} /></div>
               <div style={{ position: 'absolute', left: px(33), top: 0 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', width: px(186) }}>
-                  <span style={{ fontSize: px(13), fontWeight: 600, color: '#FFFFFF', whiteSpace: 'nowrap' }}>{r.name}</span>
-                  <span style={{ fontSize: px(11), color: '#D2D5DA', whiteSpace: 'nowrap' }}>{r.time}</span>
+                  <span style={{ fontSize: px(12), fontWeight: 600, color: '#FFFFFF', whiteSpace: 'nowrap' }}>{r.name}</span>
+                  <span style={{ fontSize: px(10.5), color: '#D2D5DA', whiteSpace: 'nowrap' }}>{r.time}</span>
                 </div>
-                <div style={{ fontSize: px(11.5), color: '#D8DCE4', whiteSpace: 'nowrap', marginTop: px(2) }}>{r.detail}</div>
+                <div style={{ fontSize: px(10.5), color: '#D8DCE4', whiteSpace: 'nowrap', marginTop: px(2) }}>{r.detail}</div>
               </div>
             </div>
           );

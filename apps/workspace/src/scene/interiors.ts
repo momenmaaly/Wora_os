@@ -95,9 +95,9 @@ function buildWallPanels(): P[] {
   });
 }
 
-const DESK_DEPT_MATERIAL: Record<string, 'deskwood' | 'floor'> = {
+const DESK_DEPT_MATERIAL: Record<string, 'deskwood' | 'floor' | 'darkwood'> = {
   // analysis/03 §6: light wood (Marketing), white (Engineering), grey/white (Creative, Research), wood/dark (QA), dark wood (Executive)
-  'DEPT-01': 'deskwood',
+  'DEPT-01': 'darkwood', // review R21: ref Executive desk reads dark walnut (r20 row-2 zoom)
   'DEPT-02': 'deskwood',
   'DEPT-03': 'floor',
   'DEPT-04': 'floor',
@@ -151,7 +151,11 @@ function buildItem(it: InteriorItem): P[] {
     case 'desk': {
       const mat = DESK_DEPT_MATERIAL[it.dept ?? ''] ?? 'deskwood';
       out.push(box(mat, [x, h - 0.025, z], [pxW, 0.05, d], yaw, 'D'));
-      out.push(box(mat, [x, h / 2 - 0.05, z], [pxW * 0.96, h - 0.1, d * 0.9], yaw, 'D'));
+      out.push(box(mat === 'darkwood' ? 'darkwood' : 'deskwood', [x, h / 2 - 0.02, z], [pxW * 0.9, h - 0.08, d * 0.3], yaw, 'D')); // review R11 underframe (R21: exec matches its dark top)
+      if (it.dept === 'DEPT-01') {
+        // review R21: ref Executive Office has a warm wood slat wall behind the desk (r20 row-2 zoom; walnut = measured slat sample)
+        out.push(box('walnut', [x - Math.sin(yaw) * (d * 0.5 + 0.14), 0.78, z - Math.cos(yaw) * (d * 0.5 + 0.14)], [pxW * 0.95, 1.56, 0.12], yaw, 'D'));
+      }
       break;
     }
     case 'conference-table': {
@@ -225,7 +229,7 @@ function buildItem(it: InteriorItem): P[] {
     case 'rack': {
       out.push(box('frame', [x, h / 2, z], [pxW, h, d], yaw, 'RK'));
       // reset: the reference server banks glow blue across the whole front face
-      out.push(box('screen', [x + Math.sin(yaw) * (d / 2 + 0.005), h * 0.55, z + Math.cos(yaw) * (d / 2 + 0.005)], [pxW * 0.88, h * 0.66, 0.015], yaw, 'RK'));
+      out.push(box('screen', [x, h * 0.55, z], [pxW * 0.88, h * 0.66, d * 1.02], yaw, 'RK'));
       break;
     }
     case 'shelf-stand': {
@@ -233,6 +237,13 @@ function buildItem(it: InteriorItem): P[] {
       for (let i = 0; i < shelves; i++) {
         const y = (h * (i + 1)) / shelves;
         out.push(box('deskwood', [x, y, z], [pxW, 0.04, d], yaw, 'SH'));
+        // review R11: ref shelf units carry objects (vases/plants/books) — EST. pieces per board
+        for (let k = 0; k < 3; k++) {
+          const ox = (k - 1) * pxW * 0.24;
+          const oy = y + 0.08;
+          if (k % 2 === 0) out.push(cyl('foliage', [x + Math.cos(yaw) * ox, oy, z - Math.sin(yaw) * ox], 0.05, 0.09, 10, 'SH'));
+          else out.push(box('leather', [x + Math.cos(yaw) * ox, oy - 0.015, z - Math.sin(yaw) * ox], [0.06, 0.13, 0.06], yaw, 'SH'));
+        }
       }
       out.push(box('deskwood', [x - Math.cos(yaw) * pxW * 0.48, h / 2, z + Math.sin(yaw) * pxW * 0.48], [0.05, h, d], yaw, 'SH'));
       out.push(box('deskwood', [x + Math.cos(yaw) * pxW * 0.48, h / 2, z - Math.sin(yaw) * pxW * 0.48], [0.05, h, d], yaw, 'SH'));
@@ -254,7 +265,9 @@ function buildItem(it: InteriorItem): P[] {
     }
     case 'display-wall':
     case 'display-stand': {
-      const cy = mount + h / 2;
+      // review R22: centre_y in the JSON is the MEASURED screen centre when present (px-box derived);
+      // the KIND_DIM mount default only applies when no measurement exists.
+      const cy = it.centre_y ?? mount + h / 2;
       out.push(box('frame', [x, cy, z], [pxW, h, 0.06], yaw, 'DP'));
       // reset: the reference shows display screens glowing from both sides — slab proud of the frame
       out.push(box('screen', [x, cy, z], [pxW * 0.96, h * 0.94, 0.07], yaw, 'DP'));
@@ -275,10 +288,11 @@ function buildItem(it: InteriorItem): P[] {
     }
     case 'monitor': {
       out.push(box('frame', [x, 0.75 + 0.12, z], [0.06, 0.24, 0.05], yaw, 'MO'));
-      out.push(box('frame', [x, 0.75 + 0.3, z], [0.55, 0.36, 0.04], yaw, 'MO'));
-      // reset audit: the reference renders every desk monitor as a bright blue panel from both
-      // sides — the screen slab protrudes past the frame on both faces (was recessed → dark backs)
-      out.push(box('screen', [x, 0.75 + 0.3, z], [0.5, 0.31, 0.052], yaw, 'MO'));
+      // review R24: whole head assembly leans back toward the HOME camera (r23/r24 zooms: a vertical
+      // slab shows only its dark top edge; the ref reads every desk monitor as a bright blue panel)
+      const TILT = 0.6;
+      out.push({ ...box('frame', [x, 0.93, z], [0.55, 0.36, 0.04], yaw, 'MO'), tilt: TILT });
+      out.push({ ...box('screen', [x, 0.93, z], [0.56, 0.37, 0.052], yaw, 'MO'), tilt: TILT }); // face dominates the bezel at render scale
       break;
     }
     default:

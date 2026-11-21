@@ -12,6 +12,10 @@ import { BACKGROUND_COLOR } from './materials';
 import type { FovRule } from './camera';
 
 /**
+ * Review R1/R2 (reset): scene-wide tone calibration — measured scene patches read +20…+55 RGB vs
+ * the reference at the VF-1 light budget; hemisphere/dir scaled (1.5→0.95 / 1.55→1.15, both
+ * further trimmed after R2) and robot shells given a slight emissive so figures read bright on
+ * darker floors exactly as in the reference. Flat mode skips lights entirely (unchanged).
  * VF-1: shadow-mapped key light (VAC-LGT-02) + ACES tone mapping (r3f default) + selective bloom
  * (VAC-LGT-03: only HDR emitters — rim ×6, strips ×5.5 — clear the threshold-3 band that diffuse albedo cannot reach;
  * intensity budget subtle per approved default Q-VF-03). Flat measurement mode skips the

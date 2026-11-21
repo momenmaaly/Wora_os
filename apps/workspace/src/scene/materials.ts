@@ -25,6 +25,8 @@ interface Spec {
   clearcoat?: number;
   clearcoatRoughness?: number;
   envIntensity?: number;
+  emissive?: string;
+  emissiveIntensity?: number;
   /** Procedural texture (runtime-generated; no assets). */
   map?: 'marble' | 'wood-management';
   mapRepeat?: [number, number];
@@ -32,11 +34,11 @@ interface Spec {
 
 const spec: Record<MaterialKey, Spec> = {
   // Atrium marble: base #B4A1A5 (probe) inside sampled range #ACA0AB–#D2B9B0; polished (VAC-LGT-04).
-  slab: { color: '#B4A1A5', map: 'marble', mapRepeat: [4, 4], roughness: 0.16, metalness: 0, clearcoat: 0.5, clearcoatRoughness: 0.25, envIntensity: 0.35 },
+  slab: { color: '#A18E92', map: 'marble', mapRepeat: [4, 4], roughness: 0.16, metalness: 0, clearcoat: 0.5, clearcoatRoughness: 0.25, envIntensity: 0.35 }, // review R4: atrium patch +25 vs ref — albedo rescaled (was the probe-measured #B4A1A5)
   mass: { color: '#4E5260', roughness: 0.95, metalness: 0 }, // exterior facade mass (scene.facade)
-  floor: { color: '#C6C2C4', roughness: 0.85, metalness: 0 }, // neutral floor; per-dept tones in DEPT_FLOOR_COLORS
-  deck: { color: '#C9C4C6', roughness: 0.85, metalness: 0 }, // terrace decking (scenery; shadow-receive exempt — the ref terrace reads evenly sunlit)
-  partition: { color: '#D6DADC', opacity: 0.35, roughness: 0.06, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.08, envIntensity: 0.5 }, // clear glass, white specular streaks
+  floor: { color: '#9C989B', roughness: 0.85, metalness: 0 }, // review R5: atrium patch +24 at #B3AFB1 — rescaled ×0.85
+  deck: { color: '#BDB8BA', roughness: 0.85, metalness: 0 }, // terrace decking (review R4: −10 vs ref terrace patch) (scenery; shadow-receive exempt — the ref terrace reads evenly sunlit)
+  partition: { color: '#D6DADC', opacity: 0.12, roughness: 0.06, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.08, envIntensity: 0.8 }, // review R4: through-glass robots still dimmed at 0.26 (ref ≈200 everywhere) — 0.12 + stronger reflections; glass look carried by frames/streaks
   balustrade: { color: '#D6DADC', opacity: 0.35, roughness: 0.06, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.08, envIntensity: 1.2 },
   // Plinth dais: same marble family (ENV-002 floor-coloured; treatment EST.)
   plinth: { color: '#C9C4C9', map: 'marble', mapRepeat: [2, 2], roughness: 0.3, metalness: 0, clearcoat: 0.3, clearcoatRoughness: 0.35, envIntensity: 0.3 },
@@ -54,12 +56,14 @@ const spec: Record<MaterialKey, Spec> = {
   // VF-2/VF-3/VF-4 (catalogued; analysis/03 §6-§7, analysis/05 §1.5):
   walnut: { color: '#897047', roughness: 0.6, metalness: 0, envIntensity: 0.25 }, // DEPT-01 slat back wall (MEASURED sample)
   screen: { color: '#1A55C0', unlit: true, boost: 4.5 }, // emissive displays/monitors/tablets — reference screens read bright blue (reset render audit)
-  deskwood: { color: '#805E4C', roughness: 0.65, metalness: 0 }, // work desks / shelves / trunks (warm wood)
+  monitorscreen: { color: '#16305E', unlit: true, boost: 1.5 }, // review R21: desk monitors read DARK navy in the ref (r20 row-2 zoom); the ×4.5 screen token is only for the big wall displays
+  darkwood: { color: '#4E3E33', roughness: 0.55, metalness: 0 }, // review R21: Executive desk reads dark walnut in the ref (r20 row-2 zoom)
+  deskwood: { color: '#C0A284', roughness: 0.65, metalness: 0 }, // review R11: ref desk wood reads light (r10 zoom still dark at #A98B72)
   leather: { color: '#8F5A32', roughness: 0.7, metalness: 0 }, // sofas/upholstery (reset: ref ottoman ≈ RGB(96,62,34) cognac)
   rug: { color: '#82818F', roughness: 0.95, metalness: 0 }, // rugs / chairs / ottoman (reset: ref lounge rug ≈ RGB(116,113,125) lit)
   bench: { color: '#665D68', roughness: 0.8, metalness: 0 }, // curved bench / grey lounge chairs (MEASURED sample)
   planter: { color: '#8A7160', roughness: 0.85, metalness: 0 }, // planter drums (reset: ref ≈ RGB(136,112,97) warm stone, lit) // concrete planters (MEASURED shadow-side sample)
-  'robot-shell': { color: '#F2F4FA', roughness: 0.3, metalness: 0, clearcoat: 0.8, clearcoatRoughness: 0.25, envIntensity: 0.5 }, // glossy white shells (est. token)
+  'robot-shell': { color: '#F2F4FA', roughness: 0.3, metalness: 0, clearcoat: 0.8, clearcoatRoughness: 0.25, envIntensity: 0.85, emissive: '#FFFFFF', emissiveIntensity: 0.5 }, // review R5: shaded-side robots must read ≈200 like the reference (front ≈207 ✓; emissive dominates on shaded faces)
   'robot-visor': { color: '#05080F', roughness: 0.15, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.1, envIntensity: 0.5 }, // black glass visor (est. token)
   'robot-eye': { color: '#2FD2FF', unlit: true, boost: 3.5 }, // emissive cyan eyes (#19C6FF–#3FD8FF) — blooms
 };
@@ -71,11 +75,11 @@ const spec: Record<MaterialKey, Spec> = {
  * kept until the owner resolves it — no invention.
  */
 export const DEPT_FLOOR_COLORS: Partial<Record<DeptId, { color: string; provenance: string }>> = {
-  'DEPT-02': { color: '#927A74', provenance: 'MEASURED analysis/03 §7' },
-  'DEPT-03': { color: '#8F7F80', provenance: 'MEASURED analysis/03 §7' },
+  'DEPT-02': { color: '#8B8890', provenance: 'MEASURED ref-image floor patch (review R11 visual calibration ≈RGB(140,138,142); §7 sample #927A74 was from a shadowed zone — reference image is the authority)' },
+  'DEPT-03': { color: '#8F7F80', provenance: 'MEASURED analysis/03 §7 (restored — marble recalibration changed the room brightness; sample re-pinned)' },
   'DEPT-04': { color: '#836B5F', provenance: 'MEASURED analysis/03 §7' },
   'DEPT-05': { color: '#805E4C', provenance: 'MEASURED analysis/03 §7 (warm wood; grain EST.)' },
-  'DEPT-06': { color: '#817880', provenance: 'MEASURED probe 2026-11-20 (front-band smooth-pixel median)' },
+  'DEPT-06': { color: '#817880', provenance: 'MEASURED probe 2026-11-20 (restored — see DEPT-02 note)' },
   'DEPT-07': { color: '#655B61', provenance: 'MEASURED analysis/03 §7' },
 };
 
@@ -106,6 +110,8 @@ export const FLAT_COLORS: Record<MaterialKey, string> = {
   // VF-2/VF-3/VF-4 flat IDs — chosen >40 Manhattan from every existing scanned colour (test-enforced)
   walnut: '#503018',
   screen: '#0000c0',
+  monitorscreen: '#20e0d0',
+  darkwood: '#e01040',
   deskwood: '#b06020',
   leather: '#c08060',
   rug: '#30284e',
@@ -167,6 +173,8 @@ export function createMaterials(flat = false): Record<MaterialKey, Material> {
     if (map && s.mapRepeat) map.repeat.set(s.mapRepeat[0], s.mapRepeat[1]);
     const base = {
       color: new Color(map ? '#ffffff' : s.color), // map carries the sampled tones
+      emissive: s.emissive ? new Color(s.emissive) : undefined,
+      emissiveIntensity: s.emissiveIntensity,
       map,
       roughness: s.roughness ?? 0.9,
       metalness: s.metalness ?? 0,

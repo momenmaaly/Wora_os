@@ -2300,7 +2300,7 @@
     ],
     "rot_y": 0.865,
     "prov": {
-     "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+     "pos": "MEASURED px box [485,205,70,70]@941, centre_y 0.854 consumed as measured screen centre (review R22 semantics fix)",
      "size": "EST. derived from px via HOME camera",
      "catalog": "analysis/03 \u00a74 DEPT-02 blue bar chart display"
     }
@@ -2328,7 +2328,7 @@
     ],
     "rot_y": 0.908,
     "prov": {
-     "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+     "pos": "FIT derived from px box via HOME inverse projection (wall-adjacent EST.); review R13 revert \u2014 repositioning broke the \u226430 px projection gate, adjacency to the sign is ref-faithful",
      "size": "EST. derived from px via HOME camera",
      "catalog": "analysis/03 \u00a74 DEPT-02 wall dashboard"
     }
@@ -2428,7 +2428,7 @@
      -0.211,
      -14.873
     ],
-    "centre_y": 0.823,
+    "centre_y": 0.98,
     "size": [
      1.767,
      0.442,
@@ -2436,7 +2436,7 @@
     ],
     "rot_y": 0.67,
     "prov": {
-     "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+     "pos": "MEASURED px box [1287,232,73,68]@941 \u2014 screen sits directly BELOW the Engineering sign (sign bottom \u2248 px 230, screen top \u2248 px 232); centre \u22480.98 m via solver scale \u224852 px/m (review R23 \u2014 builder consumes centre_y as the measured screen centre)",
      "size": "EST. derived from px via HOME camera",
      "catalog": "analysis/03 \u00a74 DEPT-03 code display"
     }

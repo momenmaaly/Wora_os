@@ -43,6 +43,8 @@ export type MaterialKey =
   // concrete planters, and the robot shell/visor/eye tokens (analysis/05 §1.5).
   | 'walnut'
   | 'screen'
+  | 'monitorscreen'
+  | 'darkwood'
   | 'deskwood'
   | 'leather'
   | 'rug'
@@ -61,6 +63,8 @@ export interface BoxSpec {
   size: Vec3;
   /** rotation about +Y in radians */
   rotationY: number;
+  /** review R23: optional tilt about the local X axis after yaw (monitor faces lean back toward the HOME camera) */
+  tilt?: number;
 }
 export interface CylinderSpec {
   key: string;

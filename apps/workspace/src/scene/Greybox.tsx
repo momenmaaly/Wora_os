@@ -58,7 +58,7 @@ function shadowProps(material: string) {
 
 function BoxPrimitive({ spec, materials, edges, materialOverride }: { spec: BoxSpec; materials: Record<string, Material>; edges: boolean; materialOverride?: Material }) {
   return (
-    <group position={spec.center} rotation={[0, spec.rotationY, 0]} scale={spec.size} name={spec.key} userData={{ refId: spec.refId }}>
+    <group position={spec.center} rotation={[spec.tilt ?? 0, spec.rotationY, 0]} scale={spec.size} name={spec.key} userData={{ refId: spec.refId }}>
       <mesh geometry={unitBox} material={materialOverride ?? materials[spec.material]} renderOrder={spec.material === 'partition' || spec.material === 'balustrade' ? 2 : 0} {...shadowProps(spec.material)} />
       {edges && (
         <lineSegments geometry={unitBoxEdges}>
@@ -91,7 +91,7 @@ function SpherePrimitive({ spec, materials }: { spec: SphereSpec; materials: Rec
   );
 }
 
-function RibbonPrimitive({ spec, materials }: { spec: RibbonSpec; materials: Record<string, Material> }) {
+function RibbonPrimitive({ spec, materials, materialOverride }: { spec: RibbonSpec; materials: Record<string, Material>; materialOverride?: Material }) {
   const geometry = useMemo(() => {
     const n = spec.pts.length;
     const pos = new Float32Array(n * 2 * 3);
@@ -110,11 +110,29 @@ function RibbonPrimitive({ spec, materials }: { spec: RibbonSpec; materials: Rec
     const g = new BufferGeometry();
     g.setAttribute('position', new BufferAttribute(pos, 3));
     g.setIndex(idx);
+    // review R16: UVs so textured overrides (facade glazing) map along the ribbon
+    const uv = new Float32Array(n * 2 * 2);
+    let uSpan = 0;
+    const us: number[] = [];
+    for (let i = 0; i < n; i++) {
+      const u = spec.pts[i].u;
+      if (i) uSpan += Math.abs(u - spec.pts[i - 1].u);
+      us.push(uSpan);
+    }
+    const yTop = spec.pts[0].yTop;
+    const yBot = spec.pts[0].yBot;
+    for (let i = 0; i < n; i++) {
+      const u = uSpan ? us[i] / uSpan : 0;
+      uv.set([u, 1], i * 4);
+      uv.set([u, 0], i * 4 + 2);
+    }
+    g.setAttribute('uv', new BufferAttribute(uv, 2));
     g.computeVertexNormals();
+    void yTop; void yBot;
     return g;
   }, [spec]);
   return (
-    <mesh geometry={geometry} material={materials[spec.material]} name={spec.key} userData={{ refId: spec.refId }} {...shadowProps(spec.material)} />
+    <mesh geometry={geometry} material={materialOverride ?? materials[spec.material]} name={spec.key} userData={{ refId: spec.refId }} {...shadowProps(spec.material)} />
   );
 }
 
@@ -359,10 +377,10 @@ export function Greybox({ layers = DEFAULT_LAYERS, flat = false }: { layers?: Gr
         {layers.fascia && (
           <group name="Facade">
             {env.fascia.map((f) => <RibbonPrimitive key={f.key} spec={f} materials={materials} />)}
-            {env.facadePanes.map((f) => <RibbonPrimitive key={f.key} spec={f} materials={materials} />)}
+            {env.facadePanes.map((f) => <RibbonPrimitive key={f.key} spec={f} materials={materials} materialOverride={displayMaterialFor(f.refId) ?? undefined} />)}
             {boostThin(env.facadeMullions, mobileK).map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
             {boostThin(env.facadeTransoms, mobileK).map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
-            {env.backGlazingPanes.map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
+            {env.backGlazingPanes.map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} materialOverride={displayMaterialFor(f.refId) ?? undefined} />)}
             {boostThin(env.backGlazingMullions, mobileK).map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
           </group>
         )}

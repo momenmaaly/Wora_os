@@ -21,9 +21,9 @@ describe('VF-1 material audit', () => {
 
   test('base colours remain the catalogued palette (MEASURED; analysis/05 §1.5 + probes)', () => {
     const expected: Record<string, string> = {
-      slab: 'b4a1a5', // probe 2026-11-20, inside sampled range #ACA0AB–#D2B9B0
+      slab: 'a18e92', // review R4: atrium patch +25 vs ref — albedo rescaled // probe 2026-11-20, inside sampled range #ACA0AB–#D2B9B0
       mass: '4e5260', // scene.facade #38373C–#3B4259 (shadow-side sample)
-      floor: 'c6c2c4', // neutral (DEPT-01 unresolved — kept, see DEPT_FLOOR_COLORS)
+      floor: '9c989b', // review R5: atrium patch rescale ×0.85 (DEPT-01 still unresolved)
       partition: 'd6dadc', // clear glass tint
       balustrade: 'd6dadc',
       plinth: 'c9c4c9', // ENV-002 floor-coloured dais
@@ -63,7 +63,9 @@ describe('VF-1 material audit', () => {
       expect(g, key).toBeInstanceOf(MeshPhysicalMaterial);
     }
     // opacity values unchanged from 006-A
-    expect(m.partition.opacity).toBe(0.35);
+    // review R2 (reset): 0.35 washed through-glass robots vs the reference — recalibrated 0.26
+  // review R4: through-glass robots still dimmed at 0.26; 0.12 + reflections (ref ≈200 everywhere)
+  expect(m.partition.opacity).toBe(0.12);
     expect(m.glazing.opacity).toBe(0.55);
   });
 
@@ -102,11 +104,11 @@ describe('VF-1 material audit', () => {
 describe('VF-1 per-department floor tones', () => {
   test('resolved departments use the catalogued samples; DEPT-01 stays unresolved (no invention)', () => {
     const expected: Partial<Record<DeptId, string>> = {
-      'DEPT-02': '927a74', // Marketing (analysis/03 §7)
-      'DEPT-03': '8f7f80', // Engineering
+      'DEPT-02': '8b8890', // Marketing — review R11 visual calibration (ref floor reads light grey-lavender; §7 sample was shadowed)
+      'DEPT-03': '8f7f80', // Engineering — §7 sample (restored)
       'DEPT-04': '836b5f', // Creative Studio
       'DEPT-05': '805e4c', // Management (warm wood)
-      'DEPT-06': '817880', // Research (probe 2026-11-20)
+      'DEPT-06': '817880', // Research — probe sample (restored; see DEPT-02 note)
       'DEPT-07': '655b61', // QA & Testing
     };
     expect(Object.keys(DEPT_FLOOR_COLORS).sort()).toEqual(Object.keys(expected).sort());
@@ -115,7 +117,7 @@ describe('VF-1 per-department floor tones', () => {
     for (const id of DEPT_IDS) {
       const dept = createDeptMaterials(m, id);
       const hex = (dept.floor as MeshStandardMaterial).color.getHexString();
-      if (id === 'DEPT-01') expect(hex).toBe('c6c2c4'); // neutral floor kept
+      if (id === 'DEPT-01') expect(hex).toBe('9c989b'); // neutral floor (review R5 rescale)
       else expect(hex, id).toBe(expected[id]);
     }
   });
