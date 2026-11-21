@@ -37,7 +37,20 @@ export type MaterialKey =
   | 'strip'
   | 'city'
   | 'parapet'
-  | 'foliage';
+  | 'foliage'
+  // VF-2/VF-3/VF-4 keys (owner-approved Visual Foundation Completion Plan, 2026-11-20):
+  // walnut slat wall (#897047 MEASURED), emissive screens, per-type furniture woods/upholstery,
+  // concrete planters, and the robot shell/visor/eye tokens (analysis/05 §1.5).
+  | 'walnut'
+  | 'screen'
+  | 'deskwood'
+  | 'leather'
+  | 'rug'
+  | 'bench'
+  | 'planter'
+  | 'robot-shell'
+  | 'robot-visor'
+  | 'robot-eye';
 
 export interface BoxSpec {
   key: string;
@@ -59,7 +72,17 @@ export interface CylinderSpec {
   height: number;
   segments: number;
 }
-export type PrimitiveSpec = BoxSpec | CylinderSpec;
+export type PrimitiveSpec = BoxSpec | CylinderSpec | SphereSpec;
+
+/** Sphere (VF-3/VF-4: chibi robot heads, foliage canopies, emissive eyes). */
+export interface SphereSpec {
+  key: string;
+  refId?: string;
+  kind: 'sphere';
+  material: MaterialKey;
+  center: Vec3;
+  radius: number;
+}
 
 /** Vertical ribbon in a plane parallel to one axis: runs along `axis` at fixed `at`, from yTop(u) down to yBot(u). */
 export interface RibbonSpec {

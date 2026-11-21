@@ -50,6 +50,17 @@ const spec: Record<MaterialKey, Spec> = {
   city: { color: '#2E3A4C', unlit: true }, // backdrop city cards (scenery, CR-02) — no bloom
   parapet: { color: '#E8E5E9', roughness: 0.7, metalness: 0, envIntensity: 0.25 }, // terrace parapet band (scenery)
   foliage: { color: '#3E5A3A', roughness: 0.9, metalness: 0 }, // greenery canopy discs (scenery)
+  // VF-2/VF-3/VF-4 (catalogued; analysis/03 §6-§7, analysis/05 §1.5):
+  walnut: { color: '#897047', roughness: 0.6, metalness: 0, envIntensity: 0.25 }, // DEPT-01 slat back wall (MEASURED sample)
+  screen: { color: '#1A55C0', unlit: true, boost: 2.2 }, // emissive displays/monitors/tablets (#134AB0–#1A55C0) — blooms
+  deskwood: { color: '#805E4C', roughness: 0.65, metalness: 0 }, // work desks / shelves / trunks (warm wood)
+  leather: { color: '#966B61', roughness: 0.7, metalness: 0 }, // sofas/upholstery (MEASURED sample)
+  rug: { color: '#4E4F63', roughness: 0.95, metalness: 0 }, // rugs / dark chairs / ottoman (MEASURED sample)
+  bench: { color: '#665D68', roughness: 0.8, metalness: 0 }, // curved bench / grey lounge chairs (MEASURED sample)
+  planter: { color: '#4B536A', roughness: 0.85, metalness: 0 }, // concrete planters (MEASURED shadow-side sample)
+  'robot-shell': { color: '#F2F4FA', roughness: 0.3, metalness: 0, clearcoat: 0.8, clearcoatRoughness: 0.25, envIntensity: 0.5 }, // glossy white shells (est. token)
+  'robot-visor': { color: '#05080F', roughness: 0.15, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.1, envIntensity: 0.5 }, // black glass visor (est. token)
+  'robot-eye': { color: '#2FD2FF', unlit: true, boost: 3.5 }, // emissive cyan eyes (#19C6FF–#3FD8FF) — blooms
 };
 
 /**
@@ -67,9 +78,9 @@ export const DEPT_FLOOR_COLORS: Partial<Record<DeptId, { color: string; provenan
   'DEPT-07': { color: '#655B61', provenance: 'MEASURED analysis/03 §7' },
 };
 
-/** Glass and backdrop/emissive surfaces never cast or receive shadows. */
-export const SHADOW_EXCLUDE_CAST = new Set<MaterialKey>(['partition', 'balustrade', 'glazing', 'city', 'rim', 'strip']);
-export const SHADOW_EXCLUDE_RECEIVE = new Set<MaterialKey>(['partition', 'balustrade', 'glazing', 'city', 'rim', 'strip']);
+/** Glass, backdrop and emissive surfaces never cast or receive shadows. */
+export const SHADOW_EXCLUDE_CAST = new Set<MaterialKey>(['partition', 'balustrade', 'glazing', 'city', 'rim', 'strip', 'screen', 'robot-eye']);
+export const SHADOW_EXCLUDE_RECEIVE = new Set<MaterialKey>(['partition', 'balustrade', 'glazing', 'city', 'rim', 'strip', 'screen', 'robot-eye']);
 
 /** Flat, unlit ID colours for the dev "flat" mode (pixel measurement of the rendered frame).
  *  VF-1 rule: byte-identical to Mission 006-A so flat-mode measurements stay comparable. */
@@ -90,6 +101,17 @@ export const FLAT_COLORS: Record<MaterialKey, string> = {
   city: '#020202',
   parapet: '#c0c0c0',
   foliage: '#004000',
+  // VF-2/VF-3/VF-4 flat IDs — chosen >40 Manhattan from every existing scanned colour (test-enforced)
+  walnut: '#503018',
+  screen: '#0000c0',
+  deskwood: '#b06020',
+  leather: '#c08060',
+  rug: '#30284e',
+  bench: '#8878a0',
+  planter: '#3c485c',
+  'robot-shell': '#f0f0f0',
+  'robot-visor': '#240430',
+  'robot-eye': '#00d0a0',
 };
 export const DEPT_FLAT_COLORS: Record<string, string> = {
   'DEPT-01': '#ff8000',

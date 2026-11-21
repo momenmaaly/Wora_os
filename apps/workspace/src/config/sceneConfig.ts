@@ -40,7 +40,7 @@ export interface CameraConfig {
 /** Reference frame of the locked image (1672 × 941). */
 export const REFERENCE = { width: 1672, height: 941, sha256: architecture.reference.sha256 } as const;
 
-const EXPECTED_SCHEMA = 'wora-main-workspace-architecture/v2';
+const EXPECTED_SCHEMA = 'wora-main-workspace-architecture/v3';
 if (architecture.schema !== EXPECTED_SCHEMA) {
   throw new Error(`scene-architecture.json schema mismatch: ${architecture.schema} (expected ${EXPECTED_SCHEMA})`);
 }
@@ -147,3 +147,51 @@ export function fasciaPlusZBot(x: number): number {
   const t = (x - 4.4) / (14.6 - 4.4);
   return -1.0334 + t * (-2.3 + 1.0334);
 }
+
+/* ── VF-2/VF-3 interiors (schema v3 `interiors` section, 2026-11-20) ──────────── */
+
+export interface InteriorItem {
+  id: string;
+  kind: string;
+  dept: string | null;
+  px_box: [number, number, number, number] | null;
+  floor_xz: [number, number] | null;
+  size: [number, number, number] | null;
+  rot_y?: number;
+  centre_y?: number;
+  wall?: string;
+  prov: { pos?: string; size?: string; catalog: string };
+}
+
+/** Furniture/large-display placements (analysis/03 §3–§6 via the HOME inverse projection). */
+export const INTERIORS: InteriorItem[] = (architecture.interiors as unknown as { items: InteriorItem[] }).items;
+
+/* ── VF-4 robot visual reconstruction (schema v3 `robot_visual` section) ─────── */
+
+export type RobotPose = 'seated' | 'standing' | 'walking';
+export type RobotFacing = 'cam' | 'left' | 'right' | 'back';
+
+export interface RobotVisual {
+  id: string;
+  zone: string;
+  headPx: [number, number];
+  floorXZ: [number, number];
+  pose: RobotPose;
+  facing: RobotFacing;
+  pxBox: [number, number, number, number];
+  /** [width, height] derived from the §5.2 visible box (height reference only; geometry anchors to assumedHeadH) */
+  sizeM: [number, number];
+}
+
+export const ROBOT_VISUAL: RobotVisual[] = (architecture.robot_visual as unknown as {
+  rows: { id: string; zone: string; head_px: [number, number]; floor_xz: [number, number]; pose: RobotPose; facing: RobotFacing; px_box: [number, number, number, number]; size_m: [number, number] }[];
+}).rows.map((r) => ({
+  id: r.id,
+  zone: r.zone,
+  headPx: r.head_px,
+  floorXZ: r.floor_xz,
+  pose: r.pose,
+  facing: r.facing,
+  pxBox: r.px_box,
+  sizeM: r.size_m,
+}));

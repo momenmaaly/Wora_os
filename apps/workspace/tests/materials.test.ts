@@ -127,17 +127,36 @@ describe('VF-1 per-department floor tones', () => {
   });
 });
 
-describe('VF-1 flat measurement mode is byte-identical to 006-A', () => {
+describe('VF-1 flat measurement mode: 006-A IDs byte-identical (subset)', () => {
   const expectedFlat: Record<string, string> = {
     slab: '#808080', mass: '#202020', floor: '#ffffff', partition: '#00ff00', balustrade: '#00ffff',
     plinth: '#ff0000', sign: '#0000ff', fascia: '#3c3c3c', facade: '#2c2c2c', glazing: '#585858',
     frame: '#0c0c0c', rim: '#00c000', strip: '#ffc0c0', city: '#020202', parapet: '#c0c0c0', foliage: '#004000',
   };
-  test('FLAT_COLORS unchanged', () => {
-    expect(FLAT_COLORS).toEqual(expectedFlat);
+  test('006-A flat IDs unchanged (VF-2/3/4 keys may only be added)', () => {
+    for (const [k, v] of Object.entries(expectedFlat)) expect(FLAT_COLORS[k as keyof typeof FLAT_COLORS], k).toBe(v);
+    expect(Object.keys(FLAT_COLORS).length).toBeGreaterThanOrEqual(Object.keys(expectedFlat).length);
     const flat = createMaterials(true);
     expect(flat.slab).toBeInstanceOf(MeshBasicMaterial);
     expect(flat.slab.toneMapped).toBe(false);
     expect(createFlatMaterial('#123456').toneMapped).toBe(false);
+  });
+  test('every VF-added flat ID is >40 Manhattan from every scanned colour (measurement uniqueness)', () => {
+    // Original 006-A rule: *new* colours are chosen >40 Manhattan from every scanned colour.
+    // Legacy 006-A↔006-A pairs are frozen (byte-identical flat mode) and exempt: facade|mass (36),
+    // city|frame (30) — they never appear in the same scan region (documented in report 12).
+    const hex = (c: string) => [parseInt(c.slice(1, 3), 16), parseInt(c.slice(3, 5), 16), parseInt(c.slice(5, 7), 16)];
+    const legacy = new Set(['slab', 'mass', 'floor', 'partition', 'balustrade', 'plinth', 'sign', 'fascia', 'facade', 'glazing', 'frame', 'rim', 'strip', 'city', 'parapet', 'foliage']);
+    const entries = Object.entries(FLAT_COLORS);
+    for (const [k, v] of entries) {
+      if (legacy.has(k)) continue; // VF-added keys are checked below against EVERYTHING
+      const a = hex(v);
+      for (const [k2, v2] of entries) {
+        if (k2 === k) continue;
+        const b = hex(v2);
+        const dist = Math.abs(a[0] - b[0]) + Math.abs(a[1] - b[1]) + Math.abs(a[2] - b[2]);
+        expect(dist, `${k} vs ${k2}`).toBeGreaterThan(40);
+      }
+    }
   });
 });

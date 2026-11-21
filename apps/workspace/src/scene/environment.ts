@@ -41,6 +41,8 @@ export interface EnvironmentModel {
   backdropParapet: RibbonSpec[];
   backdropParapetStrips: RibbonSpec[];
   backdropTrees: DiscSpec[];
+  /** VF-5: trunks under the terrace trees (catalogued structure, positions on the same assumed planes). */
+  backdropTreeTrunks: CylinderSpec[];
 }
 
 export const SIGN_ICONS: Record<string, string> = {
@@ -275,7 +277,7 @@ function signFaces(): LabelSpec[] {
 }
 
 /** Backdrop scenery (CR-02): city cards, terrace parapet bands, greenery discs. */
-function backdrop(): { city: BoxSpec[]; parapet: RibbonSpec[]; parapetStrips: RibbonSpec[]; trees: DiscSpec[] } {
+function backdrop(): { city: BoxSpec[]; parapet: RibbonSpec[]; parapetStrips: RibbonSpec[]; trees: DiscSpec[]; trunks: CylinderSpec[] } {
   const bd = ENV.backdrop;
   const p = bd.planes;
   const city: BoxSpec[] = [
@@ -318,12 +320,18 @@ function backdrop(): { city: BoxSpec[]; parapet: RibbonSpec[]; parapetStrips: Ri
     );
   }
   const trees: DiscSpec[] = [];
+  const trunks: CylinderSpec[] = [];
   for (const [name, list, normal] of [['right_terrace', bd.trees.right_terrace, 'z'], ['left_terrace', bd.trees.left_terrace, 'x'], ['bottom_right', bd.trees.bottom_right, 'x']] as const) {
     for (const [i, t] of (list as { c: [number, number, number]; r_m: number }[]).entries()) {
       trees.push({ key: `tree-${name}-${i}`, kind: 'disc', material: 'foliage', center: t.c, radius: t.r_m, normal: normal as 'x' | 'z', refId: 'ENV-016' });
+      // VF-5: the reference shows light trunks under the terrace canopies (analysis/03 §3/§4).
+      // Trunk length EST. (r × 1.5) on the same assumed plane (CR-02); canopy position unchanged.
+      const trunkLen = t.r_m * 1.5;
+      const c: [number, number, number] = [t.c[0], t.c[1] - t.r_m * 0.6 - trunkLen / 2, t.c[2]];
+      trunks.push({ key: `tree-${name}-${i}-trunk`, kind: 'cylinder', material: 'deskwood', center: c, radius: Math.max(0.06, t.r_m * 0.12), height: trunkLen, segments: 10, refId: 'ENV-016' });
     }
   }
-  return { city, parapet, parapetStrips, trees };
+  return { city, parapet, parapetStrips, trees, trunks };
 }
 
 export function buildEnvironmentModel(): EnvironmentModel {
@@ -349,5 +357,6 @@ export function buildEnvironmentModel(): EnvironmentModel {
     backdropParapet: bd.parapet,
     backdropParapetStrips: bd.parapetStrips,
     backdropTrees: bd.trees,
+    backdropTreeTrunks: bd.trunks,
   };
 }

@@ -65,6 +65,9 @@ export function DevInspector() {
     fascia: flag('fascia', DEFAULT_LAYERS.fascia),
     strips: flag('strips', DEFAULT_LAYERS.strips),
     backdrop: flag('backdrop', DEFAULT_LAYERS.backdrop),
+    structure: flag('structure', DEFAULT_LAYERS.structure),
+    interiors: flag('interiors', DEFAULT_LAYERS.interiors),
+    robots: flag('robots3d', DEFAULT_LAYERS.robots),
   }));
   const [flat, setFlat] = useState(flag('flat', false));
   const [orbit, setOrbit] = useState(false);

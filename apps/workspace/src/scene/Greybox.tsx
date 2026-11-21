@@ -10,14 +10,17 @@ import {
   BufferGeometry,
   CircleGeometry,
   CylinderGeometry,
+  SphereGeometry,
   EdgesGeometry,
   PlaneGeometry,
   CanvasTexture,
   DoubleSide,
   type Material,
 } from 'three';
-import { buildGreyboxModel, type BoxSpec, type CylinderSpec, type DiscSpec, type LabelSpec, type PrimitiveSpec, type RibbonSpec } from './model';
+import { buildGreyboxModel, type BoxSpec, type CylinderSpec, type DiscSpec, type LabelSpec, type PrimitiveSpec, type RibbonSpec, type SphereSpec } from './model';
 import { buildEnvironmentModel, type EnvironmentModel } from './environment';
+import { buildInteriors, buildStructureCompletion } from './interiors';
+import { buildRobots } from './robots';
 import { createDeptMaterials, createFlatMaterial, createMaterials, DEPT_FLAT_COLORS, EDGE_COLOR, SHADOW_EXCLUDE_CAST, SHADOW_EXCLUDE_RECEIVE } from './materials';
 import type { DeptId } from '../config/sceneConfig';
 
@@ -54,6 +57,13 @@ function CylinderPrimitive({ spec, materials, edges }: { spec: CylinderSpec; mat
         </lineSegments>
       )}
     </group>
+  );
+}
+
+function SpherePrimitive({ spec, materials }: { spec: SphereSpec; materials: Record<string, Material> }) {
+  const geometry = useMemo(() => new SphereGeometry(spec.radius, 18, 14), [spec]);
+  return (
+    <mesh geometry={geometry} material={materials[spec.material]} position={spec.center} name={spec.key} userData={{ refId: spec.refId }} {...shadowProps(spec.material)} />
   );
 }
 
@@ -254,7 +264,9 @@ function LabelPrimitive({ spec }: { spec: LabelSpec }) {
 }
 
 function Primitive({ spec, materials, edges = true }: { spec: PrimitiveSpec; materials: Record<string, Material>; edges?: boolean }) {
-  return spec.kind === 'box' ? <BoxPrimitive spec={spec} materials={materials} edges={edges} /> : <CylinderPrimitive spec={spec} materials={materials} edges={edges} />;
+  if (spec.kind === 'box') return <BoxPrimitive spec={spec} materials={materials} edges={edges} />;
+  if (spec.kind === 'sphere') return <SpherePrimitive spec={spec} materials={materials} />;
+  return <CylinderPrimitive spec={spec} materials={materials} edges={edges} />;
 }
 
 export interface GreyboxLayers {
@@ -265,13 +277,22 @@ export interface GreyboxLayers {
   fascia: boolean;
   strips: boolean;
   backdrop: boolean;
+  /** VF-2 structure completion (walnut wall, partition frames) */
+  structure: boolean;
+  /** VF-3 furniture / large displays */
+  interiors: boolean;
+  /** VF-4 robots */
+  robots: boolean;
 }
 
-export const DEFAULT_LAYERS: GreyboxLayers = { mass: true, partitions: true, signs: true, balustrades: true, fascia: true, strips: true, backdrop: true };
+export const DEFAULT_LAYERS: GreyboxLayers = { mass: true, partitions: true, signs: true, balustrades: true, fascia: true, strips: true, backdrop: true, structure: true, interiors: true, robots: true };
 
 export function Greybox({ layers = DEFAULT_LAYERS, flat = false }: { layers?: GreyboxLayers; flat?: boolean }) {
   const model = useMemo(() => buildGreyboxModel(), []);
   const env: EnvironmentModel = useMemo(() => buildEnvironmentModel(), []);
+  const structureSpecs = useMemo(() => (flat ? [] : buildStructureCompletion()), [flat]);
+  const interiorSpecs = useMemo(() => (flat ? [] : buildInteriors()), [flat]);
+  const robotSpecs = useMemo(() => (flat ? [] : buildRobots()), [flat]);
   const materials = useMemo(() => createMaterials(flat), [flat]);
   const deptFloor = useMemo(
     () =>
@@ -324,12 +345,30 @@ export function Greybox({ layers = DEFAULT_LAYERS, flat = false }: { layers?: Gr
           {env.edgeStrips.map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
         </group>
       )}
+      {/* VF-2/VF-3/VF-4 content groups. Flat mode skips them: measurement neutrality for the
+          rendered check (identical behaviour to the 006-A flat mode; documented in the reports). */}
+      {!flat && layers.structure && (
+        <group name="StructureCompletion">
+          {structureSpecs.map((f) => <Primitive key={f.key} spec={f} materials={materials} edges={false} />)}
+        </group>
+      )}
+      {!flat && layers.interiors && (
+        <group name="Interiors">
+          {interiorSpecs.map((f) => <Primitive key={f.key} spec={f} materials={materials} edges={false} />)}
+        </group>
+      )}
+      {!flat && layers.robots && (
+        <group name="Robots">
+          {robotSpecs.map((f) => <Primitive key={f.key} spec={f} materials={materials} edges={false} />)}
+        </group>
+      )}
       {layers.backdrop && (
         <group name="Backdrop">
           {env.backdropCity.map((f) => <BoxPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
           {env.backdropParapet.map((f) => <RibbonPrimitive key={f.key} spec={f} materials={materials} />)}
           {env.backdropParapetStrips.map((f) => <RibbonPrimitive key={f.key} spec={f} materials={materials} />)}
           {env.backdropTrees.map((f) => <DiscPrimitive key={f.key} spec={f} materials={materials} />)}
+          {env.backdropTreeTrunks.map((f) => <CylinderPrimitive key={f.key} spec={f} materials={materials} edges={false} />)}
         </group>
       )}
     </group>

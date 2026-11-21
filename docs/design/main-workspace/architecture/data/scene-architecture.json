@@ -1,5 +1,5 @@
 {
-  "schema": "wora-main-workspace-architecture/v2",
+  "schema": "wora-main-workspace-architecture/v3",
   "reference": {
     "path": "docs/design/main-workspace/reference/wora-main-workspace.png",
     "sha256": "6f91ff3d27f1d69d7189b6d1a599088086bb50048d1c0b492e3ebcdb718036a1",
@@ -245,7 +245,7 @@
       "partition_height": 2.07,
       "sign": {
         "id": "SIGN-01",
-        "wall": "front facet (normal ≈ +X+Z)",
+        "wall": "front facet (normal \u2248 +X+Z)",
         "anchor_world": [
           -10.397,
           2.072,
@@ -1970,5 +1970,5980 @@
       "post_bay_m": 2.4,
       "note": "anthracite top rail + slender posts (scene.frame family). Bay 2.4 m est.: the reference balustrades read as glass with a thin rail; posts are sparse. Styling estimate, not a measurement."
     }
+  },
+  "interiors": {
+    "note": "VF-3 (2026-11-20): furniture placements derived from the catalogued screen-px boxes (analysis/03 \u00a73-\u00a76) via the approved HOME camera inverse projection (verified: plinth centre residual 0.23 m, SIGN-01 anchor exact). Widths FIT-derived from px; depths/heights type-standard EST. unless noted; wall items wall-adjacent EST. Content of displays recorded by type; chart artwork is ND at greybox level (art pass).",
+    "items": [
+      {
+        "id": "INT-01-DESK",
+        "kind": "exec-desk",
+        "dept": "DEPT-01",
+        "px_box": [
+          808,
+          238,
+          132,
+          44
+        ],
+        "floor_xz": [
+          -8.515,
+          -7.631
+        ],
+        "size": [
+          3.203,
+          1.92,
+          1.068
+        ],
+        "rot_y": 0.782,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-01 furniture"
+        }
+      },
+      {
+        "id": "INT-01-RUG",
+        "kind": "rug",
+        "dept": "DEPT-01",
+        "px_box": [
+          780,
+          255,
+          180,
+          45
+        ],
+        "floor_xz": [
+          -7.87,
+          -6.849
+        ],
+        "size": [
+          4.331,
+          2.6,
+          1.083
+        ],
+        "rot_y": 0.783,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-01 (light patterned)"
+        }
+      },
+      {
+        "id": "INT-01-LOUNGE-L",
+        "kind": "lounge-chair",
+        "dept": "DEPT-01",
+        "px_box": [
+          730,
+          260,
+          35,
+          30
+        ],
+        "floor_xz": [
+          -10.344,
+          -5.138
+        ],
+        "size": [
+          0.846,
+          0.51,
+          0.725
+        ],
+        "rot_y": 0.814,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-01 front-left"
+        }
+      },
+      {
+        "id": "INT-01-LOUNGE-R",
+        "kind": "lounge-chair",
+        "dept": "DEPT-01",
+        "px_box": [
+          985,
+          260,
+          35,
+          22
+        ],
+        "floor_xz": [
+          -6.327,
+          -9.848
+        ],
+        "size": [
+          0.85,
+          0.51,
+          0.534
+        ],
+        "rot_y": 0.751,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-01 front-right"
+        }
+      },
+      {
+        "id": "INT-01-SHELF-L",
+        "kind": "shelf-wall",
+        "dept": "DEPT-01",
+        "px_box": [
+          760,
+          185,
+          40,
+          35
+        ],
+        "wall": "x0",
+        "floor_xz": [
+          -13.275,
+          -8.516
+        ],
+        "centre_y": 0.437,
+        "size": [
+          1.0,
+          0.25,
+          0.875
+        ],
+        "rot_y": 0.809,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-01 left wall shelf"
+        }
+      },
+      {
+        "id": "INT-01-SHELF-R",
+        "kind": "shelf-wall",
+        "dept": "DEPT-01",
+        "px_box": [
+          940,
+          180,
+          55,
+          60
+        ],
+        "wall": "z0",
+        "floor_xz": [
+          -8.602,
+          -11.86
+        ],
+        "centre_y": 0.743,
+        "size": [
+          1.362,
+          0.34,
+          1.486
+        ],
+        "rot_y": 0.754,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-01 right floating shelves"
+        }
+      },
+      {
+        "id": "INT-01-PLANT-L",
+        "kind": "plant",
+        "dept": "DEPT-01",
+        "px_box": [
+          740,
+          210,
+          22,
+          30
+        ],
+        "floor_xz": [
+          -12.362,
+          -7.181
+        ],
+        "size": [
+          0.545,
+          0.33,
+          0.743
+        ],
+        "rot_y": 0.813,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-01 plants left"
+        }
+      },
+      {
+        "id": "INT-01-PLANT-R",
+        "kind": "plant",
+        "dept": "DEPT-01",
+        "px_box": [
+          1005,
+          215,
+          22,
+          28
+        ],
+        "floor_xz": [
+          -7.639,
+          -11.715
+        ],
+        "size": [
+          0.544,
+          0.33,
+          0.693
+        ],
+        "rot_y": 0.748,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-01 plants right"
+        }
+      },
+      {
+        "id": "INT-01-WALNUT",
+        "kind": "walnut-wall",
+        "dept": "DEPT-01",
+        "px_box": null,
+        "floor_xz": null,
+        "prov": {
+          "catalog": "analysis/03 \u00a72.2/\u00a74 DEPT-01 walnut slat back wall #897047 (MEASURED sample)",
+          "pos": "BY CONSTRUCTION on the DEPT-01 back footprint edge (inner face)"
+        }
+      },
+      {
+        "id": "INT-02-DISP-BAR",
+        "kind": "display-wall",
+        "dept": "DEPT-02",
+        "px_box": [
+          485,
+          205,
+          70,
+          70
+        ],
+        "wall": "z0",
+        "floor_xz": [
+          -14.844,
+          -2.454
+        ],
+        "centre_y": 0.854,
+        "size": [
+          1.708,
+          0.427,
+          1.708
+        ],
+        "rot_y": 0.865,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-02 blue bar chart display"
+        }
+      },
+      {
+        "id": "INT-02-DISP-DASH",
+        "kind": "display-wall",
+        "dept": "DEPT-02",
+        "px_box": [
+          320,
+          230,
+          70,
+          50
+        ],
+        "wall": "x0",
+        "floor_xz": [
+          -17.135,
+          1.25
+        ],
+        "centre_y": 0.611,
+        "size": [
+          1.71,
+          0.427,
+          1.221
+        ],
+        "rot_y": 0.908,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-02 wall dashboard"
+        }
+      },
+      {
+        "id": "INT-02-SHELF",
+        "kind": "shelf-stand",
+        "dept": "DEPT-02",
+        "px_box": [
+          452,
+          160,
+          78,
+          95
+        ],
+        "wall": "x0",
+        "floor_xz": [
+          -16.643,
+          -2.035
+        ],
+        "centre_y": 1.171,
+        "size": [
+          1.923,
+          0.481,
+          2.342
+        ],
+        "rot_y": 0.879,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-02 wooden bookshelf"
+        }
+      },
+      {
+        "id": "INT-02-PLANT-L",
+        "kind": "plant",
+        "dept": "DEPT-02",
+        "px_box": [
+          240,
+          265,
+          50,
+          90
+        ],
+        "floor_xz": [
+          -15.729,
+          5.359
+        ],
+        "size": [
+          1.183,
+          0.71,
+          2.129
+        ],
+        "rot_y": 0.933,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-02 large plant left"
+        }
+      },
+      {
+        "id": "INT-02-PLANT-R",
+        "kind": "plant",
+        "dept": "DEPT-02",
+        "px_box": [
+          560,
+          268,
+          40,
+          62
+        ],
+        "floor_xz": [
+          -11.539,
+          -0.79
+        ],
+        "size": [
+          0.951,
+          0.57,
+          1.474
+        ],
+        "rot_y": 0.855,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-02 plant right"
+        }
+      },
+      {
+        "id": "INT-03-DISP-CODE",
+        "kind": "display-wall",
+        "dept": "DEPT-03",
+        "px_box": [
+          1287,
+          232,
+          73,
+          68
+        ],
+        "wall": "z0",
+        "floor_xz": [
+          -0.211,
+          -14.873
+        ],
+        "centre_y": 0.823,
+        "size": [
+          1.767,
+          0.442,
+          1.646
+        ],
+        "rot_y": 0.67,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-03 code display"
+        }
+      },
+      {
+        "id": "INT-03-PLANT-A",
+        "kind": "plant",
+        "dept": "DEPT-03",
+        "px_box": [
+          1186,
+          188,
+          22,
+          22
+        ],
+        "floor_xz": [
+          -5.799,
+          -16.375
+        ],
+        "size": [
+          0.554,
+          0.33,
+          0.554
+        ],
+        "rot_y": 0.704,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-03 plants back"
+        }
+      },
+      {
+        "id": "INT-03-PLANT-B",
+        "kind": "plant",
+        "dept": "DEPT-03",
+        "px_box": [
+          1274,
+          218,
+          22,
+          22
+        ],
+        "floor_xz": [
+          -3.088,
+          -16.576
+        ],
+        "size": [
+          0.547,
+          0.33,
+          0.547
+        ],
+        "rot_y": 0.682,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-03 plants back"
+        }
+      },
+      {
+        "id": "INT-04-DISP-ART",
+        "kind": "display-stand",
+        "dept": "DEPT-04",
+        "px_box": [
+          356,
+          487,
+          65,
+          63
+        ],
+        "wall": "x0",
+        "floor_xz": [
+          -6.32,
+          9.368
+        ],
+        "centre_y": 0.683,
+        "size": [
+          1.41,
+          0.352,
+          1.366
+        ],
+        "rot_y": 0.905,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-04 artwork monitor"
+        }
+      },
+      {
+        "id": "INT-04-SHELF",
+        "kind": "shelf-stand",
+        "dept": "DEPT-04",
+        "px_box": [
+          478,
+          462,
+          38,
+          68
+        ],
+        "wall": "z0",
+        "floor_xz": [
+          -5.391,
+          6.936
+        ],
+        "centre_y": 0.742,
+        "size": [
+          0.829,
+          0.207,
+          1.484
+        ],
+        "rot_y": 0.876,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-04 bookshelf/cabinet"
+        }
+      },
+      {
+        "id": "INT-04-BOARD",
+        "kind": "whiteboard",
+        "dept": "DEPT-04",
+        "px_box": [
+          543,
+          480,
+          38,
+          60
+        ],
+        "wall": "z0",
+        "floor_xz": [
+          -4.057,
+          6.654
+        ],
+        "centre_y": 0.651,
+        "size": [
+          0.825,
+          0.206,
+          1.303
+        ],
+        "rot_y": 0.864,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-04 pin-board back-right"
+        }
+      },
+      {
+        "id": "INT-04-PLANT-A",
+        "kind": "plant",
+        "dept": "DEPT-04",
+        "px_box": [
+          446,
+          480,
+          18,
+          22
+        ],
+        "floor_xz": [
+          -7.019,
+          6.924
+        ],
+        "size": [
+          0.398,
+          0.24,
+          0.486
+        ],
+        "rot_y": 0.888,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-04 plants"
+        }
+      },
+      {
+        "id": "INT-04-PLANT-B",
+        "kind": "plant",
+        "dept": "DEPT-04",
+        "px_box": [
+          510,
+          498,
+          14,
+          18
+        ],
+        "floor_xz": [
+          -5.57,
+          6.379
+        ],
+        "size": [
+          0.307,
+          0.18,
+          0.395
+        ],
+        "rot_y": 0.873,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-04 small plant on cabinet"
+        }
+      },
+      {
+        "id": "INT-04-PLANT-C",
+        "kind": "plant",
+        "dept": "DEPT-04",
+        "px_box": [
+          590,
+          532,
+          20,
+          26
+        ],
+        "floor_xz": [
+          -2.879,
+          6.359
+        ],
+        "size": [
+          0.431,
+          0.26,
+          0.56
+        ],
+        "rot_y": 0.852,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-04 large plant"
+        }
+      },
+      {
+        "id": "INT-04-PLANT-D",
+        "kind": "plant",
+        "dept": "DEPT-04",
+        "px_box": [
+          256,
+          555,
+          30,
+          35
+        ],
+        "floor_xz": [
+          -6.739,
+          12.27
+        ],
+        "size": [
+          0.642,
+          0.39,
+          0.749
+        ],
+        "rot_y": 0.936,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-04 plants left"
+        }
+      },
+      {
+        "id": "INT-04-WALLPANEL",
+        "kind": "wall-panel",
+        "dept": "DEPT-04",
+        "px_box": [
+          540,
+          470,
+          44,
+          75
+        ],
+        "wall": "z0",
+        "floor_xz": [
+          -3.889,
+          6.714
+        ],
+        "centre_y": 0.812,
+        "size": [
+          0.953,
+          0.238,
+          1.625
+        ],
+        "rot_y": -1.571,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a72.2 white wall slab behind Creative Studio pin-board"
+        }
+      },
+      {
+        "id": "INT-05-DISP-CHART",
+        "kind": "display-wall",
+        "dept": "DEPT-05",
+        "px_box": [
+          1472,
+          460,
+          75,
+          65
+        ],
+        "wall": "z0",
+        "floor_xz": [
+          9.943,
+          -8.563
+        ],
+        "centre_y": 0.717,
+        "size": [
+          1.654,
+          0.413,
+          1.433
+        ],
+        "rot_y": 0.624,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-05 wall screen charts"
+        }
+      },
+      {
+        "id": "INT-05-BOARD",
+        "kind": "whiteboard",
+        "dept": "DEPT-05",
+        "px_box": [
+          1317,
+          420,
+          53,
+          60
+        ],
+        "wall": "x0",
+        "floor_xz": [
+          6.509,
+          -7.794
+        ],
+        "centre_y": 0.671,
+        "size": [
+          1.185,
+          0.296,
+          1.341
+        ],
+        "rot_y": 0.66,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-05 whiteboard"
+        }
+      },
+      {
+        "id": "INT-05-WALLPANEL",
+        "kind": "wall-panel",
+        "dept": "DEPT-05",
+        "px_box": [
+          1314,
+          412,
+          60,
+          72
+        ],
+        "wall": "x0",
+        "floor_xz": [
+          6.56,
+          -7.655
+        ],
+        "centre_y": 0.804,
+        "size": [
+          1.339,
+          0.335,
+          1.607
+        ],
+        "rot_y": 0,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a72.2 white wall slab behind Management whiteboard"
+        }
+      },
+      {
+        "id": "INT-05-TABLE",
+        "kind": "conference-table",
+        "dept": "DEPT-05",
+        "px_box": [
+          1365,
+          505,
+          175,
+          75
+        ],
+        "floor_xz": [
+          10.609,
+          -5.923
+        ],
+        "size": [
+          3.766,
+          2.26,
+          1.614
+        ],
+        "rot_y": 0.635,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-05 warm wood, highlight #E4A77D"
+        }
+      },
+      {
+        "id": "INT-05-PLANT-A",
+        "kind": "plant",
+        "dept": "DEPT-05",
+        "px_box": [
+          1384,
+          464,
+          16,
+          18
+        ],
+        "floor_xz": [
+          6.873,
+          -8.487
+        ],
+        "size": [
+          0.358,
+          0.21,
+          0.403
+        ],
+        "rot_y": 0.652,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-05 back plants"
+        }
+      },
+      {
+        "id": "INT-05-PLANT-B",
+        "kind": "plant",
+        "dept": "DEPT-05",
+        "px_box": [
+          1424,
+          469,
+          16,
+          18
+        ],
+        "floor_xz": [
+          7.646,
+          -8.933
+        ],
+        "size": [
+          0.358,
+          0.21,
+          0.402
+        ],
+        "rot_y": 0.642,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-05 back plants"
+        }
+      },
+      {
+        "id": "INT-05-PLANT-C",
+        "kind": "plant",
+        "dept": "DEPT-05",
+        "px_box": [
+          1284,
+          494,
+          16,
+          20
+        ],
+        "floor_xz": [
+          6.284,
+          -5.76
+        ],
+        "size": [
+          0.352,
+          0.21,
+          0.44
+        ],
+        "rot_y": 0.677,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-05 plant left"
+        }
+      },
+      {
+        "id": "INT-05-PLANT-D",
+        "kind": "plant",
+        "dept": "DEPT-05",
+        "px_box": [
+          1614,
+          544,
+          16,
+          20
+        ],
+        "floor_xz": [
+          12.723,
+          -9.066
+        ],
+        "size": [
+          0.349,
+          0.21,
+          0.436
+        ],
+        "rot_y": 0.594,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-05 plant right"
+        }
+      },
+      {
+        "id": "INT-05-PLANTER",
+        "kind": "planter-box",
+        "dept": "DEPT-05",
+        "px_box": [
+          1484,
+          612,
+          40,
+          30
+        ],
+        "floor_xz": [
+          13.016,
+          -4.599
+        ],
+        "size": [
+          0.841,
+          0.5,
+          0.631
+        ],
+        "rot_y": 0.621,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-05 wooden planter box front"
+        }
+      },
+      {
+        "id": "INT-06-DISP-MAP",
+        "kind": "display-wall",
+        "dept": "DEPT-06",
+        "px_box": [
+          602,
+          615,
+          78,
+          75
+        ],
+        "wall": "x0",
+        "floor_xz": [
+          1.433,
+          9.493
+        ],
+        "centre_y": 0.767,
+        "size": [
+          1.595,
+          0.399,
+          1.534
+        ],
+        "rot_y": 0.846,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-06 world map display"
+        }
+      },
+      {
+        "id": "INT-06-SHELF",
+        "kind": "shelf-stand",
+        "dept": "DEPT-06",
+        "px_box": [
+          705,
+          575,
+          75,
+          95
+        ],
+        "wall": "z0",
+        "floor_xz": [
+          2.727,
+          7.239
+        ],
+        "centre_y": 0.978,
+        "size": [
+          1.544,
+          0.386,
+          1.956
+        ],
+        "rot_y": 0.814,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-06 wooden bookshelf"
+        }
+      },
+      {
+        "id": "INT-06-PLANT-A",
+        "kind": "plant",
+        "dept": "DEPT-06",
+        "px_box": [
+          676,
+          586,
+          16,
+          18
+        ],
+        "floor_xz": [
+          -0.138,
+          6.442
+        ],
+        "size": [
+          0.338,
+          0.2,
+          0.38
+        ],
+        "rot_y": 0.831,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-06 plant back"
+        }
+      },
+      {
+        "id": "INT-06-PLANT-B",
+        "kind": "plant",
+        "dept": "DEPT-06",
+        "px_box": [
+          478,
+          700,
+          20,
+          26
+        ],
+        "floor_xz": [
+          0.744,
+          12.644
+        ],
+        "size": [
+          0.404,
+          0.24,
+          0.526
+        ],
+        "rot_y": 0.882,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-06 plant left"
+        }
+      },
+      {
+        "id": "INT-07-DISP-CHECK",
+        "kind": "display-wall",
+        "dept": "DEPT-07",
+        "px_box": [
+          1122,
+          622,
+          80,
+          73
+        ],
+        "wall": "z0",
+        "floor_xz": [
+          9.458,
+          1.845
+        ],
+        "centre_y": 0.746,
+        "size": [
+          1.636,
+          0.409,
+          1.492
+        ],
+        "rot_y": 0.706,
+        "prov": {
+          "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
+          "size": "EST. derived from px via HOME camera",
+          "catalog": "analysis/03 \u00a74 DEPT-07 check-mark screen"
+        }
+      },
+      {
+        "id": "INT-07-RACK-L",
+        "kind": "rack",
+        "dept": "DEPT-07",
+        "px_box": [
+          1077,
+          567,
+          48,
+          88
+        ],
+        "floor_xz": [
+          7.492,
+          1.762
+        ],
+        "size": [
+          0.995,
+          0.6,
+          1.825
+        ],
+        "rot_y": 0.724,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-07 server racks left-back"
+        }
+      },
+      {
+        "id": "INT-07-RACK-R",
+        "kind": "rack",
+        "dept": "DEPT-07",
+        "px_box": [
+          1222,
+          637,
+          68,
+          73
+        ],
+        "floor_xz": [
+          11.192,
+          1.168
+        ],
+        "size": [
+          1.385,
+          0.83,
+          1.487
+        ],
+        "rot_y": 0.683,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-07 server racks right"
+        }
+      },
+      {
+        "id": "INT-07-PLANT-A",
+        "kind": "plant",
+        "dept": "DEPT-07",
+        "px_box": [
+          1054,
+          590,
+          14,
+          18
+        ],
+        "floor_xz": [
+          5.57,
+          0.904
+        ],
+        "size": [
+          0.296,
+          0.18,
+          0.38
+        ],
+        "rot_y": 0.734,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-07 plants"
+        }
+      },
+      {
+        "id": "INT-07-PLANT-B",
+        "kind": "plant",
+        "dept": "DEPT-07",
+        "px_box": [
+          1280,
+          700,
+          20,
+          26
+        ],
+        "floor_xz": [
+          12.082,
+          1.158
+        ],
+        "size": [
+          0.405,
+          0.24,
+          0.527
+        ],
+        "rot_y": 0.674,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-07 large plant right"
+        }
+      },
+      {
+        "id": "INT-07-PLANT-C",
+        "kind": "plant",
+        "dept": "DEPT-07",
+        "px_box": [
+          984,
+          634,
+          16,
+          20
+        ],
+        "floor_xz": [
+          5.88,
+          3.337
+        ],
+        "size": [
+          0.332,
+          0.2,
+          0.414
+        ],
+        "rot_y": 0.752,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a74 DEPT-07 plant behind glass left"
+        }
+      },
+      {
+        "id": "INT-AT-PLANTER-TREE",
+        "kind": "planter-cyl",
+        "dept": null,
+        "px_box": [
+          750,
+          372,
+          105,
+          60
+        ],
+        "floor_xz": [
+          -4.052,
+          -0.864
+        ],
+        "size": [
+          2.381,
+          1.43,
+          1.361
+        ],
+        "rot_y": 0.8,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a73 ENV-005 concrete planter"
+        }
+      },
+      {
+        "id": "INT-AT-TREE-A",
+        "kind": "tree",
+        "dept": null,
+        "px_box": [
+          755,
+          285,
+          90,
+          93
+        ],
+        "floor_xz": [
+          -6.052,
+          -2.731
+        ],
+        "size": [
+          2.09,
+          1.25,
+          2.159
+        ],
+        "rot_y": 0.801,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a73 ENV-005 tree canopy"
+        }
+      },
+      {
+        "id": "INT-AT-SOFA-L",
+        "kind": "sofa",
+        "dept": null,
+        "px_box": [
+          635,
+          375,
+          105,
+          55
+        ],
+        "floor_xz": [
+          -5.957,
+          0.924
+        ],
+        "size": [
+          2.384,
+          1.43,
+          1.249
+        ],
+        "rot_y": 0.829,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a73 ENV-006 curved sofa leather #966B61"
+        }
+      },
+      {
+        "id": "INT-AT-POT-SM",
+        "kind": "plant",
+        "dept": null,
+        "px_box": [
+          630,
+          420,
+          25,
+          30
+        ],
+        "floor_xz": [
+          -5.949,
+          2.314
+        ],
+        "size": [
+          0.563,
+          0.34,
+          0.676
+        ],
+        "rot_y": 0.841,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a73 ENV-007 small planter"
+        }
+      },
+      {
+        "id": "INT-AT-RUG",
+        "kind": "rug-round",
+        "dept": null,
+        "px_box": [
+          660,
+          435,
+          110,
+          40
+        ],
+        "floor_xz": [
+          -3.925,
+          1.979
+        ],
+        "size": [
+          2.45,
+          1.47,
+          0.891
+        ],
+        "rot_y": 0.822,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a73 ENV-008 rug #4E4F63 + ottoman"
+        }
+      },
+      {
+        "id": "INT-AT-OTTOMAN",
+        "kind": "ottoman",
+        "dept": null,
+        "px_box": [
+          695,
+          442,
+          34,
+          22
+        ],
+        "floor_xz": [
+          -4.356,
+          1.666
+        ],
+        "size": [
+          0.761,
+          0.46,
+          0.492
+        ],
+        "rot_y": 0.823,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a73 ENV-008 ottoman (ROBOT-042 seat)"
+        }
+      },
+      {
+        "id": "INT-AT-SOFA-R",
+        "kind": "sofa",
+        "dept": null,
+        "px_box": [
+          867,
+          370,
+          73,
+          38
+        ],
+        "floor_xz": [
+          -3.286,
+          -3.348
+        ],
+        "size": [
+          1.673,
+          1.0,
+          0.871
+        ],
+        "rot_y": 0.775,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a73 ENV-009 sofa (ROBOT-043)"
+        }
+      },
+      {
+        "id": "INT-AT-BENCH",
+        "kind": "bench",
+        "dept": null,
+        "px_box": [
+          930,
+          397,
+          90,
+          50
+        ],
+        "floor_xz": [
+          -0.794,
+          -3.115
+        ],
+        "size": [
+          2.029,
+          1.22,
+          1.127
+        ],
+        "rot_y": 0.757,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a73 ENV-010 bench #665D68"
+        }
+      },
+      {
+        "id": "INT-AT-TREE-B",
+        "kind": "tree",
+        "dept": null,
+        "px_box": [
+          1180,
+          405,
+          80,
+          105
+        ],
+        "floor_xz": [
+          5.055,
+          -4.778
+        ],
+        "size": [
+          1.761,
+          1.06,
+          2.312
+        ],
+        "rot_y": 0.695,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a73 ENV-011 trees in white planters"
+        }
+      },
+      {
+        "id": "INT-AT-TREE-C",
+        "kind": "tree",
+        "dept": null,
+        "px_box": [
+          870,
+          715,
+          80,
+          110
+        ],
+        "floor_xz": [
+          9.316,
+          9.249
+        ],
+        "size": [
+          1.556,
+          0.93,
+          2.14
+        ],
+        "rot_y": 0.772,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a73 ENV-012 bottom-centre tree"
+        }
+      },
+      {
+        "id": "INT-AT-CABINETS",
+        "kind": "cabinet",
+        "dept": null,
+        "px_box": [
+          940,
+          740,
+          140,
+          80
+        ],
+        "floor_xz": [
+          10.554,
+          7.738
+        ],
+        "size": [
+          2.73,
+          1.64,
+          1.56
+        ],
+        "rot_y": 0.746,
+        "prov": {
+          "pos": "FIT derived from px box via HOME inverse projection",
+          "size": "EST. derived from px + 0.6 depth ratio",
+          "catalog": "analysis/03 \u00a73 ENV-013 low cabinets (Low conf.)"
+        }
+      },
+      {
+        "id": "INT-WC-01-DESK",
+        "kind": "desk",
+        "dept": "DEPT-01",
+        "px_box": null,
+        "floor_xz": [
+          -9.61,
+          -8.757
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.782,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-01-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-01",
+        "px_box": null,
+        "floor_xz": [
+          -9.998,
+          -9.147
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.782,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-01-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-01",
+        "px_box": null,
+        "floor_xz": [
+          -9.859,
+          -8.51
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.924,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-01-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-01",
+        "px_box": null,
+        "floor_xz": [
+          -9.362,
+          -9.004
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.924,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-02-DESK",
+        "kind": "desk",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -15.446,
+          0.461
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.891,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-02-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -15.874,
+          0.115
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.891,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-02-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -15.666,
+          0.733
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.033,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-02-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -15.226,
+          0.188
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.033,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-03-DESK",
+        "kind": "desk",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -13.394,
+          0.863
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.881,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-03-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -13.818,
+          0.513
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.881,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-03-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -13.616,
+          1.133
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.023,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-03-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -13.171,
+          0.593
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.023,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-04-DESK",
+        "kind": "desk",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -12.706,
+          0.087
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.87,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-04-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -13.126,
+          -0.268
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.87,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-04-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -12.931,
+          0.354
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.012,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-04-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -12.48,
+          -0.181
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.012,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-05-DESK",
+        "kind": "desk",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -15.065,
+          2.868
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.908,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-05-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -15.499,
+          2.53
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.908,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-05-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -15.281,
+          3.144
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.05,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-05-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -14.85,
+          2.592
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.05,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-06-DESK",
+        "kind": "desk",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -14.921,
+          4.279
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.919,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-06-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -15.358,
+          3.945
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.919,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-06-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -15.133,
+          4.557
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.061,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-06-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -14.708,
+          4.0
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.061,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-07-DESK",
+        "kind": "desk",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -13.786,
+          4.659
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.915,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-07-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -14.222,
+          4.324
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.915,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-07-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -14.0,
+          4.937
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.056,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-07-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -13.573,
+          4.382
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.056,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-08-DESK",
+        "kind": "desk",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -12.449,
+          4.06
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.901,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-08-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -12.88,
+          3.719
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.901,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-08-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -12.666,
+          4.335
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.043,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-08-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -12.232,
+          3.786
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.043,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-09-DESK",
+        "kind": "desk",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -12.733,
+          2.681
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.891,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-09-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -13.161,
+          2.335
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.891,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-09-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -12.953,
+          2.953
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.033,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-09-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-02",
+        "px_box": null,
+        "floor_xz": [
+          -12.513,
+          2.408
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.033,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-10-DESK",
+        "kind": "desk",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -3.407,
+          -12.962
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.708,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-10-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -3.764,
+          -13.38
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.708,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-10-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -3.673,
+          -12.735
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.849,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-10-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -3.141,
+          -13.19
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.849,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-11-DESK",
+        "kind": "desk",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -2.674,
+          -13.953
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.695,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-11-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -3.026,
+          -14.375
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.695,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-11-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -2.942,
+          -13.728
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.837,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-11-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -2.405,
+          -14.177
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.837,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-12-DESK",
+        "kind": "desk",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -1.95,
+          -13.374
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.694,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-12-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -2.302,
+          -13.797
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.694,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-12-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -2.22,
+          -13.15
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.835,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-12-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -1.681,
+          -13.598
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.835,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-13-DESK",
+        "kind": "desk",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -3.081,
+          -10.696
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.72,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-13-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -3.444,
+          -11.109
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.72,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-13-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -3.344,
+          -10.465
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.862,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-13-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -2.818,
+          -10.926
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.862,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-14-DESK",
+        "kind": "desk",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -1.797,
+          -10.963
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.708,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-14-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -2.155,
+          -11.381
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.708,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-14-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -2.063,
+          -10.736
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.85,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-14-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -1.531,
+          -11.191
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.85,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-15-DESK",
+        "kind": "desk",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          0.029,
+          -12.342
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.685,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-15-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -0.319,
+          -12.768
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.685,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-15-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -0.242,
+          -12.121
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.826,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-15-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          0.3,
+          -12.563
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.826,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-16-DESK",
+        "kind": "desk",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          0.136,
+          -10.356
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.697,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-16-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -0.217,
+          -10.778
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.697,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-16-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          -0.132,
+          -10.132
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.839,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-16-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          0.404,
+          -10.581
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.839,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-17-DESK",
+        "kind": "desk",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          1.85,
+          -11.56
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.675,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-17-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          1.506,
+          -11.989
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.675,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-17-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          1.576,
+          -11.341
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.816,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-17-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          2.123,
+          -11.778
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.816,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-18-DESK",
+        "kind": "desk",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          2.014,
+          -10.366
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.681,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-18-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          1.668,
+          -10.793
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.681,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-18-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          1.743,
+          -10.145
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.823,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-18-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          2.286,
+          -10.586
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.823,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-19-DESK",
+        "kind": "desk",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          2.575,
+          -13.445
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.656,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-19-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          2.239,
+          -13.881
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.656,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-19-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          2.297,
+          -13.232
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.798,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-19-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-03",
+        "px_box": null,
+        "floor_xz": [
+          2.852,
+          -13.659
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.798,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-20-DESK",
+        "kind": "desk",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -4.862,
+          8.689
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.888,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-20-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -5.289,
+          8.342
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.888,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-20-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -5.083,
+          8.961
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.03,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-20-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -4.641,
+          8.417
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.03,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-21-DESK",
+        "kind": "desk",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -3.537,
+          9.319
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.884,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-21-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -3.962,
+          8.97
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.884,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-21-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -3.759,
+          9.589
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.026,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-21-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -3.315,
+          9.048
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.026,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-22-DESK",
+        "kind": "desk",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -5.39,
+          12.128
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.925,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-22-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -5.829,
+          11.797
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.925,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-22-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -5.601,
+          12.408
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.066,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-22-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -5.179,
+          11.849
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.066,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-23-DESK",
+        "kind": "desk",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -5.022,
+          11.756
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.918,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-23-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -5.459,
+          11.422
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.918,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-23-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -5.235,
+          12.034
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.06,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-23-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -4.809,
+          11.478
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.06,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-24-DESK",
+        "kind": "desk",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -3.366,
+          12.039
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.909,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-24-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -3.8,
+          11.701
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.909,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-24-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -3.581,
+          12.315
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.05,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-24-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-04",
+        "px_box": null,
+        "floor_xz": [
+          -3.151,
+          11.763
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 4.05,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-25-DESK",
+        "kind": "desk",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          3.215,
+          8.455
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.821,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-25-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          2.813,
+          8.08
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.821,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-25-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          2.977,
+          8.711
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.963,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-25-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          3.454,
+          8.199
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.963,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-26-DESK",
+        "kind": "desk",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          4.801,
+          9.02
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.812,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-26-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          4.402,
+          8.642
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.812,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-26-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          4.56,
+          9.274
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.954,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-26-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          5.042,
+          8.766
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.954,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-27-DESK",
+        "kind": "desk",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          3.701,
+          9.682
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.828,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-27-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          3.296,
+          9.31
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.828,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-27-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          3.465,
+          9.94
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.97,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-27-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          3.938,
+          9.424
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.97,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-28-DESK",
+        "kind": "desk",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          3.291,
+          11.942
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.854,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-28-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          2.876,
+          11.581
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.854,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-28-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          3.061,
+          12.206
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.995,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-28-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          3.521,
+          11.679
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.995,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-29-DESK",
+        "kind": "desk",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          4.721,
+          12.022
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.842,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-29-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          4.311,
+          11.656
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.842,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-29-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          4.488,
+          12.283
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.984,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-29-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-06",
+        "px_box": null,
+        "floor_xz": [
+          4.954,
+          11.761
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.984,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-30-DESK",
+        "kind": "desk",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          7.593,
+          3.904
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.741,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-30-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          7.222,
+          3.498
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.741,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-30-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          7.335,
+          4.14
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.882,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-30-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          7.851,
+          3.668
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.882,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-31-DESK",
+        "kind": "desk",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          7.931,
+          5.113
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.748,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-31-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          7.557,
+          4.71
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.748,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-31-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          7.674,
+          5.351
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.89,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-31-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          8.188,
+          4.875
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.89,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-32-DESK",
+        "kind": "desk",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          9.333,
+          3.862
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.724,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-32-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          8.969,
+          3.45
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.724,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-32-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          9.071,
+          4.094
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.865,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-32-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          9.595,
+          3.63
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.865,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-33-DESK",
+        "kind": "desk",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          9.812,
+          5.06
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.729,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-33-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          9.445,
+          4.65
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.729,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-33-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          9.551,
+          5.293
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.871,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-33-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          10.072,
+          4.827
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.871,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-34-DESK",
+        "kind": "desk",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          11.061,
+          3.792
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.706,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-34-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          10.704,
+          3.374
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.706,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-34-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          10.795,
+          4.02
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.848,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-34-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          11.327,
+          3.565
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.848,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-35-DESK",
+        "kind": "desk",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          11.578,
+          5.021
+        ],
+        "size": [
+          1.4,
+          0.7,
+          0.75
+        ],
+        "rot_y": 0.712,
+        "prov": {
+          "pos": "EST. anchored 0.55 m camera-side of the measured robot floor point (analysis/03 \u00a74 desks at robots)",
+          "size": "EST. standard desk",
+          "catalog": "analysis/03 \u00a76 work desks"
+        }
+      },
+      {
+        "id": "INT-WC-35-CHAI",
+        "kind": "chair",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          11.219,
+          4.604
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 0.712,
+        "prov": {
+          "pos": "EST. at the measured robot floor point (robot sits on it)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76 dark task chairs"
+        }
+      },
+      {
+        "id": "INT-WC-35-MON0",
+        "kind": "monitor",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          11.313,
+          5.249
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.853,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-WC-35-MON1",
+        "kind": "monitor",
+        "dept": "DEPT-07",
+        "px_box": null,
+        "floor_xz": [
+          11.843,
+          4.792
+        ],
+        "size": [
+          0.55,
+          0.06,
+          0.35
+        ],
+        "rot_y": 3.853,
+        "prov": {
+          "pos": "EST. on the cluster desk, screen facing the robot",
+          "size": "EST. 2-3 monitors per desk (\u00a76)",
+          "catalog": "analysis/03 \u00a76 monitors"
+        }
+      },
+      {
+        "id": "INT-05-CHAIR-0",
+        "kind": "chair",
+        "dept": "DEPT-05",
+        "px_box": null,
+        "floor_xz": [
+          9.611,
+          -5.187
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 3.777,
+        "prov": {
+          "pos": "EST. along the measured conference table (5 robots seated, \u00a75.2 ROBOT-025..029)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76"
+        }
+      },
+      {
+        "id": "INT-05-LAP-0",
+        "kind": "laptop",
+        "dept": "DEPT-05",
+        "px_box": null,
+        "floor_xz": [
+          9.789,
+          -4.946
+        ],
+        "size": [
+          0.34,
+          0.02,
+          0.24
+        ],
+        "rot_y": 3.777,
+        "centre_y": 1.614,
+        "prov": {
+          "pos": "EST. on the table surface at each seat (\u00a74 laptops/papers)",
+          "size": "EST. laptop",
+          "catalog": "analysis/03 \u00a74 DEPT-05"
+        }
+      },
+      {
+        "id": "INT-05-CHAIR-1",
+        "kind": "chair",
+        "dept": "DEPT-05",
+        "px_box": null,
+        "floor_xz": [
+          10.11,
+          -5.555
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 3.777,
+        "prov": {
+          "pos": "EST. along the measured conference table (5 robots seated, \u00a75.2 ROBOT-025..029)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76"
+        }
+      },
+      {
+        "id": "INT-05-LAP-1",
+        "kind": "laptop",
+        "dept": "DEPT-05",
+        "px_box": null,
+        "floor_xz": [
+          10.288,
+          -5.314
+        ],
+        "size": [
+          0.34,
+          0.02,
+          0.24
+        ],
+        "rot_y": 3.777,
+        "centre_y": 1.614,
+        "prov": {
+          "pos": "EST. on the table surface at each seat (\u00a74 laptops/papers)",
+          "size": "EST. laptop",
+          "catalog": "analysis/03 \u00a74 DEPT-05"
+        }
+      },
+      {
+        "id": "INT-05-CHAIR-2",
+        "kind": "chair",
+        "dept": "DEPT-05",
+        "px_box": null,
+        "floor_xz": [
+          10.609,
+          -5.923
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 3.777,
+        "prov": {
+          "pos": "EST. along the measured conference table (5 robots seated, \u00a75.2 ROBOT-025..029)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76"
+        }
+      },
+      {
+        "id": "INT-05-LAP-2",
+        "kind": "laptop",
+        "dept": "DEPT-05",
+        "px_box": null,
+        "floor_xz": [
+          10.787,
+          -5.681
+        ],
+        "size": [
+          0.34,
+          0.02,
+          0.24
+        ],
+        "rot_y": 3.777,
+        "centre_y": 1.614,
+        "prov": {
+          "pos": "EST. on the table surface at each seat (\u00a74 laptops/papers)",
+          "size": "EST. laptop",
+          "catalog": "analysis/03 \u00a74 DEPT-05"
+        }
+      },
+      {
+        "id": "INT-05-CHAIR-3",
+        "kind": "chair",
+        "dept": "DEPT-05",
+        "px_box": null,
+        "floor_xz": [
+          11.108,
+          -6.291
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 3.777,
+        "prov": {
+          "pos": "EST. along the measured conference table (5 robots seated, \u00a75.2 ROBOT-025..029)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76"
+        }
+      },
+      {
+        "id": "INT-05-LAP-3",
+        "kind": "laptop",
+        "dept": "DEPT-05",
+        "px_box": null,
+        "floor_xz": [
+          11.286,
+          -6.049
+        ],
+        "size": [
+          0.34,
+          0.02,
+          0.24
+        ],
+        "rot_y": 3.777,
+        "centre_y": 1.614,
+        "prov": {
+          "pos": "EST. on the table surface at each seat (\u00a74 laptops/papers)",
+          "size": "EST. laptop",
+          "catalog": "analysis/03 \u00a74 DEPT-05"
+        }
+      },
+      {
+        "id": "INT-05-CHAIR-4",
+        "kind": "chair",
+        "dept": "DEPT-05",
+        "px_box": null,
+        "floor_xz": [
+          11.607,
+          -6.659
+        ],
+        "size": [
+          0.5,
+          0.5,
+          0.45
+        ],
+        "rot_y": 3.777,
+        "prov": {
+          "pos": "EST. along the measured conference table (5 robots seated, \u00a75.2 ROBOT-025..029)",
+          "size": "EST. task chair",
+          "catalog": "analysis/03 \u00a76"
+        }
+      },
+      {
+        "id": "INT-05-LAP-4",
+        "kind": "laptop",
+        "dept": "DEPT-05",
+        "px_box": null,
+        "floor_xz": [
+          11.785,
+          -6.417
+        ],
+        "size": [
+          0.34,
+          0.02,
+          0.24
+        ],
+        "rot_y": 3.777,
+        "centre_y": 1.614,
+        "prov": {
+          "pos": "EST. on the table surface at each seat (\u00a74 laptops/papers)",
+          "size": "EST. laptop",
+          "catalog": "analysis/03 \u00a74 DEPT-05"
+        }
+      }
+    ]
+  },
+  "robot_visual": {
+    "note": "VF-4 (2026-11-20): pose class + facing from analysis/03 \u00a75.2 (MEASURED descriptions); width FIT-derived from the \u00a75.2 visible box; geometry height anchors to assumed_head_h (0.95 seated / 1.2 standing) so the M003 floor solve stays exact.",
+    "rows": [
+      {
+        "id": "ROBOT-001",
+        "zone": "Executive Office",
+        "head_px": [
+          875,
+          210
+        ],
+        "floor_xz": [
+          -9.998,
+          -9.147
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          852,
+          192,
+          45,
+          66
+        ],
+        "size_m": [
+          1.13,
+          1.658
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-002",
+        "zone": "Marketing",
+        "head_px": [
+          431,
+          250
+        ],
+        "floor_xz": [
+          -15.874,
+          0.115
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.742,
+          1.113
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-003",
+        "zone": "Marketing",
+        "head_px": [
+          474,
+          281
+        ],
+        "floor_xz": [
+          -13.818,
+          0.513
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.731,
+          1.096
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-004",
+        "zone": "Marketing",
+        "head_px": [
+          518,
+          280
+        ],
+        "floor_xz": [
+          -13.126,
+          -0.268
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.73,
+          1.096
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-005",
+        "zone": "Marketing",
+        "head_px": [
+          363,
+          285
+        ],
+        "floor_xz": [
+          -15.499,
+          2.53
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.731,
+          1.096
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-006",
+        "zone": "Marketing",
+        "head_px": [
+          320,
+          305
+        ],
+        "floor_xz": [
+          -15.358,
+          3.945
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.725,
+          1.087
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-007",
+        "zone": "Marketing",
+        "head_px": [
+          338,
+          325
+        ],
+        "floor_xz": [
+          -14.222,
+          4.324
+        ],
+        "pose": "seated",
+        "facing": "back",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.718,
+          1.077
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-008",
+        "zone": "Marketing",
+        "head_px": [
+          395,
+          335
+        ],
+        "floor_xz": [
+          -12.88,
+          3.719
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.714,
+          1.071
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-009",
+        "zone": "Marketing",
+        "head_px": [
+          433,
+          313
+        ],
+        "floor_xz": [
+          -13.161,
+          2.335
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.72,
+          1.081
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-010",
+        "zone": "Engineering",
+        "head_px": [
+          1180,
+          235
+        ],
+        "floor_xz": [
+          -3.764,
+          -13.38
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.747,
+          1.12
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-011",
+        "zone": "Engineering",
+        "head_px": [
+          1230,
+          232
+        ],
+        "floor_xz": [
+          -3.026,
+          -14.375
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.748,
+          1.122
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-012",
+        "zone": "Engineering",
+        "head_px": [
+          1237,
+          248
+        ],
+        "floor_xz": [
+          -2.302,
+          -13.797
+        ],
+        "pose": "seated",
+        "facing": "right",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.743,
+          1.114
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-013",
+        "zone": "Engineering",
+        "head_px": [
+          1127,
+          267
+        ],
+        "floor_xz": [
+          -3.444,
+          -11.109
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.735,
+          1.102
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-014",
+        "zone": "Engineering",
+        "head_px": [
+          1175,
+          280
+        ],
+        "floor_xz": [
+          -2.155,
+          -11.381
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.731,
+          1.096
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-015",
+        "zone": "Engineering",
+        "head_px": [
+          1272,
+          286
+        ],
+        "floor_xz": [
+          -0.319,
+          -12.768
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.73,
+          1.095
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-016",
+        "zone": "Engineering",
+        "head_px": [
+          1220,
+          313
+        ],
+        "floor_xz": [
+          -0.217,
+          -10.778
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.72,
+          1.08
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-017",
+        "zone": "Engineering",
+        "head_px": [
+          1310,
+          320
+        ],
+        "floor_xz": [
+          1.506,
+          -11.989
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.719,
+          1.079
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-018",
+        "zone": "Engineering",
+        "head_px": [
+          1282,
+          338
+        ],
+        "floor_xz": [
+          1.668,
+          -10.793
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.713,
+          1.069
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-019",
+        "zone": "Engineering",
+        "head_px": [
+          1386,
+          305
+        ],
+        "floor_xz": [
+          2.239,
+          -13.881
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.726,
+          1.088
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-020",
+        "zone": "Creative Studio",
+        "head_px": [
+          455,
+          512
+        ],
+        "floor_xz": [
+          -5.289,
+          8.342
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.66,
+          0.99
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-021",
+        "zone": "Creative Studio",
+        "head_px": [
+          473,
+          543
+        ],
+        "floor_xz": [
+          -3.962,
+          8.97
+        ],
+        "pose": "seated",
+        "facing": "left",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.651,
+          0.977
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-022",
+        "zone": "Creative Studio",
+        "head_px": [
+          313,
+          558
+        ],
+        "floor_xz": [
+          -5.829,
+          11.797
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.65,
+          0.975
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-023",
+        "zone": "Creative Studio",
+        "head_px": [
+          338,
+          558
+        ],
+        "floor_xz": [
+          -5.459,
+          11.422
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.649,
+          0.974
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-024",
+        "zone": "Creative Studio",
+        "head_px": [
+          378,
+          590
+        ],
+        "floor_xz": [
+          -3.8,
+          11.701
+        ],
+        "pose": "seated",
+        "facing": "back",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.64,
+          0.961
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-025",
+        "zone": "Management",
+        "head_px": [
+          1364,
+          498
+        ],
+        "floor_xz": [
+          8.015,
+          -6.043
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.666,
+          0.999
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-026",
+        "zone": "Management",
+        "head_px": [
+          1398,
+          527
+        ],
+        "floor_xz": [
+          9.362,
+          -5.54
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.659,
+          0.988
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-027",
+        "zone": "Management",
+        "head_px": [
+          1480,
+          517
+        ],
+        "floor_xz": [
+          10.312,
+          -7.141
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.663,
+          0.994
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-028",
+        "zone": "Management",
+        "head_px": [
+          1450,
+          548
+        ],
+        "floor_xz": [
+          10.725,
+          -5.595
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.654,
+          0.981
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-029",
+        "zone": "Management",
+        "head_px": [
+          1532,
+          553
+        ],
+        "floor_xz": [
+          12.078,
+          -6.654
+        ],
+        "pose": "seated",
+        "facing": "left",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.654,
+          0.982
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-030",
+        "zone": "Research",
+        "head_px": [
+          723,
+          642
+        ],
+        "floor_xz": [
+          2.813,
+          8.08
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.624,
+          0.937
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-031",
+        "zone": "Research",
+        "head_px": [
+          757,
+          680
+        ],
+        "floor_xz": [
+          4.402,
+          8.642
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.615,
+          0.923
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-032",
+        "zone": "Research",
+        "head_px": [
+          695,
+          672
+        ],
+        "floor_xz": [
+          3.296,
+          9.31
+        ],
+        "pose": "seated",
+        "facing": "right",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.617,
+          0.926
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-033",
+        "zone": "Research",
+        "head_px": [
+          597,
+          705
+        ],
+        "floor_xz": [
+          2.876,
+          11.581
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.61,
+          0.915
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-034",
+        "zone": "Research",
+        "head_px": [
+          643,
+          733
+        ],
+        "floor_xz": [
+          4.311,
+          11.656
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.604,
+          0.906
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-035",
+        "zone": "QA & Testing",
+        "head_px": [
+          1035,
+          640
+        ],
+        "floor_xz": [
+          7.222,
+          3.498
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.625,
+          0.938
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-036",
+        "zone": "QA & Testing",
+        "head_px": [
+          1006,
+          667
+        ],
+        "floor_xz": [
+          7.557,
+          4.71
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.619,
+          0.928
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-037",
+        "zone": "QA & Testing",
+        "head_px": [
+          1100,
+          670
+        ],
+        "floor_xz": [
+          8.969,
+          3.45
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.619,
+          0.928
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-038",
+        "zone": "QA & Testing",
+        "head_px": [
+          1077,
+          700
+        ],
+        "floor_xz": [
+          9.445,
+          4.65
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.611,
+          0.917
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-039",
+        "zone": "QA & Testing",
+        "head_px": [
+          1167,
+          700
+        ],
+        "floor_xz": [
+          10.704,
+          3.374
+        ],
+        "pose": "seated",
+        "facing": "right",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.612,
+          0.918
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-040",
+        "zone": "QA & Testing",
+        "head_px": [
+          1145,
+          732
+        ],
+        "floor_xz": [
+          11.219,
+          4.604
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          0,
+          0,
+          30,
+          45
+        ],
+        "size_m": [
+          0.605,
+          0.907
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-041",
+        "zone": "Atrium / walkway (left)",
+        "head_px": [
+          617,
+          347
+        ],
+        "floor_xz": [
+          -8.416,
+          0.817
+        ],
+        "pose": "walking",
+        "facing": "right",
+        "px_box": [
+          605,
+          332,
+          37,
+          60
+        ],
+        "size_m": [
+          0.872,
+          1.414
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-042",
+        "zone": "Atrium lounge",
+        "head_px": [
+          707,
+          410
+        ],
+        "floor_xz": [
+          -5.006,
+          1.191
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          692,
+          395,
+          38,
+          62
+        ],
+        "size_m": [
+          0.87,
+          1.42
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-043",
+        "zone": "Atrium lounge",
+        "head_px": [
+          906,
+          360
+        ],
+        "floor_xz": [
+          -3.643,
+          -3.782
+        ],
+        "pose": "seated",
+        "facing": "cam",
+        "px_box": [
+          887,
+          347,
+          38,
+          60
+        ],
+        "size_m": [
+          0.89,
+          1.405
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-044",
+        "zone": "Atrium / walkway (right)",
+        "head_px": [
+          1065,
+          355
+        ],
+        "floor_xz": [
+          -0.918,
+          -6.19
+        ],
+        "pose": "standing",
+        "facing": "cam",
+        "px_box": [
+          1050,
+          342,
+          30,
+          58
+        ],
+        "size_m": [
+          0.705,
+          1.362
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-045",
+        "zone": "Atrium / walkway (right)",
+        "head_px": [
+          1097,
+          370
+        ],
+        "floor_xz": [
+          0.114,
+          -6.143
+        ],
+        "pose": "walking",
+        "facing": "left",
+        "px_box": [
+          1082,
+          357,
+          38,
+          60
+        ],
+        "size_m": [
+          0.887,
+          1.401
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-046",
+        "zone": "Atrium (right of plinth)",
+        "head_px": [
+          1073,
+          483
+        ],
+        "floor_xz": [
+          3.446,
+          -1.728
+        ],
+        "pose": "walking",
+        "facing": "cam",
+        "px_box": [
+          1050,
+          465,
+          45,
+          60
+        ],
+        "size_m": [
+          1.0,
+          1.333
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      },
+      {
+        "id": "ROBOT-047",
+        "zone": "Walkway (lower-left of Management)",
+        "head_px": [
+          1380,
+          632
+        ],
+        "floor_xz": [
+          12.221,
+          -1.412
+        ],
+        "pose": "walking",
+        "facing": "cam",
+        "px_box": [
+          1363,
+          615,
+          43,
+          65
+        ],
+        "size_m": [
+          0.905,
+          1.368
+        ],
+        "prov": {
+          "pose": "MEASURED pose class (analysis/03 \u00a75.2)",
+          "size": "FIT derived from \u00a75.2 visible box via HOME camera",
+          "catalog": "analysis/03 \u00a75.2"
+        }
+      }
+    ]
   }
 }
