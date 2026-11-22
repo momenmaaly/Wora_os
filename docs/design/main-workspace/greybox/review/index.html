@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WORA 006-A — Visual Acceptance Review Package</title>
+<style>
+  :root { --ink:#141A22; --paper:#F4F5F7; --card:#FFFFFF; --line:#D8DCE2; --mut:#5B6472; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.45 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; color:var(--ink); background:var(--paper); }
+  header { padding:20px 16px 12px; background:#10151C; color:#EEF1F5; }
+  header h1 { margin:0 0 4px; font-size:19px; }
+  header p { margin:2px 0; color:#AAB4C0; font-size:13px; }
+  header code { color:#7FD1E8; }
+  main { padding:16px; max-width:1280px; margin:0 auto; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; margin:14px 0; }
+  h2 { margin:0 0 8px; font-size:16px; }
+  h3 { margin:14px 0 6px; font-size:15px; }
+  p.note { color:var(--mut); font-size:13px; margin:6px 0; }
+  .pair { display:flex; flex-wrap:wrap; gap:10px; align-items:flex-start; }
+  .pair figure { margin:0; flex:1 1 320px; max-width:640px; }
+  .pair img { width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:6px; background:#DDD; }
+  figcaption { font-size:12px; color:var(--mut); margin-top:4px; }
+  .tags { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0; }
+  .tag { font-size:11px; font-weight:700; letter-spacing:.03em; padding:2px 8px; border-radius:999px; color:#fff; }
+  .t-meas { background:#1D7A46; } .t-fit { background:#0E7490; } .t-est { background:#B45309; } .t-assumed { background:#B91C1C; } .t-constr { background:#1D4ED8; }
+  .dev { border-left:3px solid #B91C1C; padding:6px 10px; background:#FEF2F2; font-size:13px; margin:8px 0; }
+  .live a { display:inline-block; margin:4px 8px 4px 0; padding:8px 12px; border-radius:8px; background:#0F62FE; color:#fff; text-decoration:none; font-weight:600; font-size:14px; }
+  .live a.alt { background:#3D4450; }
+  .slider { width:100%; height:34px; accent-color:#0F62FE; }
+  .ovwrap { position:relative; max-width:960px; border:1px solid var(--line); border-radius:6px; overflow:hidden; }
+  .ovwrap img { width:100%; display:block; }
+  .ovwrap .top { position:absolute; inset:0; }
+  table { border-collapse:collapse; width:100%; font-size:13px; }
+  th, td { border:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top; }
+  th { background:#EDF0F3; }
+  footer { color:var(--mut); font-size:12px; padding:10px 16px 26px; max-width:1280px; margin:0 auto; }
+</style>
+</head>
+<body>
+<header>
+  <h1>WORA — Visual Foundation Completion · Evidence Package (006-A + VF-1 + PRES + VF-2…8)</h1>
+  <p>Environment workstream (WORA-3D-SCENE-006-A) + VF-1 Materials &amp; Lighting vs the locked reference · branch <code>arena/e6096316-wora-os</code> · 2026-11-20 · VF-1 gate package in section 4-VF1</p>
+  <p>Reference checksum <code>wora-main-workspace.png: OK</code> (verified for this package; the reference file is untouched and immutable).</p>
+  <p>Honesty rules: rendered and reference close-ups use <b>identical pixel windows</b> — nothing is cropped, hidden or scaled to hide a deviation. Rendered images are actual browser output (headless Chromium, HOME camera fov 12.0006°, camera readback verified).</p>
+</header>
+<main>
+
+<section class="live">
+  <h2>1 · Live previews (phone and desktop)</h2>
+  <p class="note">Both servers bind 0.0.0.0 and are exposed by the Arena preview panel. On your Android phone open the public preview host of this sandbox: <code>https://&lt;port&gt;-&lt;sandbox-id&gt;.e2b.app</code> (the exact links are shown next to the two live processes in Arena).</p>
+  <a href="http://localhost:5173/">5173 · 3D workspace (home view)</a>
+  <a class="alt" href="http://localhost:5173/?dev&overlay=0.5&panel=1">5173 · inspector with live opacity slider</a>
+  <a class="alt" href="http://localhost:8080/greybox/review/">8080 · this review package</a>
+  <p class="note">Phone tips: <code>/</code> renders the full-bleed 3D scene (pinch-zoom via browser). <code>/?dev&amp;overlay=0.5&amp;panel=1</code> adds the reference overlay with the <b>live opacity slider</b>, markers and layer toggles (panel is desktop-oriented; on a small screen prefer <code>panel=0</code> and the slider here in section 3). Desktop previews: same URLs. Responsive framing renders: <code>V-responsive-006A-*</code> in section 7.</p>
+</section>
+
+<section>
+  <h2>2 · Full frame — reference vs rendered scene (side by side)</h2>
+  <div class="pair">
+    <figure><img src="../../reference/wora-main-workspace.png" alt="Locked reference"><figcaption>Locked reference (1672×941) — immutable original.</figcaption></figure>
+    <figure><img src="E02-clean-scene-006A.png" alt="Rendered 006-A scene"><figcaption>Rendered scene, Mission 006-A (actual browser output, HOME camera, no debug overlays).</figcaption></figure>
+  </div>
+  <p class="note">Expected differences (by design): no robots (006-B), no furniture (006-C), greybox-level materials, no bloom, background scenery simplified. Structural layout, camera framing, room ring, plinth, signs, fascia and back walls should align — check the overlay below.</p>
+</section>
+
+<section>
+  <h2>3 · Overlay comparison — adjustable opacity</h2>
+  <p class="note">The rendered scene is stacked over the reference. Move the slider: 0 % = reference only, 100 % = render only. This uses the same committed pair as the app's dev inspector (which also has a live slider — see section 1).</p>
+  <div class="ovwrap">
+    <img src="../../reference/wora-main-workspace.png" alt="reference base">
+    <img class="top" id="ov" src="E02-clean-scene-006A.png" alt="rendered overlay" style="opacity:0.5">
+  </div>
+  <input class="slider" type="range" min="0" max="100" value="50" oninput="document.getElementById('ov').style.opacity=(this.value/100).toFixed(2)">
+  <p class="note">A fixed 50 % blend is also committed as <code>E03-reference-overlay-50-006A.png</code>; the marker/edge alignment view is <code>E04-camera-sign-alignment-006A.png</code>.</p>
+</section>
+
+<section>
+  <h2>4 · Close-up comparisons</h2>
+  <p class="note">Left: reference at the stated pixel window. Right: the 006-A render at the <b>same</b> window. Tags state the provenance of every visible element: <span class="tag t-meas">MEASURED</span> <span class="tag t-fit">FIT</span> <span class="tag t-est">EST.</span> <span class="tag t-assumed">ASSUMED</span> <span class="tag t-constr">BY&nbsp;CONSTRUCTION</span></p>
+
+  <h3>4.1 Building facade and curved parapet (window 1050,40 → 1470,360)</h3>
+  <div class="tags"><span class="tag t-fit">fascia bottom FIT (LS rms 0.007 / 0.013 m)</span><span class="tag t-meas">mullion bay 0.96 m MEASURED</span><span class="tag t-est">transoms 2.0 m EST.</span><span class="tag t-assumed">parapet plane ASSUMED</span><span class="tag t-est">parapet depth 0.9 m EST.</span></div>
+  <div class="pair">
+    <figure><img src="X-facade-parapet-ref.png" alt="ref"><figcaption>Reference.</figcaption></figure>
+    <figure><img src="X-facade-parapet-render.png" alt="render"><figcaption>006-A render. The parapet band + strip sit on an assumed backdrop plane (CR-02) and project onto their reference pixels in HOME by construction; its world heights are not measurements.</figcaption></figure>
+  </div>
+  <div class="dev">Known deviation: the reference's perceived lower-edge lines are 3–10° steeper than the model (CR-01 — accepted by owner; no artificial distortion introduced). The fascia <i>wedge bottom</i> follows the measured band bottom; the structural +X edge stays grid-aligned at x = 14.6.</div>
+
+  <h3>4.2 Facade band, lower-left +Z (window 200,540 → 700,941)</h3>
+  <div class="tags"><span class="tag t-fit">fascia profile FIT</span><span class="tag t-meas">bay MEASURED</span><span class="tag t-est">rail + posts EST. (2.4 m bays)</span><span class="tag t-meas">balustrade height 1.27 m MEASURED</span></div>
+  <div class="pair">
+    <figure><img src="X-facade-band-plusZ-ref.png" alt="ref"><figcaption>Reference.</figcaption></figure>
+    <figure><img src="X-facade-band-plusZ-render.png" alt="render"><figcaption>006-A render: fascia wedge, curtain wall, balustrade rail.</figcaption></figure>
+  </div>
+
+  <h3>4.3 Facade band, lower-right +X (window 1230,520 → 1672,941)</h3>
+  <div class="tags"><span class="tag t-fit">fascia FIT (vanishes z ≤ −6.114, measured)</span><span class="tag t-meas">bay MEASURED</span><span class="tag t-assumed">edge-angle residual ACCEPTED (CR-01)</span></div>
+  <div class="pair">
+    <figure><img src="X-facade-band-plusX-ref.png" alt="ref"><figcaption>Reference.</figcaption></figure>
+    <figure><img src="X-facade-band-plusX-render.png" alt="render"><figcaption>006-A render. The band bottom tapers to nothing towards the right, as measured; the steep reference edge line is the documented, accepted residual — shown here uncorrected.</figcaption></figure>
+  </div>
+
+  <h3>4.4 Glass partitions and balustrades (window 163,380 → 676,760 — Creative Studio)</h3>
+  <div class="tags"><span class="tag t-meas">footprints MEASURED</span><span class="tag t-meas">partition height 2.07 m MEASURED (provisional scale)</span><span class="tag t-est">glass tone/opacity EST.</span><span class="tag t-assumed">no doors (Q-3D-01)</span></div>
+  <div class="pair">
+    <figure><img src="X-partitions-balustrades-ref.png" alt="ref"><figcaption>Reference (furniture, robots and screens are 006-B/006-C scope — intentionally absent).</figcaption></figure>
+    <figure><img src="X-partitions-balustrades-render.png" alt="render"><figcaption>006-A render: glazed partitions on the measured footprint lines, balustrade at the slab edge.</figcaption></figure>
+  </div>
+
+  <h3>4.5 Atrium and walkways (window 560,300 → 1260,620)</h3>
+  <div class="tags"><span class="tag t-meas">room positions MEASURED</span><span class="tag t-meas">marble tone SAMPLED (#B4A1A5)</span><span class="tag t-assumed">walkway boundaries ND — nothing invented</span></div>
+  <div class="pair">
+    <figure><img src="X-atrium-walkways-ref.png" alt="ref"><figcaption>Reference.</figcaption></figure>
+    <figure><img src="X-atrium-walkways-render.png" alt="render"><figcaption>006-A render: open atrium floor; walkway geometry is not separately invented (ND), the slab between rooms is the walkway surface.</figcaption></figure>
+  </div>
+
+  <h3>4.6 Plinth rim, logo and wordmark (window 740,410 → 1070,600)</h3>
+  <div class="tags"><span class="tag t-constr">centre/width BY CONSTRUCTION (fit anchors)</span><span class="tag t-meas">drum height MEASURED box (±5 px)</span><span class="tag t-est">rim emissive, no bloom EST.</span><span class="tag t-meas">label positions back-projected MEASURED</span><span class="tag t-est">logo/word artwork EST.</span></div>
+  <div class="pair">
+    <figure><img src="X-plinth-ref.png" alt="ref"><figcaption>Reference: glowing rim, gradient W mark, WORA wordmark.</figcaption></figure>
+    <figure><img src="X-plinth-render.png" alt="render"><figcaption>006-A render: rim ring (unlit emissive; bloom is art-pass), canvas-drawn mark + wordmark at the measured positions. Overlay80 comparison: <code>P-plinth-006A-overlay80.png</code>.</figcaption></figure>
+  </div>
+
+  <h3>4.7–4.13 · All seven department signs</h3>
+  <div class="tags"><span class="tag t-meas">plate anchors MEASURED</span><span class="tag t-fit">lengths FIT to measured box widths</span><span class="tag t-est">height 0.93 m EST. (CR-06)</span><span class="tag t-constr">angles SOLVED — residuals preserved (CR-05)</span><span class="tag t-est">typography/icons EST.</span></div>
+  <div class="dev">Known deviations: SIGN-02 renders +3.5° and SIGN-03 −5.1° off the measured plate angle (documented, kept by owner decision CR-05 — they sit at the frame's upper periphery where the reference itself deviates from a pinhole projection).</div>
+  <div class="pair"><figure><img src="X-sign-01-ref.png" alt="ref"><figcaption>SIGN-01 Executive Office — reference.</figcaption></figure><figure><img src="X-sign-01-render.png" alt="render"><figcaption>SIGN-01 — render (angle residual 0.1°).</figcaption></figure></div>
+  <div class="pair"><figure><img src="X-sign-02-ref.png" alt="ref"><figcaption>SIGN-02 Marketing — reference.</figcaption></figure><figure><img src="X-sign-02-render.png" alt="render"><figcaption>SIGN-02 — render (angle residual +3.5°, kept).</figcaption></figure></div>
+  <div class="pair"><figure><img src="X-sign-03-ref.png" alt="ref"><figcaption>SIGN-03 Engineering — reference.</figcaption></figure><figure><img src="X-sign-03-render.png" alt="render"><figcaption>SIGN-03 — render (angle residual −5.1°, kept).</figcaption></figure></div>
+  <div class="pair"><figure><img src="X-sign-04-ref.png" alt="ref"><figcaption>SIGN-04 Creative Studio — reference.</figcaption></figure><figure><img src="X-sign-04-render.png" alt="render"><figcaption>SIGN-04 — render (1.2°).</figcaption></figure></div>
+  <div class="pair"><figure><img src="X-sign-05-ref.png" alt="ref"><figcaption>SIGN-05 Management — reference.</figcaption></figure><figure><img src="X-sign-05-render.png" alt="render"><figcaption>SIGN-05 — render (0.4°).</figcaption></figure></div>
+  <div class="pair"><figure><img src="X-sign-06-ref.png" alt="ref"><figcaption>SIGN-06 Research — reference.</figcaption></figure><figure><img src="X-sign-06-render.png" alt="render"><figcaption>SIGN-06 — render (2.2°).</figcaption></figure></div>
+  <div class="pair"><figure><img src="X-sign-07-ref.png" alt="ref"><figcaption>SIGN-07 QA &amp; Testing — reference.</figcaption></figure><figure><img src="X-sign-07-render.png" alt="render"><figcaption>SIGN-07 — render (0.9°).</figcaption></figure></div>
+
+  <h3>4.14 Lighting and environmental background</h3>
+  <div class="tags"><span class="tag t-est">LGT-01/02 tone approx. EST.</span><span class="tag t-assumed">city cards + planes ASSUMED</span><span class="tag t-assumed">canopy discs APPROX.</span><span class="tag t-est">parapet strip EST.</span></div>
+  <div class="pair">
+    <figure><img src="X-backdrop-left-ref.png" alt="ref"><figcaption>Reference, upper-left band: exterior glazing, city bokeh, terrace trees and the curved parapet.</figcaption></figure>
+    <figure><img src="X-backdrop-left-render.png" alt="render"><figcaption>006-A render: back exterior wall + mullions, city backdrop card, parapet band + strip, canopy discs — simplified scenery by design (CR-02).</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="../../reference/wora-main-workspace.png" style="max-width:49%" alt="ref"><figcaption>Reference, full frame (mood reference).</figcaption></figure>
+    <figure><img src="E01-main-camera-view-006A.png" style="max-width:49%" alt="render"><figcaption>006-A render, full frame: lighting mood (cool sky / warm ground, key from upper-right), dark backdrop.</figcaption></figure>
+  </div>
+  <p class="note">Right-side backdrop comparison: section 4.1. The large outdoor tree at the bottom-right frame edge is modelled as a simple canopy disc; the right-terrace greenery cluster (ENV-017) is <b>omitted</b> — its screen ray cannot be placed at a consistent 3D location (documented, not invented).</p>
+</section>
+
+<section id="vf1">
+  <h2 style="color:#0F62FE">4-VF1 · Mission VF-1 (Materials &amp; Lighting) — gate package (2026-11-20, owner-approved)</h2>
+  <p class="note">VF-1 changes <b>appearance only</b> — zero geometry changes (rendered check re-run: all six sizes byte-equal to 006-A; see <code>greybox/data/rendered-check.json</code> note). Flat measurement mode is byte-identical (test-enforced). Existing 47 tests preserved; 9 additive VF-1 audit tests added (56 total). Full-frame and phone evidence below; commit hash in the VF-1 report <code>greybox/08-vf1-materials-lighting-report.md</code>.</p>
+
+  <h3>VF1.1 · Full frame — reference vs VF-1 render (side by side)</h3>
+  <div class="pair">
+    <figure><img src="../../reference/wora-main-workspace.png" alt="Locked reference"><figcaption>Locked reference (1672×941) — immutable original.</figcaption></figure>
+    <figure><img src="VF1-desktop-1672x941.png" alt="VF-1 render"><figcaption>VF-1 render (browser output, HOME camera): PBR marble/glass/metal, per-department floor tones, shadow-mapped key light, HDR emitters + bloom (rim, strips), ACES tone mapping.</figcaption></figure>
+  </div>
+
+  <h3>VF1.2 · Overlay — adjustable opacity (VF-1 render over reference)</h3>
+  <div class="ovwrap">
+    <img src="../../reference/wora-main-workspace.png" alt="reference base">
+    <img class="top" id="ovvf1" src="VF1-desktop-1672x941.png" alt="VF-1 overlay" style="opacity:0.5">
+  </div>
+  <input class="slider" type="range" min="0" max="100" value="50" oninput="document.getElementById('ovvf1').style.opacity=(this.value/100).toFixed(2)">
+
+  <h3>VF1.3 · Material close-ups (identical pixel windows)</h3>
+  <div class="tags"><span class="tag t-meas">marble base MEASURED</span><span class="tag t-meas">floor tones MEASURED (6 of 7)</span><span class="tag t-est">vein pattern EST.</span><span class="tag t-est">roughness/clearcoat/metalness EST.</span><span class="tag t-est">bloom budget EST. (Q-VF-03)</span><span class="tag t-est">soft shadow radius EST.</span></div>
+
+  <h4>Atrium marble (window 560,300 → 1260,620) — VAC-LGT-04</h4>
+  <div class="pair">
+    <figure><img src="Y-atrium-walkways-ref.png" alt="ref"><figcaption>Reference: polished marble, thin veins, warm zones.</figcaption></figure>
+    <figure><img src="Y-atrium-walkways-vf1render.png" alt="VF-1"><figcaption>VF-1: procedural marble from sampled tones (#ACA0AB–#D2B9B0 base MEASURED; vein pattern EST., seeded).</figcaption></figure>
+  </div>
+
+  <h4>Glass partitions + balustrades (window 1050,40 → 1470,360 area; partitions window) — VAC-LGT-06</h4>
+  <div class="pair">
+    <figure><img src="Y-partitions-balustrades-ref.png" alt="ref"><figcaption>Reference: clear glass, white specular streaks, anthracite frames.</figcaption></figure>
+    <figure><img src="Y-partitions-balustrades-vf1render.png" alt="VF-1"><figcaption>VF-1: MeshPhysicalMaterial glass (roughness 0.06, clearcoat 1) + RoomEnvironment reflections; opacity 0.35 unchanged from 006-A.</figcaption></figure>
+  </div>
+
+  <h4>Plinth rim glow + bloom (plinth window) — VAC-LGT-03</h4>
+  <div class="pair">
+    <figure><img src="Y-plinth-ref.png" alt="ref"><figcaption>Reference: glowing rim with bloom halo.</figcaption></figure>
+    <figure><img src="Y-plinth-vf1render.png" alt="VF-1"><figcaption>VF-1: rim HDR ×6.0, strips ×5.5, bloom threshold 3.0 (only true emitters bloom), intensity 0.5 — subtle per approved default Q-VF-03.</figcaption></figure>
+  </div>
+
+  <h4>Fascia + curtain wall (window 1050,40 → 1470,360)</h4>
+  <div class="pair">
+    <figure><img src="Y-facade-parapet-ref.png" alt="ref"><figcaption>Reference.</figcaption></figure>
+    <figure><img src="Y-facade-parapet-vf1render.png" alt="VF-1"><figcaption>VF-1: same geometry as 006-A; fascia/parapet roughness + env reflections added.</figcaption></figure>
+  </div>
+
+  <h4>Facade band lower-left +Z (window 200,540 → 700,941)</h4>
+  <div class="pair">
+    <figure><img src="Y-facade-band-plusZ-ref.png" alt="ref"><figcaption>Reference.</figcaption></figure>
+    <figure><img src="Y-facade-band-plusZ-vf1render.png" alt="VF-1"><figcaption>VF-1: anthracite metal frames (metalness 0.55), curtain-wall glass reflections.</figcaption></figure>
+  </div>
+
+  <h4>Backdrop mood (backdrop window)</h4>
+  <div class="pair">
+    <figure><img src="Y-backdrop-left-ref.png" alt="ref"><figcaption>Reference: cool exterior vs warm interior balance (VAC-LGT-01).</figcaption></figure>
+    <figure><img src="Y-backdrop-left-vf1render.png" alt="VF-1"><figcaption>VF-1: hemisphere light unchanged (#D6E4F0/#A3938A/1.5); ACES tone mapping added; city cards stay unlit (no bloom).</figcaption></figure>
+  </div>
+
+  <h4>Department floors (DEPT-05 Management window) — floor tones</h4>
+  <div class="pair">
+    <figure><img src="Y-dept05-floor-ref.png" alt="ref"><figcaption>Reference: Management warm-wood floor (#805E4C sample) + furniture (furniture itself is VF-3 scope — absent here).</figcaption></figure>
+    <figure><img src="Y-dept05-floor-vf1render.png" alt="VF-1"><figcaption>VF-1: warm-wood floor material (base #805E4C MEASURED; plank grain EST., Q-VF-02 default). All resolved floors: DEPT-02 #927A74, DEPT-03 #8F7F80, DEPT-04 #836B5F, DEPT-05 #805E4C, DEPT-06 #817880 (2026-11-20 probe), DEPT-07 #655B61. <b>DEPT-01 Executive stays UNRESOLVED</b> (probe contaminated by furniture; neutral kept — no invention).</figcaption></figure>
+  </div>
+
+  <h3>VF1.4 · Phone evidence — 412×915 @ DPR 2.625 (actual rendered output)</h3>
+  <div class="pair">
+    <figure><img src="VF1-phone-portrait-412x915.png" alt="phone"><figcaption>Phone portrait at the reference-responsive FOV: floor tones, glow strips and plinth bloom readable; full systematic mobile-fidelity program is VF-6 (per plan). Desktop renders are pixel-comparable to 006-A framing.</figcaption></figure>
+  </div>
+
+  <h3>VF1.5 · Quantitative appearance comparison (same-patch medians, reference frame 1672×941)</h3>
+  <table>
+    <tr><th>Patch</th><th>Reference</th><th>VF-1 render</th><th>ΔRGB (euclidean)</th><th>Reading</th></tr>
+    <tr><td>Marble left of plinth (700,520)</td><td>#B0A2AE</td><td>#B5A8AD</td><td>7.9</td><td>Base tone match</td></tr>
+    <tr><td>Marble below plinth (880,585)</td><td>#B6A6AD</td><td>#BDB0B3</td><td>13.6</td><td>Close; vein/blotch distribution EST.</td></tr>
+    <tr><td>Marble right slab (1150,470)</td><td>#CCB2AC</td><td>#B6A9AD</td><td>23.8</td><td>Warm-zone placement not reproduced (pattern EST. — documented deviation)</td></tr>
+    <tr><td>DEPT-05 floor centre</td><td>#94A0C7 (furniture-contaminated: lit table blue cast)</td><td>#969597</td><td>—</td><td>Comparison invalid vs furniture; albedo #805E4C matches catalogue by construction (test-enforced)</td></tr>
+  </table>
+
+  <h3>VF1.6 · VF-1 deviations and unresolved items (complete)</h3>
+  <table>
+    <tr><th>#</th><th>Item</th><th>Status</th></tr>
+    <tr><td>V1</td><td>Marble vein pattern + warm-zone placement</td><td><span class="tag t-est">EST.</span> — pattern not recoverable at greybox resolution; base tones measured; seeded/reproducible</td></tr>
+    <tr><td>V2</td><td>DEPT-01 Executive floor tone</td><td><b>UNRESOLVED</b> — both 2026-11-20 probes furniture-contaminated (#664732 room median / #433E3E front band); neutral floor kept; owner may resolve with a clean pixel coordinate</td></tr>
+    <tr><td>V3</td><td>PBR roughness/clearcoat/metalness/env intensities; HDR boosts ×6.0/×5.5; bloom threshold 3.0, intensity 0.5; shadow radius 4; tone mapping ACES</td><td><span class="tag t-est">EST.</span> styled after reference mood (Q-VF-02/03 defaults approved in plan); owner judgement requested at this gate</td></tr>
+    <tr><td>V4</td><td>Robot/furniture materials (VAC-LGT-05)</td><td>Not applicable in VF-1 — robots/furniture not started (VF-4/VF-3); robot tokens already catalogued</td></tr>
+    <tr><td>V5</td><td>Shadows: soft contact shadows to the lower-left</td><td>Key direction per LGT-02 observation (conf. Medium–Low); softness <span class="tag t-est">EST.</span>; glass/backdrop/emissive excluded (test-enforced)</td></tr>
+    <tr><td>V6</td><td>Bloom on screens/eyes (VAC-LGT-03)</td><td>Screens/eyes are robot/furniture scope; rim + strips bloom in VF-1</td></tr>
+  </table>
+</section>
+
+<section id="pres">
+  <h2 style="color:#0F62FE">PRES · Desktop-first presentation review &amp; correction (2026-11-20, owner-directed)</h2>
+  <p class="note">Desktop (1920×1080) is the primary acceptance viewport; mobile secondary. Scope: the presentation of the primary route <code>/</code> only — no geometry, no camera, no reference change. Root cause, before/after evidence and all four required desktop resolutions below.</p>
+
+  <h3>PRES.1 · Root cause of the red markers / cyan points / green labels / black areas</h3>
+  <p class="note">The screenshot the owner took was of the <b>dev inspector view</b>, not the clean workspace route. It is reached from <code>/</code> in two ways (source: <code>src/App.tsx</code>, <code>src/dev/DevInspector.tsx</code>):
+  <br>1. <b>The bottom-left text link "Structural greybox … · open dev inspector"</b> (production DOM, always rendered on <code>/</code>); clicking set <code>#/dev</code>.
+  <br>2. <b>The <code>?dev</code> query parameter</b> — <code>isDevRoute()</code> accepted <code>location.search</code>. The owner opened the preview through Vercel's SSO authentication redirect, which preserves query strings, so <code>/...?dev</code> (or a share/bookmark containing it) silently loaded the inspector on what the owner believed was the primary route.
+  <br>In that view: <span style="color:#ff3b3b"><b>red ×</b></span> = measured reference pixels (<code>#ff3b3b</code>, MARKERS in <code>markerSets.ts</code>), <span style="color:#21e6c1"><b>teal ● + green ID labels</b></span> = live-projected world points (<code>#21e6c1</code>/<code>#7fdcff</code>), <b>orange dashed lines</b> = measured slab-edge lines, <b>black letterbox bands</b> = the inspector's default "Reference 1672:941" frame letterboxing the stage on wider aspects. None of these existed on the clean <code>/</code> route — but the query-param path made the distinction invisible.</p>
+
+  <h3>PRES.2 · Corrections applied (exact files)</h3>
+  <table>
+    <tr><th>File</th><th>Change</th><th>Why</th></tr>
+    <tr><td><code>apps/workspace/src/App.tsx</code></td><td><code>isDevRoute()</code> now accepts <b>only</b> the explicit <code>#/dev</code> hash — the <code>?dev</code> query path removed; the bottom-left "open dev inspector" link removed; <code>/</code> renders the clean workspace only</td><td>Requirement 1: remove dev overlays from <code>/</code>; the query param could silently activate the inspector through the SSO redirect</td></tr>
+    <tr><td><code>apps/workspace/src/dev/DevInspector.tsx</code></td><td>Header note updated; new <b>"Exit to workspace (/)"</b> button that clears the hash</td><td>Preserve all inspection capabilities on <code>#/dev</code> (requirement: do not disable developer tools) and make the exit path obvious</td></tr>
+    <tr><td colspan="3">No other files changed. Camera, responsive FOV rule, geometry, materials, tests, reference: untouched (no camera change was needed — see PRES.3).</td></tr>
+  </table>
+
+  <h3>PRES.3 · Desktop inspection at the four required viewports (clean route <code>/</code>)</h3>
+  <p class="note">Instrument readback per viewport (before and after identical): <b>1920×1080 → rule "reference", vFOV 12.0006°</b> (the HOME camera exactly, aspect 1.7778 = 1672:941); <b>2560×1440 → same rule, 12.0006°</b>; <b>1440×900 → keep-vertical, 12.0006°</b>; <b>1366×768 → reference rule (Δaspect 0.0008 &lt; 0.001), 11.9885°</b>. The canvas is full-bleed (<code>position:fixed; inset:0</code>) — <b>no letterboxing exists on <code>/</code></b>; the letterbox bands belong to the inspector's reference-frame stage. Composition: complete (all 7 signs, plinth, facades, backdrop); nothing clipped; no stretch (FOV math preserves aspect); scene uses the full workspace area. <b>Cause identified before any change: no camera or framing change was warranted, so none was made.</b></p>
+  <div class="pair">
+    <figure><img src="PRES-after-home-1920x1080.png" alt="1920"><figcaption>1920×1080 — mandatory primary viewport (after; identical to before except the removed bottom-left link). FOV 12.0006°, full-bleed.</figcaption></figure>
+    <figure><img src="PRES-after-home-2560x1440.png" alt="2560"><figcaption>2560×1440 — large desktop (after). Same HOME FOV; larger display area, same composition.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="PRES-after-home-1440x900.png" alt="1440"><figcaption>1440×900 — standard laptop (after; keep-vertical rule, slight top/bottom reveal as designed).</figcaption></figure>
+    <figure><img src="PRES-after-home-1366x768.png" alt="1366"><figcaption>1366×768 — smaller laptop (after; within 0.001 of the reference aspect → HOME FOV).</figcaption></figure>
+  </div>
+  <p class="note">Before counterparts (with the old bottom-left link) are committed as <code>PRES-before-home-*.png</code> for all four sizes — the scene content is identical; the only difference is the removed link.</p>
+
+  <h3>PRES.4 · Before/after — the reported state</h3>
+  <div class="pair">
+    <figure><img src="PRES-before-LEAK-querydev-1920x1080.png" alt="before"><figcaption>BEFORE — production build, <code>/…?dev</code> at 1920×1080: red × markers, teal ● points + green labels, orange slab-edge lines, dev panel (the owner's screenshot state, reproduced from the deployed bundle).</figcaption></figure>
+    <figure><img src="PRES-after-FIX-querydev-1920x1080.png" alt="after"><figcaption>AFTER — the same URL <code>/…?dev</code> at 1920×1080 (fresh production build): clean workspace, no markers/panel/letterbox; instrument readback devPanel=false, markers=false.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="PRES-after-dev-hash-1920x1080.png" alt="dev"><figcaption><code>#/dev</code> preserved: full inspector (panel, all toggles, markers, slab edges, overlay on dev servers) + new "Exit to workspace (/)" button. Measurement data and developer tools untouched.</figcaption></figure>
+    <figure><img src="PRES-after-home-1920x1080.png" alt="clean"><figcaption>Clean screenshot of <code>/</code> at 1920×1080 with no inspection overlays (mandatory acceptance shot).</figcaption></figure>
+  </div>
+
+  <h3>PRES.5 · Mobile (secondary — basic usability only)</h3>
+  <p class="note">No mobile-driven changes were made. The clean <code>/</code> route keeps the responsive FOV rule (safe-rect framing), so the scene renders unbroken on the phone viewport; the VF-1 phone evidence (<code>VF1-phone-portrait-412x915.png</code>, §4-VF1) remains valid. Desktop composition takes precedence per the owner's directive.</p>
+
+  <h3>PRES.6 · Validation</h3>
+  <p class="note">tsc clean · vitest 56/56 (47 preserved + 9 VF-1 additive; no test weakened) · build ✓ · check-dist OK · rendered geometry check unchanged (flat mode byte-identical) · reference checksum OK pre/post · commit ⟨see git log⟩ pushed to PR #1's branch (preview auto-updates). PR #1 not merged.</p>
+</section>
+
+<section id="vf8">
+  <h2 style="color:#0F62FE">VF8 · Final visual acceptance (autonomous run VF-1→VF-7, 2026-11-20)</h2>
+  <p class="note">Owner authorisation: continuous execution VF-1→VF-8 without per-phase manual gates; delivery = this evidence package + one comprehensive report (greybox/14-vf-final-report.md). PR #1 <b>not merged</b>; reference checksum verified at every commit.</p>
+
+  <h3>VF8.1 · Final scene at the required desktop viewports (clean route /)</h3>
+  <div class="pair">
+    <figure><img src="VF8-final-1920x1080.png" alt="1920"><figcaption>1920×1080 — primary acceptance viewport. Full reconstructed scene: VF-1 materials/lighting + VF-2 walnut wall &amp; partition frames + VF-3 interiors + VF-4 robots (47) + VF-5 tree trunks + VF-7 info chip. FOV 12.0006° (HOME exact).</figcaption></figure>
+    <figure><img src="VF8-final-2560x1440.png" alt="2560"><figcaption>2560×1440 — same HOME composition.</figcaption></figure>
+  </div>
+  <div class="pair">
+    <figure><img src="VF8-final-1440x900.png" alt="1440"><figcaption>1440×900 — keep-vertical rule.</figcaption></figure>
+    <figure><img src="VF8-final-1366x768.png" alt="1366"><figcaption>1366×768 — reference rule (Δaspect 0.0008).</figcaption></figure>
+  </div>
+
+  <h3>VF8.2 · Mobile (secondary; VF-6 thickness floor active — desktop pixels unchanged)</h3>
+  <div class="pair">
+    <figure><img src="VF8-phone-412x915.png" alt="phone"><figcaption>412×915 @ DPR 2.625: rails, mullions, strips and robots remain readable (VF-6 floor ×2.2 on thin env elements; desktop identity verified meanΔ 0.16/255 = AA noise).</figcaption></figure>
+    <figure><img src="VF8-interaction-selected.png" alt="interaction"><figcaption>VF-7 selection: additive cyan ring around the clicked department + info chip with the measured census. No geometry/material identity change; HOME camera untouched.</figcaption></figure>
+  </div>
+
+  <h3>VF8.3 · Acceptance status vs the plan criteria</h3>
+  <table>
+    <tr><th>Mission</th><th>Criteria</th><th>Status</th></tr>
+    <tr><td>VF-1 Materials &amp; Lighting</td><td>palette audit, LGT-01…04 (06 open: screens/eyes), 56/56 tests, phone evidence</td><td>ACCEPTED by owner (2026-11-20)</td></tr>
+    <tr><td>VF-2 Architecture</td><td>walnut wall + frames on measured footprints; no ceilings/doors invented</td><td>COMPLETE — tests + renders verified</td></tr>
+    <tr><td>VF-3 Interiors</td><td>catalogue census; floor items ≤ 15 px; ENV-005…013; no invention in occluded zones</td><td>COMPLETE — 205 items; 3 QA defects found &amp; fixed (display orientation, lounge desks, dept strings)</td></tr>
+    <tr><td>VF-4 Robots</td><td>exactly 47; head-top ≤ 15 px; pose census; vest/tablet sets</td><td>COMPLETE — stylised low-poly (Q-VF-04 default); eye/limb detail EST. (art pass)</td></tr>
+    <tr><td>VF-5 Environment</td><td>tree trunks; canopies unchanged; ENV-017 omitted (unchanged)</td><td>COMPLETE</td></tr>
+    <tr><td>VF-6 Mobile fidelity</td><td>≥ readable fine elements at 412×915; desktop pixel-identity</td><td>COMPLETE — presentation-only floor; desktop identity proven</td></tr>
+    <tr><td>VF-7 Interaction</td><td>pickable entities; highlight additive only; HOME restorable; 24/47 figures</td><td>COMPLETE — 1 QA defect found &amp; fixed (userData level)</td></tr>
+    <tr><td>VF-8 Final</td><td>full validation; rendered check vs 006-A; evidence package</td><td>PASS — 71/71 tests, check-dist OK, rendered check byte-equal at 6 sizes, checksum OK</td></tr>
+  </table>
+
+  <h3>VF8.4 · Known deviations and unresolved items (complete, nothing hidden)</h3>
+  <table>
+    <tr><th>#</th><th>Item</th><th>Class</th></tr>
+    <tr><td>D1</td><td>DEPT-01 Executive floor tone</td><td>UNRESOLVED (probe contaminated; neutral kept)</td></tr>
+    <tr><td>D2</td><td>Marble vein pattern / warm-zone placement</td><td>EST. (seeded procedural; ΔRGB ≤ 23.8 vs reference patches)</td></tr>
+    <tr><td>D3</td><td>Partition mullion rhythm (0.96 m applied); transoms 2.0 m; post bays</td><td>EST. / ASSUMED (not separately measurable)</td></tr>
+    <tr><td>D4</td><td>Robot limb/eye simplification; ROBOT-046 ear colour via leather token</td><td>EST. (stylised low-poly per Q-VF-04)</td></tr>
+    <tr><td>D5</td><td>Display chart artwork (bar chart, code, art, map, check) rendered as flat emissive</td><td>ND → art pass</td></tr>
+    <tr><td>D6</td><td>Wall-item placement (displays/boards/shelves) wall-adjacent EST. (far-wall plane intersections proved below-floor)</td><td>EST. (documented solver limitation; ≤ 30 px tested)</td></tr>
+    <tr><td>D7</td><td>Scenery backdrop planes / distances</td><td>ASSUMED (Q-ARCH-06 open; unchanged from 006-A)</td></tr>
+    <tr><td>D8</td><td>Shadows/bloom/PBR styling values (roughness, boosts, threshold)</td><td>EST. (owner-judged at the VF-1 gate; unchanged since)</td></tr>
+    <tr><td>D9</td><td>Occluded-zone interiors (behind REG-02/04/06/07)</td><td>Intentionally sparse (Q-VF-01 default; no invention)</td></tr>
+    <tr><td>D10</td><td>Performance not yet measured on real hardware (SwiftShader proxy only)</td><td>OPEN — owner real-device check pending</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>5 · Measured vs estimated vs assumed — provenance summary</h2>
+  <table>
+    <tr><th>Element</th><th>Provenance</th><th>Source</th></tr>
+    <tr><td>Camera, footprints, plinth centre/radius, sign anchors, robot-marker data</td><td><span class="tag t-meas">MEASURED</span> / <span class="tag t-constr">BY CONSTRUCTION</span></td><td>Mission 003 solve; unchanged in 006-A</td></tr>
+    <tr><td>Fascia band bottom (+Z / +X)</td><td><span class="tag t-fit">FIT</span></td><td>Least-squares of the 2026-11-20 reference probe (rms 0.007 / 0.013 m)</td></tr>
+    <tr><td>Curtain-wall bay 0.96 m; plinth label boxes; material tone samples</td><td><span class="tag t-meas">MEASURED</span></td><td>Reference probe (scratch, image read-only)</td></tr>
+    <tr><td>Transoms 2.0 m; balustrade rail/posts (2.4 m bays); glass tones; sign typography and icons; logo/word artwork; lighting tone</td><td><span class="tag t-est">EST.</span></td><td>Styled after the reference; marked est. in the JSON</td></tr>
+    <tr><td>Scenery planes (city, parapet, canopy discs); −X/−Z fascia thickness 0.45 m; back-wall height</td><td><span class="tag t-assumed">ASSUMED</span></td><td>Q-ARCH-06 open; positions by construction in HOME</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>6 · Known deviations and unresolved items (complete list — nothing hidden)</h2>
+  <table>
+    <tr><th>#</th><th>Item</th><th>Status</th></tr>
+    <tr><td>1</td><td>+X lower-edge angle: reference 3–10° steeper</td><td>Accepted by owner (CR-01); edge grid-aligned at x = 14.6; fascia follows the measured band bottom</td></tr>
+    <tr><td>2</td><td>SIGN-02 +3.5°, SIGN-03 −5.1° angle residuals</td><td>Kept by owner (CR-05); visible in 4.7–4.13</td></tr>
+    <tr><td>3</td><td>Scenery plane distances</td><td>Assumptions (Q-ARCH-06); scenery lands below y = 0 on distant planes (all in-frame rays point below the horizon); invisible in HOME, visible in free orbit</td></tr>
+    <tr><td>4</td><td>−X/−Z mullions, transoms, post bays, fascia thickness</td><td>Styling estimates (no measurable reference lines there)</td></tr>
+    <tr><td>5</td><td>Sign typography/icons, logo/wordmark artwork</td><td>Greybox-level glyphs; exact artwork = art pass</td></tr>
+    <tr><td>6</td><td>Bloom / glow around rim, strips, screens</td><td>Deferred to the art pass (Q-3D-07 decided: emissive now)</td></tr>
+    <tr><td>7</td><td>LGT-01/02 mood and shadow direction</td><td>Approximate tone-only lighting; owner visual judgement requested in this review</td></tr>
+    <tr><td>8</td><td>ENV-017 right-terrace greenery</td><td>Omitted (ray cannot be placed consistently); can be re-scoped into 006-C</td></tr>
+    <tr><td>9</td><td>Robots (47), furniture, plants, screens, doors</td><td>Intentionally absent — 006-B / 006-C scope, not started</td></tr>
+    <tr><td>10</td><td>Executive Office interior/plan</td><td>Square greybox only (CR-07: final geometry unresolved, not confirmed)</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>7 · Responsive framing renders (desktop sizes; phone = live link)</h2>
+  <div class="pair">
+    <figure><img src="V-responsive-006A-1920x1080.png" alt="1920"><figcaption>1920×1080 — reference rule (Δaspect &lt; 0.001).</figcaption></figure>
+    <figure><img src="V-responsive-006A-2560x1080.png" alt="2560"><figcaption>2560×1080 — fit-width rule.</figcaption></figure>
+    <figure><img src="V-responsive-006A-1440x900.png" alt="1440"><figcaption>1440×900 — keep-vertical rule.</figcaption></figure>
+    <figure><img src="V-responsive-006A-1024x768.png" alt="1024"><figcaption>1024×768 — fit-safe-width rule (reveals ~19 % extra height, documented).</figcaption></figure>
+  </div>
+</section>
+
+</main>
+<footer>
+  Package contents: 006-A pairs (14 × <code>X-*-ref/render.png</code>) and VF-1 pairs (7 × <code>Y-*-ref/vf1render.png</code>, full-frame <code>VF1-*.png</code>), full-frame and overlay renders (<code>E01–E06</code>), facade/backdrop/plinth/sign sets from the mission run (<code>F-*</code>, <code>D-backdrop-*</code>, <code>P-plinth-006A-*</code>, <code>S-SIGN-*-006A</code>), responsive renders. Reference crops are read-only derivations of the locked original, committed as review artifacts per the owner's storage decision (2026-11-20) — the original file is untouched (checksum re-verified). Rendered check data: <code>greybox/data/rendered-check.json</code> · metrics: <code>greybox/data/greybox-metrics.json</code> · specialist reports: <code>greybox/06-scene-006-a-report.md</code> + <code>greybox/08-vf1-materials-lighting-report.md</code>. PR #1 remains open and unmerged; no implementation change was made for this review.
+</footer>
+</body>
+</html>

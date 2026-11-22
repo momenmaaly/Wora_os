@@ -1,0 +1,1735 @@
+{
+ "schema": "wora-greybox-metrics/v1",
+ "generatedBy": "apps/workspace/tests/report.test.ts (three.js projection of the rendered model)",
+ "reference": {
+  "width": 1672,
+  "height": 941,
+  "sha256": "6f91ff3d27f1d69d7189b6d1a599088086bb50048d1c0b492e3ebcdb718036a1"
+ },
+ "camera": {
+  "yawDeg": 225.371,
+  "pitchDeg": 27.783,
+  "rollDeg": 0,
+  "vfovDeg": 12.001,
+  "hfovDeg": 21.158,
+  "focalPx": 4476.3
+ },
+ "plinth": {
+  "topEllipse": {
+   "box": [
+    794.6,
+    449.9,
+    217,
+    102.4
+   ],
+   "aspect": 2.119,
+   "heightDeltaPx": 2.4
+  },
+  "projectedBox": [
+   794.6,
+   449.9,
+   217,
+   107.3
+  ],
+  "measuredBox": [
+   795,
+   450,
+   217,
+   100
+  ],
+  "centreDeltaPx": [
+   -0.5,
+   3.5
+  ],
+  "centreErrorPx": 3.6,
+  "widthDeltaPx": 0,
+  "heightDeltaPx": 7.3,
+  "aspect": 2.022,
+  "measuredAspect": 2.17
+ },
+ "framingAnchors": [
+  {
+   "id": "plinth centre (ellipse box centre)",
+   "reference": [
+    903,
+    500
+   ],
+   "projected": [
+    903.1,
+    503.6
+   ],
+   "independent": false,
+   "errorPx": 3.6,
+   "withinCam01": true
+  },
+  {
+   "id": "planter (ENV-005 floor point)",
+   "reference": [
+    802,
+    402
+   ],
+   "projected": [
+    802.5,
+    425
+   ],
+   "independent": false,
+   "note": "Not evaluated: ENV-005 is the floor-level base point (M003 est.), (802,402) is the visible planter centre above it; the planter is furniture and not part of the greybox.",
+   "errorPx": 23,
+   "withinCam01": false
+  },
+  {
+   "id": "Executive Office sign anchor",
+   "reference": [
+    876,
+    158
+   ],
+   "projected": [
+    876,
+    158.5
+   ],
+   "independent": false,
+   "errorPx": 0.5,
+   "withinCam01": true
+  }
+ ],
+ "roomCornerConsistency": [
+  {
+   "id": "DEPT-01",
+   "name": "Executive Office",
+   "cornersPx": [
+    [
+     864.7,
+     158.8
+    ],
+    [
+     1067.8,
+     241.5
+    ],
+    [
+     864.4,
+     330
+    ],
+    [
+     661.4,
+     240.4
+    ]
+   ],
+   "maxErrVsSolverPx": 0.19
+  },
+  {
+   "id": "DEPT-02",
+   "name": "Marketing",
+   "cornersPx": [
+    [
+     499.6,
+     229.9
+    ],
+    [
+     657.2,
+     301.6
+    ],
+    [
+     371,
+     419.7
+    ],
+    [
+     215,
+     340.2
+    ]
+   ],
+   "maxErrVsSolverPx": 0.19
+  },
+  {
+   "id": "DEPT-03",
+   "name": "Engineering",
+   "cornersPx": [
+    [
+     1191.4,
+     231.6
+    ],
+    [
+     1523.1,
+     363
+    ],
+    [
+     1391.1,
+     430
+    ],
+    [
+     1058.1,
+     290.9
+    ]
+   ],
+   "maxErrVsSolverPx": 0.23
+  },
+  {
+   "id": "DEPT-04",
+   "name": "Creative Studio",
+   "cornersPx": [
+    [
+     481.1,
+     503.8
+    ],
+    [
+     636,
+     583.6
+    ],
+    [
+     363.5,
+     710.1
+    ],
+    [
+     210.3,
+     622
+    ]
+   ],
+   "maxErrVsSolverPx": 0.17
+  },
+  {
+   "id": "DEPT-05",
+   "name": "Management",
+   "cornersPx": [
+    [
+     1386.8,
+     474.3
+    ],
+    [
+     1638.7,
+     581.6
+    ],
+    [
+     1509.6,
+     655.4
+    ],
+    [
+     1256.2,
+     541.7
+    ]
+   ],
+   "maxErrVsSolverPx": 0.3
+  },
+  {
+   "id": "DEPT-06",
+   "name": "Research",
+   "cornersPx": [
+    [
+     703.8,
+     628
+    ],
+    [
+     879.1,
+     718.6
+    ],
+    [
+     675,
+     823.3
+    ],
+    [
+     500.4,
+     725.3
+    ]
+   ],
+   "maxErrVsSolverPx": 0.16
+  },
+  {
+   "id": "DEPT-07",
+   "name": "QA & Testing",
+   "cornersPx": [
+    [
+     1078,
+     633.4
+    ],
+    [
+     1323.8,
+     751.8
+    ],
+    [
+     1205.5,
+     819.1
+    ],
+    [
+     959.2,
+     694.8
+    ]
+   ],
+   "maxErrVsSolverPx": 0.21
+  }
+ ],
+ "digitisedCorners": [
+  {
+   "name": "Marketing near floor corner",
+   "dept": "DEPT-02",
+   "corner": "x1z1",
+   "measuredPx": [
+    371,
+    420
+   ],
+   "projectedPx": [
+    371,
+    419.7
+   ],
+   "deltaPx": [
+    0,
+    -0.3
+   ],
+   "errorPx": 0.3
+  },
+  {
+   "name": "Management left corner-post foot",
+   "dept": "DEPT-05",
+   "corner": "x0z1",
+   "measuredPx": [
+    1260,
+    539
+   ],
+   "projectedPx": [
+    1256.2,
+    541.7
+   ],
+   "deltaPx": [
+    -3.8,
+    2.7
+   ],
+   "errorPx": 4.6
+  },
+  {
+   "name": "Management near floor corner",
+   "dept": "DEPT-05",
+   "corner": "x1z1",
+   "measuredPx": [
+    1508,
+    653
+   ],
+   "projectedPx": [
+    1509.6,
+    655.4
+   ],
+   "deltaPx": [
+    1.6,
+    2.4
+   ],
+   "errorPx": 2.9
+  },
+  {
+   "name": "Research right corner-post foot",
+   "dept": "DEPT-06",
+   "corner": "x1z0",
+   "measuredPx": [
+    885,
+    720
+   ],
+   "projectedPx": [
+    879.1,
+    718.6
+   ],
+   "deltaPx": [
+    -5.9,
+    -1.4
+   ],
+   "errorPx": 6.1
+  },
+  {
+   "name": "QA right wall-end foot",
+   "dept": "DEPT-07",
+   "corner": "x1z0",
+   "measuredPx": [
+    1323,
+    750
+   ],
+   "projectedPx": [
+    1323.8,
+    751.8
+   ],
+   "deltaPx": [
+    0.8,
+    1.8
+   ],
+   "errorPx": 1.9
+  }
+ ],
+ "signs": [
+  {
+   "id": "SIGN-01",
+   "dept": "DEPT-01",
+   "wall": "front facet (normal ≈ +X+Z)",
+   "plateLengthM": 4.12,
+   "anchorRoundTripPx": 0.02,
+   "projectedBox": [
+    792,
+    140.5,
+    168.1,
+    36
+   ],
+   "measuredBox": [
+    792,
+    141,
+    168,
+    35
+   ],
+   "boxCentreErrorPx": 0.1,
+   "boxHeightDeltaPx": 1,
+   "screenAngleDeg": 0.1,
+   "measuredAngleDeg": 0,
+   "angleErrorDeg": 0.1,
+   "withinCam02": true
+  },
+  {
+   "id": "SIGN-02",
+   "dept": "DEPT-02",
+   "wall": "x0",
+   "plateLengthM": 4.06,
+   "anchorRoundTripPx": 0.03,
+   "projectedBox": [
+    290.2,
+    163.8,
+    134.9,
+    85.1
+   ],
+   "measuredBox": [
+    291,
+    167,
+    135,
+    78
+   ],
+   "boxCentreErrorPx": 1,
+   "boxHeightDeltaPx": 7.1,
+   "screenAngleDeg": -20.5,
+   "measuredAngleDeg": -24,
+   "angleErrorDeg": 3.5,
+   "withinCam02": false
+  },
+  {
+   "id": "SIGN-03",
+   "dept": "DEPT-03",
+   "wall": "z0",
+   "plateLengthM": 5.26,
+   "anchorRoundTripPx": 0.04,
+   "projectedBox": [
+    1248.6,
+    159.8,
+    173,
+    100.8
+   ],
+   "measuredBox": [
+    1247,
+    169,
+    173,
+    81
+   ],
+   "boxCentreErrorPx": 1.7,
+   "boxHeightDeltaPx": 19.8,
+   "screenAngleDeg": 20.9,
+   "measuredAngleDeg": 26,
+   "angleErrorDeg": -5.1,
+   "withinCam02": false
+  },
+  {
+   "id": "SIGN-04",
+   "dept": "DEPT-04",
+   "wall": "x0",
+   "plateLengthM": 4.37,
+   "anchorRoundTripPx": 0.02,
+   "projectedBox": [
+    246.7,
+    429,
+    164.9,
+    107.4
+   ],
+   "measuredBox": [
+    248,
+    442,
+    165,
+    80
+   ],
+   "boxCentreErrorPx": 1.5,
+   "boxHeightDeltaPx": 27.4,
+   "screenAngleDeg": -22.8,
+   "measuredAngleDeg": -24,
+   "angleErrorDeg": 1.2,
+   "withinCam02": true
+  },
+  {
+   "id": "SIGN-05",
+   "dept": "DEPT-05",
+   "wall": "z0",
+   "plateLengthM": 3.94,
+   "anchorRoundTripPx": 0.02,
+   "projectedBox": [
+    1431.1,
+    393.6,
+    150,
+    98.9
+   ],
+   "measuredBox": [
+    1430,
+    400,
+    150,
+    85
+   ],
+   "boxCentreErrorPx": 1.3,
+   "boxHeightDeltaPx": 13.9,
+   "screenAngleDeg": 22.4,
+   "measuredAngleDeg": 22,
+   "angleErrorDeg": 0.4,
+   "withinCam02": true
+  },
+  {
+   "id": "SIGN-06",
+   "dept": "DEPT-06",
+   "wall": "x0",
+   "plateLengthM": 3.17,
+   "anchorRoundTripPx": 0.02,
+   "projectedBox": [
+    524.2,
+    553.8,
+    120.1,
+    95.2
+   ],
+   "measuredBox": [
+    525,
+    560,
+    120,
+    82
+   ],
+   "boxCentreErrorPx": 0.9,
+   "boxHeightDeltaPx": 13.2,
+   "screenAngleDeg": -24.8,
+   "measuredAngleDeg": -27,
+   "angleErrorDeg": 2.2,
+   "withinCam02": true
+  },
+  {
+   "id": "SIGN-07",
+   "dept": "DEPT-07",
+   "wall": "z0",
+   "plateLengthM": 3.61,
+   "anchorRoundTripPx": 0.04,
+   "projectedBox": [
+    1096,
+    548.7,
+    137,
+    103.5
+   ],
+   "measuredBox": [
+    1095,
+    560,
+    137,
+    80
+   ],
+   "boxCentreErrorPx": 1.1,
+   "boxHeightDeltaPx": 23.5,
+   "screenAngleDeg": 25.1,
+   "measuredAngleDeg": 26,
+   "angleErrorDeg": -0.9,
+   "withinCam02": true
+  }
+ ],
+ "ring": [
+  {
+   "id": "DEPT-01",
+   "name": "Executive Office",
+   "projectedEnvelope": [
+    659.9,
+    84.3,
+    1069.8,
+    330
+   ],
+   "measuredEnvelope": [
+    660,
+    120,
+    1070,
+    330
+   ],
+   "offsetPx": [
+    -38.6,
+    -292.9
+   ],
+   "referenceOffsetPx": [
+    -38,
+    -275
+   ],
+   "errorPx": 17.9,
+   "withinGeo04": true
+  },
+  {
+   "id": "DEPT-02",
+   "name": "Marketing",
+   "projectedEnvelope": [
+    209.3,
+    153.4,
+    657.2,
+    419.7
+   ],
+   "measuredEnvelope": [
+    236,
+    150,
+    656,
+    420
+   ],
+   "offsetPx": [
+    -470.2,
+    -213.4
+   ],
+   "referenceOffsetPx": [
+    -457,
+    -215
+   ],
+   "errorPx": 13.3,
+   "withinGeo04": true
+  },
+  {
+   "id": "DEPT-03",
+   "name": "Engineering",
+   "projectedEnvelope": [
+    1058.1,
+    155.1,
+    1529.5,
+    430
+   ],
+   "measuredEnvelope": [
+    1060,
+    150,
+    1440,
+    430
+   ],
+   "offsetPx": [
+    390.3,
+    -207.5
+   ],
+   "referenceOffsetPx": [
+    347,
+    -210
+   ],
+   "errorPx": 43.3,
+   "withinGeo04": false
+  },
+  {
+   "id": "DEPT-04",
+   "name": "Creative Studio",
+   "projectedEnvelope": [
+    203.8,
+    420.1,
+    636,
+    710.1
+   ],
+   "measuredEnvelope": [
+    236,
+    420,
+    636,
+    710
+   ],
+   "offsetPx": [
+    -483.6,
+    65.1
+   ],
+   "referenceOffsetPx": [
+    -467,
+    65
+   ],
+   "errorPx": 16.6,
+   "withinGeo04": true
+  },
+  {
+   "id": "DEPT-05",
+   "name": "Management",
+   "projectedEnvelope": [
+    1256.2,
+    391.3,
+    1646.9,
+    655.4
+   ],
+   "measuredEnvelope": [
+    1250,
+    380,
+    1672,
+    680
+   ],
+   "offsetPx": [
+    548.1,
+    23.4
+   ],
+   "referenceOffsetPx": [
+    558,
+    30
+   ],
+   "errorPx": 11.9,
+   "withinGeo04": true
+  },
+  {
+   "id": "DEPT-06",
+   "name": "Research",
+   "projectedEnvelope": [
+    496.8,
+    541.1,
+    879.5,
+    823.3
+   ],
+   "measuredEnvelope": [
+    490,
+    545,
+    860,
+    810
+   ],
+   "offsetPx": [
+    -215.4,
+    182.2
+   ],
+   "referenceOffsetPx": [
+    -228,
+    178
+   ],
+   "errorPx": 13.3,
+   "withinGeo04": true
+  },
+  {
+   "id": "DEPT-07",
+   "name": "QA & Testing",
+   "projectedEnvelope": [
+    959.2,
+    546.4,
+    1329.1,
+    819.1
+   ],
+   "measuredEnvelope": [
+    960,
+    545,
+    1340,
+    810
+   ],
+   "offsetPx": [
+    240.7,
+    182.7
+   ],
+   "referenceOffsetPx": [
+    247,
+    178
+   ],
+   "errorPx": 7.9,
+   "withinGeo04": true
+  }
+ ],
+ "ringOrderClockwise": [
+  "DEPT-03",
+  "DEPT-05",
+  "DEPT-07",
+  "DEPT-06",
+  "DEPT-04",
+  "DEPT-02",
+  "DEPT-01"
+ ],
+ "robots": {
+  "count": 47,
+  "maxHeadRoundTripPx": 0.036,
+  "zoneInside": 40,
+  "zoneTotal": 40,
+  "freeOutside": 7,
+  "freeTotal": 7,
+  "failures": []
+ },
+ "slabEdges": {
+  "cameraSweep": [
+   {
+    "yawDelta": 0,
+    "pitchDelta": 0,
+    "plusZAngleDeg": -29.8,
+    "plusXAngleDeg": 30.2
+   },
+   {
+    "yawDelta": -1.47,
+    "pitchDelta": 0,
+    "plusZAngleDeg": -28.5,
+    "plusXAngleDeg": 31.7
+   },
+   {
+    "yawDelta": 1.74,
+    "pitchDelta": 0,
+    "plusZAngleDeg": -31.5,
+    "plusXAngleDeg": 28.5
+   },
+   {
+    "yawDelta": 0,
+    "pitchDelta": -0.22,
+    "plusZAngleDeg": -29.7,
+    "plusXAngleDeg": 30
+   },
+   {
+    "yawDelta": 0,
+    "pitchDelta": 0.23,
+    "plusZAngleDeg": -30,
+    "plusXAngleDeg": 30.4
+   },
+   {
+    "yawDelta": -5,
+    "pitchDelta": 0,
+    "plusZAngleDeg": -25.3,
+    "plusXAngleDeg": 35.4
+   },
+   {
+    "yawDelta": 5,
+    "pitchDelta": 0,
+    "plusZAngleDeg": -34.9,
+    "plusXAngleDeg": 25.6
+   },
+   {
+    "yawDelta": 0,
+    "pitchDelta": 5,
+    "plusZAngleDeg": -33.4,
+    "plusXAngleDeg": 33.7
+   }
+  ],
+  "model": {
+   "plusZ": {
+    "z": 13.91,
+    "endpointsPx": [
+     [
+      234,
+      631
+     ],
+     [
+      561.4,
+      818.8
+     ]
+    ],
+    "angleDeg": -29.8,
+    "undersideEndpointsPx": [
+     [
+      234.9,
+      643.5
+     ],
+     [
+      561.9,
+      831.9
+     ]
+    ]
+   },
+   "plusX": {
+    "x": 14.6,
+    "endpointsPx": [
+     [
+      1703.3,
+      589.1
+     ],
+     [
+      1314.4,
+      815.4
+     ]
+    ],
+    "angleDeg": 30.2,
+    "undersideEndpointsPx": [
+     [
+      1702.1,
+      601.4
+     ],
+     [
+      1313.7,
+      828.4
+     ]
+    ]
+   }
+  },
+  "lines": [
+   {
+    "id": "LL_02_spec",
+    "edge": "+Z",
+    "label": "analysis/02 + 03 lower-left line (erratum E-02)",
+    "measuredAngleDeg": -43.3,
+    "modelAngleDeg": -29.8,
+    "angleDeltaDeg": -13.5,
+    "distanceAtFractionsPx": [
+     31,
+     15.5,
+     0.1,
+     15.6,
+     31.2,
+     46.8
+    ],
+    "maxDistancePx": 46.8,
+    "backProjection": [
+     {
+      "h": 0,
+      "a": [
+       -7.01,
+       0,
+       12.97
+      ],
+      "b": [
+       3.49,
+       0,
+       15.21
+      ],
+      "skewFromAxisDeg": 12
+     },
+     {
+      "h": -0.3,
+      "a": [
+       -7.44,
+       -0.3,
+       12.65
+      ],
+      "b": [
+       3.12,
+       -0.3,
+       14.9
+      ],
+      "skewFromAxisDeg": 12
+     },
+     {
+      "h": 1.27,
+      "a": [
+       -5.16,
+       1.27,
+       14.31
+      ],
+      "b": [
+       5.05,
+       1.27,
+       16.48
+      ],
+      "skewFromAxisDeg": 12
+     }
+    ]
+   },
+   {
+    "id": "LL_crop_est",
+    "edge": "+Z",
+    "label": "M003 re-measured lower-left edge",
+    "measuredAngleDeg": -30.3,
+    "modelAngleDeg": -29.8,
+    "angleDeltaDeg": -0.5,
+    "distanceAtFractionsPx": [
+     1.4,
+     0.8,
+     0.1,
+     0.5,
+     1.1,
+     1.8
+    ],
+    "maxDistancePx": 1.8,
+    "backProjection": [
+     {
+      "h": 0,
+      "a": [
+       -5.92,
+       0,
+       13.87
+      ],
+      "b": [
+       4.41,
+       0,
+       13.96
+      ],
+      "skewFromAxisDeg": 0.5
+     },
+     {
+      "h": -0.3,
+      "a": [
+       -6.35,
+       -0.3,
+       13.56
+      ],
+      "b": [
+       4.05,
+       -0.3,
+       13.65
+      ],
+      "skewFromAxisDeg": 0.5
+     },
+     {
+      "h": 1.27,
+      "a": [
+       -4.1,
+       1.27,
+       15.18
+      ],
+      "b": [
+       5.95,
+       1.27,
+       15.27
+      ],
+      "skewFromAxisDeg": 0.5
+     }
+    ]
+   },
+   {
+    "id": "LL_measured_hough",
+    "edge": "+Z",
+    "label": "M003 Hough lower-left segment",
+    "measuredAngleDeg": -33.1,
+    "modelAngleDeg": -29.8,
+    "angleDeltaDeg": -3.3,
+    "distanceAtFractionsPx": [
+     15.7,
+     15,
+     14.3,
+     13.6,
+     13,
+     12.3
+    ],
+    "maxDistancePx": 15.7,
+    "backProjection": [
+     {
+      "h": 0,
+      "a": [
+       3.09,
+       0,
+       13.47
+      ],
+      "b": [
+       4.65,
+       0,
+       13.57
+      ],
+      "skewFromAxisDeg": 3.7
+     },
+     {
+      "h": -0.3,
+      "a": [
+       2.72,
+       -0.3,
+       13.16
+      ],
+      "b": [
+       4.28,
+       -0.3,
+       13.26
+      ],
+      "skewFromAxisDeg": 3.7
+     },
+     {
+      "h": 1.27,
+      "a": [
+       4.66,
+       1.27,
+       14.79
+      ],
+      "b": [
+       6.17,
+       1.27,
+       14.89
+      ],
+      "skewFromAxisDeg": 3.7
+     }
+    ]
+   },
+   {
+    "id": "LR_02_spec",
+    "edge": "+X",
+    "label": "analysis/02 lower-right line (ENV-015 top edge)",
+    "measuredAngleDeg": 33.5,
+    "modelAngleDeg": 30.2,
+    "angleDeltaDeg": 3.3,
+    "distanceAtFractionsPx": [
+     14.2,
+     9.6,
+     4.9,
+     0.3,
+     4.3,
+     9
+    ],
+    "maxDistancePx": 14.2,
+    "backProjection": [
+     {
+      "h": 0,
+      "a": [
+       14.99,
+       0,
+       3.3
+      ],
+      "b": [
+       14.33,
+       0,
+       -8.65
+      ],
+      "skewFromAxisDeg": 3.1
+     },
+     {
+      "h": -0.3,
+      "a": [
+       14.69,
+       -0.3,
+       2.92
+      ],
+      "b": [
+       14.04,
+       -0.3,
+       -9.1
+      ],
+      "skewFromAxisDeg": 3.1
+     },
+     {
+      "h": 1.27,
+      "a": [
+       16.23,
+       1.27,
+       4.9
+      ],
+      "b": [
+       15.6,
+       1.27,
+       -6.72
+      ],
+      "skewFromAxisDeg": 3.1
+     }
+    ]
+   },
+   {
+    "id": "LR_measured_hough",
+    "edge": "+X",
+    "label": "M003 longest Hough lower-right segment",
+    "measuredAngleDeg": 40.4,
+    "modelAngleDeg": 30.2,
+    "angleDeltaDeg": 10.2,
+    "distanceAtFractionsPx": [
+     43.3,
+     28.9,
+     14.5,
+     0.2,
+     14.2,
+     28.6
+    ],
+    "maxDistancePx": 43.3,
+    "backProjection": [
+     {
+      "h": 0,
+      "a": [
+       15.77,
+       0,
+       3.43
+      ],
+      "b": [
+       13.75,
+       0,
+       -9.35
+      ],
+      "skewFromAxisDeg": 9
+     },
+     {
+      "h": -0.3,
+      "a": [
+       15.48,
+       -0.3,
+       3.05
+      ],
+      "b": [
+       13.44,
+       -0.3,
+       -9.81
+      ],
+      "skewFromAxisDeg": 9
+     },
+     {
+      "h": 1.27,
+      "a": [
+       16.99,
+       1.27,
+       5.03
+      ],
+      "b": [
+       15.03,
+       1.27,
+       -7.4
+      ],
+      "skewFromAxisDeg": 9
+     }
+    ]
+   }
+  ],
+  "plusXGridFit": [
+   {
+    "id": "LR_02_spec",
+    "floorXAlongLine": [
+     14.99,
+     14.33
+    ],
+    "meanX": 14.67
+   },
+   {
+    "id": "LR_measured_hough",
+    "floorXAlongLine": [
+     15.77,
+     13.75
+    ],
+    "meanX": 14.79
+   }
+  ],
+  "adoptedPlusX": 14.6,
+  "measuredRangePlusX": [
+   14.3,
+   15.8
+  ]
+ },
+ "occlusion": [
+  {
+   "id": "DEPT-01",
+   "name": "Executive Office",
+   "side": "top",
+   "extremePx": [
+    865,
+    84.3
+   ],
+   "hiddenBy": "REG-04"
+  },
+  {
+   "id": "DEPT-02",
+   "name": "Marketing",
+   "side": "left",
+   "extremePx": [
+    209.3,
+    260.8
+   ],
+   "hiddenBy": "REG-02"
+  },
+  {
+   "id": "DEPT-03",
+   "name": "Engineering",
+   "side": "right",
+   "extremePx": [
+    1529.5,
+    283
+   ],
+   "hiddenBy": "REG-06"
+  },
+  {
+   "id": "DEPT-04",
+   "name": "Creative Studio",
+   "side": "left",
+   "extremePx": [
+    203.8,
+    535.3
+   ],
+   "hiddenBy": "REG-02"
+  },
+  {
+   "id": "DEPT-05",
+   "name": "Management",
+   "side": "right",
+   "extremePx": [
+    1646.9,
+    495.9
+   ],
+   "hiddenBy": null
+  }
+ ],
+ "environment": {
+  "note": "Fascia bottom profile vs the measured reference step (sample u values are the edge-plane world coordinate).",
+  "fasciaSamples": [
+   {
+    "edge": "+Z",
+    "u": -5.36,
+    "measuredPx": [
+     250,
+     656
+    ],
+    "projectedPx": [
+     251.2,
+     657
+    ],
+    "errPx": 1.5
+   },
+   {
+    "edge": "+Z",
+    "u": -4.69,
+    "measuredPx": [
+     270,
+     670
+    ],
+    "projectedPx": [
+     271.3,
+     670.3
+    ],
+    "errPx": 1.3
+   },
+   {
+    "edge": "+Z",
+    "u": -4.03,
+    "measuredPx": [
+     290,
+     683
+    ],
+    "projectedPx": [
+     291.3,
+     683.6
+    ],
+    "errPx": 1.5
+   },
+   {
+    "edge": "+Z",
+    "u": -3.37,
+    "measuredPx": [
+     310,
+     696
+    ],
+    "projectedPx": [
+     311.4,
+     696.9
+    ],
+    "errPx": 1.7
+   },
+   {
+    "edge": "+Z",
+    "u": -2.72,
+    "measuredPx": [
+     330,
+     709
+    ],
+    "projectedPx": [
+     331.5,
+     710.2
+    ],
+    "errPx": 1.9
+   },
+   {
+    "edge": "+Z",
+    "u": -1.44,
+    "measuredPx": [
+     370,
+     736
+    ],
+    "projectedPx": [
+     371.6,
+     736.8
+    ],
+    "errPx": 1.8
+   },
+   {
+    "edge": "+Z",
+    "u": -0.81,
+    "measuredPx": [
+     390,
+     749
+    ],
+    "projectedPx": [
+     391.6,
+     750.1
+    ],
+    "errPx": 1.9
+   },
+   {
+    "edge": "+Z",
+    "u": -0.18,
+    "measuredPx": [
+     410,
+     762
+    ],
+    "projectedPx": [
+     411.6,
+     763.3
+    ],
+    "errPx": 2.1
+   },
+   {
+    "edge": "+Z",
+    "u": 0.44,
+    "measuredPx": [
+     430,
+     776
+    ],
+    "projectedPx": [
+     431.6,
+     776.6
+    ],
+    "errPx": 1.7
+   },
+   {
+    "edge": "+Z",
+    "u": 1.06,
+    "measuredPx": [
+     450,
+     789
+    ],
+    "projectedPx": [
+     451.6,
+     789.9
+    ],
+    "errPx": 1.9
+   },
+   {
+    "edge": "+X",
+    "u": 2.32,
+    "measuredPx": [
+     1350,
+     847
+    ],
+    "projectedPx": [
+     1346.6,
+     848.1
+    ],
+    "errPx": 3.5
+   },
+   {
+    "edge": "+X",
+    "u": 1.7,
+    "measuredPx": [
+     1370,
+     831
+    ],
+    "projectedPx": [
+     1366.8,
+     832.5
+    ],
+    "errPx": 3.5
+   },
+   {
+    "edge": "+X",
+    "u": 1.08,
+    "measuredPx": [
+     1390,
+     815
+    ],
+    "projectedPx": [
+     1386.9,
+     816.8
+    ],
+    "errPx": 3.5
+   },
+   {
+    "edge": "+X",
+    "u": 0.46,
+    "measuredPx": [
+     1410,
+     799
+    ],
+    "projectedPx": [
+     1407.1,
+     801.1
+    ],
+    "errPx": 3.6
+   },
+   {
+    "edge": "+X",
+    "u": -0.17,
+    "measuredPx": [
+     1430,
+     783
+    ],
+    "projectedPx": [
+     1427.3,
+     785.4
+    ],
+    "errPx": 3.6
+   },
+   {
+    "edge": "+X",
+    "u": -0.81,
+    "measuredPx": [
+     1450,
+     767
+    ],
+    "projectedPx": [
+     1447.5,
+     769.7
+    ],
+    "errPx": 3.7
+   },
+   {
+    "edge": "+X",
+    "u": -1.45,
+    "measuredPx": [
+     1470,
+     752
+    ],
+    "projectedPx": [
+     1467.8,
+     754
+    ],
+    "errPx": 3
+   },
+   {
+    "edge": "+X",
+    "u": -2.1,
+    "measuredPx": [
+     1490,
+     737
+    ],
+    "projectedPx": [
+     1488,
+     738.2
+    ],
+    "errPx": 2.3
+   },
+   {
+    "edge": "+X",
+    "u": -2.76,
+    "measuredPx": [
+     1510,
+     721
+    ],
+    "projectedPx": [
+     1508.3,
+     722.5
+    ],
+    "errPx": 2.2
+   },
+   {
+    "edge": "+X",
+    "u": -3.42,
+    "measuredPx": [
+     1530,
+     706
+    ],
+    "projectedPx": [
+     1528.6,
+     706.7
+    ],
+    "errPx": 1.6
+   },
+   {
+    "edge": "+X",
+    "u": -4.08,
+    "measuredPx": [
+     1550,
+     691
+    ],
+    "projectedPx": [
+     1548.9,
+     690.9
+    ],
+    "errPx": 1.1
+   },
+   {
+    "edge": "+X",
+    "u": -4.76,
+    "measuredPx": [
+     1570,
+     675
+    ],
+    "projectedPx": [
+     1569.3,
+     675.1
+    ],
+    "errPx": 0.7
+   }
+  ],
+  "fasciaMaxPx": {
+   "+Z": 2.1,
+   "+X": 3.7
+  },
+  "fasciaMeanPx": {
+   "+Z": 1.7,
+   "+X": 2.7
+  },
+  "elementCounts": {
+   "fasciaRibbons": 4,
+   "facadePanes": 2,
+   "facadeMullions": 63,
+   "facadeTransoms": 10,
+   "backGlazingPanes": 2,
+   "backGlazingMullions": 63,
+   "balustradeFrames": 27,
+   "plinthLabels": 2,
+   "signFaces": 7,
+   "partitionStrips": 28,
+   "edgeStrips": 2,
+   "backdropCity": 2,
+   "backdropParapet": 2,
+   "backdropTrees": 7
+  },
+  "sceneryNote": "Backdrop scenery is by-construction on assumed planes (CR-02); no independent numeric check is claimed."
+ },
+ "slabFootprint": {
+  "x0": -17.18,
+  "x1": 14.6,
+  "z0": -15.3,
+  "z1": 13.91
+ },
+ "responsive": [
+  {
+   "size": "1672x941",
+   "aspect": 1.777,
+   "rule": "reference",
+   "vfovDeg": 12.001,
+   "hfovDeg": 21.158,
+   "canvasOverReference": {
+    "width": 1,
+    "height": 1
+   },
+   "safeRectPx": [
+    246.7,
+    140.5,
+    1581.1,
+    652.3
+   ],
+   "safeRectOverflowPx": 0,
+   "plinthNormalised": [
+    0.54,
+    0.531
+   ]
+  },
+  {
+   "size": "1920x1080",
+   "aspect": 1.778,
+   "rule": "reference",
+   "vfovDeg": 12.001,
+   "hfovDeg": 21.169,
+   "canvasOverReference": {
+    "width": 1.001,
+    "height": 1
+   },
+   "safeRectPx": [
+    283.6,
+    161.2,
+    1815.2,
+    748.6
+   ],
+   "safeRectOverflowPx": 0,
+   "plinthNormalised": [
+    0.54,
+    0.531
+   ]
+  },
+  {
+   "size": "2560x1440",
+   "aspect": 1.778,
+   "rule": "reference",
+   "vfovDeg": 12.001,
+   "hfovDeg": 21.169,
+   "canvasOverReference": {
+    "width": 1.001,
+    "height": 1
+   },
+   "safeRectPx": [
+    378.2,
+    214.9,
+    2420.3,
+    998.1
+   ],
+   "safeRectOverflowPx": 0,
+   "plinthNormalised": [
+    0.54,
+    0.531
+   ]
+  },
+  {
+   "size": "2560x1080",
+   "aspect": 2.37,
+   "rule": "fit-width",
+   "vfovDeg": 9.01,
+   "hfovDeg": 21.158,
+   "canvasOverReference": {
+    "width": 1,
+    "height": 0.75
+   },
+   "safeRectPx": [
+    377.7,
+    34.7,
+    2420.9,
+    818.3
+   ],
+   "safeRectOverflowPx": 0,
+   "plinthNormalised": [
+    0.54,
+    0.542
+   ]
+  },
+  {
+   "size": "3440x1440",
+   "aspect": 2.389,
+   "rule": "fit-width",
+   "vfovDeg": 8.941,
+   "hfovDeg": 21.158,
+   "canvasOverReference": {
+    "width": 1,
+    "height": 0.744
+   },
+   "safeRectPx": [
+    507.5,
+    41,
+    3253.1,
+    1093.9
+   ],
+   "safeRectOverflowPx": 0,
+   "plinthNormalised": [
+    0.54,
+    0.542
+   ]
+  },
+  {
+   "size": "1440x900",
+   "aspect": 1.6,
+   "rule": "keep-vertical",
+   "vfovDeg": 12.001,
+   "hfovDeg": 19.093,
+   "canvasOverReference": {
+    "width": 0.9,
+    "height": 1
+   },
+   "safeRectPx": [
+    156.4,
+    134.3,
+    1432.7,
+    623.8
+   ],
+   "safeRectOverflowPx": 0,
+   "plinthNormalised": [
+    0.545,
+    0.531
+   ]
+  },
+  {
+   "size": "1280x800",
+   "aspect": 1.6,
+   "rule": "keep-vertical",
+   "vfovDeg": 12.001,
+   "hfovDeg": 19.093,
+   "canvasOverReference": {
+    "width": 0.9,
+    "height": 1
+   },
+   "safeRectPx": [
+    139,
+    119.4,
+    1273.5,
+    554.5
+   ],
+   "safeRectOverflowPx": 0,
+   "plinthNormalised": [
+    0.545,
+    0.531
+   ]
+  },
+  {
+   "size": "1366x768",
+   "aspect": 1.779,
+   "rule": "fit-width",
+   "vfovDeg": 11.988,
+   "hfovDeg": 21.158,
+   "canvasOverReference": {
+    "width": 1,
+    "height": 0.999
+   },
+   "safeRectPx": [
+    201.5,
+    114.4,
+    1291.8,
+    532.5
+   ],
+   "safeRectOverflowPx": 0,
+   "plinthNormalised": [
+    0.54,
+    0.531
+   ]
+  },
+  {
+   "size": "1024x768",
+   "aspect": 1.333,
+   "rule": "fit-safe-width",
+   "vfovDeg": 14.211,
+   "hfovDeg": 18.874,
+   "canvasOverReference": {
+    "width": 0.89,
+    "height": 1.186
+   },
+   "safeRectPx": [
+    106.4,
+    156.9,
+    1024.8,
+    509.1
+   ],
+   "safeRectOverflowPx": 0.8,
+   "plinthNormalised": [
+    0.545,
+    0.526
+   ]
+  }
+ ]
+}

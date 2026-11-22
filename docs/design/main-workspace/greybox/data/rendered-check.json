@@ -1,0 +1,3127 @@
+{
+  "schema": "wora-greybox-rendered-check/v1",
+  "method": "Headless Chromium (SwiftShader WebGL2), dev route ?dev&flat=1&frame=fill&partitions=0&balustrades=0&markers=0&edges=0&panel=0, DPR 1, window.__WORA_RENDERED_CHECK__() \u2014 rendered ID-colour pixels vs three.js projection of the same model. Floor corners hidden behind sign plates are flagged 'occluded' and excluded; corners outside the canvas are flagged inFrame=false. In 006-A flat mode the rim ring, labels and backdrop are measurement-neutral (rim/labels skipped, backdrop flat colour #020202 distinct from scanned IDs).",
+  "note": "Numbers only; no screenshots are committed. Regenerated for the VF-8 final acceptance run (2026-11-20): summaries and occlusion sets are byte-equal to the 006-A run \u2014 VF-1..VF-7 added appearance/content only, and all VF content groups are skipped in flat measurement mode. Flat check URL now uses the #/dev?... hash form (the ?dev query activation was removed in the presentation correction).",
+  "results": {
+    "1672x941": {
+      "canvas": [
+        1672,
+        941
+      ],
+      "plinth": {
+        "rendered": [
+          795,
+          450,
+          1011,
+          557
+        ],
+        "projected": [
+          794.6,
+          449.9,
+          1011.5,
+          557.2
+        ],
+        "maxEdgeErrPx": 0.5
+      },
+      "floors": [
+        {
+          "id": "DEPT-01",
+          "maxCornerErrPx": 1.1,
+          "corners": [
+            {
+              "rendered": [
+                819.5,
+                176.5
+              ],
+              "projected": [
+                864.7,
+                158
+              ],
+              "inFrame": true,
+              "occluded": true
+            },
+            {
+              "rendered": [
+                1067.5,
+                241.5
+              ],
+              "projected": [
+                1067.8,
+                240.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                863.5,
+                329.5
+              ],
+              "projected": [
+                864.4,
+                329.3
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                662.5,
+                239.5
+              ],
+              "projected": [
+                661.4,
+                239.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-02",
+          "maxCornerErrPx": 1.5,
+          "corners": [
+            {
+              "rendered": [
+                499.5,
+                229.5
+              ],
+              "projected": [
+                499.6,
+                229.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                656.5,
+                300.5
+              ],
+              "projected": [
+                657.2,
+                300.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                369.5,
+                418.5
+              ],
+              "projected": [
+                370.9,
+                418.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                215.5,
+                339.5
+              ],
+              "projected": [
+                214.9,
+                339.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-03",
+          "maxCornerErrPx": 1.1,
+          "corners": [
+            {
+              "rendered": [
+                1190.5,
+                231.5
+              ],
+              "projected": [
+                1191.4,
+                230.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1522.5,
+                362.5
+              ],
+              "projected": [
+                1523.1,
+                362.3
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1390.5,
+                429.5
+              ],
+              "projected": [
+                1391.2,
+                429.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1058.5,
+                290.5
+              ],
+              "projected": [
+                1058.1,
+                290.1
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-04",
+          "maxCornerErrPx": 0.8,
+          "corners": [
+            {
+              "rendered": [
+                480.5,
+                503.5
+              ],
+              "projected": [
+                481.1,
+                503
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                607.5,
+                568.5
+              ],
+              "projected": [
+                636,
+                582.8
+              ],
+              "inFrame": true,
+              "occluded": true
+            },
+            {
+              "rendered": [
+                363.5,
+                709.5
+              ],
+              "projected": [
+                363.5,
+                709.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                210.5,
+                621.5
+              ],
+              "projected": [
+                210.2,
+                621.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-05",
+          "maxCornerErrPx": 1.7,
+          "corners": [
+            {
+              "rendered": [
+                1385.5,
+                474.5
+              ],
+              "projected": [
+                1386.9,
+                473.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1638.5,
+                581.5
+              ],
+              "projected": [
+                1638.8,
+                580.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1508.5,
+                654.5
+              ],
+              "projected": [
+                1509.7,
+                654.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1256.5,
+                541.5
+              ],
+              "projected": [
+                1256.3,
+                540.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-06",
+          "maxCornerErrPx": 0.9,
+          "corners": [
+            {
+              "rendered": [
+                703.5,
+                627.5
+              ],
+              "projected": [
+                703.8,
+                627.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                878.5,
+                718.5
+              ],
+              "projected": [
+                879.1,
+                717.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                674.5,
+                822.5
+              ],
+              "projected": [
+                675,
+                822.4
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                500.5,
+                724.5
+              ],
+              "projected": [
+                500.3,
+                724.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-07",
+          "maxCornerErrPx": 1.7,
+          "corners": [
+            {
+              "rendered": [
+                1076.5,
+                633.5
+              ],
+              "projected": [
+                1078,
+                632.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1323.5,
+                751.5
+              ],
+              "projected": [
+                1323.9,
+                750.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1204.5,
+                818.5
+              ],
+              "projected": [
+                1205.5,
+                818.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                959.5,
+                694.5
+              ],
+              "projected": [
+                959.2,
+                693.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        }
+      ],
+      "signs": [
+        {
+          "id": "SIGN-01",
+          "rendered": [
+            792,
+            140,
+            960,
+            176
+          ],
+          "projected": [
+            792,
+            140.5,
+            960.2,
+            176.4
+          ],
+          "maxEdgeErrPx": 0.5
+        },
+        {
+          "id": "SIGN-02",
+          "rendered": [
+            290,
+            164,
+            425,
+            249
+          ],
+          "projected": [
+            290.2,
+            163.8,
+            425,
+            249
+          ],
+          "maxEdgeErrPx": 0.2
+        },
+        {
+          "id": "SIGN-03",
+          "rendered": [
+            1249,
+            160,
+            1421,
+            260
+          ],
+          "projected": [
+            1248.6,
+            159.8,
+            1421.5,
+            260.6
+          ],
+          "maxEdgeErrPx": 0.6
+        },
+        {
+          "id": "SIGN-04",
+          "rendered": [
+            247,
+            429,
+            412,
+            536
+          ],
+          "projected": [
+            246.7,
+            429,
+            411.6,
+            536.3
+          ],
+          "maxEdgeErrPx": 0.4
+        },
+        {
+          "id": "SIGN-05",
+          "rendered": [
+            1431,
+            394,
+            1581,
+            492
+          ],
+          "projected": [
+            1431.1,
+            393.6,
+            1581.1,
+            492.5
+          ],
+          "maxEdgeErrPx": 0.5
+        },
+        {
+          "id": "SIGN-06",
+          "rendered": [
+            524,
+            554,
+            644,
+            649
+          ],
+          "projected": [
+            524.2,
+            553.8,
+            644.3,
+            649
+          ],
+          "maxEdgeErrPx": 0.3
+        },
+        {
+          "id": "SIGN-07",
+          "rendered": [
+            1096,
+            549,
+            1233,
+            652
+          ],
+          "projected": [
+            1096,
+            548.7,
+            1233,
+            652.3
+          ],
+          "maxEdgeErrPx": 0.3
+        }
+      ],
+      "summary": {
+        "plinthMaxPx": 0.5,
+        "floorCornerMaxPx": 1.7,
+        "signMaxPx": 0.6
+      }
+    },
+    "1920x1080": {
+      "canvas": [
+        1920,
+        1080
+      ],
+      "plinth": {
+        "rendered": [
+          912,
+          516,
+          1161,
+          639
+        ],
+        "projected": [
+          912.4,
+          516.3,
+          1161.5,
+          639.5
+        ],
+        "maxEdgeErrPx": 0.5
+      },
+      "floors": [
+        {
+          "id": "DEPT-01",
+          "maxCornerErrPx": 1,
+          "corners": [
+            {
+              "rendered": [
+                940.5,
+                202.5
+              ],
+              "projected": [
+                993,
+                181.4
+              ],
+              "inFrame": true,
+              "occluded": true
+            },
+            {
+              "rendered": [
+                1225.5,
+                276.5
+              ],
+              "projected": [
+                1226.1,
+                276.3
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                992.5,
+                378.5
+              ],
+              "projected": [
+                992.6,
+                377.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                760.5,
+                275.5
+              ],
+              "projected": [
+                759.6,
+                275.1
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-02",
+          "maxCornerErrPx": 0.9,
+          "corners": [
+            {
+              "rendered": [
+                573.5,
+                263.5
+              ],
+              "projected": [
+                573.9,
+                263
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                754.5,
+                345.5
+              ],
+              "projected": [
+                754.8,
+                345.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                426.5,
+                481.5
+              ],
+              "projected": [
+                426.2,
+                480.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                247.5,
+                390.5
+              ],
+              "projected": [
+                247.2,
+                389.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-03",
+          "maxCornerErrPx": 1.7,
+          "corners": [
+            {
+              "rendered": [
+                1367.5,
+                265.5
+              ],
+              "projected": [
+                1367.9,
+                265
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1748.5,
+                416.5
+              ],
+              "projected": [
+                1748.6,
+                415.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1595.5,
+                492.5
+              ],
+              "projected": [
+                1597.2,
+                492.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1215.5,
+                333.5
+              ],
+              "projected": [
+                1214.9,
+                333
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-04",
+          "maxCornerErrPx": 0.9,
+          "corners": [
+            {
+              "rendered": [
+                552.5,
+                577.5
+              ],
+              "projected": [
+                552.7,
+                577.3
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                698.5,
+                652.5
+              ],
+              "projected": [
+                730.4,
+                668.9
+              ],
+              "inFrame": true,
+              "occluded": true
+            },
+            {
+              "rendered": [
+                417.5,
+                814.5
+              ],
+              "projected": [
+                417.7,
+                814
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                242.5,
+                713.5
+              ],
+              "projected": [
+                241.8,
+                713
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-05",
+          "maxCornerErrPx": 2,
+          "corners": [
+            {
+              "rendered": [
+                1590.5,
+                544.5
+              ],
+              "projected": [
+                1592.2,
+                543.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1880.5,
+                666.5
+              ],
+              "projected": [
+                1881.4,
+                666.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1732.5,
+                751.5
+              ],
+              "projected": [
+                1733.2,
+                751.3
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1442.5,
+                621.5
+              ],
+              "projected": [
+                1442.4,
+                620.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-06",
+          "maxCornerErrPx": 1.1,
+          "corners": [
+            {
+              "rendered": [
+                807.5,
+                720.5
+              ],
+              "projected": [
+                808.3,
+                719.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1008.5,
+                823.5
+              ],
+              "projected": [
+                1009.4,
+                823.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                775.5,
+                944.5
+              ],
+              "projected": [
+                775.2,
+                943.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                575.5,
+                831.5
+              ],
+              "projected": [
+                574.8,
+                831.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-07",
+          "maxCornerErrPx": 0.8,
+          "corners": [
+            {
+              "rendered": [
+                1237.5,
+                726.5
+              ],
+              "projected": [
+                1237.8,
+                726
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1519.5,
+                862.5
+              ],
+              "projected": [
+                1519.9,
+                861.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1383.5,
+                939.5
+              ],
+              "projected": [
+                1384.1,
+                939.1
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1101.5,
+                796.5
+              ],
+              "projected": [
+                1101.4,
+                796.4
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        }
+      ],
+      "signs": [
+        {
+          "id": "SIGN-01",
+          "rendered": [
+            910,
+            161,
+            1102,
+            202
+          ],
+          "projected": [
+            909.5,
+            161.2,
+            1102.5,
+            202.5
+          ],
+          "maxEdgeErrPx": 0.5
+        },
+        {
+          "id": "SIGN-02",
+          "rendered": [
+            334,
+            188,
+            488,
+            286
+          ],
+          "projected": [
+            333.5,
+            188,
+            488.3,
+            285.7
+          ],
+          "maxEdgeErrPx": 0.5
+        },
+        {
+          "id": "SIGN-03",
+          "rendered": [
+            1434,
+            184,
+            1632,
+            299
+          ],
+          "projected": [
+            1433.5,
+            183.4,
+            1632,
+            299
+          ],
+          "maxEdgeErrPx": 0.6
+        },
+        {
+          "id": "SIGN-04",
+          "rendered": [
+            284,
+            493,
+            473,
+            615
+          ],
+          "projected": [
+            283.6,
+            492.3,
+            472.9,
+            615.5
+          ],
+          "maxEdgeErrPx": 0.7
+        },
+        {
+          "id": "SIGN-05",
+          "rendered": [
+            1643,
+            452,
+            1815,
+            565
+          ],
+          "projected": [
+            1643,
+            451.7,
+            1815.2,
+            565.2
+          ],
+          "maxEdgeErrPx": 0.3
+        },
+        {
+          "id": "SIGN-06",
+          "rendered": [
+            602,
+            636,
+            740,
+            745
+          ],
+          "projected": [
+            602.1,
+            635.6,
+            739.9,
+            744.9
+          ],
+          "maxEdgeErrPx": 0.4
+        },
+        {
+          "id": "SIGN-07",
+          "rendered": [
+            1258,
+            630,
+            1416,
+            749
+          ],
+          "projected": [
+            1258.4,
+            629.8,
+            1415.7,
+            748.6
+          ],
+          "maxEdgeErrPx": 0.4
+        }
+      ],
+      "summary": {
+        "plinthMaxPx": 0.5,
+        "floorCornerMaxPx": 2,
+        "signMaxPx": 0.7
+      }
+    },
+    "2560x1080": {
+      "canvas": [
+        2560,
+        1080
+      ],
+      "plinth": {
+        "rendered": [
+          1217,
+          508,
+          1549,
+          673
+        ],
+        "projected": [
+          1216.5,
+          508.4,
+          1548.8,
+          672.7
+        ],
+        "maxEdgeErrPx": 0.5
+      },
+      "floors": [
+        {
+          "id": "DEPT-01",
+          "maxCornerErrPx": 0.8,
+          "corners": [
+            {
+              "rendered": [
+                1255.5,
+                89.5
+              ],
+              "projected": [
+                1324,
+                61.6
+              ],
+              "inFrame": true,
+              "occluded": true
+            },
+            {
+              "rendered": [
+                1634.5,
+                188.5
+              ],
+              "projected": [
+                1635,
+                188.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1323.5,
+                324.5
+              ],
+              "projected": [
+                1323.5,
+                323.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1013.5,
+                186.5
+              ],
+              "projected": [
+                1012.7,
+                186.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-02",
+          "maxCornerErrPx": 2.6,
+          "corners": [
+            {
+              "rendered": [
+                762.5,
+                171.5
+              ],
+              "projected": [
+                764.9,
+                170.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1005.5,
+                280.5
+              ],
+              "projected": [
+                1006.3,
+                280.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                567.5,
+                461.5
+              ],
+              "projected": [
+                568,
+                461.1
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                329.5,
+                339.5
+              ],
+              "projected": [
+                329.1,
+                339.4
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-03",
+          "maxCornerErrPx": 0.9,
+          "corners": [
+            {
+              "rendered": [
+                1823.5,
+                173.5
+              ],
+              "projected": [
+                1824.2,
+                173.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                2331.5,
+                374.5
+              ],
+              "projected": [
+                2332.1,
+                374.3
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                2129.5,
+                477.5
+              ],
+              "projected": [
+                2130,
+                476.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1620.5,
+                264.5
+              ],
+              "projected": [
+                1620,
+                263.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-04",
+          "maxCornerErrPx": 1.3,
+          "corners": [
+            {
+              "rendered": [
+                735.5,
+                590.5
+              ],
+              "projected": [
+                736.6,
+                589.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                931.5,
+                690.5
+              ],
+              "projected": [
+                973.7,
+                712
+              ],
+              "inFrame": true,
+              "occluded": true
+            },
+            {
+              "rendered": [
+                556.5,
+                906.5
+              ],
+              "projected": [
+                556.5,
+                905.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                322.5,
+                770.5
+              ],
+              "projected": [
+                321.8,
+                770.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-05",
+          "maxCornerErrPx": 1.3,
+          "corners": [
+            {
+              "rendered": [
+                2122.5,
+                545.5
+              ],
+              "projected": [
+                2123.4,
+                544.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                2508.5,
+                709.5
+              ],
+              "projected": [
+                2509.2,
+                708.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                2310.5,
+                822.5
+              ],
+              "projected": [
+                2311.4,
+                821.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1923.5,
+                648.5
+              ],
+              "projected": [
+                1923.5,
+                647.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-06",
+          "maxCornerErrPx": 1.3,
+          "corners": [
+            {
+              "rendered": [
+                1076.5,
+                780.5
+              ],
+              "projected": [
+                1077.6,
+                779.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1345.5,
+                918.5
+              ],
+              "projected": [
+                1345.9,
+                918.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1032.5,
+                1079.5
+              ],
+              "projected": [
+                1033.5,
+                1078.8
+              ],
+              "inFrame": false,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                766.5,
+                929.5
+              ],
+              "projected": [
+                766.1,
+                928.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-07",
+          "maxCornerErrPx": 1.1,
+          "corners": [
+            {
+              "rendered": [
+                1650.5,
+                788.5
+              ],
+              "projected": [
+                1650.6,
+                788.1
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                2026.5,
+                969.5
+              ],
+              "projected": [
+                2027,
+                969.3
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1845.5,
+                1073.5
+              ],
+              "projected": [
+                1845.8,
+                1072.4
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1469.5,
+                882.5
+              ],
+              "projected": [
+                1468.6,
+                882.1
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        }
+      ],
+      "signs": [
+        {
+          "id": "SIGN-01",
+          "rendered": [
+            1213,
+            35,
+            1470,
+            90
+          ],
+          "projected": [
+            1212.7,
+            34.7,
+            1470.1,
+            89.8
+          ],
+          "maxEdgeErrPx": 0.3
+        },
+        {
+          "id": "SIGN-02",
+          "rendered": [
+            444,
+            71,
+            651,
+            201
+          ],
+          "projected": [
+            444.3,
+            70.5,
+            650.8,
+            200.8
+          ],
+          "maxEdgeErrPx": 0.5
+        },
+        {
+          "id": "SIGN-03",
+          "rendered": [
+            1912,
+            64,
+            2176,
+            218
+          ],
+          "projected": [
+            1911.7,
+            64.3,
+            2176.5,
+            218.5
+          ],
+          "maxEdgeErrPx": 0.5
+        },
+        {
+          "id": "SIGN-04",
+          "rendered": [
+            378,
+            477,
+            630,
+            641
+          ],
+          "projected": [
+            377.7,
+            476.4,
+            630.2,
+            640.8
+          ],
+          "maxEdgeErrPx": 0.6
+        },
+        {
+          "id": "SIGN-05",
+          "rendered": [
+            2191,
+            422,
+            2421,
+            574
+          ],
+          "projected": [
+            2191.2,
+            422.2,
+            2420.9,
+            573.7
+          ],
+          "maxEdgeErrPx": 0.3
+        },
+        {
+          "id": "SIGN-06",
+          "rendered": [
+            803,
+            668,
+            986,
+            813
+          ],
+          "projected": [
+            802.6,
+            667.5,
+            986.4,
+            813.3
+          ],
+          "maxEdgeErrPx": 0.5
+        },
+        {
+          "id": "SIGN-07",
+          "rendered": [
+            1678,
+            660,
+            1888,
+            818
+          ],
+          "projected": [
+            1678.1,
+            659.8,
+            1887.9,
+            818.3
+          ],
+          "maxEdgeErrPx": 0.3
+        }
+      ],
+      "summary": {
+        "plinthMaxPx": 0.5,
+        "floorCornerMaxPx": 2.6,
+        "signMaxPx": 0.6
+      }
+    },
+    "1440x900": {
+      "canvas": [
+        1440,
+        900
+      ],
+      "plinth": {
+        "rendered": [
+          680,
+          430,
+          888,
+          533
+        ],
+        "projected": [
+          680.4,
+          430.3,
+          887.9,
+          532.9
+        ],
+        "maxEdgeErrPx": 0.4
+      },
+      "floors": [
+        {
+          "id": "DEPT-01",
+          "maxCornerErrPx": 1.7,
+          "corners": [
+            {
+              "rendered": [
+                704.5,
+                168.5
+              ],
+              "projected": [
+                747.5,
+                151.2
+              ],
+              "inFrame": true,
+              "occluded": true
+            },
+            {
+              "rendered": [
+                941.5,
+                230.5
+              ],
+              "projected": [
+                941.7,
+                230.3
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                745.5,
+                314.5
+              ],
+              "projected": [
+                747.2,
+                314.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                553.5,
+                229.5
+              ],
+              "projected": [
+                553,
+                229.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-02",
+          "maxCornerErrPx": 1.7,
+          "corners": [
+            {
+              "rendered": [
+                397.5,
+                219.5
+              ],
+              "projected": [
+                398.2,
+                219.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                548.5,
+                287.5
+              ],
+              "projected": [
+                549,
+                287.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                273.5,
+                400.5
+              ],
+              "projected": [
+                275.2,
+                400.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                126.5,
+                325.5
+              ],
+              "projected": [
+                126,
+                324.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-03",
+          "maxCornerErrPx": 1.5,
+          "corners": [
+            {
+              "rendered": [
+                1059.5,
+                221.5
+              ],
+              "projected": [
+                1059.9,
+                220.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1376.5,
+                346.5
+              ],
+              "projected": [
+                1377.2,
+                346.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1249.5,
+                410.5
+              ],
+              "projected": [
+                1251,
+                410.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                932.5,
+                277.5
+              ],
+              "projected": [
+                932.4,
+                277.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-04",
+          "maxCornerErrPx": 0.4,
+          "corners": [
+            {
+              "rendered": [
+                380.5,
+                481.5
+              ],
+              "projected": [
+                380.6,
+                481.1
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                501.5,
+                543.5
+              ],
+              "projected": [
+                528.7,
+                557.4
+              ],
+              "inFrame": true,
+              "occluded": true
+            },
+            {
+              "rendered": [
+                267.5,
+                678.5
+              ],
+              "projected": [
+                268.1,
+                678.3
+              ],
+              "inFrame": true,
+              "occluded": true
+            },
+            {
+              "rendered": [
+                121.5,
+                594.5
+              ],
+              "projected": [
+                121.5,
+                594.1
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-05",
+          "maxCornerErrPx": 0.9,
+          "corners": [
+            {
+              "rendered": [
+                1246.5,
+                453.5
+              ],
+              "projected": [
+                1246.9,
+                452.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1439.5,
+                535.5
+              ],
+              "projected": [
+                1487.8,
+                555.5
+              ],
+              "inFrame": false,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1363.5,
+                626.5
+              ],
+              "projected": [
+                1364.3,
+                626
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1122.5,
+                517.5
+              ],
+              "projected": [
+                1122,
+                517.3
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-06",
+          "maxCornerErrPx": 1.5,
+          "corners": [
+            {
+              "rendered": [
+                592.5,
+                600.5
+              ],
+              "projected": [
+                593.6,
+                599.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                760.5,
+                686.5
+              ],
+              "projected": [
+                761.2,
+                686.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                564.5,
+                786.5
+              ],
+              "projected": [
+                566,
+                786.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                399.5,
+                693.5
+              ],
+              "projected": [
+                399,
+                692.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-07",
+          "maxCornerErrPx": 0.9,
+          "corners": [
+            {
+              "rendered": [
+                951.5,
+                605.5
+              ],
+              "projected": [
+                951.5,
+                605
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1186.5,
+                718.5
+              ],
+              "projected": [
+                1186.6,
+                718.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1072.5,
+                782.5
+              ],
+              "projected": [
+                1073.4,
+                782.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                838.5,
+                663.5
+              ],
+              "projected": [
+                837.8,
+                663.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        }
+      ],
+      "signs": [
+        {
+          "id": "SIGN-01",
+          "rendered": [
+            678,
+            134,
+            839,
+            169
+          ],
+          "projected": [
+            677.9,
+            134.3,
+            838.7,
+            168.8
+          ],
+          "maxEdgeErrPx": 0.3
+        },
+        {
+          "id": "SIGN-02",
+          "rendered": [
+            198,
+            157,
+            327,
+            238
+          ],
+          "projected": [
+            197.9,
+            156.7,
+            326.9,
+            238.1
+          ],
+          "maxEdgeErrPx": 0.3
+        },
+        {
+          "id": "SIGN-03",
+          "rendered": [
+            1115,
+            153,
+            1280,
+            249
+          ],
+          "projected": [
+            1114.6,
+            152.8,
+            1280,
+            249.2
+          ],
+          "maxEdgeErrPx": 0.4
+        },
+        {
+          "id": "SIGN-04",
+          "rendered": [
+            156,
+            410,
+            314,
+            513
+          ],
+          "projected": [
+            156.4,
+            410.3,
+            314.1,
+            512.9
+          ],
+          "maxEdgeErrPx": 0.4
+        },
+        {
+          "id": "SIGN-05",
+          "rendered": [
+            1289,
+            377,
+            1433,
+            471
+          ],
+          "projected": [
+            1289.2,
+            376.4,
+            1432.7,
+            471
+          ],
+          "maxEdgeErrPx": 0.6
+        },
+        {
+          "id": "SIGN-06",
+          "rendered": [
+            422,
+            530,
+            537,
+            621
+          ],
+          "projected": [
+            421.8,
+            529.6,
+            536.6,
+            620.7
+          ],
+          "maxEdgeErrPx": 0.4
+        },
+        {
+          "id": "SIGN-07",
+          "rendered": [
+            969,
+            525,
+            1100,
+            624
+          ],
+          "projected": [
+            968.7,
+            524.8,
+            1099.7,
+            623.8
+          ],
+          "maxEdgeErrPx": 0.3
+        }
+      ],
+      "summary": {
+        "plinthMaxPx": 0.4,
+        "floorCornerMaxPx": 1.7,
+        "signMaxPx": 0.6
+      }
+    },
+    "1280x800": {
+      "canvas": [
+        1280,
+        800
+      ],
+      "plinth": {
+        "rendered": [
+          605,
+          383,
+          789,
+          474
+        ],
+        "projected": [
+          604.8,
+          382.5,
+          789.2,
+          473.7
+        ],
+        "maxEdgeErrPx": 0.5
+      },
+      "floors": [
+        {
+          "id": "DEPT-01",
+          "maxCornerErrPx": 1.6,
+          "corners": [
+            {
+              "rendered": [
+                624.5,
+                150.5
+              ],
+              "projected": [
+                664.4,
+                134.4
+              ],
+              "inFrame": true,
+              "occluded": true
+            },
+            {
+              "rendered": [
+                836.5,
+                204.5
+              ],
+              "projected": [
+                837.1,
+                204.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                662.5,
+                279.5
+              ],
+              "projected": [
+                664.1,
+                279.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                492.5,
+                203.5
+              ],
+              "projected": [
+                491.6,
+                203.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-02",
+          "maxCornerErrPx": 1.7,
+          "corners": [
+            {
+              "rendered": [
+                352.5,
+                195.5
+              ],
+              "projected": [
+                354,
+                194.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                487.5,
+                256.5
+              ],
+              "projected": [
+                488,
+                255.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                244.5,
+                356.5
+              ],
+              "projected": [
+                244.6,
+                356.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                112.5,
+                288.5
+              ],
+              "projected": [
+                112,
+                288.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-03",
+          "maxCornerErrPx": 2.5,
+          "corners": [
+            {
+              "rendered": [
+                942.5,
+                196.5
+              ],
+              "projected": [
+                942.2,
+                196.3
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1223.5,
+                308.5
+              ],
+              "projected": [
+                1224.2,
+                308
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1109.5,
+                364.5
+              ],
+              "projected": [
+                1112,
+                364.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                829.5,
+                246.5
+              ],
+              "projected": [
+                828.8,
+                246.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-04",
+          "maxCornerErrPx": 2,
+          "corners": [
+            {
+              "rendered": [
+                336.5,
+                428.5
+              ],
+              "projected": [
+                338.3,
+                427.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                446.5,
+                483.5
+              ],
+              "projected": [
+                469.9,
+                495.5
+              ],
+              "inFrame": true,
+              "occluded": true
+            },
+            {
+              "rendered": [
+                238.5,
+                603.5
+              ],
+              "projected": [
+                238.3,
+                603
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                108.5,
+                528.5
+              ],
+              "projected": [
+                108,
+                528.1
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-05",
+          "maxCornerErrPx": 2,
+          "corners": [
+            {
+              "rendered": [
+                1106.5,
+                403.5
+              ],
+              "projected": [
+                1108.3,
+                402.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1279.5,
+                475.5
+              ],
+              "projected": [
+                1322.5,
+                493.8
+              ],
+              "inFrame": false,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1211.5,
+                556.5
+              ],
+              "projected": [
+                1212.7,
+                556.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                997.5,
+                460.5
+              ],
+              "projected": [
+                997.3,
+                459.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-06",
+          "maxCornerErrPx": 1.1,
+          "corners": [
+            {
+              "rendered": [
+                527.5,
+                533.5
+              ],
+              "projected": [
+                527.6,
+                533.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                676.5,
+                610.5
+              ],
+              "projected": [
+                676.6,
+                610.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                502.5,
+                699.5
+              ],
+              "projected": [
+                503.1,
+                699.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                355.5,
+                616.5
+              ],
+              "projected": [
+                354.6,
+                615.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-07",
+          "maxCornerErrPx": 1.7,
+          "corners": [
+            {
+              "rendered": [
+                844.5,
+                538.5
+              ],
+              "projected": [
+                845.8,
+                537.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1054.5,
+                638.5
+              ],
+              "projected": [
+                1054.8,
+                638.4
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                952.5,
+                695.5
+              ],
+              "projected": [
+                954.2,
+                695.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                745.5,
+                590.5
+              ],
+              "projected": [
+                744.7,
+                589.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        }
+      ],
+      "signs": [
+        {
+          "id": "SIGN-01",
+          "rendered": [
+            603,
+            119,
+            746,
+            150
+          ],
+          "projected": [
+            602.6,
+            119.4,
+            745.5,
+            150
+          ],
+          "maxEdgeErrPx": 0.5
+        },
+        {
+          "id": "SIGN-02",
+          "rendered": [
+            176,
+            139,
+            291,
+            211
+          ],
+          "projected": [
+            176,
+            139.3,
+            290.6,
+            211.7
+          ],
+          "maxEdgeErrPx": 0.7
+        },
+        {
+          "id": "SIGN-03",
+          "rendered": [
+            991,
+            136,
+            1138,
+            221
+          ],
+          "projected": [
+            990.7,
+            135.8,
+            1137.8,
+            221.5
+          ],
+          "maxEdgeErrPx": 0.5
+        },
+        {
+          "id": "SIGN-04",
+          "rendered": [
+            139,
+            365,
+            279,
+            456
+          ],
+          "projected": [
+            139,
+            364.7,
+            279.2,
+            455.9
+          ],
+          "maxEdgeErrPx": 0.3
+        },
+        {
+          "id": "SIGN-05",
+          "rendered": [
+            1146,
+            335,
+            1273,
+            419
+          ],
+          "projected": [
+            1146,
+            334.6,
+            1273.5,
+            418.7
+          ],
+          "maxEdgeErrPx": 0.5
+        },
+        {
+          "id": "SIGN-06",
+          "rendered": [
+            375,
+            471,
+            477,
+            552
+          ],
+          "projected": [
+            374.9,
+            470.8,
+            477,
+            551.8
+          ],
+          "maxEdgeErrPx": 0.2
+        },
+        {
+          "id": "SIGN-07",
+          "rendered": [
+            861,
+            467,
+            978,
+            554
+          ],
+          "projected": [
+            861.1,
+            466.5,
+            977.5,
+            554.5
+          ],
+          "maxEdgeErrPx": 0.5
+        }
+      ],
+      "summary": {
+        "plinthMaxPx": 0.5,
+        "floorCornerMaxPx": 2.5,
+        "signMaxPx": 0.7
+      }
+    },
+    "1024x768": {
+      "canvas": [
+        1024,
+        768
+      ],
+      "plinth": {
+        "rendered": [
+          483,
+          370,
+          633,
+          444
+        ],
+        "projected": [
+          483.5,
+          369.8,
+          632.8,
+          443.7
+        ],
+        "maxEdgeErrPx": 0.5
+      },
+      "floors": [
+        {
+          "id": "DEPT-01",
+          "maxCornerErrPx": 1.1,
+          "corners": [
+            {
+              "rendered": [
+                501.5,
+                181.5
+              ],
+              "projected": [
+                531.8,
+                169
+              ],
+              "inFrame": true,
+              "occluded": true
+            },
+            {
+              "rendered": [
+                670.5,
+                225.5
+              ],
+              "projected": [
+                671.5,
+                225.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                530.5,
+                286.5
+              ],
+              "projected": [
+                531.5,
+                286.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                392.5,
+                225.5
+              ],
+              "projected": [
+                391.9,
+                225.1
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-02",
+          "maxCornerErrPx": 1.2,
+          "corners": [
+            {
+              "rendered": [
+                279.5,
+                218.5
+              ],
+              "projected": [
+                280.5,
+                217.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                388.5,
+                267.5
+              ],
+              "projected": [
+                389,
+                267.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                191.5,
+                348.5
+              ],
+              "projected": [
+                192,
+                348.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                85.5,
+                293.5
+              ],
+              "projected": [
+                84.6,
+                293.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-03",
+          "maxCornerErrPx": 0.9,
+          "corners": [
+            {
+              "rendered": [
+                756.5,
+                219.5
+              ],
+              "projected": [
+                756.6,
+                219.1
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                984.5,
+                309.5
+              ],
+              "projected": [
+                984.9,
+                309.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                893.5,
+                355.5
+              ],
+              "projected": [
+                894,
+                355.6
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                665.5,
+                260.5
+              ],
+              "projected": [
+                664.8,
+                259.9
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-04",
+          "maxCornerErrPx": 1.2,
+          "corners": [
+            {
+              "rendered": [
+                267.5,
+                406.5
+              ],
+              "projected": [
+                267.8,
+                406.4
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                354.5,
+                451.5
+              ],
+              "projected": [
+                374.3,
+                461.3
+              ],
+              "inFrame": true,
+              "occluded": true
+            },
+            {
+              "rendered": [
+                186.5,
+                548.5
+              ],
+              "projected": [
+                186.8,
+                548.3
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                82.5,
+                487.5
+              ],
+              "projected": [
+                81.3,
+                487.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-05",
+          "maxCornerErrPx": 1.1,
+          "corners": [
+            {
+              "rendered": [
+                890.5,
+                386.5
+              ],
+              "projected": [
+                891.1,
+                386.1
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                1023.5,
+                442.5
+              ],
+              "projected": [
+                1064.5,
+                459.9
+              ],
+              "inFrame": false,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                974.5,
+                510.5
+              ],
+              "projected": [
+                975.6,
+                510.7
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                801.5,
+                432.5
+              ],
+              "projected": [
+                801.2,
+                432.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-06",
+          "maxCornerErrPx": 0.9,
+          "corners": [
+            {
+              "rendered": [
+                420.5,
+                492.5
+              ],
+              "projected": [
+                421,
+                491.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                541.5,
+                554.5
+              ],
+              "projected": [
+                541.6,
+                554.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                401.5,
+                626.5
+              ],
+              "projected": [
+                401.2,
+                626.2
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                281.5,
+                559.5
+              ],
+              "projected": [
+                281,
+                558.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        },
+        {
+          "id": "DEPT-07",
+          "maxCornerErrPx": 1.5,
+          "corners": [
+            {
+              "rendered": [
+                677.5,
+                496.5
+              ],
+              "projected": [
+                678.6,
+                495.5
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                847.5,
+                577.5
+              ],
+              "projected": [
+                847.7,
+                577
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                766.5,
+                623.5
+              ],
+              "projected": [
+                766.3,
+                623.3
+              ],
+              "inFrame": true,
+              "occluded": false
+            },
+            {
+              "rendered": [
+                597.5,
+                537.5
+              ],
+              "projected": [
+                596.8,
+                537.8
+              ],
+              "inFrame": true,
+              "occluded": false
+            }
+          ]
+        }
+      ],
+      "signs": [
+        {
+          "id": "SIGN-01",
+          "rendered": [
+            482,
+            157,
+            597,
+            182
+          ],
+          "projected": [
+            481.7,
+            156.9,
+            597.4,
+            181.6
+          ],
+          "maxEdgeErrPx": 0.4
+        },
+        {
+          "id": "SIGN-02",
+          "rendered": [
+            136,
+            173,
+            229,
+            231
+          ],
+          "projected": [
+            136.4,
+            173,
+            229.2,
+            231.5
+          ],
+          "maxEdgeErrPx": 0.5
+        },
+        {
+          "id": "SIGN-03",
+          "rendered": [
+            796,
+            170,
+            915,
+            239
+          ],
+          "projected": [
+            795.9,
+            170.2,
+            914.9,
+            239.5
+          ],
+          "maxEdgeErrPx": 0.5
+        },
+        {
+          "id": "SIGN-04",
+          "rendered": [
+            106,
+            355,
+            220,
+            429
+          ],
+          "projected": [
+            106.4,
+            355.4,
+            220,
+            429.3
+          ],
+          "maxEdgeErrPx": 0.4
+        },
+        {
+          "id": "SIGN-05",
+          "rendered": [
+            922,
+            331,
+            1024,
+            399
+          ],
+          "projected": [
+            921.6,
+            331.1,
+            1024.8,
+            399.1
+          ],
+          "maxEdgeErrPx": 0.8
+        },
+        {
+          "id": "SIGN-06",
+          "rendered": [
+            297,
+            441,
+            380,
+            507
+          ],
+          "projected": [
+            297.4,
+            441.3,
+            380,
+            506.9
+          ],
+          "maxEdgeErrPx": 0.4
+        },
+        {
+          "id": "SIGN-07",
+          "rendered": [
+            691,
+            438,
+            785,
+            509
+          ],
+          "projected": [
+            690.9,
+            437.8,
+            785.2,
+            509.1
+          ],
+          "maxEdgeErrPx": 0.2
+        }
+      ],
+      "summary": {
+        "plinthMaxPx": 0.5,
+        "floorCornerMaxPx": 1.5,
+        "signMaxPx": 0.8
+      }
+    }
+  }
+}
