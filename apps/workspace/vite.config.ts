@@ -30,6 +30,10 @@ export default defineConfig(({ command }) => ({
     fs: { allow: [repoRoot] },
   },
   preview: { host: '0.0.0.0', port: 4173, allowedHosts: true },
-  build: { outDir: 'dist', sourcemap: true, chunkSizeWarningLimit: 1500 },
+  build: {
+    outDir: 'dist', sourcemap: true, chunkSizeWarningLimit: 1500,
+    // Keep the heavy, shared 3D/runtime packages out of the app entry chunk.
+    rolldownOptions: { output: { codeSplitting: { groups: [{ name: 'vendor', test: /node_modules/ }] } } },
+  },
   test: { environment: 'node', include: ['tests/**/*.test.ts'] },
 }));

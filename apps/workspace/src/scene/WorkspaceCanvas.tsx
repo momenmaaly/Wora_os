@@ -1,3 +1,4 @@
+import type { EmployeeLife } from '../life/employeeLife';
 import type { ReactNode } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Bloom, EffectComposer, ToneMapping } from '@react-three/postprocessing';
@@ -28,6 +29,8 @@ export function WorkspaceCanvas({
   onRule,
   onSelection,
   children,
+  life,
+  view = '3d',
 }: {
   layers?: GreyboxLayers;
   flat?: boolean;
@@ -35,6 +38,8 @@ export function WorkspaceCanvas({
   onRule?: (rule: FovRule, fovDeg: number) => void;
   onSelection?: (s: Selection | null) => void;
   children?: ReactNode;
+  life?: EmployeeLife;
+  view?: '3d' | 'floor-plan';
 }) {
   return (
     <Canvas
@@ -46,14 +51,14 @@ export function WorkspaceCanvas({
       data-testid="greybox-canvas"
     >
       <color attach="background" args={[flat ? '#000000' : BACKGROUND_COLOR]} />
-      <CameraRig homeToken={homeToken} onRule={onRule} />
+      <CameraRig homeToken={homeToken} onRule={onRule} view={view} />
       {!flat && (
         <>
           <SceneEnvironment />
           <Lights />
         </>
       )}
-      <Greybox layers={layers} flat={flat} />
+      <Greybox layers={layers} flat={flat} life={life} />
       {!flat && onSelection && <SceneInteraction onSelection={onSelection} />}
       {!flat && (
         <EffectComposer multisampling={0}>

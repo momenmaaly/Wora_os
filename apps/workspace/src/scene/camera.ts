@@ -74,6 +74,16 @@ export function fovForAspect(aspect: number): { fovDeg: number; rule: FovRule } 
 }
 
 /** Apply the HOME pose and the responsive FOV to a PerspectiveCamera. */
+/** Optional top-down workspace projection; HOME remains the only default/reference projection. */
+export function applyFloorPlanCamera(camera: PerspectiveCamera): void {
+  camera.position.set(0, 48, 0);
+  camera.up.set(0, 0, -1);
+  camera.lookAt(0, 0, 0);
+  camera.fov = 40;
+  camera.updateProjectionMatrix();
+  camera.updateMatrixWorld(true);
+}
+
 export function applyHomeCamera(camera: PerspectiveCamera, aspect: number): FovRule {
   const { fovDeg, rule } = fovForAspect(aspect);
   camera.fov = fovDeg;

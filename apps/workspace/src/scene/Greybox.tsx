@@ -4,6 +4,8 @@
  * Labels (sign text, plinth wordmark/logo) are canvas textures and are skipped in flat mode.
  */
 import { useMemo } from 'react';
+import { LifeActors } from '../life/LifeActors';
+import type { EmployeeLife } from '../life/employeeLife';
 import {
   BoxGeometry,
   BufferAttribute,
@@ -353,13 +355,23 @@ export interface GreyboxLayers {
 
 export const DEFAULT_LAYERS: GreyboxLayers = { mass: true, partitions: true, signs: true, balustrades: true, fascia: true, strips: true, backdrop: true, structure: true, interiors: true, robots: true };
 
-export function Greybox({ layers = DEFAULT_LAYERS, flat = false }: { layers?: GreyboxLayers; flat?: boolean }) {
+export function Greybox({ layers = DEFAULT_LAYERS, flat = false, life }: { layers?: GreyboxLayers; flat?: boolean; life?: EmployeeLife }) {
   const model = useMemo(() => buildGreyboxModel(), []);
   const env: EnvironmentModel = useMemo(() => buildEnvironmentModel(), []);
   const mobileK = useMemo(() => (!flat && typeof window !== 'undefined' && Math.min(window.innerWidth, window.innerHeight) < 900 && window.innerWidth < window.innerHeight ? MOBILE_BOOST : 1), [flat]);
   const structureSpecs = useMemo(() => (flat ? [] : buildStructureCompletion()), [flat]);
   const interiorSpecs = useMemo(() => (flat ? [] : buildInteriors()), [flat]);
   const robotSpecs = useMemo(() => (flat ? [] : buildRobots()), [flat]);
+  const actorSpecs = useMemo(() => {
+    const grouped = new Map<string, PrimitiveSpec[]>();
+    for (const spec of robotSpecs) {
+      if (!spec.refId) continue;
+      const actor = grouped.get(spec.refId) ?? [];
+      actor.push(spec);
+      grouped.set(spec.refId, actor);
+    }
+    return grouped;
+  }, [robotSpecs]);
   const materials = useMemo(() => createMaterials(flat), [flat]);
   const deptFloor = useMemo(
     () =>
@@ -425,9 +437,7 @@ export function Greybox({ layers = DEFAULT_LAYERS, flat = false }: { layers?: Gr
         </group>
       )}
       {!flat && layers.robots && (
-        <group name="Robots">
-          {robotSpecs.map((f) => <Primitive key={f.key} spec={f} materials={materials} edges={false} />)}
-        </group>
+        <LifeActors key={life ? "live" : "static"} engine={life} renderActor={(id) => (actorSpecs.get(id) ?? []).map(f => <Primitive key={f.key} spec={f} materials={materials} edges={false} />)} />
       )}
       {layers.backdrop && (
         <group name="Backdrop">

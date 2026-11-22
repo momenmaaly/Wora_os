@@ -56,6 +56,14 @@ Results recorded for Mission 004 are in `docs/design/main-workspace/greybox/data
 `cd docs/design/main-workspace/reference && sha256sum -c wora-main-workspace.png.sha256`.
 Run it from `reference/` (see erratum E-05).
 
+## Employee life simulation
+
+The measured **47-robot** census and placements are retained. Select **Live View** in the dashboard tabs to start the optional visual simulation; select another view to return to the static scene. The deterministic 120-second cycle alternates work, paired same-zone collaboration, short in-place breaks, and idle time. The simulation does not execute real agent jobs or move actors across the catalogued closed partitions.
+
+The live panel provides pause/resume, reset, 1×/4×/8× speed, recent transitions, actor-update time and render-FPS telemetry. Sound is off until explicitly enabled and uses only a short locally synthesized Web Audio cue for a collaboration transition; there is no microphone or network audio. Employee selection/search and the Agent Directory expose local demo profiles and browser-native text-to-speech introductions behind explicit Play/Replay, Mute and Stop controls. Reduced-motion preferences suppress actor movement. Frame catch-up and transition history are bounded to protect performance.
+
+The search, directory, and View All action operate on those 47 local fixtures. Floor Plan switches to a top-down projection and Live View starts the optional animation. Executive Command is deliberately non-dispatching and explains that no task backend is connected. The dashboard status counts remain immutable reference-image values, and Live Activity is explicitly tagged as a static reference snapshot. Roles, names, personalities, tasks and permissions in the employee panel are demo fixture values, not identities or authorizations from a WORA service.
+
 ## Layout
 
 ```

@@ -6,19 +6,23 @@
 import { useEffect, useLayoutEffect } from 'react';
 import { useThree } from '@react-three/fiber';
 import { PerspectiveCamera } from 'three';
-import { applyHomeCamera, type FovRule } from './camera';
+import { applyFloorPlanCamera, applyHomeCamera, type FovRule } from './camera';
 
-export function CameraRig({ homeToken = 0, onRule }: { homeToken?: number; onRule?: (rule: FovRule, fovDeg: number) => void }) {
+export function CameraRig({ homeToken = 0, onRule, view = '3d' }: { homeToken?: number; onRule?: (rule: FovRule, fovDeg: number) => void; view?: '3d' | 'floor-plan' }) {
   const camera = useThree((s) => s.camera);
   const size = useThree((s) => s.size);
   const invalidate = useThree((s) => s.invalidate);
 
   useLayoutEffect(() => {
     if (!(camera instanceof PerspectiveCamera)) throw new Error('Greybox requires a perspective camera (approved projection).');
-    const rule = applyHomeCamera(camera, size.width / size.height);
-    onRule?.(rule, camera.fov);
+    if (view === 'floor-plan') {
+      applyFloorPlanCamera(camera);
+    } else {
+      const rule = applyHomeCamera(camera, size.width / size.height);
+      onRule?.(rule, camera.fov);
+    }
     invalidate();
-  }, [camera, size.width, size.height, homeToken, onRule, invalidate]);
+  }, [camera, size.width, size.height, homeToken, onRule, invalidate, view]);
 
   useEffect(() => {
     (window as unknown as { __WORA_CAMERA__?: PerspectiveCamera }).__WORA_CAMERA__ = camera as PerspectiveCamera;

@@ -1,6 +1,6 @@
 /** Responsive rule (architecture/03 §6): pose never changes, only the FOV; safe rect stays visible. */
 import { describe, expect, test } from 'vitest';
-import { fovForAspect, REFERENCE_ASPECT, SAFE_RECT } from '../src/scene/camera';
+import { applyFloorPlanCamera, applyHomeCamera, createHomeCamera, fovForAspect, REFERENCE_ASPECT, SAFE_RECT } from '../src/scene/camera';
 import { responsiveMetrics } from '../src/validation/metrics';
 
 describe('responsive FOV rule', () => {
@@ -20,6 +20,19 @@ describe('responsive FOV rule', () => {
     expect(fovForAspect(2.6).rule).toBe('fit-safe-height');
     expect(fovForAspect(1.333).fovDeg).toBeCloseTo((2 * Math.atan(0.1662 / 1.333) * 180) / Math.PI, 1);
   });
+  test('floor-plan projection is top-down and HOME can be reapplied without changing the approved pose', () => {
+    const camera = createHomeCamera(REFERENCE_ASPECT);
+    applyFloorPlanCamera(camera);
+    expect(camera.position.toArray()).toEqual([0, 48, 0]);
+    expect(camera.up.toArray()).toEqual([0, 0, -1]);
+    expect(camera.fov).toBe(40);
+    camera.position.set(2, 3, 4);
+    camera.up.set(0, 1, 0);
+    // The production HOME helper restores the approved perspective and up vector.
+    applyHomeCamera(camera, REFERENCE_ASPECT);
+    expect(camera.position.toArray()).toEqual([60.675, 46.538, 61.964]);
+  });
+
   test('safe rectangle stays inside the canvas and the plinth keeps its normalised position', () => {
     const r = responsiveMetrics([
       [1672, 941], [1920, 1080], [2560, 1440], [2560, 1080], [3440, 1440], [1440, 900], [1280, 800], [1366, 768], [1024, 768],
