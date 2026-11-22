@@ -71,12 +71,12 @@ function BoxPrimitive({ spec, materials, edges, materialOverride }: { spec: BoxS
   );
 }
 
-function CylinderPrimitive({ spec, materials, edges }: { spec: CylinderSpec; materials: Record<string, Material>; edges: boolean }) {
+function CylinderPrimitive({ spec, materials, edges, materialOverride }: { spec: CylinderSpec; materials: Record<string, Material>; edges: boolean; materialOverride?: Material }) {
   const geometry = useMemo(() => new CylinderGeometry(spec.radius, spec.radius, spec.height, spec.segments), [spec]);
   const edgeGeometry = useMemo(() => new EdgesGeometry(geometry, 30), [geometry]);
   return (
     <group position={spec.center} name={spec.key} userData={{ refId: spec.refId }}>
-      <mesh geometry={geometry} material={materials[spec.material]} {...shadowProps(spec.material)} />
+      <mesh geometry={geometry} material={materialOverride ?? materials[spec.material]} {...shadowProps(spec.material)} />
       {edges && (
         <lineSegments geometry={edgeGeometry}>
           <lineBasicMaterial color={EDGE_COLOR} />
@@ -334,7 +334,7 @@ function LabelPrimitive({ spec }: { spec: LabelSpec }) {
 function Primitive({ spec, materials, edges = true, materialOverride }: { spec: PrimitiveSpec; materials: Record<string, Material>; edges?: boolean; materialOverride?: Material }) {
   if (spec.kind === 'box') return <BoxPrimitive spec={spec} materials={materials} edges={edges} materialOverride={materialOverride} />;
   if (spec.kind === 'sphere') return <SpherePrimitive spec={spec} materials={materials} />;
-  return <CylinderPrimitive spec={spec} materials={materials} edges={edges} />;
+  return <CylinderPrimitive spec={spec} materials={materials} edges={edges} materialOverride={materialOverride} />;
 }
 
 export interface GreyboxLayers {

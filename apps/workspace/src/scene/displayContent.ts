@@ -123,6 +123,70 @@ const painters: Record<string, (ctx: CanvasRenderingContext2D, w: number, h: num
   },
 };
 
+/**
+ * Desk monitors are visibly dark screens carrying blue/white UI in all seven room crops.
+ * Individual text and exact panel layout are not resolvable at the source size, so these
+ * textures render only the documented content category (code, charts, artwork, map-like data,
+ * or test UI) using abstract marks rather than fabricated labels or values.
+ */
+function paintExecutiveRug(ctx: CanvasRenderingContext2D, s: number): void {
+  // The measured room crop shows a light, finely patterned rug below the desk; exact motif is ND.
+  ctx.fillStyle = '#D8CFC2'; ctx.fillRect(0, 0, s, s);
+  ctx.strokeStyle = 'rgba(105,91,83,0.28)'; ctx.lineWidth = 1.2;
+  for (let i = -s; i < s * 2; i += 9) {
+    ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i + s, s); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(i, s); ctx.lineTo(i + s, 0); ctx.stroke();
+  }
+  ctx.strokeStyle = 'rgba(245,239,229,0.65)'; ctx.lineWidth = 1;
+  for (let inset = 7; inset < 27; inset += 7) ctx.strokeRect(inset, inset, s - inset * 2, s - inset * 2);
+  ctx.fillStyle = 'rgba(112,94,82,0.32)';
+  for (let y = 12; y < s; y += 18) for (let x = 12; x < s; x += 18) {
+    ctx.beginPath(); ctx.arc(x, y, 1.4, 0, Math.PI * 2); ctx.fill();
+  }
+}
+
+function paintDeskMonitor(ctx: CanvasRenderingContext2D, w: number, h: number, dept: string): void {
+  ctx.fillStyle = '#0B1422';
+  ctx.fillRect(0, 0, w, h);
+  ctx.fillStyle = '#152943';
+  ctx.fillRect(0, 0, w, h * 0.12);
+  ctx.fillStyle = '#19C6FF';
+  ctx.beginPath(); ctx.arc(w * 0.06, h * 0.06, h * 0.018, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = '#7893AA';
+  ctx.fillRect(w * 0.12, h * 0.045, w * 0.22, h * 0.025);
+  ctx.fillStyle = '#1B2C42';
+  ctx.fillRect(w * 0.035, h * 0.17, w * 0.93, h * 0.78);
+  const blue = '#238EE8', cyan = '#37C9F0', pale = '#A9D6F4', muted = '#53718E';
+  if (dept === 'DEPT-03') {
+    // Engineering: syntax-like horizontal runs in blue/white; no readable or fabricated code.
+    for (let r = 0; r < 9; r++) {
+      const y = h * (0.23 + r * 0.078), indent = (r % 3) * w * 0.045;
+      ctx.fillStyle = r % 4 === 0 ? cyan : r % 3 === 0 ? pale : blue;
+      ctx.fillRect(w * 0.08 + indent, y, w * (0.26 + ((r * 17) % 43) / 100), h * 0.022);
+      if (r % 2 === 0) { ctx.fillStyle = muted; ctx.fillRect(w * 0.78, y, w * 0.13, h * 0.022); }
+    }
+  } else if (dept === 'DEPT-04') {
+    // Creative Studio: compact colorful artwork thumbnail rather than invented UI copy.
+    ctx.fillStyle = '#E8734A'; ctx.beginPath(); ctx.arc(w * 0.34, h * 0.52, h * 0.17, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#D8433B'; ctx.fillRect(w * 0.53, h * 0.36, w * 0.27, h * 0.34);
+    ctx.fillStyle = '#2E7FD8'; ctx.beginPath(); ctx.moveTo(w * 0.13,h * 0.87);ctx.lineTo(w * 0.43,h * 0.59);ctx.lineTo(w * 0.62,h * 0.87);ctx.closePath();ctx.fill();
+    ctx.fillStyle = '#F2C14E'; ctx.fillRect(w * 0.76,h * 0.24,w * 0.12,h * 0.14);
+  } else if (dept === 'DEPT-05') {
+    // Management: small chart panels as documented on the meeting-room devices.
+    ctx.fillStyle = '#102743'; ctx.fillRect(w * 0.08,h * 0.24,w * 0.36,h * 0.59);
+    for (let i=0;i<4;i++){const bh=h*(0.12+i*0.045);ctx.fillStyle=i%2?cyan:blue;ctx.fillRect(w*(0.13+i*0.075),h*0.77-bh,w*0.042,bh);}
+    ctx.fillStyle = '#102743';ctx.fillRect(w*0.5,h*0.24,w*0.41,h*0.59);
+    ctx.strokeStyle=cyan;ctx.lineWidth=h*0.018;ctx.beginPath();for(let i=0;i<6;i++){const x=w*(0.54+i*0.066),y=h*(0.61-Math.sin(i*1.1)*0.11);i?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.stroke();
+  } else if (dept === 'DEPT-07') {
+    // QA: blue test-status rows and checks; no fabricated labels or numbers.
+    for(let r=0;r<5;r++){const y=h*(0.25+r*0.125);ctx.fillStyle=r===0?cyan:muted;ctx.beginPath();ctx.arc(w*0.15,y+h*0.025,h*0.026,0,Math.PI*2);ctx.strokeStyle=ctx.fillStyle;ctx.lineWidth=h*0.012;ctx.stroke();ctx.beginPath();ctx.moveTo(w*0.13,y+h*0.025);ctx.lineTo(w*0.145,y+h*0.04);ctx.lineTo(w*0.176,y+h*0.005);ctx.stroke();ctx.fillRect(w*0.23,y,w*(0.38+(r%2)*0.12),h*0.024);}
+  } else {
+    // Marketing, Research and the executive device: restrained blue chart / data panels.
+    for(let p=0;p<3;p++){const x=w*(0.08+p*0.3),pw=w*0.25;ctx.fillStyle='#102743';ctx.fillRect(x,h*0.25,pw,h*0.58);ctx.strokeStyle=p===1?cyan:blue;ctx.lineWidth=h*0.012;ctx.beginPath();for(let i=0;i<5;i++){const xx=x+pw*(0.08+i*0.21),yy=h*(0.63-Math.sin(i*0.9+p)*0.12);i?ctx.lineTo(xx,yy):ctx.moveTo(xx,yy);}ctx.stroke();}
+    for(let i=0;i<4;i++){ctx.fillStyle=i%2?cyan:blue;ctx.fillRect(w*(0.12+i*0.12),h*0.79-h*(0.09+i*0.035),w*0.055,h*(0.09+i*0.035));}
+  }
+}
+
 // Backdrop city cards (CR-02 scenery, ENV-016 extents measured): the reference upper band is a
 // blurred tower skyline averaging RGB(118,117,122). Tower subdivision and window grids are EST.
 // (out-of-focus in the reference); tone family and coverage follow the sampled band.
@@ -230,6 +294,32 @@ export function displayMaterialFor(refId: string | undefined, key?: string): Mat
     tex.colorSpace = SRGBColorSpace;
     const mat = new MeshBasicMaterial({ map: tex, toneMapped: false }); // interior-lit: unlit
     cache.set(refId, mat);
+    return mat;
+  }
+  if (refId === 'INT-01-RUG' && key?.startsWith('RG-')) {
+    const hit = cache.get(refId);
+    if (hit) return hit;
+    const canvas = document.createElement('canvas'); canvas.width = 256; canvas.height = 256;
+    paintExecutiveRug(canvas.getContext('2d')!, 256);
+    const tex = new CanvasTexture(canvas); tex.colorSpace = SRGBColorSpace; tex.anisotropy = 4;
+    const mat = new MeshBasicMaterial({ map: tex, toneMapped: false });
+    cache.set(refId, mat);
+    return mat;
+  }
+  if (refId && /^INT-WC-\d+-MON\d+$/.test(refId) && key?.startsWith('MOS-')) {
+    const deptIndex = Number(refId.slice(7, 9));
+    const dept = `DEPT-${String(deptIndex).padStart(2, '0')}`;
+    const cacheKey = `desk-monitor-${dept}`;
+    const hit = cache.get(cacheKey);
+    if (hit) return hit;
+    const canvas = document.createElement('canvas');
+    canvas.width = 256; canvas.height = 160;
+    paintDeskMonitor(canvas.getContext('2d')!, 256, 160, dept);
+    const tex = new CanvasTexture(canvas);
+    tex.colorSpace = SRGBColorSpace;
+    tex.anisotropy = 4;
+    const mat = new MeshBasicMaterial({ map: tex, toneMapped: false });
+    cache.set(cacheKey, mat);
     return mat;
   }
   if (!refId) return null;
