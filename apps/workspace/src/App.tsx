@@ -60,7 +60,7 @@ export function App() {
       <Suspense fallback={null}>
         {live && <LifePanel engine={engine} />}
         {selection?.kind === 'robot' && engine.getEmployee(selection.refId) ? (
-          <EmployeePanel employee={engine.getEmployee(selection.refId)!} onClose={() => setSelection(null)} />
+          <EmployeePanel employee={engine.getEmployee(selection.refId)!} engine={engine} onClose={() => setSelection(null)} />
         ) : selection && (
         <div
           style={{

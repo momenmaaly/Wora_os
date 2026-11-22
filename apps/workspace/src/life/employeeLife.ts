@@ -43,6 +43,7 @@ const DEPT: Record<string, { role: string; task: string; skills: string[]; tools
 };
 const PERSONALITIES = ['curious and methodical', 'calm and analytical', 'collaborative and thoughtful', 'direct and detail-oriented', 'creative and reflective'];
 const STYLES = ['concise, evidence-led updates', 'warm, structured explanations', 'clear questions and short summaries', 'careful notes with explicit assumptions'];
+const activityForStatus = (status: EmployeeStatus): Activity => status === 'working' ? 'working' : status === 'collaborating' ? 'collaborating' : status === 'on-break' ? 'break' : 'idle';
 
 /**
  * Deterministic local prototype data; not connected to an LLM, task backend, persistent memory,
@@ -84,6 +85,7 @@ export class EmployeeLife implements EmployeeRuntime {
   actorUpdateMs = 0;
   private offsets: number[] = [];
   private partners: (string | null)[] = [];
+  private manualStates = new Map<string, { status: EmployeeStatus; partner: string | null; sharedTaskId: string | null; originalTask?: string; originalTaskId?: string }>();
   private listeners = new Set<() => void>();
   constructor() {
     this.employees = buildDemoProfiles().map((p, i) => ({
@@ -114,11 +116,47 @@ export class EmployeeLife implements EmployeeRuntime {
     if (command.type === 'reset') this.reset();
     this.notify();
   }
+  beginCollaboration(id: string, partnerId: string, sharedTaskId: string): boolean {
+    const employee = this.getEmployee(id), partner = this.getEmployee(partnerId);
+    if (!employee || !partner || employee.id === partner.id || employee.department !== partner.department || !sharedTaskId.startsWith('DEMO-SHARED-')) return false;
+    if (employee.partner) this.resumeSchedule(employee.id);
+    if (partner.partner) this.resumeSchedule(partner.id);
+    for (const [actor, other] of [[employee, partner], [partner, employee]] as const) {
+      actor.status = 'collaborating'; actor.activity = 'collaborating'; actor.partner = other.id; actor.sharedTaskId = sharedTaskId;
+      this.manualStates.set(actor.id, { status: 'collaborating', partner: other.id, sharedTaskId, originalTask: actor.task, originalTaskId: actor.taskId });
+      actor.taskId = sharedTaskId; actor.task = `Collaborate on ${sharedTaskId}`;
+      actor.history.push({ time: this.time, status: 'collaborating', note: 'Local demo pairing; no task runtime communication occurred.' });
+      if (actor.history.length > MAX_HISTORY) actor.history.splice(0, actor.history.length - MAX_HISTORY);
+    }
+    this.notify();
+    return true;
+  }
+  resumeSchedule(id: string): boolean {
+    const employee = this.getEmployee(id);
+    if (!employee) return false;
+    const partnerId = employee.partner;
+    const restore = (actor: Employee) => {
+      const state = this.manualStates.get(actor.id);
+      this.manualStates.delete(actor.id);
+      if (state?.originalTask) actor.task = state.originalTask;
+      if (state?.originalTaskId) actor.taskId = state.originalTaskId;
+      actor.partner = null; actor.sharedTaskId = null;
+    };
+    restore(employee);
+    if (partnerId) {
+      const partner = this.getEmployee(partnerId);
+      if (partner?.partner === id) restore(partner);
+    }
+    this.sample(false); this.notify();
+    return true;
+  }
   setStatus(id: string, status: EmployeeStatus, note = `Demo status changed to ${status}.`) {
     const e = this.getEmployee(id);
     if (!e) return false;
+    if (e.partner) this.resumeSchedule(id);
     e.status = status;
-    e.activity = status === 'working' || status === 'completed' ? 'working' : status === 'collaborating' ? 'collaborating' : status === 'on-break' ? 'break' : 'idle';
+    e.activity = activityForStatus(status);
+    this.manualStates.set(id, { status, partner: status === 'collaborating' ? e.partner : null, sharedTaskId: status === 'collaborating' ? e.sharedTaskId : null });
     if (status === 'completed') e.progress = 100;
     e.history.push({ time: this.time, status, note });
     if (e.history.length > MAX_HISTORY) e.history.splice(0, e.history.length - MAX_HISTORY);
@@ -135,26 +173,32 @@ export class EmployeeLife implements EmployeeRuntime {
   reset() {
     this.time = 0; this.events.length = 0;
     for (const e of this.employees) {
+      const manual = this.manualStates.get(e.id);
+      if (manual?.originalTask) e.task = manual.originalTask;
+      if (manual?.originalTaskId) e.taskId = manual.originalTaskId;
+      e.partner = null; e.sharedTaskId = null;
       e.progress = 0; e.history.splice(0, e.history.length, { time: 0, status: 'working', note: 'Local demo task reset; no external work executed.' });
     }
+    this.manualStates.clear();
     this.sample(false); this.notify();
   }
   private sample(emit: boolean) {
     this.employees.forEach((e, i) => {
       const t = (this.time + this.offsets[i]) % CYCLE_SECONDS;
-      const activity: Activity = t < 60 ? 'working' : t < 80 ? (this.partners[i] ? 'collaborating' : 'idle') : t < 105 ? 'break' : 'idle';
-      const status: EmployeeStatus = activity === 'working' ? 'working' : activity === 'collaborating' ? 'collaborating' : activity === 'break' ? 'on-break' : 'waiting';
+      const scheduleActivity: Activity = t < 60 ? 'working' : t < 80 ? (this.partners[i] ? 'collaborating' : 'idle') : t < 105 ? 'break' : 'idle';
+      const scheduleStatus: EmployeeStatus = scheduleActivity === 'working' ? 'working' : scheduleActivity === 'collaborating' ? 'collaborating' : scheduleActivity === 'break' ? 'on-break' : 'waiting';
+      const manual = this.manualStates.get(e.id);
+      const activity = manual ? activityForStatus(manual.status) : scheduleActivity;
+      const status = manual?.status ?? scheduleStatus;
       if (emit && (activity !== e.activity || status !== e.status)) {
         this.events.push({ time: this.time, id: e.id, activity, status });
         e.history.push({ time: this.time, status, note: 'Local visual cycle transition; not a real runtime event.' });
         if (e.history.length > MAX_HISTORY) e.history.splice(0, e.history.length - MAX_HISTORY);
       }
-      if (e.status !== 'blocked' && e.status !== 'completed' && e.status !== 'communicating') {
-        e.activity = activity; e.status = status;
-        e.partner = activity === 'collaborating' ? this.partners[i] : null;
-        e.sharedTaskId = e.partner ? `DEMO-SHARED-${[e.id, e.partner].sort().join('-')}` : null;
-        e.progress = activity === 'working' ? Math.min(99, Math.floor((t / 60) * 100)) : e.progress;
-      }
+      e.activity = activity; e.status = status;
+      e.partner = manual ? manual.partner : activity === 'collaborating' ? this.partners[i] : null;
+      e.sharedTaskId = manual ? manual.sharedTaskId : e.partner ? `DEMO-SHARED-${[e.id, e.partner].sort().join('-')}` : null;
+      if (activity === 'working' && !manual) e.progress = Math.min(99, Math.floor((t / 60) * 100));
       e.phase = t;
       e.energy = t < 80 ? 1 - t / 160 : t < 105 ? 0.5 + (t - 80) / 50 : 1;
     });

@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
-import type { Employee } from './employeeLife';
+import type { Employee, EmployeeLife } from './employeeLife';
 
 function introduction(employee: Employee): string {
   return `Hello, I am ${employee.name}, the ${employee.role} in ${employee.department}. I focus on ${employee.skills.slice(0, 3).join(', ')}. My communication style is ${employee.communicationStyle}. This profile and all task activity shown here are local demonstration data, not a connected AI agent.`;
 }
 
 /** Employee details are driven by the selected stable ROBOT id and the local runtime contract. */
-export function EmployeePanel({ employee, onClose }: { employee: Employee; onClose: () => void }) {
+export function EmployeePanel({ employee, engine, onClose }: { employee: Employee; engine: EmployeeLife; onClose: () => void }) {
   const [, refresh] = useState(0);
   const [speechAvailable, setSpeechAvailable] = useState(false);
   const [speaking, setSpeaking] = useState(false);
   const [muted, setMuted] = useState(false);
   const [message, setMessage] = useState('');
+  const peer = engine.employees.find(e => e.id !== employee.id && e.department === employee.department);
   useEffect(() => {
     const timer = window.setInterval(() => refresh(n => n + 1), 250);
     return () => window.clearInterval(timer);
@@ -37,6 +38,15 @@ export function EmployeePanel({ employee, onClose }: { employee: Employee; onClo
   return <aside aria-label={`${employee.name} information`} style={{ position: 'absolute', left: 16, bottom: 130, width: 'min(340px, calc(100vw - 32px))', maxHeight: '55vh', overflow: 'auto', boxSizing: 'border-box', padding: 14, borderRadius: 10, background: 'rgba(12, 24, 39, .97)', border: '1px solid #386174', boxShadow: '0 8px 28px #0008', color: '#e6f4fa', font: '13px/1.5 system-ui, sans-serif', pointerEvents: 'auto' }}>
     <header style={{ display: 'flex', justifyContent: 'space-between', gap: 8 }}><div><strong>{employee.name}</strong><div>{employee.role} · {employee.department}</div></div><button onClick={onClose} aria-label="Close employee details">Close</button></header>
     <div style={{ marginTop: 8 }}><strong>Status:</strong> {employee.status} · <strong>Task:</strong> {employee.task}</div>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5, margin: '7px 0' }}>
+      <button onClick={() => engine.setStatus(employee.id, 'waiting')}>Simulate waiting</button>
+      <button onClick={() => engine.setStatus(employee.id, 'on-break')}>Simulate in-place break</button>
+      <button onClick={() => engine.setStatus(employee.id, 'blocked')}>Simulate blocked</button>
+      <button onClick={() => engine.setStatus(employee.id, 'completed')}>Simulate completed</button>
+      <button onClick={() => engine.setStatus(employee.id, 'working')}>Set working</button>
+      {peer && <button onClick={() => engine.beginCollaboration(employee.id, peer.id, `DEMO-SHARED-${[employee.id, peer.id].sort().join('-')}`)}>Pair with same-department demo employee</button>}
+      <button onClick={() => engine.resumeSchedule(employee.id)}>Resume scheduled demo</button>
+    </div>
     <div>Progress: <progress value={employee.progress} max={100} aria-label="Task progress" /> {employee.progress}%</div>
     {employee.partner && <div>Collaborating with {employee.partner} on {employee.sharedTaskId}</div>}
     {employee.status === 'blocked' && <div role="status">Blocked — this is a manually set local demo state. No remote task is running.</div>}

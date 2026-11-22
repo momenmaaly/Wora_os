@@ -45,6 +45,26 @@ describe('47-employee life simulation and local identity fixture', () => {
     expect(life.events.every(e => e.time >= 0 && e.id.startsWith('ROBOT-'))).toBe(true);
   });
 
+  test('explicit collaboration is restricted to same-department profiles and restores task records', () => {
+    const life = new EmployeeLife();
+    const a = life.getEmployee('ROBOT-002')!;
+    const b = life.getEmployee('ROBOT-003')!;
+    const taskA = a.taskId, taskB = b.taskId;
+    expect(life.beginCollaboration(a.id, 'ROBOT-001', 'DEMO-SHARED-invalid')).toBe(false); // cross-department
+    const shared = `DEMO-SHARED-${a.id}-${b.id}`;
+    expect(life.beginCollaboration(a.id, b.id, shared)).toBe(true);
+    expect(a.status).toBe('collaborating');
+    expect(a.partner).toBe(b.id);
+    expect(a.sharedTaskId).toBe(shared);
+    step(life, 5);
+    expect(a.status).toBe('collaborating'); // explicit pair is not lost on a simulation frame
+    expect(life.resumeSchedule(a.id)).toBe(true);
+    expect(a.taskId).toBe(taskA);
+    expect(b.taskId).toBe(taskB);
+    expect(a.partner).toBeNull();
+    expect(b.partner).toBeNull();
+  });
+
   test('employee info query and explicit complete/blocked/waiting state transitions work', () => {
     const life = new EmployeeLife();
     const e = life.getEmployee('ROBOT-001')!;
@@ -58,6 +78,7 @@ describe('47-employee life simulation and local identity fixture', () => {
     expect(life.setStatus(e.id, 'completed')).toBe(true);
     expect(e.progress).toBe(100);
     expect(e.status).toBe('completed');
+    expect(e.activity).toBe('idle'); // completed actors do not retain a working animation state
     expect(life.setStatus('NOT-A-ROBOT', 'working')).toBe(false);
     expect(e.history.length).toBeLessThanOrEqual(12);
   });
