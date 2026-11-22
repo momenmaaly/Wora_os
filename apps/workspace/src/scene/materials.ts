@@ -173,9 +173,6 @@ export function createMaterials(flat = false): Record<MaterialKey, Material> {
     if (map && s.mapRepeat) map.repeat.set(s.mapRepeat[0], s.mapRepeat[1]);
     const base = {
       color: new Color(map ? '#ffffff' : s.color), // map carries the sampled tones
-      emissive: s.emissive ? new Color(s.emissive) : undefined,
-      emissiveIntensity: s.emissiveIntensity,
-      map,
       roughness: s.roughness ?? 0.9,
       metalness: s.metalness ?? 0,
       envMapIntensity: s.envIntensity ?? 0.3,
@@ -183,6 +180,9 @@ export function createMaterials(flat = false): Record<MaterialKey, Material> {
       opacity: s.opacity ?? 1,
       depthWrite: s.opacity === undefined,
       side: s.opacity !== undefined ? DoubleSide : FrontSide,
+      ...(s.emissive !== undefined ? { emissive: new Color(s.emissive) } : {}),
+      ...(s.emissiveIntensity !== undefined ? { emissiveIntensity: s.emissiveIntensity } : {}),
+      ...(map !== undefined ? { map } : {}),
     };
     if (s.clearcoat !== undefined) {
       out[key] = new MeshPhysicalMaterial({ ...base, clearcoat: s.clearcoat, clearcoatRoughness: s.clearcoatRoughness ?? 0.2 });
@@ -201,7 +201,7 @@ export function createDeptMaterials(materials: Record<MaterialKey, Material>, id
   const wood = id === 'DEPT-05' ? getMap('wood-management') : undefined; // Management: warm-wood floor
   const floor = new MeshStandardMaterial({
     color: new Color(tone.color),
-    map: wood,
+    ...(wood ? { map: wood } : {}),
     roughness: 0.8,
     metalness: 0,
     envMapIntensity: 0.4,

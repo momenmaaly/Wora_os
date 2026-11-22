@@ -13,6 +13,7 @@
 import { Fragment, useEffect, useState, type CSSProperties, type ReactNode } from 'react';
 import { ACTIVITY_ROWS, NAV_ITEMS, REF_FRAME, STATUS_METRICS, UI_STRINGS, VIEW_TABS, uiBox } from './uiSpec';
 import type { Employee } from '../life/employeeLife';
+import { MobileUiShell } from './MobileUiShell';
 
 export function useUiScale(): number {
   const [s, setS] = useState(() => (typeof window === 'undefined' ? 1 : window.innerHeight / REF_FRAME.h));
@@ -200,6 +201,12 @@ export function UiShell({ onTab, employees = [], onEmployee, onCommand }: { onTa
   const [command, setCommand] = useState('');
   const [search, setSearch] = useState('');
   const [commandNotice, setCommandNotice] = useState('');
+  const [mobileLayout, setMobileLayout] = useState(() => typeof window !== 'undefined' && window.innerWidth < 720);
+  useEffect(() => {
+    const updateLayout = () => setMobileLayout(window.innerWidth < 720);
+    window.addEventListener('resize', updateLayout);
+    return () => window.removeEventListener('resize', updateLayout);
+  }, []);
   const matches = search.trim() ? employees.filter(e => `${e.name} ${e.id} ${e.department} ${e.role}`.toLowerCase().includes(search.trim().toLowerCase())).slice(0, 6) : [];
   const submitCommand = () => {
     if (!command.trim()) return;
@@ -215,6 +222,10 @@ export function UiShell({ onTab, employees = [], onEmployee, onCommand }: { onTa
 
   const px = (n: number) => `${n * s}px`;
   const panel: CSSProperties = { position: 'absolute', borderRadius: px(12), background: '#0A1422', boxShadow: `0 ${px(6)} ${px(14)} rgba(0,0,0,0.22)` }; // review R1: ref panels show crisp edges, minimal shadow
+
+  if (mobileLayout) {
+    return <MobileUiShell employees={employees} onEmployee={onEmployee} onCommand={onCommand} onTab={onTab} />;
+  }
 
   return (
     <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', fontFamily: "'Inter', 'Roboto', system-ui, sans-serif" }} data-testid="ui-shell">
@@ -288,7 +299,7 @@ export function UiShell({ onTab, employees = [], onEmployee, onCommand }: { onTa
         </div>
       </div>
       {search.trim() && <div role="listbox" aria-label="Employee search results" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: px(60), width: px(562), maxHeight: px(210), overflow: 'auto', zIndex: 50, background: '#101c2c', border: '1px solid #3A4456', borderRadius: px(10), pointerEvents: 'auto' }}>
-        {matches.length ? matches.map(e => <button key={e.id} role="option" onClick={() => { onEmployee?.(e.id); setSearch(''); }} style={{ display: 'block', width: '100%', textAlign: 'left', padding: `${px(7)} ${px(12)}`, color: '#eefaff', background: 'transparent', border: 0, cursor: 'pointer' }}>{e.name} · {e.role} · {e.department}</button>) : <div style={{ padding: px(10), color: '#c3cad3', fontSize: px(12) }}>No matching employee in the local demo directory.</div>}
+        {matches.length ? matches.map(e => <button key={e.id} role="option" onClick={() => { onEmployee?.(e.id); setSearch(''); }} style={{ display: 'block', width: '100%', textAlign: 'left', padding: `${px(7)} ${px(12)}`, color: '#eefaff', background: 'transparent', border: 0, cursor: 'pointer' }}>{e.name} · {e.id} · {e.role} · {e.department}</button>) : <div style={{ padding: px(10), color: '#c3cad3', fontSize: px(12) }}>No matching employee in the local demo directory.</div>}
       </div>}
 
       {/* ── Status strip (UI-050) — centre, below search ── */}

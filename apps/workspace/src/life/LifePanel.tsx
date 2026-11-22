@@ -35,7 +35,7 @@ export function LifePanel({ engine }: { engine: EmployeeLife }) {
       try { await audio.current?.enable(); setSound(true); setError(''); } catch { setError('Audio unavailable in this browser'); }
     }}>{sound ? 'Mute' : 'Enable sound'}</button>
     {error && <div role="alert">{error}</div>}
-    <div>Remote collaboration; in-place breaks. No wall-crossing navigation.</div>
+    <div>Same-department local pairing; actors stay at measured positions. Breaks are in-place—no obstacle-avoiding walking, drink station, or lounge trip is implemented.</div>
     <details><summary>Recent transitions ({engine.events.length}/32)</summary><ol style={{ maxHeight: 120, overflow: 'auto', margin: 0 }}>{engine.events.slice(-6).reverse().map((e,i) => <li key={`${e.time}-${e.id}-${i}`}>{e.id}: {e.activity}</li>)}</ol></details>
   </section>;
 }

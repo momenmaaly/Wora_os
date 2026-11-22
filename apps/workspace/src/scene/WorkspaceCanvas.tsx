@@ -43,6 +43,7 @@ export function WorkspaceCanvas({
 }) {
   return (
     <Canvas
+      frameloop={life ? 'always' : 'demand'}
       camera={{ fov: CAMERA.fovVerticalDeg, near: CAMERA.near, far: CAMERA.far, position: CAMERA.position }}
       dpr={[1, 2]}
       shadows={!flat}

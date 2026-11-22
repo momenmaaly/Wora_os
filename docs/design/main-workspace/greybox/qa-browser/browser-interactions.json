@@ -1,0 +1,732 @@
+{
+  "generatedAt": "2026-11-22T14:32:46.798Z",
+  "mobileSearchSelectionCount": 47,
+  "employeeAudit": [
+    {
+      "id": "ROBOT-001",
+      "name": "WORA Employee 001",
+      "department": "Executive Office",
+      "expectedLocation": [
+        "-9.285",
+        "-8.430"
+      ],
+      "shownLocation": [
+        "-9.285",
+        "-8.430"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true,
+      "speechVoicesInBrowser": 0,
+      "playDisabledWithoutVoice": true,
+      "textFallbackVisible": true
+    },
+    {
+      "id": "ROBOT-002",
+      "name": "WORA Employee 002",
+      "department": "Marketing",
+      "expectedLocation": [
+        "-15.102",
+        "0.739"
+      ],
+      "shownLocation": [
+        "-15.102",
+        "0.739"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-003",
+      "name": "WORA Employee 003",
+      "department": "Marketing",
+      "expectedLocation": [
+        "-13.067",
+        "1.133"
+      ],
+      "shownLocation": [
+        "-13.067",
+        "1.133"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-004",
+      "name": "WORA Employee 004",
+      "department": "Marketing",
+      "expectedLocation": [
+        "-12.381",
+        "0.361"
+      ],
+      "shownLocation": [
+        "-12.381",
+        "0.361"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-005",
+      "name": "WORA Employee 005",
+      "department": "Marketing",
+      "expectedLocation": [
+        "-14.730",
+        "3.130"
+      ],
+      "shownLocation": [
+        "-14.730",
+        "3.130"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-006",
+      "name": "WORA Employee 006",
+      "department": "Marketing",
+      "expectedLocation": [
+        "-14.591",
+        "4.531"
+      ],
+      "shownLocation": [
+        "-14.591",
+        "4.531"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-007",
+      "name": "WORA Employee 007",
+      "department": "Marketing",
+      "expectedLocation": [
+        "-13.466",
+        "4.906"
+      ],
+      "shownLocation": [
+        "-13.466",
+        "4.906"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-008",
+      "name": "WORA Employee 008",
+      "department": "Marketing",
+      "expectedLocation": [
+        "-12.138",
+        "4.307"
+      ],
+      "shownLocation": [
+        "-12.138",
+        "4.307"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-009",
+      "name": "WORA Employee 009",
+      "department": "Marketing",
+      "expectedLocation": [
+        "-12.416",
+        "2.937"
+      ],
+      "shownLocation": [
+        "-12.416",
+        "2.937"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-010",
+      "name": "WORA Employee 010",
+      "department": "Engineering",
+      "expectedLocation": [
+        "-3.114",
+        "-12.619"
+      ],
+      "shownLocation": [
+        "-3.114",
+        "-12.619"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-011",
+      "name": "WORA Employee 011",
+      "department": "Engineering",
+      "expectedLocation": [
+        "-2.383",
+        "-13.605"
+      ],
+      "shownLocation": [
+        "-2.383",
+        "-13.605"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-012",
+      "name": "WORA Employee 012",
+      "department": "Engineering",
+      "expectedLocation": [
+        "-1.666",
+        "-13.032"
+      ],
+      "shownLocation": [
+        "-1.666",
+        "-13.032"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-013",
+      "name": "WORA Employee 013",
+      "department": "Engineering",
+      "expectedLocation": [
+        "-2.797",
+        "-10.590"
+      ],
+      "shownLocation": [
+        "-2.797",
+        "-10.590"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-014",
+      "name": "WORA Employee 014",
+      "department": "Engineering",
+      "expectedLocation": [
+        "-1.521",
+        "-10.641"
+      ],
+      "shownLocation": [
+        "-1.521",
+        "-10.641"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-015",
+      "name": "WORA Employee 015",
+      "department": "Engineering",
+      "expectedLocation": [
+        "0.296",
+        "-12.014"
+      ],
+      "shownLocation": [
+        "0.296",
+        "-12.014"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-016",
+      "name": "WORA Employee 016",
+      "department": "Engineering",
+      "expectedLocation": [
+        "0.398",
+        "-10.590"
+      ],
+      "shownLocation": [
+        "0.398",
+        "-10.590"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-017",
+      "name": "WORA Employee 017",
+      "department": "Engineering",
+      "expectedLocation": [
+        "2.103",
+        "-11.242"
+      ],
+      "shownLocation": [
+        "2.103",
+        "-11.242"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-018",
+      "name": "WORA Employee 018",
+      "department": "Engineering",
+      "expectedLocation": [
+        "2.263",
+        "-10.590"
+      ],
+      "shownLocation": [
+        "2.263",
+        "-10.590"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-019",
+      "name": "WORA Employee 019",
+      "department": "Engineering",
+      "expectedLocation": [
+        "2.829",
+        "-13.115"
+      ],
+      "shownLocation": [
+        "2.829",
+        "-13.115"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-020",
+      "name": "WORA Employee 020",
+      "department": "Creative Studio",
+      "expectedLocation": [
+        "-4.624",
+        "8.883"
+      ],
+      "shownLocation": [
+        "-4.624",
+        "8.883"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-021",
+      "name": "WORA Employee 021",
+      "department": "Creative Studio",
+      "expectedLocation": [
+        "-3.310",
+        "9.505"
+      ],
+      "shownLocation": [
+        "-3.310",
+        "9.505"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-022",
+      "name": "WORA Employee 022",
+      "department": "Creative Studio",
+      "expectedLocation": [
+        "-5.158",
+        "12.303"
+      ],
+      "shownLocation": [
+        "-5.158",
+        "12.303"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-023",
+      "name": "WORA Employee 023",
+      "department": "Creative Studio",
+      "expectedLocation": [
+        "-4.792",
+        "11.932"
+      ],
+      "shownLocation": [
+        "-4.792",
+        "11.932"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-024",
+      "name": "WORA Employee 024",
+      "department": "Creative Studio",
+      "expectedLocation": [
+        "-3.149",
+        "12.208"
+      ],
+      "shownLocation": [
+        "-3.149",
+        "12.208"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-025",
+      "name": "WORA Employee 025",
+      "department": "Management",
+      "expectedLocation": [
+        "8.546",
+        "-5.356"
+      ],
+      "shownLocation": [
+        "8.546",
+        "-5.356"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-026",
+      "name": "WORA Employee 026",
+      "department": "Management",
+      "expectedLocation": [
+        "9.880",
+        "-4.858"
+      ],
+      "shownLocation": [
+        "9.880",
+        "-4.858"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-027",
+      "name": "WORA Employee 027",
+      "department": "Management",
+      "expectedLocation": [
+        "10.820",
+        "-6.443"
+      ],
+      "shownLocation": [
+        "10.820",
+        "-6.443"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-028",
+      "name": "WORA Employee 028",
+      "department": "Management",
+      "expectedLocation": [
+        "11.229",
+        "-4.913"
+      ],
+      "shownLocation": [
+        "11.229",
+        "-4.913"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-029",
+      "name": "WORA Employee 029",
+      "department": "Management",
+      "expectedLocation": [
+        "12.568",
+        "-5.961"
+      ],
+      "shownLocation": [
+        "12.568",
+        "-5.961"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-030",
+      "name": "WORA Employee 030",
+      "department": "Research",
+      "expectedLocation": [
+        "3.397",
+        "8.624"
+      ],
+      "shownLocation": [
+        "3.397",
+        "8.624"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-031",
+      "name": "WORA Employee 031",
+      "department": "Research",
+      "expectedLocation": [
+        "4.970",
+        "9.180"
+      ],
+      "shownLocation": [
+        "4.970",
+        "9.180"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-032",
+      "name": "WORA Employee 032",
+      "department": "Research",
+      "expectedLocation": [
+        "3.875",
+        "9.842"
+      ],
+      "shownLocation": [
+        "3.875",
+        "9.842"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-033",
+      "name": "WORA Employee 033",
+      "department": "Research",
+      "expectedLocation": [
+        "3.459",
+        "12.090"
+      ],
+      "shownLocation": [
+        "3.459",
+        "12.090"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-034",
+      "name": "WORA Employee 034",
+      "department": "Research",
+      "expectedLocation": [
+        "4.880",
+        "12.164"
+      ],
+      "shownLocation": [
+        "4.880",
+        "12.164"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-035",
+      "name": "WORA Employee 035",
+      "department": "QA & Testing",
+      "expectedLocation": [
+        "7.761",
+        "4.088"
+      ],
+      "shownLocation": [
+        "7.761",
+        "4.088"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-036",
+      "name": "WORA Employee 036",
+      "department": "QA & Testing",
+      "expectedLocation": [
+        "8.093",
+        "4.860"
+      ],
+      "shownLocation": [
+        "8.093",
+        "4.860"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-037",
+      "name": "WORA Employee 037",
+      "department": "QA & Testing",
+      "expectedLocation": [
+        "9.491",
+        "4.040"
+      ],
+      "shownLocation": [
+        "9.491",
+        "4.040"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-038",
+      "name": "WORA Employee 038",
+      "department": "QA & Testing",
+      "expectedLocation": [
+        "9.962",
+        "4.860"
+      ],
+      "shownLocation": [
+        "9.962",
+        "4.860"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-039",
+      "name": "WORA Employee 039",
+      "department": "QA & Testing",
+      "expectedLocation": [
+        "11.208",
+        "3.966"
+      ],
+      "shownLocation": [
+        "11.208",
+        "3.966"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-040",
+      "name": "WORA Employee 040",
+      "department": "QA & Testing",
+      "expectedLocation": [
+        "11.718",
+        "4.860"
+      ],
+      "shownLocation": [
+        "11.718",
+        "4.860"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-041",
+      "name": "WORA Employee 041",
+      "department": "Atrium / walkway (left)",
+      "expectedLocation": [
+        "-8.035",
+        "1.154"
+      ],
+      "shownLocation": [
+        "-8.035",
+        "1.154"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-042",
+      "name": "WORA Employee 042",
+      "department": "Atrium lounge",
+      "expectedLocation": [
+        "-4.343",
+        "1.805"
+      ],
+      "shownLocation": [
+        "-4.343",
+        "1.805"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-043",
+      "name": "WORA Employee 043",
+      "department": "Atrium lounge",
+      "expectedLocation": [
+        "-2.994",
+        "-3.118"
+      ],
+      "shownLocation": [
+        "-2.994",
+        "-3.118"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-044",
+      "name": "WORA Employee 044",
+      "department": "Atrium / walkway (right)",
+      "expectedLocation": [
+        "-0.579",
+        "-5.814"
+      ],
+      "shownLocation": [
+        "-0.579",
+        "-5.814"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-045",
+      "name": "WORA Employee 045",
+      "department": "Atrium / walkway (right)",
+      "expectedLocation": [
+        "0.448",
+        "-5.767"
+      ],
+      "shownLocation": [
+        "0.448",
+        "-5.767"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-046",
+      "name": "WORA Employee 046",
+      "department": "Atrium (right of plinth)",
+      "expectedLocation": [
+        "3.762",
+        "-1.376"
+      ],
+      "shownLocation": [
+        "3.762",
+        "-1.376"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    },
+    {
+      "id": "ROBOT-047",
+      "name": "WORA Employee 047",
+      "department": "Walkway (lower-left of Management)",
+      "expectedLocation": [
+        "12.488",
+        "-1.063"
+      ],
+      "shownLocation": [
+        "12.488",
+        "-1.063"
+      ],
+      "identityAndLocationMatched": true,
+      "detailsExposeStatus": true
+    }
+  ],
+  "directoryButtonsIncludingClose": 48,
+  "viewSwitches": [
+    "Floor Plan",
+    "Live View"
+  ],
+  "modeScreenshots": [
+    "docs/design/main-workspace/greybox/qa-browser/mobile-floor-plan-390x844.png",
+    "docs/design/main-workspace/greybox/qa-browser/mobile-live-view-390x844.png"
+  ],
+  "lifePanelVisible": true,
+  "softwareWebGlRafSample": {
+    "frames": 9,
+    "durationMs": 2014.2999999997264,
+    "fps": 4
+  },
+  "commandNotSentDisclosure": true,
+  "muteToggle": "passed",
+  "note": "Browser clicks inspect local demo data; RAF sample is headless SwiftShader, not representative hardware FPS. These checks do not establish live backend behavior or audible output."
+}
