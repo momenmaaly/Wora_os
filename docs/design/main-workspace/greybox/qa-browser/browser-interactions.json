@@ -1,6 +1,19 @@
 {
-  "generatedAt": "2026-11-22T14:32:46.798Z",
-  "mobileSearchSelectionCount": 47,
+  "generatedAt": "2026-11-22T14:37:22.892Z",
+  "desktopNavigationAudit": [
+    "Company Overview",
+    "Executive Office",
+    "Departments",
+    "Agent Directory",
+    "Projects",
+    "Tasks & Workflows",
+    "Knowledge Base",
+    "Reports & Analytics",
+    "Integrations",
+    "Billing & Usage",
+    "Settings"
+  ],
+  "billingNotConnectedDisclosure": true,
   "employeeAudit": [
     {
       "id": "ROBOT-001",
@@ -711,6 +724,7 @@
       "detailsExposeStatus": true
     }
   ],
+  "mobileSearchSelectionCount": 47,
   "directoryButtonsIncludingClose": 48,
   "viewSwitches": [
     "Floor Plan",
@@ -722,9 +736,9 @@
   ],
   "lifePanelVisible": true,
   "softwareWebGlRafSample": {
-    "frames": 9,
-    "durationMs": 2014.2999999997264,
-    "fps": 4
+    "frames": 14,
+    "durationMs": 2151.799999999901,
+    "fps": 7
   },
   "commandNotSentDisclosure": true,
   "muteToggle": "passed",

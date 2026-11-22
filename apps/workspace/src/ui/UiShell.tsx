@@ -233,7 +233,7 @@ export function UiShell({ onTab, employees = [], onEmployee, onCommand }: { onTa
       <div style={{ position: 'absolute', left: 0, top: 0, width: px(295), height: px(67), background: '#091423', pointerEvents: 'auto' }} />
       <div style={{ position: 'absolute', left: 0, top: px(67), width: px(235), bottom: 0, background: '#121C2C', borderRight: `${px(1)} solid #0B1523`, pointerEvents: 'auto' }}>
         {/* company selector (UI-010) */}
-        <div style={{ position: 'absolute', left: px(19), top: px(86 - 67), width: px(197), height: px(69), background: '#091321', border: `${px(1)} solid #3E4D63`, borderRadius: px(10) }}>
+        <div role="button" tabIndex={0} aria-label="Open company selector" onClick={() => setOpenSection('Company selector')} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setOpenSection('Company selector'); }} title="Demo workspace only; no tenant service connected" style={{ position: 'absolute', left: px(19), top: px(86 - 67), width: px(197), height: px(69), background: '#091321', border: `${px(1)} solid #3E4D63`, borderRadius: px(10), cursor: 'pointer' }}>
           <div style={{ position: 'absolute', left: px(11), top: px(11), width: px(20), height: px(19), background: 'linear-gradient(135deg,#16CBDD,#0891B2)', borderRadius: px(5), display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Icon kind="building" size={12 * s} color="#FFFFFF" />
           </div>
@@ -249,7 +249,10 @@ export function UiShell({ onTab, employees = [], onEmployee, onCommand }: { onTa
           return (
             <div
               key={n.id}
+              role="button"
+              tabIndex={0}
               onClick={() => { setActiveNav(n.label); setOpenSection(n.label); }}
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { setActiveNav(n.label); setOpenSection(n.label); } }}
               aria-label={`Open ${n.label}`}
               aria-current={active ? 'page' : undefined}
               style={{
@@ -331,7 +334,7 @@ export function UiShell({ onTab, employees = [], onEmployee, onCommand }: { onTa
 
       {/* ── Top-right cluster (REG-05) ── */}
       <div role="button" tabIndex={0} aria-label="Open account details" onClick={() => setOpenSection('Account')} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setOpenSection('Account'); }} style={{ ...panel, right: px(15), top: px(12), width: px(239), height: px(51), background: '#091322', pointerEvents: 'auto', cursor: 'pointer' }}>
-        <div role="button" tabIndex={0} aria-label="Open notifications" onClick={() => setOpenSection('Notifications')} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setOpenSection('Notifications'); }} title="Static reference-image badge; no live notification feed." style={{ position: 'absolute', left: px(15), top: px(13), cursor: 'pointer' }}>
+        <div role="button" tabIndex={0} aria-label="Open notifications" onClick={e => { e.stopPropagation(); setOpenSection('Notifications'); }} onKeyDown={e => { e.stopPropagation(); if (e.key === 'Enter' || e.key === ' ') setOpenSection('Notifications'); }} title="Static reference-image badge; no live notification feed." style={{ position: 'absolute', left: px(15), top: px(13), cursor: 'pointer' }}>
           <Icon kind="bell" size={19 * s} color="#E6E9EE" />
           <div style={{ position: 'absolute', left: px(11), top: px(-10), width: px(13), height: px(14), background: '#F3272B', borderRadius: '50%', color: '#FFFFFF', fontSize: px(10), fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>3</div>
         </div>
@@ -401,6 +404,10 @@ export function UiShell({ onTab, employees = [], onEmployee, onCommand }: { onTa
           return (
             <div
               key={t.id}
+              role="button"
+              tabIndex={0}
+              aria-pressed={active}
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { setActiveTab(t.label); onTab?.(t.label); } }}
               onClick={() => {
                 setActiveTab(t.label);
                 onTab?.(t.label);

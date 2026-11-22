@@ -95,6 +95,29 @@ try {
   }
 
   // Functional browser smoke checks, kept separate from the pristine viewport captures.
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(baseURL, { waitUntil: 'networkidle', timeout: 60000 });
+  await page.getByRole('button', { name: 'Open company selector' }).click();
+  await page.getByRole('region', { name: 'Company selector section' }).waitFor({ timeout: 15000 });
+  await page.getByRole('button', { name: 'Close navigation section' }).click();
+  const navigationAudit = [];
+  for (const label of ['Company Overview', 'Executive Office', 'Departments', 'Agent Directory', 'Projects', 'Tasks & Workflows', 'Knowledge Base', 'Reports & Analytics', 'Integrations', 'Billing & Usage', 'Settings']) {
+    await page.getByRole('button', { name: `Open ${label}` }).click();
+    const section = page.getByRole('region', { name: `${label} section` });
+    await section.waitFor({ timeout: 15000 });
+    navigationAudit.push(label);
+    await section.getByRole('button', { name: 'Close navigation section' }).click();
+  }
+  await page.getByRole('button', { name: 'Open notifications' }).click();
+  await page.getByRole('region', { name: 'Notifications section' }).waitFor({ timeout: 15000 });
+  await page.getByRole('button', { name: 'Close navigation section' }).click();
+  await page.getByRole('button', { name: 'Open account details' }).click();
+  await page.getByRole('region', { name: 'Account section' }).waitFor({ timeout: 15000 });
+  await page.getByRole('button', { name: 'Close navigation section' }).click();
+  await page.getByRole('button', { name: 'Upgrade Now' }).click();
+  const billingNotice = await page.getByRole('status').filter({ hasText: 'Billing is not connected' }).count();
+  if (!billingNotice) throw new Error('Upgrade action did not disclose missing billing integration.');
+
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(baseURL, { waitUntil: 'networkidle', timeout: 60000 });
   await page.waitForSelector('[data-mobile-ui-shell]', { timeout: 15000 });
@@ -161,7 +184,7 @@ try {
   await page.getByRole('button', { name: 'Submit command' }).click();
   const commandResponse = await page.getByRole('status').filter({ hasText: 'Not sent: no connected task runtime.' }).count();
   if (!commandResponse) throw new Error('Executive Command did not disclose its disconnected runtime.');
-  await writeFile(path.join(output, 'browser-interactions.json'), `${JSON.stringify({ generatedAt: new Date().toISOString(), mobileSearchSelectionCount: employeeAudit.length, employeeAudit, directoryButtonsIncludingClose: directoryCount, viewSwitches: ['Floor Plan', 'Live View'], modeScreenshots: [path.relative(repoRoot, floorPlanShot), path.relative(repoRoot, liveViewShot)], lifePanelVisible: true, softwareWebGlRafSample: raf, commandNotSentDisclosure: true, muteToggle: 'passed', note: 'Browser clicks inspect local demo data; RAF sample is headless SwiftShader, not representative hardware FPS. These checks do not establish live backend behavior or audible output.' }, null, 2)}\n`);
+  await writeFile(path.join(output, 'browser-interactions.json'), `${JSON.stringify({ generatedAt: new Date().toISOString(), desktopNavigationAudit: navigationAudit, billingNotConnectedDisclosure: billingNotice > 0, employeeAudit, mobileSearchSelectionCount: employeeAudit.length, directoryButtonsIncludingClose: directoryCount, viewSwitches: ['Floor Plan', 'Live View'], modeScreenshots: [path.relative(repoRoot, floorPlanShot), path.relative(repoRoot, liveViewShot)], lifePanelVisible: true, softwareWebGlRafSample: raf, commandNotSentDisclosure: true, muteToggle: 'passed', note: 'Browser clicks inspect local demo data; RAF sample is headless SwiftShader, not representative hardware FPS. These checks do not establish live backend behavior or audible output.' }, null, 2)}\n`);
 } finally {
   await browser.close();
 }
