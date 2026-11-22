@@ -65,6 +65,24 @@ describe('47-employee life simulation and local identity fixture', () => {
     expect(b.partner).toBeNull();
   });
 
+  test('every same-management pair can record and cleanly end a local collaboration', () => {
+    const life = new EmployeeLife();
+    const management = life.employees.filter(e => e.department === 'Management');
+    expect(management.length).toBeGreaterThan(1);
+    for (let i = 0; i < management.length; i++) for (let j = i + 1; j < management.length; j++) {
+      const a = management[i], b = management[j];
+      const sharedTaskId = `DEMO-SHARED-${a.id}-${b.id}`;
+      expect(life.beginCollaboration(a.id, b.id, sharedTaskId)).toBe(true);
+      expect(a.partner).toBe(b.id);
+      expect(b.partner).toBe(a.id);
+      expect(a.sharedTaskId).toBe(sharedTaskId);
+      expect(b.sharedTaskId).toBe(sharedTaskId);
+      expect(life.resumeSchedule(a.id)).toBe(true);
+      expect(a.partner).toBeNull();
+      expect(b.partner).toBeNull();
+    }
+  });
+
   test('employee info query and explicit complete/blocked/waiting state transitions work', () => {
     const life = new EmployeeLife();
     const e = life.getEmployee('ROBOT-001')!;

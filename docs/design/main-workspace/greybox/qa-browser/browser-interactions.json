@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T14:37:22.892Z",
+  "generatedAt": "2026-11-22T14:40:56.537Z",
   "desktopNavigationAudit": [
     "Company Overview",
     "Executive Office",
@@ -28,7 +28,7 @@
         "-8.430"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true,
+      "detailsExposeAllProfileFields": true,
       "speechVoicesInBrowser": 0,
       "playDisabledWithoutVoice": true,
       "textFallbackVisible": true
@@ -46,7 +46,7 @@
         "0.739"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-003",
@@ -61,7 +61,7 @@
         "1.133"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-004",
@@ -76,7 +76,7 @@
         "0.361"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-005",
@@ -91,7 +91,7 @@
         "3.130"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-006",
@@ -106,7 +106,7 @@
         "4.531"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-007",
@@ -121,7 +121,7 @@
         "4.906"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-008",
@@ -136,7 +136,7 @@
         "4.307"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-009",
@@ -151,7 +151,7 @@
         "2.937"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-010",
@@ -166,7 +166,7 @@
         "-12.619"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-011",
@@ -181,7 +181,7 @@
         "-13.605"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-012",
@@ -196,7 +196,7 @@
         "-13.032"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-013",
@@ -211,7 +211,7 @@
         "-10.590"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-014",
@@ -226,7 +226,7 @@
         "-10.641"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-015",
@@ -241,7 +241,7 @@
         "-12.014"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-016",
@@ -256,7 +256,7 @@
         "-10.590"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-017",
@@ -271,7 +271,7 @@
         "-11.242"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-018",
@@ -286,7 +286,7 @@
         "-10.590"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-019",
@@ -301,7 +301,7 @@
         "-13.115"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-020",
@@ -316,7 +316,7 @@
         "8.883"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-021",
@@ -331,7 +331,7 @@
         "9.505"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-022",
@@ -346,7 +346,7 @@
         "12.303"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-023",
@@ -361,7 +361,7 @@
         "11.932"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-024",
@@ -376,7 +376,7 @@
         "12.208"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-025",
@@ -391,7 +391,7 @@
         "-5.356"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-026",
@@ -406,7 +406,7 @@
         "-4.858"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-027",
@@ -421,7 +421,7 @@
         "-6.443"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-028",
@@ -436,7 +436,7 @@
         "-4.913"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-029",
@@ -451,7 +451,7 @@
         "-5.961"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-030",
@@ -466,7 +466,7 @@
         "8.624"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-031",
@@ -481,7 +481,7 @@
         "9.180"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-032",
@@ -496,7 +496,7 @@
         "9.842"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-033",
@@ -511,7 +511,7 @@
         "12.090"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-034",
@@ -526,7 +526,7 @@
         "12.164"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-035",
@@ -541,7 +541,7 @@
         "4.088"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-036",
@@ -556,7 +556,7 @@
         "4.860"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-037",
@@ -571,7 +571,7 @@
         "4.040"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-038",
@@ -586,7 +586,7 @@
         "4.860"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-039",
@@ -601,7 +601,7 @@
         "3.966"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-040",
@@ -616,7 +616,7 @@
         "4.860"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-041",
@@ -631,7 +631,7 @@
         "1.154"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-042",
@@ -646,7 +646,7 @@
         "1.805"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-043",
@@ -661,7 +661,7 @@
         "-3.118"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-044",
@@ -676,7 +676,7 @@
         "-5.814"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-045",
@@ -691,7 +691,7 @@
         "-5.767"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-046",
@@ -706,7 +706,7 @@
         "-1.376"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     },
     {
       "id": "ROBOT-047",
@@ -721,7 +721,7 @@
         "-1.063"
       ],
       "identityAndLocationMatched": true,
-      "detailsExposeStatus": true
+      "detailsExposeAllProfileFields": true
     }
   ],
   "mobileSearchSelectionCount": 47,
@@ -736,9 +736,9 @@
   ],
   "lifePanelVisible": true,
   "softwareWebGlRafSample": {
-    "frames": 14,
-    "durationMs": 2151.799999999901,
-    "fps": 7
+    "frames": 12,
+    "durationMs": 2253.9999999999054,
+    "fps": 5
   },
   "commandNotSentDisclosure": true,
   "muteToggle": "passed",

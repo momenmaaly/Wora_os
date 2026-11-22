@@ -139,10 +139,11 @@ try {
     const expected = actorRows.get(id);
     const shownLocation = detailText.match(/Measured floor location \(X, Z\):\s*(-?\d+(?:\.\d+)?),\s*(-?\d+(?:\.\d+)?)/);
     const expectedLocation = expected?.floor_xz.map(value => Number(value).toFixed(3));
-    if (!expected || !detailText.includes(id) || !detailText.includes('Status:') || !detailText.includes(expected.zone) || !searchSummary?.includes(id) || !shownLocation || shownLocation[1] !== expectedLocation?.[0] || shownLocation[2] !== expectedLocation?.[1]) {
+    const detailFieldsPresent = ['Status:', 'Task:', 'Progress:', 'Personality:', 'Communication:', 'Skills:', 'Tools:', 'Permissions:'].every(label => detailText.includes(label));
+    if (!expected || !detailText.includes(id) || !detailFieldsPresent || !detailText.includes(expected.zone) || !searchSummary?.includes(id) || !shownLocation || shownLocation[1] !== expectedLocation?.[0] || shownLocation[2] !== expectedLocation?.[1]) {
       throw new Error(`Employee browser audit failed for ${id}: expected catalogue identity, department, location, and visible status to match.`);
     }
-    employeeAudit.push({ id, name, department: expected.zone, expectedLocation, shownLocation: shownLocation.slice(1), identityAndLocationMatched: true, detailsExposeStatus: true });
+    employeeAudit.push({ id, name, department: expected.zone, expectedLocation, shownLocation: shownLocation.slice(1), identityAndLocationMatched: true, detailsExposeAllProfileFields: detailFieldsPresent });
     if (n === 1) {
       const voiceCount = await page.evaluate(() => ('speechSynthesis' in window ? window.speechSynthesis.getVoices().length : 0));
       const playDisabled = await details.getByRole('button', { name: 'Play employee introduction', exact: true }).isDisabled();
