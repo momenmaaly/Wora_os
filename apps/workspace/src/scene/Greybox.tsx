@@ -4,6 +4,8 @@
  * Labels (sign text, plinth wordmark/logo) are canvas textures and are skipped in flat mode.
  */
 import { useMemo } from 'react';
+import { LifeActors } from '../life/LifeActors';
+import type { EmployeeLife } from '../life/employeeLife';
 import {
   BoxGeometry,
   BufferAttribute,
@@ -69,12 +71,12 @@ function BoxPrimitive({ spec, materials, edges, materialOverride }: { spec: BoxS
   );
 }
 
-function CylinderPrimitive({ spec, materials, edges }: { spec: CylinderSpec; materials: Record<string, Material>; edges: boolean }) {
+function CylinderPrimitive({ spec, materials, edges, materialOverride }: { spec: CylinderSpec; materials: Record<string, Material>; edges: boolean; materialOverride?: Material }) {
   const geometry = useMemo(() => new CylinderGeometry(spec.radius, spec.radius, spec.height, spec.segments), [spec]);
   const edgeGeometry = useMemo(() => new EdgesGeometry(geometry, 30), [geometry]);
   return (
     <group position={spec.center} name={spec.key} userData={{ refId: spec.refId }}>
-      <mesh geometry={geometry} material={materials[spec.material]} {...shadowProps(spec.material)} />
+      <mesh geometry={geometry} material={materialOverride ?? materials[spec.material]} {...shadowProps(spec.material)} />
       {edges && (
         <lineSegments geometry={edgeGeometry}>
           <lineBasicMaterial color={EDGE_COLOR} />
@@ -332,7 +334,7 @@ function LabelPrimitive({ spec }: { spec: LabelSpec }) {
 function Primitive({ spec, materials, edges = true, materialOverride }: { spec: PrimitiveSpec; materials: Record<string, Material>; edges?: boolean; materialOverride?: Material }) {
   if (spec.kind === 'box') return <BoxPrimitive spec={spec} materials={materials} edges={edges} materialOverride={materialOverride} />;
   if (spec.kind === 'sphere') return <SpherePrimitive spec={spec} materials={materials} />;
-  return <CylinderPrimitive spec={spec} materials={materials} edges={edges} />;
+  return <CylinderPrimitive spec={spec} materials={materials} edges={edges} materialOverride={materialOverride} />;
 }
 
 export interface GreyboxLayers {
@@ -353,13 +355,23 @@ export interface GreyboxLayers {
 
 export const DEFAULT_LAYERS: GreyboxLayers = { mass: true, partitions: true, signs: true, balustrades: true, fascia: true, strips: true, backdrop: true, structure: true, interiors: true, robots: true };
 
-export function Greybox({ layers = DEFAULT_LAYERS, flat = false }: { layers?: GreyboxLayers; flat?: boolean }) {
+export function Greybox({ layers = DEFAULT_LAYERS, flat = false, life }: { layers?: GreyboxLayers; flat?: boolean; life?: EmployeeLife }) {
   const model = useMemo(() => buildGreyboxModel(), []);
   const env: EnvironmentModel = useMemo(() => buildEnvironmentModel(), []);
   const mobileK = useMemo(() => (!flat && typeof window !== 'undefined' && Math.min(window.innerWidth, window.innerHeight) < 900 && window.innerWidth < window.innerHeight ? MOBILE_BOOST : 1), [flat]);
   const structureSpecs = useMemo(() => (flat ? [] : buildStructureCompletion()), [flat]);
   const interiorSpecs = useMemo(() => (flat ? [] : buildInteriors()), [flat]);
   const robotSpecs = useMemo(() => (flat ? [] : buildRobots()), [flat]);
+  const actorSpecs = useMemo(() => {
+    const grouped = new Map<string, PrimitiveSpec[]>();
+    for (const spec of robotSpecs) {
+      if (!spec.refId) continue;
+      const actor = grouped.get(spec.refId) ?? [];
+      actor.push(spec);
+      grouped.set(spec.refId, actor);
+    }
+    return grouped;
+  }, [robotSpecs]);
   const materials = useMemo(() => createMaterials(flat), [flat]);
   const deptFloor = useMemo(
     () =>
@@ -425,9 +437,7 @@ export function Greybox({ layers = DEFAULT_LAYERS, flat = false }: { layers?: Gr
         </group>
       )}
       {!flat && layers.robots && (
-        <group name="Robots">
-          {robotSpecs.map((f) => <Primitive key={f.key} spec={f} materials={materials} edges={false} />)}
-        </group>
+        <LifeActors key={life ? "live" : "static"} engine={life} renderActor={(id) => (actorSpecs.get(id) ?? []).map(f => <Primitive key={f.key} spec={f} materials={materials} edges={false} />)} />
       )}
       {layers.backdrop && (
         <group name="Backdrop">

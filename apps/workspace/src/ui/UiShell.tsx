@@ -12,6 +12,8 @@
  */
 import { Fragment, useEffect, useState, type CSSProperties, type ReactNode } from 'react';
 import { ACTIVITY_ROWS, NAV_ITEMS, REF_FRAME, STATUS_METRICS, UI_STRINGS, VIEW_TABS, uiBox } from './uiSpec';
+import type { Employee } from '../life/employeeLife';
+import { MobileUiShell } from './MobileUiShell';
 
 export function useUiScale(): number {
   const [s, setS] = useState(() => (typeof window === 'undefined' ? 1 : window.innerHeight / REF_FRAME.h));
@@ -190,15 +192,40 @@ function Text({ x, y, w, h, s, size, weight = 400, color = '#FFFFFF', align, let
 }
 
 /** The full measured UI overlay. Rendered on the production route; skipped on the dev route. */
-export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
+export function UiShell({ onTab, employees = [], onEmployee, onCommand }: { onTab?: (label: string) => void; employees?: readonly Employee[]; onEmployee?: (id: string) => void; onCommand?: (command: string) => void }) {
   const s = useUiScale();
   const [activeNav, setActiveNav] = useState('Company Overview');
+  const [openSection, setOpenSection] = useState('');
+  const [, refreshDirectory] = useState(0);
   const [activeTab, setActiveTab] = useState('3D View');
   const [command, setCommand] = useState('');
   const [search, setSearch] = useState('');
+  const [commandNotice, setCommandNotice] = useState('');
+  const [mobileLayout, setMobileLayout] = useState(() => typeof window !== 'undefined' && window.innerWidth < 720);
+  useEffect(() => {
+    const updateLayout = () => setMobileLayout(window.innerWidth < 720);
+    window.addEventListener('resize', updateLayout);
+    return () => window.removeEventListener('resize', updateLayout);
+  }, []);
+  const matches = search.trim() ? employees.filter(e => `${e.name} ${e.id} ${e.department} ${e.role}`.toLowerCase().includes(search.trim().toLowerCase())).slice(0, 6) : [];
+  const submitCommand = () => {
+    if (!command.trim()) return;
+    onCommand?.(command.trim());
+    setCommandNotice('Not sent: no task runtime is connected.');
+    setCommand('');
+  };
+  useEffect(() => {
+    if (!openSection) return;
+    const timer = window.setInterval(() => refreshDirectory(n => n + 1), 500);
+    return () => window.clearInterval(timer);
+  }, [openSection]);
 
   const px = (n: number) => `${n * s}px`;
   const panel: CSSProperties = { position: 'absolute', borderRadius: px(12), background: '#0A1422', boxShadow: `0 ${px(6)} ${px(14)} rgba(0,0,0,0.22)` }; // review R1: ref panels show crisp edges, minimal shadow
+
+  if (mobileLayout) {
+    return <MobileUiShell employees={employees} onEmployee={onEmployee} onCommand={onCommand} onTab={onTab} />;
+  }
 
   return (
     <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', fontFamily: "'Inter', 'Roboto', system-ui, sans-serif" }} data-testid="ui-shell">
@@ -206,7 +233,7 @@ export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
       <div style={{ position: 'absolute', left: 0, top: 0, width: px(295), height: px(67), background: '#091423', pointerEvents: 'auto' }} />
       <div style={{ position: 'absolute', left: 0, top: px(67), width: px(235), bottom: 0, background: '#121C2C', borderRight: `${px(1)} solid #0B1523`, pointerEvents: 'auto' }}>
         {/* company selector (UI-010) */}
-        <div style={{ position: 'absolute', left: px(19), top: px(86 - 67), width: px(197), height: px(69), background: '#091321', border: `${px(1)} solid #3E4D63`, borderRadius: px(10) }}>
+        <div role="button" tabIndex={0} aria-label="Open company selector" onClick={() => setOpenSection('Company selector')} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setOpenSection('Company selector'); }} title="Demo workspace only; no tenant service connected" style={{ position: 'absolute', left: px(19), top: px(86 - 67), width: px(197), height: px(69), background: '#091321', border: `${px(1)} solid #3E4D63`, borderRadius: px(10), cursor: 'pointer' }}>
           <div style={{ position: 'absolute', left: px(11), top: px(11), width: px(20), height: px(19), background: 'linear-gradient(135deg,#16CBDD,#0891B2)', borderRadius: px(5), display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Icon kind="building" size={12 * s} color="#FFFFFF" />
           </div>
@@ -222,7 +249,12 @@ export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
           return (
             <div
               key={n.id}
-              onClick={() => setActiveNav(n.label)}
+              role="button"
+              tabIndex={0}
+              onClick={() => { setActiveNav(n.label); setOpenSection(n.label); }}
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { setActiveNav(n.label); setOpenSection(n.label); } }}
+              aria-label={`Open ${n.label}`}
+              aria-current={active ? 'page' : undefined}
               style={{
                 position: 'absolute', left: px(b.x), top: px(b.y - 67), width: px(b.w), height: px(b.h),
                 borderRadius: px(10), background: active ? '#074A5F' : 'transparent', cursor: 'pointer', pointerEvents: 'auto',
@@ -241,11 +273,16 @@ export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
           <Text x={0} y={45} w={197} h={15} s={s} size={16} weight={700} align="center">{UI_STRINGS.upgradeTitle}</Text>
           <Text x={0} y={71} w={197} h={13} s={s} size={14} color="#C3CAD3" align="center">{UI_STRINGS.upgradeLine1}</Text>
           <Text x={0} y={90} w={197} h={13} s={s} size={14} color="#C3CAD3" align="center">{UI_STRINGS.upgradeLine2}</Text>
-          <div style={{ position: 'absolute', left: px(21), top: px(116), width: px(156), height: px(36), background: '#1A2B43', borderRadius: px(8), cursor: 'pointer', pointerEvents: 'auto' }}>
-            <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: px(15), fontWeight: 700, color: '#FFFFFF' }}>{UI_STRINGS.upgradeButton}</div>
-          </div>
+          <button type="button" onClick={() => setCommandNotice('Billing is not connected; no plan change was made.')} style={{ position: 'absolute', left: px(21), top: px(116), width: px(156), height: px(36), background: '#1A2B43', border: 0, borderRadius: px(8), cursor: 'pointer', pointerEvents: 'auto', fontSize: px(15), fontWeight: 700, color: '#FFFFFF' }}>{UI_STRINGS.upgradeButton}</button>
         </div>
       </div>
+      {openSection && <section aria-label={`${openSection} section`} style={{ position: 'absolute', left: '50%', top: px(140), transform: 'translateX(-50%)', width: 'min(420px, calc(100vw - 32px))', maxHeight: '55vh', overflow: 'auto', zIndex: 55, boxSizing: 'border-box', padding: 14, border: '1px solid #386174', borderRadius: 10, background: '#101c2cf5', color: '#eefaff', font: '13px/1.5 system-ui', pointerEvents: 'auto' }}>
+        <button onClick={() => setOpenSection('')} style={{ float: 'right' }} aria-label="Close navigation section">Close</button>
+        <strong>{openSection}</strong><div style={{ color: '#FBB845' }}>Prototype data · no production workspace service connected</div>
+        {openSection === 'Agent Directory' && <><p>{employees.length} local demo profiles. Select an employee to inspect its stable ID and simulated state.</p>{employees.map(e => <button key={e.id} onClick={() => { onEmployee?.(e.id); setOpenSection(''); }} style={{ display: 'block', width: '100%', textAlign: 'left', padding: '5px 8px', background: 'transparent', color: '#eefaff', border: 0, borderBottom: '1px solid #293a4c', cursor: 'pointer' }}>{e.name} · {e.role} · {e.department} · {e.status} ({e.progress}%)</button>)}</>}
+        {openSection === 'Departments' && <ul>{Array.from(new Set(employees.map(e => e.department))).map(dept => <li key={dept}>{dept}: {employees.filter(e => e.department === dept).length} measured actor records</li>)}</ul>}
+        {openSection !== 'Agent Directory' && openSection !== 'Departments' && <p>This navigation action opens a prototype status panel. This module has no connected data source or dedicated route yet.</p>}
+      </section>}
       <Text x={66} y={28} w={72} h={17} s={s} size={24} weight={700} letterSpacing={0.5}>{UI_STRINGS.wordmark}</Text>
       <div style={{ position: 'absolute', left: px(27), top: px(23), pointerEvents: 'auto' }}><Logo size={28 * s} /></div>
       <div style={{ position: 'absolute', left: px(163), top: px(26), width: px(75), height: px(21), background: '#4C5669', borderRadius: px(999), display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: px(13), color: '#FFFFFF' }}>{UI_STRINGS.badge}</div>
@@ -264,9 +301,12 @@ export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
           />
         </div>
       </div>
+      {search.trim() && <div role="listbox" aria-label="Employee search results" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: px(60), width: px(562), maxHeight: px(210), overflow: 'auto', zIndex: 50, background: '#101c2c', border: '1px solid #3A4456', borderRadius: px(10), pointerEvents: 'auto' }}>
+        {matches.length ? matches.map(e => <button key={e.id} role="option" onClick={() => { onEmployee?.(e.id); setSearch(''); }} style={{ display: 'block', width: '100%', textAlign: 'left', padding: `${px(7)} ${px(12)}`, color: '#eefaff', background: 'transparent', border: 0, cursor: 'pointer' }}>{e.name} · {e.id} · {e.role} · {e.department}</button>) : <div style={{ padding: px(10), color: '#c3cad3', fontSize: px(12) }}>No matching employee in the local demo directory.</div>}
+      </div>}
 
       {/* ── Status strip (UI-050) — centre, below search ── */}
-      <div style={{ ...panel, left: '50%', transform: 'translateX(-50%)', top: px(63), width: px(590), height: px(64), background: '#141C2C', borderRadius: px(11), pointerEvents: 'auto' }}>
+      <div title="Immutable counts reproduced from the reference image; not connected runtime metrics." style={{ ...panel, left: '50%', transform: 'translateX(-50%)', top: px(63), width: px(590), height: px(64), background: '#141C2C', borderRadius: px(11), pointerEvents: 'auto' }}>
         <div style={{ position: 'absolute', left: px(18), top: px(20) }}><Icon kind="building" size={27 * s} color="#A3A6B0" /></div>
         <Text x={60} y={17} w={90} h={16} s={s} size={15}>{UI_STRINGS.company}</Text>
         <Text x={60} y={37} w={70} h={11} s={s} size={12} color="#C3CAD3">{UI_STRINGS.operational}</Text>
@@ -293,8 +333,8 @@ export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
       </div>
 
       {/* ── Top-right cluster (REG-05) ── */}
-      <div style={{ ...panel, right: px(15), top: px(12), width: px(239), height: px(51), background: '#091322', borderRadius: px(12), pointerEvents: 'auto' }}>
-        <div style={{ position: 'absolute', left: px(15), top: px(13) }}>
+      <div role="button" tabIndex={0} aria-label="Open account details" onClick={() => setOpenSection('Account')} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setOpenSection('Account'); }} style={{ ...panel, right: px(15), top: px(12), width: px(239), height: px(51), background: '#091322', pointerEvents: 'auto', cursor: 'pointer' }}>
+        <div role="button" tabIndex={0} aria-label="Open notifications" onClick={e => { e.stopPropagation(); setOpenSection('Notifications'); }} onKeyDown={e => { e.stopPropagation(); if (e.key === 'Enter' || e.key === ' ') setOpenSection('Notifications'); }} title="Static reference-image badge; no live notification feed." style={{ position: 'absolute', left: px(15), top: px(13), cursor: 'pointer' }}>
           <Icon kind="bell" size={19 * s} color="#E6E9EE" />
           <div style={{ position: 'absolute', left: px(11), top: px(-10), width: px(13), height: px(14), background: '#F3272B', borderRadius: '50%', color: '#FFFFFF', fontSize: px(10), fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>3</div>
         </div>
@@ -307,9 +347,10 @@ export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
       </div>
 
       {/* ── Live Activity (REG-06) ── */}
-      <div style={{ ...panel, right: px(16), top: px(83), width: px(236), height: px(266), background: '#0A1422', pointerEvents: 'auto' }}>
-        <div style={{ position: 'absolute', left: px(15), top: px(15), width: px(10), height: px(9), borderRadius: '50%', background: '#11FA73' }} />
-        <Text x={32} y={12} w={120} h={14} s={s} size={16} weight={700}>{UI_STRINGS.activityTitle}</Text>
+        <div title="Static reference-image sample; not a live operational feed." style={{ ...panel, right: px(16), top: px(83), width: px(236), height: px(266), background: '#0A1422', pointerEvents: 'auto' }}>
+          <span style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>Static reference-image sample; not a live operational feed.</span>
+          <div style={{ position: 'absolute', left: px(15), top: px(15), width: px(10), height: px(9), borderRadius: '50%', background: '#11FA73' }} />
+          <Text x={32} y={12} w={120} h={14} s={s} size={16} weight={700}>{UI_STRINGS.activityTitle}</Text>
         {ACTIVITY_ROWS.map((r, i) => {
           const y = [47, 97, 144, 189][i];
           return (
@@ -326,7 +367,7 @@ export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
           );
         })}
         <div style={{ position: 'absolute', left: px(15), top: px(233), width: px(205), height: px(1), background: '#222D40' }} />
-        <div style={{ position: 'absolute', right: px(15), top: px(240), fontSize: px(12), color: '#EAF1F7', cursor: 'pointer' }}>{UI_STRINGS.viewAll}</div>
+        <button type="button" onClick={() => { setActiveNav('Agent Directory'); setOpenSection('Agent Directory'); }} style={{ position: 'absolute', right: px(15), top: px(240), fontSize: px(12), color: '#EAF1F7', cursor: 'pointer', background: 'transparent', border: 0 }}>{UI_STRINGS.viewAll}</button>
       </div>
 
       {/* ── Executive Command (REG-07) — bottom, left-anchored per measurement ── */}
@@ -344,13 +385,16 @@ export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
           <input
             value={command}
             onChange={(e) => setCommand(e.target.value)}
+            onKeyDown={e => { if (e.key === 'Enter') submitCommand(); }}
+            aria-label={UI_STRINGS.commandPlaceholder}
             placeholder={UI_STRINGS.commandPlaceholder}
             style={{ background: 'transparent', border: 'none', outline: 'none', color: '#E6E9EE', fontSize: px(17), marginLeft: px(17), width: '88%' }}
           />
-          <div style={{ position: 'absolute', right: px(8), width: px(37), height: px(37), borderRadius: '50%', background: '#019FBB', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+          <button type="button" aria-label="Submit executive command" onClick={submitCommand} style={{ position: 'absolute', right: px(8), width: px(37), height: px(37), border: 0, borderRadius: '50%', background: '#019FBB', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
             <Icon kind="send" size={16 * s} color="#FFFFFF" />
-          </div>
+          </button>
         </div>
+        {commandNotice && <div role="status" style={{ position: 'absolute', left: px(72), bottom: px(2), color: '#FBB845', fontSize: px(10) }}>{commandNotice}</div>}
       </div>
 
       {/* ── View switcher (REG-08) — bottom right ── */}
@@ -360,6 +404,10 @@ export function UiShell({ onTab }: { onTab?: (label: string) => void }) {
           return (
             <div
               key={t.id}
+              role="button"
+              tabIndex={0}
+              aria-pressed={active}
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { setActiveTab(t.label); onTab?.(t.label); } }}
               onClick={() => {
                 setActiveTab(t.label);
                 onTab?.(t.label);

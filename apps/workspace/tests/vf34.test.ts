@@ -5,7 +5,7 @@
 import { describe, expect, test } from 'vitest';
 import { createHomeCamera, projectToPixels } from '../src/scene/camera';
 import { REFERENCE } from '../src/config/sceneConfig';
-import { buildStructureCompletion } from '../src/scene/interiors';
+import { buildInteriors, buildStructureCompletion } from '../src/scene/interiors';
 import { buildRobots } from '../src/scene/robots';
 import { INTERIORS, ROBOT_POSITIONS, ROBOT_VISUAL, DEPARTMENTS } from '../src/config/sceneConfig';
 
@@ -81,7 +81,10 @@ describe('VF-3 interiors (department furniture + atrium lounge)', () => {
       const [bx, by, bw, bh] = i.px_box;
       const p = project(i.floor_xz![0], 0.02, i.floor_xz![1]);
       const dx = Math.abs(p.x - (bx + bw / 2));
-      const dy = Math.abs(p.y - (by + bh));
+      // A floor rug is an area whose center projects to the center of its measured box; other
+      // floor-mounted objects use the bottom-center contact point.
+      const targetY = i.kind === 'rug' ? by + bh / 2 : by + bh;
+      const dy = Math.abs(p.y - targetY);
       maxPx = Math.max(maxPx, Math.hypot(dx, dy));
       checked += 1;
     }
@@ -107,6 +110,45 @@ describe('VF-3 interiors (department furniture + atrium lounge)', () => {
     const ids = INTERIORS.map((i) => i.id);
     for (const frag of ['PLANTER-TREE', 'TREE-A', 'SOFA-L', 'RUG', 'OTTOMAN', 'SOFA-R', 'BENCH', 'TREE-B', 'TREE-C', 'CABINETS'])
       expect(ids.some((id) => id.includes(frag)), frag).toBe(true);
+  });
+  test('phase-one furniture detail: 70 catalogued desk screens, five-star task-chair bases, filled bookshelves, executive rug and laptop', () => {
+    const built = buildStructureCompletion().concat(buildInteriors());
+    const screens = built.filter((s) => s.material === 'monitorscreen');
+    expect(screens).toHaveLength(70); // 35 shared-desk clusters x 2 + Executive Office x 2
+    expect(screens.every((s) => s.kind === 'box' && s.key.startsWith('MOS-'))).toBe(true);
+    const executiveDesk = built.filter((s) => s.refId === 'INT-01-DESK');
+    expect(executiveDesk.some((s) => s.key.startsWith('LP-'))).toBe(true); // visible reference laptop
+    expect(executiveDesk.filter((s) => s.material === 'parapet').length).toBe(2); // measured light desk pedestals
+    const executiveRug = built.find((s) => s.refId === 'INT-01-RUG');
+    expect(executiveRug?.kind).toBe('box'); // source crop shows a long rectangular rug, not a round mat
+    if (executiveRug?.kind === 'box') {
+      const sourceRug = INTERIORS.find((item) => item.id === 'INT-01-RUG')!;
+      expect(executiveRug.size[0]).toBe(sourceRug.size![0]);
+      expect(executiveRug.size[2]).toBeCloseTo(sourceRug.size![0] * 0.55, 5);
+    }
+    const deskChairs = built.filter((s) => s.refId?.startsWith('INT-WC-') && s.key.startsWith('CH-'));
+    expect(deskChairs.filter((s) => s.kind === 'box')).toHaveLength(35 * 2 + 35 * 5); // seat/back + five spokes
+    for (const id of ['INT-02-SHELF', 'INT-04-SHELF', 'INT-06-SHELF']) {
+      expect(built.filter((s) => s.refId === id && s.key.startsWith('BK-')).length, id).toBeGreaterThanOrEqual(12);
+    }
+    for (const id of ['INT-04-BOARD', 'INT-05-BOARD']) {
+      expect(built.filter((s) => s.refId === id && s.key.startsWith('WBS-'))).toHaveLength(1);
+    }
+  });
+  test('wall-mounted shelf and whiteboard vertical centers use measured centre_y (position correction)', () => {
+    const rendered = buildInteriors();
+    for (const item of INTERIORS.filter((i) => i.kind === 'shelf-wall' && i.centre_y !== undefined)) {
+      const ys = rendered.filter((s) => s.refId === item.id && s.kind === 'box' && s.material === 'deskwood').map(s => s.center[1]);
+      const h = item.size![2];
+      const expected = [0.3, 0.62, 0.9].map(f => item.centre_y! + h * (f - 0.5));
+      expect(ys).toHaveLength(3);
+      for (let i=0;i<3;i++) expect(ys[i], `${item.id} shelf ${i}`).toBeCloseTo(expected[i], 5);
+    }
+    for (const item of INTERIORS.filter((i) => i.kind === 'whiteboard' && i.centre_y !== undefined)) {
+      const panels = rendered.filter((s) => s.refId === item.id);
+      expect(panels.length).toBeGreaterThan(0);
+      for (const panel of panels) expect(panel.center[1], item.id).toBeCloseTo(item.centre_y!, 5);
+    }
   });
 });
 

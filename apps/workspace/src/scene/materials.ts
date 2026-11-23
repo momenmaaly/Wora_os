@@ -173,9 +173,6 @@ export function createMaterials(flat = false): Record<MaterialKey, Material> {
     if (map && s.mapRepeat) map.repeat.set(s.mapRepeat[0], s.mapRepeat[1]);
     const base = {
       color: new Color(map ? '#ffffff' : s.color), // map carries the sampled tones
-      emissive: s.emissive ? new Color(s.emissive) : undefined,
-      emissiveIntensity: s.emissiveIntensity,
-      map,
       roughness: s.roughness ?? 0.9,
       metalness: s.metalness ?? 0,
       envMapIntensity: s.envIntensity ?? 0.3,
@@ -183,6 +180,9 @@ export function createMaterials(flat = false): Record<MaterialKey, Material> {
       opacity: s.opacity ?? 1,
       depthWrite: s.opacity === undefined,
       side: s.opacity !== undefined ? DoubleSide : FrontSide,
+      ...(s.emissive !== undefined ? { emissive: new Color(s.emissive) } : {}),
+      ...(s.emissiveIntensity !== undefined ? { emissiveIntensity: s.emissiveIntensity } : {}),
+      ...(map !== undefined ? { map } : {}),
     };
     if (s.clearcoat !== undefined) {
       out[key] = new MeshPhysicalMaterial({ ...base, clearcoat: s.clearcoat, clearcoatRoughness: s.clearcoatRoughness ?? 0.2 });
@@ -199,12 +199,17 @@ export function createDeptMaterials(materials: Record<MaterialKey, Material>, id
   const tone = DEPT_FLOOR_COLORS[id];
   if (!tone) return materials; // DEPT-01 unresolved: keep the neutral floor (documented)
   const wood = id === 'DEPT-05' ? getMap('wood-management') : undefined; // Management: warm-wood floor
-  const floor = new MeshStandardMaterial({
+  // Department crops show broad floor highlights/reflections; the previous matte StandardMaterial
+  // (roughness .8, no clearcoat) flattened this large visual surface. Keep sampled tones fixed and
+  // change only the measured appearance treatment. Finish values are EST. from visible reflections.
+  const floor = new MeshPhysicalMaterial({
     color: new Color(tone.color),
-    map: wood,
-    roughness: 0.8,
+    ...(wood ? { map: wood } : {}),
+    roughness: id === 'DEPT-05' ? 0.32 : 0.26,
     metalness: 0,
-    envMapIntensity: 0.4,
+    envMapIntensity: 0.8,
+    clearcoat: 0.42,
+    clearcoatRoughness: 0.2,
   });
   return { ...materials, floor };
 }

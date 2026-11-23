@@ -1,0 +1,234 @@
+{
+  "stage": "01-department-interiors",
+  "capturedAt": "2026-11-22T22:22:08.202Z",
+  "reference": {
+    "path": "docs/design/main-workspace/reference/wora-main-workspace.png",
+    "sha256": "6f91ff3d27f1d69d7189b6d1a599088086bb50048d1c0b492e3ebcdb718036a1",
+    "width": 1672,
+    "height": 941
+  },
+  "capture": {
+    "path": "docs/design/main-workspace/greybox/visual-fidelity/reconstruction/01-department-interiors/captures/before-1672x941-full.png",
+    "sha256": "e7ae53996b52e4f41ddc43bfc8c1aa6d72f9f724ad888ae67d2228fd5eb17041",
+    "provenance": "fresh browser screenshot captured at phase entry",
+    "browserSnapshot": {
+      "viewport": [
+        1672,
+        941
+      ],
+      "dpr": 1,
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 1672,
+        "height": 941,
+        "bitmap": [
+          1672,
+          941
+        ],
+        "buffer": [
+          1672,
+          941
+        ]
+      },
+      "camera": {
+        "position": [
+          60.675,
+          46.538,
+          61.964
+        ],
+        "quaternion": [
+          -0.2215131438543051,
+          0.3743891198215765,
+          0.09259420776622,
+          0.8956511747031615
+        ],
+        "zoom": 1,
+        "fov": 12.0006,
+        "aspect": 1.7768331562167907
+      },
+      "selectedView": [
+        "3D View"
+      ]
+    },
+    "browserErrors": []
+  },
+  "regionMasks": [
+    {
+      "id": "DEPT-01",
+      "name": "Executive Office (room)",
+      "x": 660,
+      "y": 120,
+      "w": 410,
+      "h": 210,
+      "confidence": "Medium",
+      "note": "",
+      "overlap": 1800
+    },
+    {
+      "id": "DEPT-02",
+      "name": "Marketing (room)",
+      "x": 236,
+      "y": 150,
+      "w": 420,
+      "h": 270,
+      "confidence": "Low",
+      "note": "Left part hidden behind the sidebar",
+      "overlap": 0
+    },
+    {
+      "id": "DEPT-03",
+      "name": "Engineering (room)",
+      "x": 1060,
+      "y": 150,
+      "w": 380,
+      "h": 280,
+      "confidence": "Low",
+      "note": "Right part hidden behind the Live Activity panel",
+      "overlap": 11300
+    },
+    {
+      "id": "DEPT-04",
+      "name": "Creative Studio (room)",
+      "x": 236,
+      "y": 420,
+      "w": 400,
+      "h": 290,
+      "confidence": "Low",
+      "note": "Left part hidden behind the sidebar",
+      "overlap": 24090
+    },
+    {
+      "id": "DEPT-05",
+      "name": "Management (room)",
+      "x": 1250,
+      "y": 380,
+      "w": 422,
+      "h": 300,
+      "confidence": "Low",
+      "note": "Right part runs off the image edge",
+      "overlap": 21650
+    },
+    {
+      "id": "DEPT-06",
+      "name": "Research (room)",
+      "x": 490,
+      "y": 545,
+      "w": 370,
+      "h": 265,
+      "confidence": "Medium",
+      "note": "",
+      "overlap": 24090
+    },
+    {
+      "id": "DEPT-07",
+      "name": "QA & Testing (room)",
+      "x": 960,
+      "y": 545,
+      "w": 380,
+      "h": 265,
+      "confidence": "Medium",
+      "note": "",
+      "overlap": 12150
+    }
+  ],
+  "beforeMetrics": {
+    "DEPT-01": {
+      "pixelsCompared": 86100,
+      "pixelsExactlyIdentical": 11,
+      "pixelsDifferent": 86089,
+      "differentPercent": 99.98722415795586,
+      "maeRgb8": 49.88070460704607,
+      "rmseRgb8": 64.15369194735554,
+      "maxChannelDiffGt8Pixels": 83068,
+      "maxChannelDiffGt8Percent": 96.47851335656213,
+      "maxChannelDiffGe16Pixels": 78646,
+      "maxChannelDiffGe16Percent": 91.34262485481997
+    },
+    "DEPT-02": {
+      "pixelsCompared": 113400,
+      "pixelsExactlyIdentical": 1,
+      "pixelsDifferent": 113399,
+      "differentPercent": 99.99911816578484,
+      "maeRgb8": 55.51823339212228,
+      "rmseRgb8": 70.10975134729841,
+      "maxChannelDiffGt8Pixels": 112329,
+      "maxChannelDiffGt8Percent": 99.05555555555556,
+      "maxChannelDiffGe16Pixels": 108149,
+      "maxChannelDiffGe16Percent": 95.3694885361552
+    },
+    "DEPT-03": {
+      "pixelsCompared": 106400,
+      "pixelsExactlyIdentical": 33,
+      "pixelsDifferent": 106367,
+      "differentPercent": 99.96898496240601,
+      "maeRgb8": 60.72484649122807,
+      "rmseRgb8": 78.72137573027524,
+      "maxChannelDiffGt8Pixels": 101963,
+      "maxChannelDiffGt8Percent": 95.82988721804512,
+      "maxChannelDiffGe16Pixels": 96460,
+      "maxChannelDiffGe16Percent": 90.65789473684211
+    },
+    "DEPT-04": {
+      "pixelsCompared": 116000,
+      "pixelsExactlyIdentical": 0,
+      "pixelsDifferent": 116000,
+      "differentPercent": 100,
+      "maeRgb8": 55.51081896551724,
+      "rmseRgb8": 72.97603229985778,
+      "maxChannelDiffGt8Pixels": 113909,
+      "maxChannelDiffGt8Percent": 98.19741379310345,
+      "maxChannelDiffGe16Pixels": 108170,
+      "maxChannelDiffGe16Percent": 93.25
+    },
+    "DEPT-05": {
+      "pixelsCompared": 126600,
+      "pixelsExactlyIdentical": 1,
+      "pixelsDifferent": 126599,
+      "differentPercent": 99.99921011058451,
+      "maeRgb8": 53.63183254344392,
+      "rmseRgb8": 69.22413558772185,
+      "maxChannelDiffGt8Pixels": 123360,
+      "maxChannelDiffGt8Percent": 97.44075829383887,
+      "maxChannelDiffGe16Pixels": 116945,
+      "maxChannelDiffGe16Percent": 92.3736176935229
+    },
+    "DEPT-06": {
+      "pixelsCompared": 98050,
+      "pixelsExactlyIdentical": 0,
+      "pixelsDifferent": 98050,
+      "differentPercent": 100,
+      "maeRgb8": 50.505381608023114,
+      "rmseRgb8": 65.86216627515292,
+      "maxChannelDiffGt8Pixels": 96022,
+      "maxChannelDiffGt8Percent": 97.93166751657317,
+      "maxChannelDiffGe16Pixels": 90324,
+      "maxChannelDiffGe16Percent": 92.1203467618562
+    },
+    "DEPT-07": {
+      "pixelsCompared": 100700,
+      "pixelsExactlyIdentical": 1,
+      "pixelsDifferent": 100699,
+      "differentPercent": 99.99900695134062,
+      "maeRgb8": 56.056252896391925,
+      "rmseRgb8": 73.44339836898504,
+      "maxChannelDiffGt8Pixels": 98994,
+      "maxChannelDiffGt8Percent": 98.30585898709037,
+      "maxChannelDiffGe16Pixels": 93627,
+      "maxChannelDiffGe16Percent": 92.97616683217478
+    }
+  },
+  "fullFrameBefore": {
+    "pixelsCompared": 1573352,
+    "pixelsExactlyIdentical": 23222,
+    "pixelsDifferent": 1550130,
+    "differentPercent": 98.52404293508383,
+    "maeRgb8": 43.05513070183913,
+    "rmseRgb8": 62.639396198984876,
+    "maxChannelDiffGt8Pixels": 1197113,
+    "maxChannelDiffGt8Percent": 76.08678795336327,
+    "maxChannelDiffGe16Pixels": 1108032,
+    "maxChannelDiffGe16Percent": 70.42492716188113
+  },
+  "note": "Each department ROI is the full catalogued measurement rectangle. No pixels or occlusions are excluded; adjacent ROI overlaps are reported as raw pixel counts. No resize or crop."
+}

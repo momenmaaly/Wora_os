@@ -61,7 +61,9 @@ export function buildStructureCompletion(): P[] {
   const backEdgeZ = Math.abs(d1.z0) > Math.abs(d1.z1) ? d1.z0 : d1.z1;
   const inner = backEdgeZ + (backEdgeZ < 0 ? 0.08 : -0.08);
   const w = d1.x1 - d1.x0 - 0.6;
-  out.push(box('walnut', [(d1.x0 + d1.x1) / 2, H / 2, inner], [w, H, 0.08], 0, 'WAL'));
+  const walnutWall = box('walnut', [(d1.x0 + d1.x1) / 2, H / 2, inner], [w, H, 0.08], 0, 'WAL');
+  walnutWall.refId = INTERIORS.find(i => i.kind === 'walnut-wall')?.id;
+  out.push(walnutWall);
 
   // Partition frame rhythm on every atrium-facing glass front (analysis/03 §2.2)
   for (const d of DEPARTMENTS) {
@@ -91,7 +93,9 @@ function buildWallPanels(): P[] {
   const panels = INTERIORS.filter((i) => i.kind === 'wall-panel');
   return panels.map((p) => {
     const [w, , h] = p.size!;
-    return box('floor', [p.floor_xz![0], (p.centre_y ?? h / 2) , p.floor_xz![1]], [w, h, 0.06], p.rot_y ?? 0, 'WP');
+    const panel = box('floor', [p.floor_xz![0], (p.centre_y ?? h / 2), p.floor_xz![1]], [w, h, 0.06], p.rot_y ?? 0, 'WP');
+    panel.refId = p.id;
+    return panel;
   });
 }
 
@@ -150,23 +154,54 @@ function buildItem(it: InteriorItem): P[] {
     case 'exec-desk':
     case 'desk': {
       const mat = DESK_DEPT_MATERIAL[it.dept ?? ''] ?? 'deskwood';
-      out.push(box(mat, [x, h - 0.025, z], [pxW, 0.05, d], yaw, 'D'));
-      out.push(box(mat === 'darkwood' ? 'darkwood' : 'deskwood', [x, h / 2 - 0.02, z], [pxW * 0.9, h - 0.08, d * 0.3], yaw, 'D')); // review R11 underframe (R21: exec matches its dark top)
+      // Separate thin worktop from supports so the under-desk opening and desk silhouette remain visible.
+      out.push(box(it.dept === 'DEPT-01' ? 'deskwood' : mat, [x, h - 0.025, z], [pxW, 0.05, d], yaw, 'D'));
+      if (it.kind === 'exec-desk') {
+        // The reference executive desk has a warm wood top and two light pedestal-like supports.
+        for (const side of [-1, 1]) {
+          const dx = side * pxW * 0.32;
+          out.push(box('parapet', [x + Math.cos(yaw) * dx, h * 0.48, z - Math.sin(yaw) * dx], [pxW * 0.24, h * 0.86, d * 0.7], yaw, 'D'));
+        }
+        // A dark, open laptop is visible on the measured desktop; content remains abstract.
+        const lx = x - Math.sin(yaw) * 0.08;
+        const lz = z - Math.cos(yaw) * 0.08;
+        out.push(box('darkwood', [lx, h + 0.025, lz], [0.42, 0.025, 0.28], yaw, 'LP'));
+        out.push(box('frame', [lx + Math.sin(yaw) * 0.11, h + 0.13, lz + Math.cos(yaw) * 0.11], [0.4, 0.2, 0.035], yaw, 'LP'));
+      } else {
+        const legMat = mat === 'darkwood' ? 'darkwood' : 'frame';
+        for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
+          const lx = x + Math.cos(yaw) * sx * pxW * 0.43 + Math.sin(yaw) * sz * d * 0.38;
+          const lz = z - Math.sin(yaw) * sx * pxW * 0.43 + Math.cos(yaw) * sz * d * 0.38;
+          out.push(box(legMat, [lx, (h - 0.06) / 2, lz], [0.045, h - 0.06, 0.045], yaw, 'D'));
+        }
+      }
       if (it.dept === 'DEPT-01') {
-        // review R21: ref Executive Office has a warm wood slat wall behind the desk (r20 row-2 zoom; walnut = measured slat sample)
+        // measured walnut back-wall treatment
         out.push(box('walnut', [x - Math.sin(yaw) * (d * 0.5 + 0.14), 0.78, z - Math.cos(yaw) * (d * 0.5 + 0.14)], [pxW * 0.95, 1.56, 0.12], yaw, 'D'));
       }
       break;
     }
     case 'conference-table': {
       out.push(box('deskwood', [x, h - 0.03, z], [pxW, 0.06, d], yaw, 'CT'));
-      out.push(box('deskwood', [x, h / 2 - 0.06, z], [pxW * 0.9, h - 0.12, d * 0.55], yaw, 'CT'));
+      // Preserve the open knee space under the long wooden conference top.
+      for (const side of [-1, 1]) {
+        const lx = x + Math.cos(yaw) * side * pxW * 0.34;
+        const lz = z - Math.sin(yaw) * side * pxW * 0.34;
+        out.push(box('deskwood', [lx, h * 0.48, lz], [0.12, h * 0.88, d * 0.82], yaw, 'CT'));
+      }
       break;
     }
     case 'chair': {
+      // Task-chair seat, back, centre post and five-spoke caster base (reference catalogue §6).
       out.push(box('rug', [x, 0.45, z], [0.48, 0.07, 0.48], yaw, 'CH'));
       out.push(box('rug', [x - Math.sin(yaw) * 0.2, 0.72, z - Math.cos(yaw) * 0.2], [0.46, 0.55, 0.07], yaw, 'CH'));
-      out.push(cyl('frame', [x, 0.2, z], 0.05, 0.4, 10, 'CH'));
+      out.push(cyl('frame', [x, 0.25, z], 0.045, 0.38, 10, 'CH'));
+      for (let spoke = 0; spoke < 5; spoke++) {
+        const a = yaw + spoke * Math.PI * 2 / 5;
+        const r = 0.22;
+        out.push(box('frame', [x + Math.sin(a) * r * 0.5, 0.07, z + Math.cos(a) * r * 0.5], [0.27, 0.035, 0.045], a, 'CH'));
+        out.push(cyl('rug', [x + Math.sin(a) * r, 0.045, z + Math.cos(a) * r], 0.045, 0.06, 8, 'CH'));
+      }
       break;
     }
     case 'lounge-chair': {
@@ -188,6 +223,10 @@ function buildItem(it: InteriorItem): P[] {
       out.push(box('rug', [x, h / 2, z], [pxW, h, d], yaw, 'OT'));
       break;
     case 'rug':
+      // The measured Executive Office rug is an elongated rectangular textile, not a circular mat:
+      // keep the catalog-derived width and depth rather than using the former width-sized cylinder.
+      out.push(box('rug', [x, 0.011, z], [pxW, 0.022, d], yaw, 'RG'));
+      break;
     case 'rug-round':
       out.push(cyl('rug', [x, 0.011, z], Math.max(pxW, d) / 2, 0.022, 28, 'RG'));
       break;
@@ -234,29 +273,38 @@ function buildItem(it: InteriorItem): P[] {
     }
     case 'shelf-stand': {
       const shelves = 3;
+      // Floor-standing bookcases in Marketing, Creative Studio and Research visibly hold books/decor.
+      out.push(box('deskwood', [x, h / 2, z - Math.cos(yaw) * d * 0.42], [pxW * 0.94, h * 0.96, 0.045], yaw, 'SH'));
       for (let i = 0; i < shelves; i++) {
-        const y = (h * (i + 1)) / shelves;
-        out.push(box('deskwood', [x, y, z], [pxW, 0.04, d], yaw, 'SH'));
-        // review R11: ref shelf units carry objects (vases/plants/books) — EST. pieces per board
-        for (let k = 0; k < 3; k++) {
-          const ox = (k - 1) * pxW * 0.24;
-          const oy = y + 0.08;
-          if (k % 2 === 0) out.push(cyl('foliage', [x + Math.cos(yaw) * ox, oy, z - Math.sin(yaw) * ox], 0.05, 0.09, 10, 'SH'));
-          else out.push(box('leather', [x + Math.cos(yaw) * ox, oy - 0.015, z - Math.sin(yaw) * ox], [0.06, 0.13, 0.06], yaw, 'SH'));
+        const y = (h * (i + 1)) / (shelves + 1);
+        out.push(box('deskwood', [x, y, z], [pxW, 0.045, d], yaw, 'SH'));
+        const bookCount = Math.max(4, Math.min(10, Math.floor(pxW / 0.16)));
+        const bookW = Math.min(0.12, (pxW * 0.76) / bookCount);
+        for (let k = 0; k < bookCount; k++) {
+          const u = (k - (bookCount - 1) / 2) * (pxW * 0.76 / bookCount);
+          const bookH = h * (0.13 + ((k * 7 + i * 3) % 4) * 0.018);
+          const bookY = y + bookH / 2 + 0.025;
+          const bookX = x + Math.cos(yaw) * u;
+          const bookZ = z - Math.sin(yaw) * u;
+          const bookMat = ['darkwood', 'leather', 'deskwood'][(k + i) % 3] as BoxSpec['material'];
+          out.push(box(bookMat, [bookX, bookY, bookZ], [bookW, bookH, d * 0.62], yaw, 'BK'));
         }
       }
-      out.push(box('deskwood', [x - Math.cos(yaw) * pxW * 0.48, h / 2, z + Math.sin(yaw) * pxW * 0.48], [0.05, h, d], yaw, 'SH'));
-      out.push(box('deskwood', [x + Math.cos(yaw) * pxW * 0.48, h / 2, z - Math.sin(yaw) * pxW * 0.48], [0.05, h, d], yaw, 'SH'));
+      out.push(box('deskwood', [x - Math.cos(yaw) * pxW * 0.48, h / 2, z + Math.sin(yaw) * pxW * 0.48], [0.055, h, d], yaw, 'SH'));
+      out.push(box('deskwood', [x + Math.cos(yaw) * pxW * 0.48, h / 2, z - Math.sin(yaw) * pxW * 0.48], [0.055, h, d], yaw, 'SH'));
       break;
     }
     case 'shelf-wall': {
-      // reset: §3 shelves carry small plants/objects — decor pieces EST. within the shelf extents
+      // The catalogue centre_y is measured from the floor; the previous mount=1.2 m offset
+      // displaced these shelves well above their reference boxes (DEPT-01 by up to 65 px).
+      const shelfCentreY = it.centre_y ?? mount + h / 2;
       for (const [fy, fw] of [[0.3, 1], [0.62, 1], [0.9, 0.8]] as const) {
-        out.push(box('deskwood', [x, mount + h * fy, z], [pxW * fw, 0.04, d], yaw, 'SW'));
+        const shelfY = shelfCentreY + h * (fy - 0.5);
+        out.push(box('deskwood', [x, shelfY, z], [pxW * fw, 0.04, d], yaw, 'SW'));
         const n = 3;
         for (let i = 0; i < n; i++) {
           const ox = (i - (n - 1) / 2) * pxW * 0.22;
-          const oy = mount + h * fy + 0.09;
+          const oy = shelfY + 0.09;
           if (i % 2 === 0) out.push(cyl('foliage', [x + Math.cos(yaw) * ox, oy, z - Math.sin(yaw) * ox], 0.055, 0.1, 10, 'SW'));
           else out.push(box('leather', [x + Math.cos(yaw) * ox, oy - 0.02, z - Math.sin(yaw) * ox], [0.07, 0.14, 0.07], yaw, 'SW'));
         }
@@ -275,9 +323,10 @@ function buildItem(it: InteriorItem): P[] {
       break;
     }
     case 'whiteboard': {
-      const cy = mount + h / 2;
-      out.push(box('floor', [x, cy, z], [pxW, h, 0.05], yaw, 'WB'));
-      out.push(box('frame', [x, cy, z], [pxW * 1.02, h * 1.02, 0.03], yaw, 'WB'));
+      // centre_y stores the measured wall-panel centre when present; do not add an estimated mount offset.
+      const cy = it.centre_y ?? mount + h / 2;
+      out.push(box('floor', [x, cy, z], [pxW, h, 0.05], yaw, 'WBS'));
+      out.push(box('frame', [x, cy, z], [pxW * 1.02, h * 1.02, 0.03], yaw, 'WBF'));
       break;
     }
     case 'laptop': {
@@ -288,11 +337,11 @@ function buildItem(it: InteriorItem): P[] {
     }
     case 'monitor': {
       out.push(box('frame', [x, 0.75 + 0.12, z], [0.06, 0.24, 0.05], yaw, 'MO'));
-      // review R24: whole head assembly leans back toward the HOME camera (r23/r24 zooms: a vertical
-      // slab shows only its dark top edge; the ref reads every desk monitor as a bright blue panel)
+      // The reference shows desk displays as dark-bezel monitors with blue UI content. Keep the
+      // abstract, non-text UI on the screen face only; exact per-monitor content is not legible.
       const TILT = 0.6;
-      out.push({ ...box('frame', [x, 0.93, z], [0.55, 0.36, 0.04], yaw, 'MO'), tilt: TILT });
-      out.push({ ...box('screen', [x, 0.93, z], [0.56, 0.37, 0.052], yaw, 'MO'), tilt: TILT }); // face dominates the bezel at render scale
+      out.push({ ...box('frame', [x, 0.93, z], [0.55, 0.36, 0.04], yaw, 'MOF'), tilt: TILT });
+      out.push({ ...box('monitorscreen', [x, 0.93, z], [0.56, 0.37, 0.052], yaw, 'MOS'), tilt: TILT });
       break;
     }
     default:

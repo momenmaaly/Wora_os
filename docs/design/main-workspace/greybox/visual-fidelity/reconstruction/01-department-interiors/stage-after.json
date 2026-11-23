@@ -1,0 +1,378 @@
+{
+  "stage": "01-department-interiors",
+  "capturedAt": "2026-11-22T22:27:43.237Z",
+  "reference": {
+    "path": "docs/design/main-workspace/reference/wora-main-workspace.png",
+    "sha256": "6f91ff3d27f1d69d7189b6d1a599088086bb50048d1c0b492e3ebcdb718036a1",
+    "width": 1672,
+    "height": 941
+  },
+  "before": {
+    "path": "docs/design/main-workspace/greybox/visual-fidelity/reconstruction/01-department-interiors/captures/before-1672x941-full.png",
+    "sha256": "e7ae53996b52e4f41ddc43bfc8c1aa6d72f9f724ad888ae67d2228fd5eb17041"
+  },
+  "after": {
+    "path": "docs/design/main-workspace/greybox/visual-fidelity/reconstruction/01-department-interiors/captures/after-1672x941-full.png",
+    "sha256": "355f08d53acad2a0335c5db0f64dde84237ed568dd5a89bb8565e4988a951616",
+    "provenance": "fresh browser screenshot after phase edits",
+    "browserSnapshot": {
+      "viewport": [
+        1672,
+        941
+      ],
+      "dpr": 1,
+      "canvas": {
+        "x": 0,
+        "y": 0,
+        "width": 1672,
+        "height": 941,
+        "bitmap": [
+          1672,
+          941
+        ],
+        "buffer": [
+          1672,
+          941
+        ]
+      },
+      "camera": {
+        "position": [
+          60.675,
+          46.538,
+          61.964
+        ],
+        "quaternion": [
+          -0.2215131438543051,
+          0.3743891198215765,
+          0.09259420776622,
+          0.8956511747031615
+        ],
+        "zoom": 1,
+        "fov": 12.0006,
+        "aspect": 1.7768331562167907
+      },
+      "selectedView": [
+        "3D View"
+      ]
+    },
+    "browserErrors": []
+  },
+  "fullFrame": {
+    "before": {
+      "pixelsCompared": 1573352,
+      "pixelsExactlyIdentical": 23222,
+      "pixelsDifferent": 1550130,
+      "differentPercent": 98.52404293508383,
+      "maeRgb8": 43.05513070183913,
+      "rmseRgb8": 62.639396198984876,
+      "maxChannelDiffGt8Pixels": 1197113,
+      "maxChannelDiffGt8Percent": 76.08678795336327,
+      "maxChannelDiffGe16Pixels": 1108032,
+      "maxChannelDiffGe16Percent": 70.42492716188113
+    },
+    "after": {
+      "pixelsCompared": 1573352,
+      "pixelsExactlyIdentical": 23222,
+      "pixelsDifferent": 1550130,
+      "differentPercent": 98.52404293508383,
+      "maeRgb8": 43.094893577533824,
+      "rmseRgb8": 62.738032884794634,
+      "maxChannelDiffGt8Pixels": 1196902,
+      "maxChannelDiffGt8Percent": 76.07337709552598,
+      "maxChannelDiffGe16Pixels": 1107289,
+      "maxChannelDiffGe16Percent": 70.37770314589488
+    }
+  },
+  "departmentDeltas": {
+    "DEPT-01": {
+      "before": {
+        "pixelsCompared": 86100,
+        "pixelsExactlyIdentical": 11,
+        "pixelsDifferent": 86089,
+        "differentPercent": 99.98722415795586,
+        "maeRgb8": 49.88070460704607,
+        "rmseRgb8": 64.15369194735554,
+        "maxChannelDiffGt8Pixels": 83068,
+        "maxChannelDiffGt8Percent": 96.47851335656213,
+        "maxChannelDiffGe16Pixels": 78646,
+        "maxChannelDiffGe16Percent": 91.34262485481997
+      },
+      "after": {
+        "pixelsCompared": 86100,
+        "pixelsExactlyIdentical": 11,
+        "pixelsDifferent": 86089,
+        "differentPercent": 99.98722415795586,
+        "maeRgb8": 53.46339527680991,
+        "rmseRgb8": 68.29260730804397,
+        "maxChannelDiffGt8Pixels": 83197,
+        "maxChannelDiffGt8Percent": 96.62833914053427,
+        "maxChannelDiffGe16Pixels": 79023,
+        "maxChannelDiffGe16Percent": 91.78048780487805
+      },
+      "changePercentagePoints": 0,
+      "maeChangeRgb8": 3.582690669763842,
+      "rmseChangeRgb8": 4.138915360688429
+    },
+    "DEPT-02": {
+      "before": {
+        "pixelsCompared": 113400,
+        "pixelsExactlyIdentical": 1,
+        "pixelsDifferent": 113399,
+        "differentPercent": 99.99911816578484,
+        "maeRgb8": 55.51823339212228,
+        "rmseRgb8": 70.10975134729841,
+        "maxChannelDiffGt8Pixels": 112329,
+        "maxChannelDiffGt8Percent": 99.05555555555556,
+        "maxChannelDiffGe16Pixels": 108149,
+        "maxChannelDiffGe16Percent": 95.3694885361552
+      },
+      "after": {
+        "pixelsCompared": 113400,
+        "pixelsExactlyIdentical": 1,
+        "pixelsDifferent": 113399,
+        "differentPercent": 99.99911816578484,
+        "maeRgb8": 55.01057319223986,
+        "rmseRgb8": 69.72184082612436,
+        "maxChannelDiffGt8Pixels": 112292,
+        "maxChannelDiffGt8Percent": 99.02292768959435,
+        "maxChannelDiffGe16Pixels": 107939,
+        "maxChannelDiffGe16Percent": 95.18430335097001
+      },
+      "changePercentagePoints": 0,
+      "maeChangeRgb8": -0.5076601998824231,
+      "rmseChangeRgb8": -0.38791052117404945
+    },
+    "DEPT-03": {
+      "before": {
+        "pixelsCompared": 106400,
+        "pixelsExactlyIdentical": 33,
+        "pixelsDifferent": 106367,
+        "differentPercent": 99.96898496240601,
+        "maeRgb8": 60.72484649122807,
+        "rmseRgb8": 78.72137573027524,
+        "maxChannelDiffGt8Pixels": 101963,
+        "maxChannelDiffGt8Percent": 95.82988721804512,
+        "maxChannelDiffGe16Pixels": 96460,
+        "maxChannelDiffGe16Percent": 90.65789473684211
+      },
+      "after": {
+        "pixelsCompared": 106400,
+        "pixelsExactlyIdentical": 33,
+        "pixelsDifferent": 106367,
+        "differentPercent": 99.96898496240601,
+        "maeRgb8": 60.576199874686715,
+        "rmseRgb8": 78.63586320394515,
+        "maxChannelDiffGt8Pixels": 101834,
+        "maxChannelDiffGt8Percent": 95.70864661654136,
+        "maxChannelDiffGe16Pixels": 96078,
+        "maxChannelDiffGe16Percent": 90.29887218045113
+      },
+      "changePercentagePoints": 0,
+      "maeChangeRgb8": -0.14864661654135602,
+      "rmseChangeRgb8": -0.08551252633009199
+    },
+    "DEPT-04": {
+      "before": {
+        "pixelsCompared": 116000,
+        "pixelsExactlyIdentical": 0,
+        "pixelsDifferent": 116000,
+        "differentPercent": 100,
+        "maeRgb8": 55.51081896551724,
+        "rmseRgb8": 72.97603229985778,
+        "maxChannelDiffGt8Pixels": 113909,
+        "maxChannelDiffGt8Percent": 98.19741379310345,
+        "maxChannelDiffGe16Pixels": 108170,
+        "maxChannelDiffGe16Percent": 93.25
+      },
+      "after": {
+        "pixelsCompared": 116000,
+        "pixelsExactlyIdentical": 0,
+        "pixelsDifferent": 116000,
+        "differentPercent": 100,
+        "maeRgb8": 55.12395402298851,
+        "rmseRgb8": 72.65168116335691,
+        "maxChannelDiffGt8Pixels": 113880,
+        "maxChannelDiffGt8Percent": 98.17241379310344,
+        "maxChannelDiffGe16Pixels": 108124,
+        "maxChannelDiffGe16Percent": 93.21034482758621
+      },
+      "changePercentagePoints": 0,
+      "maeChangeRgb8": -0.3868649425287316,
+      "rmseChangeRgb8": -0.3243511365008658
+    },
+    "DEPT-05": {
+      "before": {
+        "pixelsCompared": 126600,
+        "pixelsExactlyIdentical": 1,
+        "pixelsDifferent": 126599,
+        "differentPercent": 99.99921011058451,
+        "maeRgb8": 53.63183254344392,
+        "rmseRgb8": 69.22413558772185,
+        "maxChannelDiffGt8Pixels": 123360,
+        "maxChannelDiffGt8Percent": 97.44075829383887,
+        "maxChannelDiffGe16Pixels": 116945,
+        "maxChannelDiffGe16Percent": 92.3736176935229
+      },
+      "after": {
+        "pixelsCompared": 126600,
+        "pixelsExactlyIdentical": 1,
+        "pixelsDifferent": 126599,
+        "differentPercent": 99.99921011058451,
+        "maeRgb8": 53.22679831490258,
+        "rmseRgb8": 68.82436821229061,
+        "maxChannelDiffGt8Pixels": 123329,
+        "maxChannelDiffGt8Percent": 97.41627172195892,
+        "maxChannelDiffGe16Pixels": 116848,
+        "maxChannelDiffGe16Percent": 92.29699842022117
+      },
+      "changePercentagePoints": 0,
+      "maeChangeRgb8": -0.4050342285413393,
+      "rmseChangeRgb8": -0.39976737543123875
+    },
+    "DEPT-06": {
+      "before": {
+        "pixelsCompared": 98050,
+        "pixelsExactlyIdentical": 0,
+        "pixelsDifferent": 98050,
+        "differentPercent": 100,
+        "maeRgb8": 50.505381608023114,
+        "rmseRgb8": 65.86216627515292,
+        "maxChannelDiffGt8Pixels": 96022,
+        "maxChannelDiffGt8Percent": 97.93166751657317,
+        "maxChannelDiffGe16Pixels": 90324,
+        "maxChannelDiffGe16Percent": 92.1203467618562
+      },
+      "after": {
+        "pixelsCompared": 98050,
+        "pixelsExactlyIdentical": 0,
+        "pixelsDifferent": 98050,
+        "differentPercent": 100,
+        "maeRgb8": 50.07801801801802,
+        "rmseRgb8": 65.64988477057105,
+        "maxChannelDiffGt8Pixels": 95943,
+        "maxChannelDiffGt8Percent": 97.85109637939827,
+        "maxChannelDiffGe16Pixels": 90056,
+        "maxChannelDiffGe16Percent": 91.84701682814891
+      },
+      "changePercentagePoints": 0,
+      "maeChangeRgb8": -0.4273635900050934,
+      "rmseChangeRgb8": -0.2122815045818669
+    },
+    "DEPT-07": {
+      "before": {
+        "pixelsCompared": 100700,
+        "pixelsExactlyIdentical": 1,
+        "pixelsDifferent": 100699,
+        "differentPercent": 99.99900695134062,
+        "maeRgb8": 56.056252896391925,
+        "rmseRgb8": 73.44339836898504,
+        "maxChannelDiffGt8Pixels": 98994,
+        "maxChannelDiffGt8Percent": 98.30585898709037,
+        "maxChannelDiffGe16Pixels": 93627,
+        "maxChannelDiffGe16Percent": 92.97616683217478
+      },
+      "after": {
+        "pixelsCompared": 100700,
+        "pixelsExactlyIdentical": 1,
+        "pixelsDifferent": 100699,
+        "differentPercent": 99.99900695134062,
+        "maeRgb8": 55.44674611055942,
+        "rmseRgb8": 72.8980823737516,
+        "maxChannelDiffGt8Pixels": 98893,
+        "maxChannelDiffGt8Percent": 98.20556107249256,
+        "maxChannelDiffGe16Pixels": 93320,
+        "maxChannelDiffGe16Percent": 92.67130089374379
+      },
+      "changePercentagePoints": 0,
+      "maeChangeRgb8": -0.6095067858325081,
+      "rmseChangeRgb8": -0.5453159952334374
+    }
+  },
+  "maskAudit": {
+    "regions": [
+      {
+        "id": "DEPT-01",
+        "name": "Executive Office (room)",
+        "x": 660,
+        "y": 120,
+        "w": 410,
+        "h": 210,
+        "confidence": "Medium",
+        "note": "",
+        "overlap": 1800
+      },
+      {
+        "id": "DEPT-02",
+        "name": "Marketing (room)",
+        "x": 236,
+        "y": 150,
+        "w": 420,
+        "h": 270,
+        "confidence": "Low",
+        "note": "Left part hidden behind the sidebar",
+        "overlap": 0
+      },
+      {
+        "id": "DEPT-03",
+        "name": "Engineering (room)",
+        "x": 1060,
+        "y": 150,
+        "w": 380,
+        "h": 280,
+        "confidence": "Low",
+        "note": "Right part hidden behind the Live Activity panel",
+        "overlap": 11300
+      },
+      {
+        "id": "DEPT-04",
+        "name": "Creative Studio (room)",
+        "x": 236,
+        "y": 420,
+        "w": 400,
+        "h": 290,
+        "confidence": "Low",
+        "note": "Left part hidden behind the sidebar",
+        "overlap": 24090
+      },
+      {
+        "id": "DEPT-05",
+        "name": "Management (room)",
+        "x": 1250,
+        "y": 380,
+        "w": 422,
+        "h": 300,
+        "confidence": "Low",
+        "note": "Right part runs off the image edge",
+        "overlap": 21650
+      },
+      {
+        "id": "DEPT-06",
+        "name": "Research (room)",
+        "x": 490,
+        "y": 545,
+        "w": 370,
+        "h": 265,
+        "confidence": "Medium",
+        "note": "",
+        "overlap": 24090
+      },
+      {
+        "id": "DEPT-07",
+        "name": "QA & Testing (room)",
+        "x": 960,
+        "y": 545,
+        "w": 380,
+        "h": 265,
+        "confidence": "Medium",
+        "note": "",
+        "overlap": 12150
+      }
+    ],
+    "pairwiseRawOverlapPixels": 47540,
+    "coordinatesSource": "docs/design/main-workspace/analysis/data/measurements.json",
+    "allCoordinatesInBounds": true,
+    "sameMaskDefinitionBeforeAndAfter": true,
+    "noPixelsExcluded": true
+  },
+  "note": "No transform. Pixel counts are calculated on native RGB pixels across each complete catalogued department rectangle; all occlusions remain included. Raw region overlaps are reported and each ROI is scored independently."
+}

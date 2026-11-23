@@ -2091,8 +2091,8 @@
      45
     ],
     "floor_xz": [
-     -7.87,
-     -6.849
+     -8.747,
+     -7.726
     ],
     "size": [
      4.331,
@@ -2101,7 +2101,7 @@
     ],
     "rot_y": 0.783,
     "prov": {
-     "pos": "FIT derived from px box via HOME inverse projection",
+     "pos": "FIT from measured px-box center onto floor plane via unchanged HOME camera; prior bottom-center anchor offset area rug down by 22 px",
      "size": "EST. derived from px + 0.6 depth ratio",
      "catalog": "analysis/03 \u00a74 DEPT-01 (light patterned)"
     }
@@ -2289,19 +2289,20 @@
     ],
     "wall": "z0",
     "floor_xz": [
-     -14.844,
-     -2.454
+     -14.959,
+     -1.923
     ],
     "centre_y": 0.854,
     "size": [
-     1.708,
+     1.641,
      0.427,
-     1.708
+     1.780
     ],
     "rot_y": 0.865,
     "prov": {
-     "pos": "MEASURED px box [485,205,70,70]@941, centre_y 0.854 consumed as measured screen centre (review R22 semantics fix)",
-     "size": "EST. derived from px via HOME camera",
+     "pos": "FIT from measured px-box center [520,240] at measured centre_y 0.854 through unchanged HOME camera; moved from [−14.844,−2.454] to [−14.959,−1.923] to correct the projected center residual",
+
+     "size": "FIT to measured 70×70 px box via unchanged HOME camera projection after center correction; bounds before fit were 72.86×67.16 px",
      "catalog": "analysis/03 \u00a74 DEPT-02 blue bar chart display"
     }
    },
@@ -2317,19 +2318,19 @@
     ],
     "wall": "x0",
     "floor_xz": [
-     -17.135,
-     1.25
+     -17.512,
+     1.150
     ],
     "centre_y": 0.611,
     "size": [
-     1.71,
+     1.627,
      0.427,
-     1.221
+     1.219
     ],
     "rot_y": 0.908,
     "prov": {
-     "pos": "FIT derived from px box via HOME inverse projection (wall-adjacent EST.); review R13 revert \u2014 repositioning broke the \u226430 px projection gate, adjacency to the sign is ref-faithful",
-     "size": "EST. derived from px via HOME camera",
+     "pos": "FIT to measured screen px_box center via unchanged HOME camera; wall relation remains inside department footprint",
+     "size": "FIT to measured screen px_box dimensions via unchanged HOME camera projection",
      "catalog": "analysis/03 \u00a74 DEPT-02 wall dashboard"
     }
    },
@@ -2425,19 +2426,19 @@
     ],
     "wall": "z0",
     "floor_xz": [
-     -0.211,
-     -14.873
+     -0.138,
+     -14.437
     ],
     "centre_y": 0.98,
     "size": [
-     1.767,
+     1.651,
      0.442,
-     1.646
+     1.672
     ],
     "rot_y": 0.67,
     "prov": {
-     "pos": "MEASURED px box [1287,232,73,68]@941 \u2014 screen sits directly BELOW the Engineering sign (sign bottom \u2248 px 230, screen top \u2248 px 232); centre \u22480.98 m via solver scale \u224852 px/m (review R23 \u2014 builder consumes centre_y as the measured screen centre)",
-     "size": "EST. derived from px via HOME camera",
+     "pos": "FIT to measured screen px_box center via unchanged HOME camera; wall relation remains inside department footprint",
+     "size": "FIT to measured screen px_box dimensions via unchanged HOME camera projection",
      "catalog": "analysis/03 \u00a74 DEPT-03 code display"
     }
    },
@@ -2505,19 +2506,19 @@
     ],
     "wall": "x0",
     "floor_xz": [
-     -6.32,
-     9.368
+     -6.451,
+     9.240
     ],
     "centre_y": 0.683,
     "size": [
-     1.41,
+     1.327,
      0.352,
-     1.366
+     1.429
     ],
     "rot_y": 0.905,
     "prov": {
-     "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
-     "size": "EST. derived from px via HOME camera",
+     "pos": "FIT to measured screen px_box center via unchanged HOME camera; wall relation remains inside department footprint",
+     "size": "FIT to measured screen px_box dimensions via unchanged HOME camera projection",
      "catalog": "analysis/03 \u00a74 DEPT-04 artwork monitor"
     }
    },
@@ -2721,19 +2722,19 @@
     ],
     "wall": "z0",
     "floor_xz": [
-     9.943,
-     -8.563
+     9.807,
+     -8.834
     ],
     "centre_y": 0.717,
     "size": [
-     1.654,
+     1.517,
      0.413,
-     1.433
+     1.436
     ],
     "rot_y": 0.624,
     "prov": {
-     "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
-     "size": "EST. derived from px via HOME camera",
+     "pos": "FIT to measured screen px_box center via unchanged HOME camera; wall relation remains inside department footprint",
+     "size": "FIT to measured screen px_box dimensions via unchanged HOME camera projection",
      "catalog": "analysis/03 \u00a74 DEPT-05 wall screen charts"
     }
    },
@@ -2961,19 +2962,19 @@
     ],
     "wall": "x0",
     "floor_xz": [
-     1.433,
-     9.493
+     1.726,
+     9.347
     ],
     "centre_y": 0.767,
     "size": [
-     1.595,
+     1.552,
      0.399,
-     1.534
+     1.681
     ],
     "rot_y": 0.846,
     "prov": {
-     "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
-     "size": "EST. derived from px via HOME camera",
+     "pos": "FIT to measured screen px_box center via unchanged HOME camera; wall relation remains inside department footprint",
+     "size": "FIT to measured screen px_box dimensions via unchanged HOME camera projection",
      "catalog": "analysis/03 \u00a74 DEPT-06 world map display"
     }
    },
@@ -3069,19 +3070,19 @@
     ],
     "wall": "z0",
     "floor_xz": [
-     9.458,
-     1.845
+     9.312,
+     1.955
     ],
     "centre_y": 0.746,
     "size": [
-     1.636,
+     1.567,
      0.409,
-     1.492
+     1.602
     ],
     "rot_y": 0.706,
     "prov": {
-     "pos": "EST. wall-adjacent: floor point from the px bottom ray, snapped toward the nearest room edge",
-     "size": "EST. derived from px via HOME camera",
+     "pos": "FIT to measured screen px_box center via unchanged HOME camera; wall relation remains inside department footprint",
+     "size": "FIT to measured screen px_box dimensions via unchanged HOME camera projection",
      "catalog": "analysis/03 \u00a74 DEPT-07 check-mark screen"
     }
    },

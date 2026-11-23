@@ -1,0 +1,745 @@
+{
+  "generatedAt": "2026-11-22T20:29:30.631Z",
+  "stage": "before",
+  "captureProvenance": "Preserved screenshot bytes reused; metrics re-computed now. No browser recapture.",
+  "browser": "Chromium 153 headless; SwiftShader software WebGL; deviceScaleFactor=1",
+  "baseURL": "http://127.0.0.1:5173",
+  "reference": {
+    "path": "docs/design/main-workspace/reference/wora-main-workspace.png",
+    "width": 1672,
+    "height": 941,
+    "sha256": "6f91ff3d27f1d69d7189b6d1a599088086bb50048d1c0b492e3ebcdb718036a1"
+  },
+  "methodology": {
+    "native": "Exact 1672×941 reference-sized capture, one-to-one pixels; no transform.",
+    "requestedViewports": "Reference fit uses uniform contain with centred dark letterbox and nearest-neighbour sampling only. No anisotropic resize/crop. 1440×900 and mobile do not share the source aspect; mobile has no owner-provided mobile reference, so these are diagnostics, not mobile acceptance scores.",
+    "roi": "UI groups and 3D department/environment bounds come from analysis/data/measurements.json. Scene metrics mask out the seven measured floating UI regions; UI metrics use the matching DOM layer with the canvas hidden. UI and scene are rendered layers, not reference-image substitutions.",
+    "metrics": "Exact RGB pixel-difference ratio; thresholded max-channel pixel ratios >8 and >16; normalized MAE/RMSE (0–1) plus absolute 8-bit RGB MAE/RMSE; spatial 8×8 block SSIM on luma with standard C1/C2. The red diff overlays expose changed ROI pixels. SSIM is a block mean and not the sole acceptance metric.",
+    "before": "Baseline images were captured at commit 157f52c before bundling an Inter font; metrics are recomputed from these preserved bytes when WORA_REUSE_CAPTURES=1.",
+    "after": "Inter 400/500/600/700 is bundled and document.fonts.ready is awaited before capture."
+  },
+  "nativeExactComparison": {
+    "width": 1672,
+    "height": 941,
+    "referenceWidth": 1672,
+    "referenceHeight": 941,
+    "referenceSha256": "6f91ff3d27f1d69d7189b6d1a599088086bb50048d1c0b492e3ebcdb718036a1",
+    "alignment": "Exact native 1672x941; no resizing/cropping; deviceScaleFactor=1.",
+    "regions": {
+      "Full frame": {
+        "pixels": 1573352,
+        "pixelDifferenceRatio": 0.985299538819031,
+        "pixelDifferencePercent": 98.5299538819031,
+        "pixelDifferenceOver8Ratio": 0.7622674391998739,
+        "pixelDifferenceOver16Ratio": 0.6991073834717215,
+        "mae": 0.17073707035114272,
+        "rmse": 0.2485433307537565,
+        "mae8Bit": 43.5379529395414,
+        "rmse8Bit": 63.37854934220791,
+        "ssimBlock8": 0.3396799679947297
+      },
+      "UI Shell (reference UI boxes only)": {
+        "pixels": 485598,
+        "pixelDifferenceRatio": 0.9523659487889159,
+        "pixelDifferencePercent": 95.2365948788916,
+        "pixelDifferenceOver8Ratio": 0.26209745509660254,
+        "pixelDifferenceOver16Ratio": 0.17002747128283066,
+        "mae": 0.06581844629169177,
+        "rmse": 0.17616509628076418,
+        "mae8Bit": 16.783703804381403,
+        "rmse8Bit": 44.92209955159487,
+        "ssimBlock8": 0.6585187758023778
+      },
+      "3D Scene (outside reference UI boxes)": {
+        "pixels": 1087754,
+        "pixelDifferenceRatio": 0.9999935647214352,
+        "pixelDifferencePercent": 99.99935647214352,
+        "pixelDifferenceOver8Ratio": 0.9855794600617419,
+        "pixelDifferenceOver16Ratio": 0.9366161834385348,
+        "mae": 0.21877572496597625,
+        "rmse": 0.27597354238148397,
+        "mae8Bit": 55.78780986632394,
+        "rmse8Bit": 70.37325330727842,
+        "ssimBlock8": 0.1927352405021492
+      },
+      "Geometry and Element Positions (measured rooms/signs/robot boxes)": {
+        "pixels": 1056177,
+        "pixelDifferenceRatio": 0.9999952659450073,
+        "pixelDifferencePercent": 99.99952659450074,
+        "pixelDifferenceOver8Ratio": 0.9859067182868023,
+        "pixelDifferenceOver16Ratio": 0.9368524404526892,
+        "mae": 0.22001171186640267,
+        "rmse": 0.2774801594010166,
+        "mae8Bit": 56.10298652593268,
+        "rmse8Bit": 70.75744064725923,
+        "ssimBlock8": 0.19458167520513997
+      },
+      "Colors and Materials (measured environment/sign ROIs)": {
+        "pixels": 593866,
+        "pixelDifferenceRatio": 0.9999932644738039,
+        "pixelDifferencePercent": 99.99932644738038,
+        "pixelDifferenceOver8Ratio": 0.989197899862932,
+        "pixelDifferenceOver16Ratio": 0.9464946637793711,
+        "mae": 0.21710631052990123,
+        "rmse": 0.2715262990299793,
+        "mae8Bit": 55.362109185124815,
+        "rmse8Bit": 69.23920625264472,
+        "ssimBlock8": 0.24398108053202627
+      },
+      "Lighting and Shadows (open-floor samples; objects/UI excluded)": {
+        "pixels": 127622,
+        "pixelDifferenceRatio": 0.9999921643603767,
+        "pixelDifferencePercent": 99.99921643603767,
+        "pixelDifferenceOver8Ratio": 0.9857783140837787,
+        "pixelDifferenceOver16Ratio": 0.940496152700945,
+        "mae": 0.1924658634982413,
+        "rmse": 0.22260632368131966,
+        "mae8Bit": 49.07879519205153,
+        "rmse8Bit": 56.76461253873652,
+        "ssimBlock8": 0.29616572440364214
+      },
+      "UI Shell union": {
+        "pixels": 485598,
+        "pixelDifferenceRatio": 0.9523659487889159,
+        "pixelDifferencePercent": 95.2365948788916,
+        "pixelDifferenceOver8Ratio": 0.26209745509660254,
+        "pixelDifferenceOver16Ratio": 0.17002747128283066,
+        "mae": 0.06581844629169177,
+        "rmse": 0.17616509628076418,
+        "mae8Bit": 16.783703804381403,
+        "rmse8Bit": 44.92209955159487,
+        "ssimBlock8": 0.6585187758023778
+      },
+      "UI · Brand header": {
+        "pixels": 3627,
+        "pixelDifferenceRatio": 0.9771160738902674,
+        "pixelDifferencePercent": 97.71160738902674,
+        "pixelDifferenceOver8Ratio": 0.666115246760408,
+        "pixelDifferenceOver16Ratio": 0.5925006892748829,
+        "mae": 0.23381933970169264,
+        "rmse": 0.37597964782195303,
+        "mae8Bit": 59.623931623931625,
+        "rmse8Bit": 95.87481019459803,
+        "ssimBlock8": 0.26166848187126873
+      },
+      "UI · Sidebar": {
+        "pixels": 135818,
+        "pixelDifferenceRatio": 0.9355166472779749,
+        "pixelDifferencePercent": 93.55166472779749,
+        "pixelDifferenceOver8Ratio": 0.21513348746116126,
+        "pixelDifferenceOver16Ratio": 0.17661871033294557,
+        "mae": 0.07353037903376462,
+        "rmse": 0.19451734590098982,
+        "mae8Bit": 18.750246653609977,
+        "rmse8Bit": 49.6019232047524,
+        "ssimBlock8": 0.6920609996966708
+      },
+      "UI · Top-centre": {
+        "pixels": 64174,
+        "pixelDifferenceRatio": 0.9983170754511173,
+        "pixelDifferencePercent": 99.83170754511173,
+        "pixelDifferenceOver8Ratio": 0.3664879857886371,
+        "pixelDifferenceOver16Ratio": 0.2624115685480101,
+        "mae": 0.08584363467704531,
+        "rmse": 0.19012972258933977,
+        "mae8Bit": 21.890126842646556,
+        "rmse8Bit": 48.48307926028164,
+        "ssimBlock8": 0.39000839548817384
+      },
+      "UI · Top-right": {
+        "pixels": 3274,
+        "pixelDifferenceRatio": 0.9960293219303604,
+        "pixelDifferencePercent": 99.60293219303604,
+        "pixelDifferenceOver8Ratio": 0.8173488087965791,
+        "pixelDifferenceOver16Ratio": 0.7443494196701282,
+        "mae": 0.30898063970039247,
+        "rmse": 0.41975539179705074,
+        "mae8Bit": 78.79006312360008,
+        "rmse8Bit": 107.03762490824793,
+        "ssimBlock8": 0.22270907387310285
+      },
+      "UI · Live Activity": {
+        "pixels": 62776,
+        "pixelDifferenceRatio": 0.9912864789091372,
+        "pixelDifferencePercent": 99.12864789091373,
+        "pixelDifferenceOver8Ratio": 0.40482031349560343,
+        "pixelDifferenceOver16Ratio": 0.2304383840958328,
+        "mae": 0.11405466141258763,
+        "rmse": 0.2549300697490209,
+        "mae8Bit": 29.083938660209846,
+        "rmse8Bit": 65.00716778600032,
+        "ssimBlock8": 0.49416325914033477
+      },
+      "UI · Executive Command": {
+        "pixels": 42296,
+        "pixelDifferenceRatio": 0.9532107055040666,
+        "pixelDifferencePercent": 95.32107055040666,
+        "pixelDifferenceOver8Ratio": 0.20046812937393607,
+        "pixelDifferenceOver16Ratio": 0.15914034424059012,
+        "mae": 0.04638724161248889,
+        "rmse": 0.14200706507775107,
+        "mae8Bit": 11.828746611184666,
+        "rmse8Bit": 36.21180159482652,
+        "ssimBlock8": 0.6584531393203549
+      },
+      "UI · View switcher": {
+        "pixels": 14796,
+        "pixelDifferenceRatio": 0.9988510408218437,
+        "pixelDifferencePercent": 99.88510408218437,
+        "pixelDifferenceOver8Ratio": 0.4819545823195458,
+        "pixelDifferenceOver16Ratio": 0.21052987293863207,
+        "mae": 0.07657501497490048,
+        "rmse": 0.17471582481218675,
+        "mae8Bit": 19.526628818599622,
+        "rmse8Bit": 44.55253532710763,
+        "ssimBlock8": 0.7115437534277519
+      },
+      "Typography and Icons": {
+        "pixels": 155900,
+        "pixelDifferenceRatio": 0.9541372674791533,
+        "pixelDifferencePercent": 95.41372674791533,
+        "pixelDifferenceOver8Ratio": 0.3581398332264272,
+        "pixelDifferenceOver16Ratio": 0.28094291212315586,
+        "mae": 0.11462325019809078,
+        "rmse": 0.24554232602022022,
+        "mae8Bit": 29.22892880051315,
+        "rmse8Bit": 62.613293135156155,
+        "ssimBlock8": 0.5574267275828635
+      },
+      "Scene geometry · DEPT-01 Executive Office (room)": {
+        "pixels": 83230,
+        "pixelDifferenceRatio": 1,
+        "pixelDifferencePercent": 100,
+        "pixelDifferenceOver8Ratio": 0.9862309263486724,
+        "pixelDifferenceOver16Ratio": 0.9287035924546437,
+        "mae": 0.20199233716475096,
+        "rmse": 0.25653086692712407,
+        "mae8Bit": 51.50804597701149,
+        "rmse8Bit": 65.41537106641664,
+        "ssimBlock8": 0.16593803673857832
+      },
+      "Scene geometry · DEPT-02 Marketing (room)": {
+        "pixels": 113400,
+        "pixelDifferenceRatio": 0.9999911816578483,
+        "pixelDifferencePercent": 99.99911816578484,
+        "pixelDifferenceOver8Ratio": 0.9905555555555555,
+        "pixelDifferenceOver16Ratio": 0.9457407407407408,
+        "mae": 0.2220517919101797,
+        "rmse": 0.2811036847846563,
+        "mae8Bit": 56.62320693709582,
+        "rmse8Bit": 71.68143962008736,
+        "ssimBlock8": 0.14663403577034642
+      },
+      "Scene geometry · DEPT-03 Engineering (room)": {
+        "pixels": 102420,
+        "pixelDifferenceRatio": 0.9999902362819761,
+        "pixelDifferencePercent": 99.99902362819762,
+        "pixelDifferenceOver8Ratio": 0.9792228080453037,
+        "pixelDifferenceOver16Ratio": 0.9238820542862722,
+        "mae": 0.24388692976376908,
+        "rmse": 0.31016505782815923,
+        "mae8Bit": 62.191167089761116,
+        "rmse8Bit": 79.0920897461806,
+        "ssimBlock8": 0.10881150305202
+      },
+      "Scene geometry · DEPT-04 Creative Studio (room)": {
+        "pixels": 116000,
+        "pixelDifferenceRatio": 1,
+        "pixelDifferencePercent": 100,
+        "pixelDifferenceOver8Ratio": 0.9819741379310345,
+        "pixelDifferenceOver16Ratio": 0.9228879310344827,
+        "mae": 0.2193532679738562,
+        "rmse": 0.2881934678402015,
+        "mae8Bit": 55.93508333333333,
+        "rmse8Bit": 73.4893342992514,
+        "ssimBlock8": 0.13422957669867577
+      },
+      "Scene geometry · DEPT-05 Management (room)": {
+        "pixels": 126600,
+        "pixelDifferenceRatio": 0.9999921011058451,
+        "pixelDifferencePercent": 99.99921011058451,
+        "pixelDifferenceOver8Ratio": 0.9744075829383886,
+        "pixelDifferenceOver16Ratio": 0.9152922590837282,
+        "mae": 0.21032091193507418,
+        "rmse": 0.271467198383223,
+        "mae8Bit": 53.63183254344392,
+        "rmse8Bit": 69.22413558772185,
+        "ssimBlock8": 0.16359067340278804
+      },
+      "Scene geometry · DEPT-06 Research (room)": {
+        "pixels": 98050,
+        "pixelDifferenceRatio": 1,
+        "pixelDifferencePercent": 100,
+        "pixelDifferenceOver8Ratio": 0.9792860785313615,
+        "pixelDifferenceOver16Ratio": 0.9104436511983682,
+        "mae": 0.2012942043041932,
+        "rmse": 0.2629816435382532,
+        "mae8Bit": 51.33002209756927,
+        "rmse8Bit": 67.06031910225457,
+        "ssimBlock8": 0.18002202807513737
+      },
+      "Scene geometry · DEPT-07 QA & Testing (room)": {
+        "pixels": 100700,
+        "pixelDifferenceRatio": 0.9999900695134062,
+        "pixelDifferencePercent": 99.99900695134062,
+        "pixelDifferenceOver8Ratio": 0.9830486593843099,
+        "pixelDifferenceOver16Ratio": 0.9193445878848063,
+        "mae": 0.22301377936146322,
+        "rmse": 0.2923724781247378,
+        "mae8Bit": 56.868513737173124,
+        "rmse8Bit": 74.55498192180814,
+        "ssimBlock8": 0.17137321018374313
+      },
+      "Scene material/light · ENV-001 Central atrium plaza (open floor)": {
+        "pixels": 210000,
+        "pixelDifferenceRatio": 0.999995238095238,
+        "pixelDifferencePercent": 99.99952380952381,
+        "pixelDifferenceOver8Ratio": 0.9887428571428571,
+        "pixelDifferenceOver16Ratio": 0.9498428571428571,
+        "mae": 0.2074842141300965,
+        "rmse": 0.25014102977320996,
+        "mae8Bit": 52.908474603174604,
+        "rmse8Bit": 63.78596259216854,
+        "ssimBlock8": 0.2644938442223134
+      },
+      "Scene material/light · ENV-002 WORA logo plinth (circular dais, glowing rim)": {
+        "pixels": 21700,
+        "pixelDifferenceRatio": 1,
+        "pixelDifferencePercent": 100,
+        "pixelDifferenceOver8Ratio": 0.9974654377880184,
+        "pixelDifferenceOver16Ratio": 0.990552995391705,
+        "mae": 0.22938995813379115,
+        "rmse": 0.24961875562522526,
+        "mae8Bit": 58.49443932411674,
+        "rmse8Bit": 63.65278268443244,
+        "ssimBlock8": 0.483163380280684
+      },
+      "Scene material/light · ENV-003 Plinth logo mark (interlocking W)": {
+        "pixels": 2108,
+        "pixelDifferenceRatio": 1,
+        "pixelDifferencePercent": 100,
+        "pixelDifferenceOver8Ratio": 0.9990512333965844,
+        "pixelDifferenceOver16Ratio": 0.9928842504743833,
+        "mae": 0.26367278094033314,
+        "rmse": 0.28176900436499674,
+        "mae8Bit": 67.23655913978494,
+        "rmse8Bit": 71.85109611307416,
+        "ssimBlock8": 0.4640284318837412
+      },
+      "Scene material/light · ENV-004 Plinth wordmark \"WORA\" (dark navy)": {
+        "pixels": 2280,
+        "pixelDifferenceRatio": 1,
+        "pixelDifferencePercent": 100,
+        "pixelDifferenceOver8Ratio": 0.9986842105263158,
+        "pixelDifferenceOver16Ratio": 0.9868421052631579,
+        "mae": 0.2614717348927875,
+        "rmse": 0.27951842573996155,
+        "mae8Bit": 66.67529239766081,
+        "rmse8Bit": 71.27719856369019,
+        "ssimBlock8": 0.38851241863285035
+      },
+      "Scene material/light · ENV-005 Central round planter + tree": {
+        "pixels": 15435,
+        "pixelDifferenceRatio": 1,
+        "pixelDifferencePercent": 100,
+        "pixelDifferenceOver8Ratio": 0.9942338840298024,
+        "pixelDifferenceOver16Ratio": 0.9565273728539034,
+        "mae": 0.1876723599492707,
+        "rmse": 0.23400452923366621,
+        "mae8Bit": 47.85645178706403,
+        "rmse8Bit": 59.671154954584885,
+        "ssimBlock8": 0.140096052292455
+      },
+      "Scene material/light · ENV-006 Curved brown sofa (left lounge)": {
+        "pixels": 5775,
+        "pixelDifferenceRatio": 1,
+        "pixelDifferencePercent": 100,
+        "pixelDifferenceOver8Ratio": 0.9927272727272727,
+        "pixelDifferenceOver16Ratio": 0.9558441558441558,
+        "mae": 0.2283769912005206,
+        "rmse": 0.2986420947461093,
+        "mae8Bit": 58.236132756132754,
+        "rmse8Bit": 76.15373416025787,
+        "ssimBlock8": 0.197797210556913
+      },
+      "Scene material/light · ENV-009 Brown sofa (right of planter)": {
+        "pixels": 2774,
+        "pixelDifferenceRatio": 1,
+        "pixelDifferencePercent": 100,
+        "pixelDifferenceOver8Ratio": 0.9960346070656092,
+        "pixelDifferenceOver16Ratio": 0.9844989185291997,
+        "mae": 0.24745418475008366,
+        "rmse": 0.3320325285128136,
+        "mae8Bit": 63.100817111271326,
+        "rmse8Bit": 84.66829477076747,
+        "ssimBlock8": 0.1723285279568254
+      },
+      "Scene material/light · ENV-010 Dark grey curved bench": {
+        "pixels": 4500,
+        "pixelDifferenceRatio": 1,
+        "pixelDifferencePercent": 100,
+        "pixelDifferenceOver8Ratio": 0.9857777777777778,
+        "pixelDifferenceOver16Ratio": 0.9302222222222222,
+        "mae": 0.18814901960784314,
+        "rmse": 0.23714943429647053,
+        "mae8Bit": 47.978,
+        "rmse8Bit": 60.47310574559999,
+        "ssimBlock8": 0.3447120066213018
+      },
+      "Scene material/light · ENV-014 Lower-left exterior facade (floors below)": {
+        "pixels": 85440,
+        "pixelDifferenceRatio": 1,
+        "pixelDifferencePercent": 100,
+        "pixelDifferenceOver8Ratio": 0.9900397940074906,
+        "pixelDifferenceOver16Ratio": 0.9621488764044944,
+        "mae": 0.2611134060365719,
+        "rmse": 0.3136716902353443,
+        "mae8Bit": 66.58391853932584,
+        "rmse8Bit": 79.9862810100128,
+        "ssimBlock8": 0.14710621468033336
+      },
+      "Scene material/light · ENV-015 Lower-right exterior facade (floors below)": {
+        "pixels": 95592,
+        "pixelDifferenceRatio": 0.9999895388735459,
+        "pixelDifferencePercent": 99.99895388735459,
+        "pixelDifferenceOver8Ratio": 0.9880952380952381,
+        "pixelDifferenceOver16Ratio": 0.9425684157670098,
+        "mae": 0.21461913021408524,
+        "rmse": 0.2695185865875206,
+        "mae8Bit": 54.72787820459174,
+        "rmse8Bit": 68.72723957981775,
+        "ssimBlock8": 0.26801173959336977
+      },
+      "Scene material/light · ENV-016 Exterior glazing + outdoor trees (top band)": {
+        "pixels": 138416,
+        "pixelDifferenceRatio": 1,
+        "pixelDifferencePercent": 100,
+        "pixelDifferenceOver8Ratio": 0.9936929256733326,
+        "pixelDifferenceOver16Ratio": 0.9484524910414981,
+        "mae": 0.19670650867367329,
+        "rmse": 0.24309571699640772,
+        "mae8Bit": 50.16015971178669,
+        "rmse8Bit": 61.98940783408397,
+        "ssimBlock8": 0.2968438737692915
+      }
+    }
+  },
+  "viewportComparisons": [
+    {
+      "label": "desktop-1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "referenceFit": {
+        "method": "uniform contain, nearest-neighbour, centred dark letterbox; no non-uniform stretch",
+        "scale": 1.1477151965993624,
+        "offsetX": 0.5100956429330381,
+        "offsetY": 0,
+        "drawWidth": 1918.979808714134,
+        "drawHeight": 1080
+      },
+      "metrics": {
+        "fullFrame": {
+          "pixels": 2073600,
+          "pixelDifferenceRatio": 0.9851948302469136,
+          "pixelDifferencePercent": 98.51948302469135,
+          "pixelDifferenceOver8Ratio": 0.7605174575617284,
+          "pixelDifferenceOver16Ratio": 0.697626350308642,
+          "mae": 0.17126258775114983,
+          "rmse": 0.24968533395770695,
+          "mae8Bit": 43.67195987654321,
+          "rmse8Bit": 63.669760159215265,
+          "ssimBlock8": 0.35720070339000576
+        },
+        "measuredUiRegions": {
+          "pixels": 643494,
+          "pixelDifferenceRatio": 0.9522963695077188,
+          "pixelDifferencePercent": 95.22963695077188,
+          "pixelDifferenceOver8Ratio": 0.25999620820085345,
+          "pixelDifferenceOver16Ratio": 0.16594715723845133,
+          "mae": 0.06557136975097817,
+          "rmse": 0.17694477509937379,
+          "mae8Bit": 16.720699286499435,
+          "rmse8Bit": 45.12091765034032,
+          "ssimBlock8": 0.6829261566504625
+        },
+        "sceneOutsideMeasuredUi": {
+          "pixels": 1430106,
+          "pixelDifferenceRatio": 0.9999979022533994,
+          "pixelDifferencePercent": 99.99979022533994,
+          "pixelDifferenceOver8Ratio": 0.9857332253693083,
+          "pixelDifferenceOver16Ratio": 0.936862022815092,
+          "mae": 0.21881966718148751,
+          "rmse": 0.27623647723369055,
+          "mae8Bit": 55.79901513127931,
+          "rmse8Bit": 70.44030169459108,
+          "ssimBlock8": 0.21273517393274502
+        }
+      }
+    },
+    {
+      "label": "desktop-1440x900",
+      "width": 1440,
+      "height": 900,
+      "referenceFit": {
+        "method": "uniform contain, nearest-neighbour, centred dark letterbox; no non-uniform stretch",
+        "scale": 0.861244019138756,
+        "offsetX": 0,
+        "offsetY": 44.78468899521528,
+        "drawWidth": 1440,
+        "drawHeight": 810.4306220095694
+      },
+      "metrics": {
+        "fullFrame": {
+          "pixels": 1296000,
+          "pixelDifferenceRatio": 0.9902114197530865,
+          "pixelDifferencePercent": 99.02114197530864,
+          "pixelDifferenceOver8Ratio": 0.8596581790123456,
+          "pixelDifferenceOver16Ratio": 0.7922268518518518,
+          "mae": 0.20027994533204227,
+          "rmse": 0.27774822873149674,
+          "mae8Bit": 51.07138605967078,
+          "rmse8Bit": 70.82579832653167,
+          "ssimBlock8": 0.24554913034369535
+        },
+        "measuredUiRegions": {
+          "pixels": 364253,
+          "pixelDifferenceRatio": 0.9651753039782789,
+          "pixelDifferencePercent": 96.51753039782788,
+          "pixelDifferenceOver8Ratio": 0.5325666501030877,
+          "pixelDifferenceOver16Ratio": 0.43762988911553236,
+          "mae": 0.13058727460294825,
+          "rmse": 0.2415758326776016,
+          "mae8Bit": 33.29975502375181,
+          "rmse8Bit": 61.601837332788406,
+          "ssimBlock8": 0.41270961876247714
+        },
+        "sceneOutsideMeasuredUi": {
+          "pixels": 931747,
+          "pixelDifferenceRatio": 0.9999989267472823,
+          "pixelDifferencePercent": 99.99989267472823,
+          "pixelDifferenceOver8Ratio": 0.9875298766725302,
+          "pixelDifferenceOver16Ratio": 0.9308514006484593,
+          "mae": 0.22752528595678773,
+          "rmse": 0.2906679872750133,
+          "mae8Bit": 58.01894791898087,
+          "rmse8Bit": 74.12033675512839,
+          "ssimBlock8": 0.18528484741821868
+        }
+      }
+    },
+    {
+      "label": "desktop-1366x768",
+      "width": 1366,
+      "height": 768,
+      "referenceFit": {
+        "method": "uniform contain, nearest-neighbour, centred dark letterbox; no non-uniform stretch",
+        "scale": 0.8161530286928799,
+        "offsetX": 0.6960680127524483,
+        "offsetY": 0,
+        "drawWidth": 1364.607863974495,
+        "drawHeight": 768
+      },
+      "metrics": {
+        "fullFrame": {
+          "pixels": 1049088,
+          "pixelDifferenceRatio": 0.9853329749267935,
+          "pixelDifferencePercent": 98.53329749267935,
+          "pixelDifferenceOver8Ratio": 0.7639969192288921,
+          "pixelDifferenceOver16Ratio": 0.7018934541239629,
+          "mae": 0.17109863067868272,
+          "rmse": 0.24842696383225182,
+          "mae8Bit": 43.6301508230641,
+          "rmse8Bit": 63.348875777224215,
+          "ssimBlock8": 0.3035618183710459
+        },
+        "measuredUiRegions": {
+          "pixels": 326199,
+          "pixelDifferenceRatio": 0.9528355390421185,
+          "pixelDifferencePercent": 95.28355390421184,
+          "pixelDifferenceOver8Ratio": 0.2727936014518745,
+          "pixelDifferenceOver16Ratio": 0.1823549428416396,
+          "mae": 0.0675820988779715,
+          "rmse": 0.17636210800887986,
+          "mae8Bit": 17.233435213882732,
+          "rmse8Bit": 44.97233754226436,
+          "ssimBlock8": 0.6182762324513198
+        },
+        "sceneOutsideMeasuredUi": {
+          "pixels": 722889,
+          "pixelDifferenceRatio": 0.9999972333235116,
+          "pixelDifferencePercent": 99.99972333235117,
+          "pixelDifferenceOver8Ratio": 0.9856492490548342,
+          "pixelDifferenceOver16Ratio": 0.9363318573114268,
+          "mae": 0.2178097981703173,
+          "rmse": 0.2748264686483267,
+          "mae8Bit": 55.541498533430904,
+          "rmse8Bit": 70.08074950532331,
+          "ssimBlock8": 0.1579992936020471
+        }
+      }
+    },
+    {
+      "label": "mobile-390x844",
+      "width": 390,
+      "height": 844,
+      "referenceFit": {
+        "method": "uniform contain, nearest-neighbour, centred dark letterbox; no non-uniform stretch",
+        "scale": 0.2332535885167464,
+        "offsetX": 0,
+        "offsetY": 312.25418660287085,
+        "drawWidth": 390,
+        "drawHeight": 219.49162679425837
+      },
+      "metrics": {
+        "fullFrame": {
+          "pixels": 329160,
+          "pixelDifferenceRatio": 1,
+          "pixelDifferencePercent": 100,
+          "pixelDifferenceOver8Ratio": 0.8189755741888444,
+          "pixelDifferenceOver16Ratio": 0.8021296633855876,
+          "mae": 0.2290992202770848,
+          "rmse": 0.3056295971581365,
+          "mae8Bit": 58.42030117065662,
+          "rmse8Bit": 77.9355472753248,
+          "ssimBlock8": 0.3177874966878864
+        },
+        "measuredUiRegions": {
+          "pixels": 26997,
+          "pixelDifferenceRatio": 1,
+          "pixelDifferencePercent": 100,
+          "pixelDifferenceOver8Ratio": 0.9878134607548987,
+          "pixelDifferenceOver16Ratio": 0.9576990035929918,
+          "mae": 0.37101692005962417,
+          "rmse": 0.41757911536278874,
+          "mae8Bit": 94.60931461520416,
+          "rmse8Bit": 106.48267441751113,
+          "ssimBlock8": 0.06394900717145319
+        },
+        "sceneOutsideMeasuredUi": {
+          "pixels": 302163,
+          "pixelDifferenceRatio": 1,
+          "pixelDifferencePercent": 100,
+          "pixelDifferenceOver8Ratio": 0.8038906153301364,
+          "pixelDifferenceOver16Ratio": 0.788230193637209,
+          "mae": 0.21641946749124003,
+          "rmse": 0.2935570765525256,
+          "mae8Bit": 55.186964210266204,
+          "rmse8Bit": 74.85705452089402,
+          "ssimBlock8": 0.3375308290007215
+        }
+      }
+    },
+    {
+      "label": "mobile-430x932",
+      "width": 430,
+      "height": 932,
+      "referenceFit": {
+        "method": "uniform contain, nearest-neighbour, centred dark letterbox; no non-uniform stretch",
+        "scale": 0.25717703349282295,
+        "offsetX": 2.842170943040401e-14,
+        "offsetY": 344.9982057416268,
+        "drawWidth": 429.99999999999994,
+        "drawHeight": 242.0035885167464
+      },
+      "metrics": {
+        "fullFrame": {
+          "pixels": 400760,
+          "pixelDifferenceRatio": 1,
+          "pixelDifferencePercent": 100,
+          "pixelDifferenceOver8Ratio": 0.8133421499151612,
+          "pixelDifferenceOver16Ratio": 0.796788601656852,
+          "mae": 0.2366924249155363,
+          "rmse": 0.3111854062826122,
+          "mae8Bit": 60.35656835346175,
+          "rmse8Bit": 79.35227860206612,
+          "ssimBlock8": 0.31903621572123997
+        },
+        "measuredUiRegions": {
+          "pixels": 33103,
+          "pixelDifferenceRatio": 1,
+          "pixelDifferencePercent": 100,
+          "pixelDifferenceOver8Ratio": 0.9874935806422379,
+          "pixelDifferenceOver16Ratio": 0.9591577802616077,
+          "mae": 0.37065854466125636,
+          "rmse": 0.4171577280904628,
+          "mae8Bit": 94.51792888862036,
+          "rmse8Bit": 106.37522066306802,
+          "ssimBlock8": 0.07458423379779489
+        },
+        "sceneOutsideMeasuredUi": {
+          "pixels": 367657,
+          "pixelDifferenceRatio": 1,
+          "pixelDifferencePercent": 100,
+          "pixelDifferenceOver8Ratio": 0.7976619512208389,
+          "pixelDifferenceOver16Ratio": 0.7821692501434762,
+          "mae": 0.2246304202156596,
+          "rmse": 0.2998113842193229,
+          "mae8Bit": 57.280757154993196,
+          "rmse8Bit": 76.45190297592734,
+          "ssimBlock8": 0.33863277907109096
+        }
+      }
+    }
+  ],
+  "captureFiles": [
+    {
+      "viewport": "desktop-1920x1080",
+      "full": "docs/design/main-workspace/greybox/visual-fidelity/before/desktop-1920x1080-full.png",
+      "fontInfo": {
+        "status": "not sampled on original capture; preserved screenshot bytes reused",
+        "interRegular": null,
+        "interSemibold": null
+      }
+    },
+    {
+      "viewport": "desktop-1440x900",
+      "full": "docs/design/main-workspace/greybox/visual-fidelity/before/desktop-1440x900-full.png",
+      "fontInfo": {
+        "status": "not sampled on original capture; preserved screenshot bytes reused",
+        "interRegular": null,
+        "interSemibold": null
+      }
+    },
+    {
+      "viewport": "desktop-1366x768",
+      "full": "docs/design/main-workspace/greybox/visual-fidelity/before/desktop-1366x768-full.png",
+      "fontInfo": {
+        "status": "not sampled on original capture; preserved screenshot bytes reused",
+        "interRegular": null,
+        "interSemibold": null
+      }
+    },
+    {
+      "viewport": "mobile-390x844",
+      "full": "docs/design/main-workspace/greybox/visual-fidelity/before/mobile-390x844-full.png",
+      "fontInfo": {
+        "status": "not sampled on original capture; preserved screenshot bytes reused",
+        "interRegular": null,
+        "interSemibold": null
+      }
+    },
+    {
+      "viewport": "mobile-430x932",
+      "full": "docs/design/main-workspace/greybox/visual-fidelity/before/mobile-430x932-full.png",
+      "fontInfo": {
+        "status": "not sampled on original capture; preserved screenshot bytes reused",
+        "interRegular": null,
+        "interSemibold": null
+      }
+    },
+    {
+      "viewport": "reference-native-1672x941",
+      "full": "docs/design/main-workspace/greybox/visual-fidelity/before/reference-native-1672x941-full.png",
+      "fontInfo": {
+        "status": "not sampled on original capture; preserved screenshot bytes reused",
+        "interRegular": null,
+        "interSemibold": null
+      }
+    }
+  ],
+  "layerCaptures": [
+    "reference-native-1672x941-ui-only.png",
+    "reference-native-1672x941-scene-only.png"
+  ],
+  "browserErrors": []
+}
