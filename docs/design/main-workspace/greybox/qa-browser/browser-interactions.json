@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T14:40:56.537Z",
+  "generatedAt": "2026-11-23T07:48:10.266Z",
   "desktopNavigationAudit": [
     "Company Overview",
     "Executive Office",
@@ -736,8 +736,8 @@
   ],
   "lifePanelVisible": true,
   "softwareWebGlRafSample": {
-    "frames": 12,
-    "durationMs": 2253.9999999999054,
+    "frames": 11,
+    "durationMs": 2000.5999999999985,
     "fps": 5
   },
   "commandNotSentDisclosure": true,

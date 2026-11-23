@@ -1,0 +1,2087 @@
+{
+  "generatedAt": "2026-11-23T07:49:04.085Z",
+  "referenceSha256": "6f91ff3d27f1d69d7189b6d1a599088086bb50048d1c0b492e3ebcdb718036a1",
+  "before": "2026-11-22T20:29:30.631Z",
+  "after": "2026-11-23T07:49:04.083Z",
+  "captureProvenance": {
+    "before": "Preserved screenshot bytes reused; metrics re-computed now. No browser recapture.",
+    "after": "Fresh Chromium browser screenshots captured during this run."
+  },
+  "layerRegionDeltas": {
+    "Geometry and Element Positions (measured rooms/signs/robot boxes)": {
+      "before": {
+        "pixels": 1056177,
+        "pixelDifferenceRatio": 0.9999952659450073,
+        "pixelDifferencePercent": 99.99952659450074,
+        "pixelDifferenceOver8Ratio": 0.9859067182868023,
+        "pixelDifferenceOver16Ratio": 0.9368524404526892,
+        "mae": 0.22001171186640267,
+        "rmse": 0.2774801594010166,
+        "mae8Bit": 56.10298652593268,
+        "rmse8Bit": 70.75744064725923,
+        "ssimBlock8": 0.19458167520513997
+      },
+      "after": {
+        "pixels": 1056177,
+        "pixelDifferenceRatio": 0.9999943191340088,
+        "pixelDifferencePercent": 99.99943191340088,
+        "pixelDifferenceOver8Ratio": 0.9852448973988261,
+        "pixelDifferenceOver16Ratio": 0.9345744131902134,
+        "mae": 0.2172454543959788,
+        "rmse": 0.2744829244536175,
+        "mae8Bit": 55.3975908709746,
+        "rmse8Bit": 69.99314573567246,
+        "ssimBlock8": 0.19571251628166722
+      },
+      "delta": {
+        "pixelDifferencePercent": -0.00009468109985277806,
+        "pixelDifferenceOver8Ratio": -0.0006618208879761722,
+        "pixelDifferenceOver16Ratio": -0.0022780272624758346,
+        "mae": -0.0027662574704238607,
+        "rmse": -0.002997234947399119,
+        "mae8Bit": -0.7053956549580818,
+        "rmse8Bit": -0.7642949115867737,
+        "ssimBlock8": 0.0011308410765272503
+      }
+    },
+    "Colors and Materials (measured environment/sign ROIs)": {
+      "before": {
+        "pixels": 593866,
+        "pixelDifferenceRatio": 0.9999932644738039,
+        "pixelDifferencePercent": 99.99932644738038,
+        "pixelDifferenceOver8Ratio": 0.989197899862932,
+        "pixelDifferenceOver16Ratio": 0.9464946637793711,
+        "mae": 0.21710631052990123,
+        "rmse": 0.2715262990299793,
+        "mae8Bit": 55.362109185124815,
+        "rmse8Bit": 69.23920625264472,
+        "ssimBlock8": 0.24398108053202627
+      },
+      "after": {
+        "pixels": 593866,
+        "pixelDifferenceRatio": 0.9999932644738039,
+        "pixelDifferencePercent": 99.99932644738038,
+        "pixelDifferenceOver8Ratio": 0.9887836650018691,
+        "pixelDifferenceOver16Ratio": 0.9455668450458521,
+        "mae": 0.21646431363040042,
+        "rmse": 0.2708556910329617,
+        "mae8Bit": 55.1983999757521,
+        "rmse8Bit": 69.06820121340523,
+        "ssimBlock8": 0.24498638070648704
+      },
+      "delta": {
+        "pixelDifferencePercent": 0,
+        "pixelDifferenceOver8Ratio": -0.0004142348610629565,
+        "pixelDifferenceOver16Ratio": -0.0009278187335189925,
+        "mae": -0.000641996899500813,
+        "rmse": -0.0006706079970176249,
+        "mae8Bit": -0.16370920937271194,
+        "rmse8Bit": -0.17100503923948907,
+        "ssimBlock8": 0.001005300174460766
+      }
+    },
+    "Lighting and Shadows (open-floor samples; objects/UI excluded)": {
+      "before": {
+        "pixels": 127622,
+        "pixelDifferenceRatio": 0.9999921643603767,
+        "pixelDifferencePercent": 99.99921643603767,
+        "pixelDifferenceOver8Ratio": 0.9857783140837787,
+        "pixelDifferenceOver16Ratio": 0.940496152700945,
+        "mae": 0.1924658634982413,
+        "rmse": 0.22260632368131966,
+        "mae8Bit": 49.07879519205153,
+        "rmse8Bit": 56.76461253873652,
+        "ssimBlock8": 0.29616572440364214
+      },
+      "after": {
+        "pixels": 127622,
+        "pixelDifferenceRatio": 0.9999921643603767,
+        "pixelDifferencePercent": 99.99921643603767,
+        "pixelDifferenceOver8Ratio": 0.9842738712761123,
+        "pixelDifferenceOver16Ratio": 0.9361160301515413,
+        "mae": 0.19174470810091443,
+        "rmse": 0.22192081423320748,
+        "mae8Bit": 48.89490056573318,
+        "rmse8Bit": 56.589807629467906,
+        "ssimBlock8": 0.2953147067518002
+      },
+      "delta": {
+        "pixelDifferencePercent": 0,
+        "pixelDifferenceOver8Ratio": -0.001504442807666373,
+        "pixelDifferenceOver16Ratio": -0.0043801225494036755,
+        "mae": -0.000721155397326867,
+        "rmse": -0.0006855094481121871,
+        "mae8Bit": -0.18389462631834874,
+        "rmse8Bit": -0.17480490926861592,
+        "ssimBlock8": -0.0008510176518419232
+      }
+    }
+  },
+  "interpretation": "Negative change in Pixel Difference/MAE/RMSE is better; positive change in SSIM is better. Do not interpret improvements as acceptance unless every relevant criterion and residual is reviewed.",
+  "nativeRegionDeltas": {
+    "Full frame": {
+      "pixelDifferencePercent": {
+        "before": 98.5299538819031,
+        "after": 98.52397937651587,
+        "change": -0.005974505387229101
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.7622674391998739,
+        "after": 0.7604242407293473,
+        "change": -0.001843198470526608
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.6991073834717215,
+        "after": 0.6961214019494684,
+        "change": -0.002985981522253156
+      },
+      "mae": {
+        "before": 0.17073707035114272,
+        "after": 0.16801993990965278,
+        "change": -0.00271713044148994
+      },
+      "rmse": {
+        "before": 0.2485433307537565,
+        "after": 0.24496589070815866,
+        "change": -0.003577440045597846
+      },
+      "mae8Bit": {
+        "before": 43.5379529395414,
+        "after": 42.84508467696146,
+        "change": -0.6928682625799354
+      },
+      "rmse8Bit": {
+        "before": 63.37854934220791,
+        "after": 62.46630213058046,
+        "change": -0.9122472116274523
+      },
+      "ssimBlock8": {
+        "before": 0.3396799679947297,
+        "after": 0.34412987420176316,
+        "change": 0.004449906207033449
+      }
+    },
+    "UI Shell (reference UI boxes only)": {
+      "pixelDifferencePercent": {
+        "before": 95.2365948788916,
+        "after": 95.21744323493918,
+        "change": -0.0191516439524122
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.26209745509660254,
+        "after": 0.25755872141153796,
+        "change": -0.004538733685064578
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.17002747128283066,
+        "after": 0.1652683907264857,
+        "change": -0.004759080556344969
+      },
+      "mae": {
+        "before": 0.06581844629169177,
+        "after": 0.06301823609603974,
+        "change": -0.0028002101956520337
+      },
+      "rmse": {
+        "before": 0.17616509628076418,
+        "after": 0.170023619522653,
+        "change": -0.006141476758111192
+      },
+      "mae8Bit": {
+        "before": 16.783703804381403,
+        "after": 16.069650204490134,
+        "change": -0.7140535998912689
+      },
+      "rmse8Bit": {
+        "before": 44.92209955159487,
+        "after": 43.35602297827651,
+        "change": -1.5660765733183553
+      },
+      "ssimBlock8": {
+        "before": 0.6585187758023778,
+        "after": 0.6698122532422212,
+        "change": 0.011293477439843325
+      }
+    },
+    "3D Scene (outside reference UI boxes)": {
+      "pixelDifferencePercent": {
+        "before": 99.99935647214352,
+        "after": 99.99926453959259,
+        "change": -0.00009193255093009611
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9855794600617419,
+        "after": 0.9849423674838245,
+        "change": -0.0006370925779174419
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9366161834385348,
+        "after": 0.9344189954714025,
+        "change": -0.002197187967132308
+      },
+      "mae": {
+        "before": 0.21877572496597625,
+        "after": 0.2160979797179007,
+        "change": -0.0026777452480755415
+      },
+      "rmse": {
+        "before": 0.27597354238148397,
+        "after": 0.27305350358,
+        "change": -0.0029200388014839485
+      },
+      "mae8Bit": {
+        "before": 55.78780986632394,
+        "after": 55.10498482806468,
+        "change": -0.68282503825926
+      },
+      "rmse8Bit": {
+        "before": 70.37325330727842,
+        "after": 69.6286434129,
+        "change": -0.7446098943784136
+      },
+      "ssimBlock8": {
+        "before": 0.1927352405021492,
+        "after": 0.19383679764218278,
+        "change": 0.001101557140033571
+      }
+    },
+    "Geometry and Element Positions (measured rooms/signs/robot boxes)": {
+      "pixelDifferencePercent": {
+        "before": 99.99952659450074,
+        "after": 99.99943191340088,
+        "change": -0.00009468109985277806
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9859067182868023,
+        "after": 0.9852448973988261,
+        "change": -0.0006618208879761722
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9368524404526892,
+        "after": 0.9345744131902134,
+        "change": -0.0022780272624758346
+      },
+      "mae": {
+        "before": 0.22001171186640267,
+        "after": 0.2172454543959788,
+        "change": -0.0027662574704238607
+      },
+      "rmse": {
+        "before": 0.2774801594010166,
+        "after": 0.2744829244536175,
+        "change": -0.002997234947399119
+      },
+      "mae8Bit": {
+        "before": 56.10298652593268,
+        "after": 55.3975908709746,
+        "change": -0.7053956549580818
+      },
+      "rmse8Bit": {
+        "before": 70.75744064725923,
+        "after": 69.99314573567246,
+        "change": -0.7642949115867737
+      },
+      "ssimBlock8": {
+        "before": 0.19458167520513997,
+        "after": 0.19571251628166722,
+        "change": 0.0011308410765272503
+      }
+    },
+    "Colors and Materials (measured environment/sign ROIs)": {
+      "pixelDifferencePercent": {
+        "before": 99.99932644738038,
+        "after": 99.99932644738038,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.989197899862932,
+        "after": 0.9887836650018691,
+        "change": -0.0004142348610629565
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9464946637793711,
+        "after": 0.9455668450458521,
+        "change": -0.0009278187335189925
+      },
+      "mae": {
+        "before": 0.21710631052990123,
+        "after": 0.21646431363040042,
+        "change": -0.000641996899500813
+      },
+      "rmse": {
+        "before": 0.2715262990299793,
+        "after": 0.2708556910329617,
+        "change": -0.0006706079970176249
+      },
+      "mae8Bit": {
+        "before": 55.362109185124815,
+        "after": 55.1983999757521,
+        "change": -0.16370920937271194
+      },
+      "rmse8Bit": {
+        "before": 69.23920625264472,
+        "after": 69.06820121340523,
+        "change": -0.17100503923948907
+      },
+      "ssimBlock8": {
+        "before": 0.24398108053202627,
+        "after": 0.24498638070648704,
+        "change": 0.001005300174460766
+      }
+    },
+    "Lighting and Shadows (open-floor samples; objects/UI excluded)": {
+      "pixelDifferencePercent": {
+        "before": 99.99921643603767,
+        "after": 99.99921643603767,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9857783140837787,
+        "after": 0.9842738712761123,
+        "change": -0.001504442807666373
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.940496152700945,
+        "after": 0.9361160301515413,
+        "change": -0.0043801225494036755
+      },
+      "mae": {
+        "before": 0.1924658634982413,
+        "after": 0.19174470810091443,
+        "change": -0.000721155397326867
+      },
+      "rmse": {
+        "before": 0.22260632368131966,
+        "after": 0.22192081423320748,
+        "change": -0.0006855094481121871
+      },
+      "mae8Bit": {
+        "before": 49.07879519205153,
+        "after": 48.89490056573318,
+        "change": -0.18389462631834874
+      },
+      "rmse8Bit": {
+        "before": 56.76461253873652,
+        "after": 56.589807629467906,
+        "change": -0.17480490926861592
+      },
+      "ssimBlock8": {
+        "before": 0.29616572440364214,
+        "after": 0.2953147067518002,
+        "change": -0.0008510176518419232
+      }
+    },
+    "UI Shell union": {
+      "pixelDifferencePercent": {
+        "before": 95.2365948788916,
+        "after": 95.21744323493918,
+        "change": -0.0191516439524122
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.26209745509660254,
+        "after": 0.25755872141153796,
+        "change": -0.004538733685064578
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.17002747128283066,
+        "after": 0.1652683907264857,
+        "change": -0.004759080556344969
+      },
+      "mae": {
+        "before": 0.06581844629169177,
+        "after": 0.06301823609603974,
+        "change": -0.0028002101956520337
+      },
+      "rmse": {
+        "before": 0.17616509628076418,
+        "after": 0.170023619522653,
+        "change": -0.006141476758111192
+      },
+      "mae8Bit": {
+        "before": 16.783703804381403,
+        "after": 16.069650204490134,
+        "change": -0.7140535998912689
+      },
+      "rmse8Bit": {
+        "before": 44.92209955159487,
+        "after": 43.35602297827651,
+        "change": -1.5660765733183553
+      },
+      "ssimBlock8": {
+        "before": 0.6585187758023778,
+        "after": 0.6698122532422212,
+        "change": 0.011293477439843325
+      }
+    },
+    "UI · Brand header": {
+      "pixelDifferencePercent": {
+        "before": 97.71160738902674,
+        "after": 97.73917838433968,
+        "change": 0.02757099531294216
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.666115246760408,
+        "after": 0.6492969396195203,
+        "change": -0.016818307140887723
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.5925006892748829,
+        "after": 0.5715467328370554,
+        "change": -0.020953956437827492
+      },
+      "mae": {
+        "before": 0.23381933970169264,
+        "after": 0.21869529725317202,
+        "change": -0.015124042448520614
+      },
+      "rmse": {
+        "before": 0.37597964782195303,
+        "after": 0.36189943899531285,
+        "change": -0.014080208826640184
+      },
+      "mae8Bit": {
+        "before": 59.623931623931625,
+        "after": 55.76730079955886,
+        "change": -3.8566308243727647
+      },
+      "rmse8Bit": {
+        "before": 95.87481019459803,
+        "after": 92.28435694380477,
+        "change": -3.59045325079326
+      },
+      "ssimBlock8": {
+        "before": 0.26166848187126873,
+        "after": 0.3027625687796089,
+        "change": 0.041094086908340155
+      }
+    },
+    "UI · Sidebar": {
+      "pixelDifferencePercent": {
+        "before": 93.55166472779749,
+        "after": 93.49128981431032,
+        "change": -0.06037491348716628
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.21513348746116126,
+        "after": 0.21028876879353253,
+        "change": -0.004844718667628728
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.17661871033294557,
+        "after": 0.1710524378212019,
+        "change": -0.0055662725117436584
+      },
+      "mae": {
+        "before": 0.07353037903376462,
+        "after": 0.07075477881443996,
+        "change": -0.0027756002193246587
+      },
+      "rmse": {
+        "before": 0.19451734590098982,
+        "after": 0.18930798023797793,
+        "change": -0.005209365663011889
+      },
+      "mae8Bit": {
+        "before": 18.750246653609977,
+        "after": 18.04246859768219,
+        "change": -0.7077780559277862
+      },
+      "rmse8Bit": {
+        "before": 49.6019232047524,
+        "after": 48.27353496068437,
+        "change": -1.3283882440680301
+      },
+      "ssimBlock8": {
+        "before": 0.6920609996966708,
+        "after": 0.7012404559426691,
+        "change": 0.009179456245998363
+      }
+    },
+    "UI · Top-centre": {
+      "pixelDifferencePercent": {
+        "before": 99.83170754511173,
+        "after": 99.83014928164054,
+        "change": -0.001558263471181931
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.3664879857886371,
+        "after": 0.366628229501044,
+        "change": 0.0001402437124068956
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.2624115685480101,
+        "after": 0.26245831645214573,
+        "change": 0.00004674790413561336
+      },
+      "mae": {
+        "before": 0.08584363467704531,
+        "after": 0.08547111804487433,
+        "change": -0.0003725166321709855
+      },
+      "rmse": {
+        "before": 0.19012972258933977,
+        "after": 0.1891616145000257,
+        "change": -0.0009681080893140792
+      },
+      "mae8Bit": {
+        "before": 21.890126842646556,
+        "after": 21.795135101442952,
+        "change": -0.09499174120360365
+      },
+      "rmse8Bit": {
+        "before": 48.48307926028164,
+        "after": 48.236211697506555,
+        "change": -0.24686756277508692
+      },
+      "ssimBlock8": {
+        "before": 0.39000839548817384,
+        "after": 0.3899416192630268,
+        "change": -0.00006677622514705828
+      }
+    },
+    "UI · Top-right": {
+      "pixelDifferencePercent": {
+        "before": 99.60293219303604,
+        "after": 99.60293219303604,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.8173488087965791,
+        "after": 0.8274282223579719,
+        "change": 0.010079413561392747
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.7443494196701282,
+        "after": 0.7538179596823458,
+        "change": 0.00946854001221753
+      },
+      "mae": {
+        "before": 0.30898063970039247,
+        "after": 0.31133549734289967,
+        "change": 0.002354857642507202
+      },
+      "rmse": {
+        "before": 0.41975539179705074,
+        "after": 0.42172168389064846,
+        "change": 0.0019662920935977213
+      },
+      "mae8Bit": {
+        "before": 78.79006312360008,
+        "after": 79.39055182243942,
+        "change": 0.6004886988393423
+      },
+      "rmse8Bit": {
+        "before": 107.03762490824793,
+        "after": 107.53902939211535,
+        "change": 0.5014044838674181
+      },
+      "ssimBlock8": {
+        "before": 0.22270907387310285,
+        "after": 0.23565974028780576,
+        "change": 0.01295066641470291
+      }
+    },
+    "UI · Live Activity": {
+      "pixelDifferencePercent": {
+        "before": 99.12864789091373,
+        "after": 99.11590416719766,
+        "change": -0.012743723716070576
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.40482031349560343,
+        "after": 0.38621447687014143,
+        "change": -0.018605836625462002
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.2304383840958328,
+        "after": 0.21215114056327258,
+        "change": -0.018287243532560227
+      },
+      "mae": {
+        "before": 0.11405466141258763,
+        "after": 0.10378344915129299,
+        "change": -0.01027121226129464
+      },
+      "rmse": {
+        "before": 0.2549300697490209,
+        "after": 0.23935637699177909,
+        "change": -0.015573692757241797
+      },
+      "mae8Bit": {
+        "before": 29.083938660209846,
+        "after": 26.464779533579712,
+        "change": -2.6191591266301337
+      },
+      "rmse8Bit": {
+        "before": 65.00716778600032,
+        "after": 61.03587613290367,
+        "change": -3.9712916530966567
+      },
+      "ssimBlock8": {
+        "before": 0.49416325914033477,
+        "after": 0.5529499758800729,
+        "change": 0.05878671673973812
+      }
+    },
+    "UI · Executive Command": {
+      "pixelDifferencePercent": {
+        "before": 95.32107055040666,
+        "after": 95.3447134480802,
+        "change": 0.023642897673539665
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.20046812937393607,
+        "after": 0.19982977113675052,
+        "change": -0.0006383582371855545
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.15914034424059012,
+        "after": 0.1586911291847929,
+        "change": -0.00044921505579723076
+      },
+      "mae": {
+        "before": 0.04638724161248889,
+        "after": 0.04533239750726594,
+        "change": -0.0010548441052229476
+      },
+      "rmse": {
+        "before": 0.14200706507775107,
+        "after": 0.13850837870981517,
+        "change": -0.003498686367935905
+      },
+      "mae8Bit": {
+        "before": 11.828746611184666,
+        "after": 11.559761364352815,
+        "change": -0.26898524683185165
+      },
+      "rmse8Bit": {
+        "before": 36.21180159482652,
+        "after": 35.31963657100287,
+        "change": -0.8921650238236509
+      },
+      "ssimBlock8": {
+        "before": 0.6584531393203549,
+        "after": 0.6550047731710962,
+        "change": -0.003448366149258697
+      }
+    },
+    "UI · View switcher": {
+      "pixelDifferencePercent": {
+        "before": 99.88510408218437,
+        "after": 99.88510408218437,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.4819545823195458,
+        "after": 0.4813463098134631,
+        "change": -0.0006082725060826966
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.21052987293863207,
+        "after": 0.20965125709651258,
+        "change": -0.0008786158421194845
+      },
+      "mae": {
+        "before": 0.07657501497490048,
+        "after": 0.0774076901193928,
+        "change": 0.0008326751444923258
+      },
+      "rmse": {
+        "before": 0.17471582481218675,
+        "after": 0.17645008748064026,
+        "change": 0.0017342626684535012
+      },
+      "mae8Bit": {
+        "before": 19.526628818599622,
+        "after": 19.738960980445164,
+        "change": 0.21233216184554138
+      },
+      "rmse8Bit": {
+        "before": 44.55253532710763,
+        "after": 44.99477230756327,
+        "change": 0.44223698045563964
+      },
+      "ssimBlock8": {
+        "before": 0.7115437534277519,
+        "after": 0.7056072214569505,
+        "change": -0.005936531970801351
+      }
+    },
+    "Typography and Icons": {
+      "pixelDifferencePercent": {
+        "before": 95.41372674791533,
+        "after": 95.37331622835151,
+        "change": -0.04041051956382091
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.3581398332264272,
+        "after": 0.3519114817190507,
+        "change": -0.006228351507376495
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.28094291212315586,
+        "after": 0.27420141116100066,
+        "change": -0.0067415009621552
+      },
+      "mae": {
+        "before": 0.11462325019809078,
+        "after": 0.11064348270845649,
+        "change": -0.003979767489634287
+      },
+      "rmse": {
+        "before": 0.24554232602022022,
+        "after": 0.23930607756159458,
+        "change": -0.006236248458625637
+      },
+      "mae8Bit": {
+        "before": 29.22892880051315,
+        "after": 28.214088090656404,
+        "change": -1.0148407098567453
+      },
+      "rmse8Bit": {
+        "before": 62.613293135156155,
+        "after": 61.02304977820662,
+        "change": -1.5902433569495358
+      },
+      "ssimBlock8": {
+        "before": 0.5574267275828635,
+        "after": 0.5728262423296784,
+        "change": 0.01539951474681489
+      }
+    },
+    "Scene geometry · DEPT-01 Executive Office (room)": {
+      "pixelDifferencePercent": {
+        "before": 100,
+        "after": 100,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9862309263486724,
+        "after": 0.9857743602066562,
+        "change": -0.0004565661420161682
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9287035924546437,
+        "after": 0.9246305418719212,
+        "change": -0.004073050582722559
+      },
+      "mae": {
+        "before": 0.20199233716475096,
+        "after": 0.20905540124656535,
+        "change": 0.007063064081814396
+      },
+      "rmse": {
+        "before": 0.25653086692712407,
+        "after": 0.26654751239682345,
+        "change": 0.010016645469699381
+      },
+      "mae8Bit": {
+        "before": 51.50804597701149,
+        "after": 53.309127317874164,
+        "change": 1.8010813408626731
+      },
+      "rmse8Bit": {
+        "before": 65.41537106641664,
+        "after": 67.96961566118998,
+        "change": 2.554244594773337
+      },
+      "ssimBlock8": {
+        "before": 0.16593803673857832,
+        "after": 0.16517715371583155,
+        "change": -0.0007608830227467667
+      }
+    },
+    "Scene geometry · DEPT-02 Marketing (room)": {
+      "pixelDifferencePercent": {
+        "before": 99.99911816578484,
+        "after": 99.99911816578484,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9905555555555555,
+        "after": 0.989673721340388,
+        "change": -0.0008818342151675207
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9457407407407408,
+        "after": 0.9411463844797178,
+        "change": -0.004594356261023003
+      },
+      "mae": {
+        "before": 0.2220517919101797,
+        "after": 0.21247448444398334,
+        "change": -0.009577307466196366
+      },
+      "rmse": {
+        "before": 0.2811036847846563,
+        "after": 0.2698819946215136,
+        "change": -0.011221690163142728
+      },
+      "mae8Bit": {
+        "before": 56.62320693709582,
+        "after": 54.180993533215755,
+        "change": -2.442213403880068
+      },
+      "rmse8Bit": {
+        "before": 71.68143962008736,
+        "after": 68.81990862848596,
+        "change": -2.8615309916013985
+      },
+      "ssimBlock8": {
+        "before": 0.14663403577034642,
+        "after": 0.147791133607329,
+        "change": 0.0011570978369825902
+      }
+    },
+    "Scene geometry · DEPT-03 Engineering (room)": {
+      "pixelDifferencePercent": {
+        "before": 99.99902362819762,
+        "after": 99.99804725639524,
+        "change": -0.0009763718023805268
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9792228080453037,
+        "after": 0.9774067564928725,
+        "change": -0.0018160515524312526
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9238820542862722,
+        "after": 0.9194395625854326,
+        "change": -0.004442491700839657
+      },
+      "mae": {
+        "before": 0.24388692976376908,
+        "after": 0.23883767084911162,
+        "change": -0.005049258914657462
+      },
+      "rmse": {
+        "before": 0.31016505782815923,
+        "after": 0.3051702239523042,
+        "change": -0.0049948338758550315
+      },
+      "mae8Bit": {
+        "before": 62.191167089761116,
+        "after": 60.903606066523466,
+        "change": -1.2875610232376502
+      },
+      "rmse8Bit": {
+        "before": 79.0920897461806,
+        "after": 77.81840710783757,
+        "change": -1.2736826383430326
+      },
+      "ssimBlock8": {
+        "before": 0.10881150305202,
+        "after": 0.11087682069331416,
+        "change": 0.0020653176412941537
+      }
+    },
+    "Scene geometry · DEPT-04 Creative Studio (room)": {
+      "pixelDifferencePercent": {
+        "before": 100,
+        "after": 100,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9819741379310345,
+        "after": 0.9812586206896552,
+        "change": -0.0007155172413793043
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9228879310344827,
+        "after": 0.9207586206896552,
+        "change": -0.0021293103448275508
+      },
+      "mae": {
+        "before": 0.2193532679738562,
+        "after": 0.21510993914807303,
+        "change": -0.0042433288257831825
+      },
+      "rmse": {
+        "before": 0.2881934678402015,
+        "after": 0.28453246751535266,
+        "change": -0.00366100032484884
+      },
+      "mae8Bit": {
+        "before": 55.93508333333333,
+        "after": 54.85303448275862,
+        "change": -1.082048850574708
+      },
+      "rmse8Bit": {
+        "before": 73.4893342992514,
+        "after": 72.55577921641493,
+        "change": -0.9335550828364632
+      },
+      "ssimBlock8": {
+        "before": 0.13422957669867577,
+        "after": 0.14079063685992887,
+        "change": 0.006561060161253102
+      }
+    },
+    "Scene geometry · DEPT-05 Management (room)": {
+      "pixelDifferencePercent": {
+        "before": 99.99921011058451,
+        "after": 99.99921011058451,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9744075829383886,
+        "after": 0.9721958925750395,
+        "change": -0.002211690363349117
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9152922590837282,
+        "after": 0.911129541864139,
+        "change": -0.004162717219589274
+      },
+      "mae": {
+        "before": 0.21032091193507418,
+        "after": 0.20648304060960876,
+        "change": -0.003837871325465425
+      },
+      "rmse": {
+        "before": 0.271467198383223,
+        "after": 0.2666904987914121,
+        "change": -0.0047766995918108734
+      },
+      "mae8Bit": {
+        "before": 53.63183254344392,
+        "after": 52.65317535545024,
+        "change": -0.978657187993683
+      },
+      "rmse8Bit": {
+        "before": 69.22413558772185,
+        "after": 68.00607719181008,
+        "change": -1.2180583959117683
+      },
+      "ssimBlock8": {
+        "before": 0.16359067340278804,
+        "after": 0.1647184061594325,
+        "change": 0.0011277327566444617
+      }
+    },
+    "Scene geometry · DEPT-06 Research (room)": {
+      "pixelDifferencePercent": {
+        "before": 100,
+        "after": 100,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9792860785313615,
+        "after": 0.9796022437531872,
+        "change": 0.0003161652218256483
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9104436511983682,
+        "after": 0.9084446710861805,
+        "change": -0.001998980112187687
+      },
+      "mae": {
+        "before": 0.2012942043041932,
+        "after": 0.19470396923005137,
+        "change": -0.006590235074141831
+      },
+      "rmse": {
+        "before": 0.2629816435382532,
+        "after": 0.25572342028146455,
+        "change": -0.007258223256788654
+      },
+      "mae8Bit": {
+        "before": 51.33002209756927,
+        "after": 49.649512153663096,
+        "change": -1.6805099439061735
+      },
+      "rmse8Bit": {
+        "before": 67.06031910225457,
+        "after": 65.20947217177347,
+        "change": -1.8508469304810973
+      },
+      "ssimBlock8": {
+        "before": 0.18002202807513737,
+        "after": 0.18662659359351416,
+        "change": 0.006604565518376793
+      }
+    },
+    "Scene geometry · DEPT-07 QA & Testing (room)": {
+      "pixelDifferencePercent": {
+        "before": 99.99900695134062,
+        "after": 99.99900695134062,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9830486593843099,
+        "after": 0.9817775571002979,
+        "change": -0.001271102284011949
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9193445878848063,
+        "after": 0.9154121151936445,
+        "change": -0.003932472691161815
+      },
+      "mae": {
+        "before": 0.22301377936146322,
+        "after": 0.2183536551330231,
+        "change": -0.004660124228440116
+      },
+      "rmse": {
+        "before": 0.2923724781247378,
+        "after": 0.28688729511590527,
+        "change": -0.00548518300883255
+      },
+      "mae8Bit": {
+        "before": 56.868513737173124,
+        "after": 55.680182058920884,
+        "change": -1.18833167825224
+      },
+      "rmse8Bit": {
+        "before": 74.55498192180814,
+        "after": 73.15626025455585,
+        "change": -1.398721667252289
+      },
+      "ssimBlock8": {
+        "before": 0.17137321018374313,
+        "after": 0.1716997956697086,
+        "change": 0.0003265854859654804
+      }
+    },
+    "Scene material/light · ENV-001 Central atrium plaza (open floor)": {
+      "pixelDifferencePercent": {
+        "before": 99.99952380952381,
+        "after": 99.99952380952381,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9887428571428571,
+        "after": 0.9877809523809524,
+        "change": -0.0009619047619047194
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9498428571428571,
+        "after": 0.9468904761904762,
+        "change": -0.0029523809523809286
+      },
+      "mae": {
+        "before": 0.2074842141300965,
+        "after": 0.20731052598817304,
+        "change": -0.0001736881419234504
+      },
+      "rmse": {
+        "before": 0.25014102977320996,
+        "after": 0.2501883861105005,
+        "change": 0.00004735633729052724
+      },
+      "mae8Bit": {
+        "before": 52.908474603174604,
+        "after": 52.86418412698413,
+        "change": -0.04429047619047566
+      },
+      "rmse8Bit": {
+        "before": 63.78596259216854,
+        "after": 63.79803845817762,
+        "change": 0.01207586600908428
+      },
+      "ssimBlock8": {
+        "before": 0.2644938442223134,
+        "after": 0.26396809835534374,
+        "change": -0.0005257458669696846
+      }
+    },
+    "Scene material/light · ENV-002 WORA logo plinth (circular dais, glowing rim)": {
+      "pixelDifferencePercent": {
+        "before": 100,
+        "after": 100,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9974654377880184,
+        "after": 0.9974654377880184,
+        "change": 0
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.990552995391705,
+        "after": 0.990552995391705,
+        "change": 0
+      },
+      "mae": {
+        "before": 0.22938995813379115,
+        "after": 0.2293815246528719,
+        "change": -0.000008433480919251002
+      },
+      "rmse": {
+        "before": 0.24961875562522526,
+        "after": 0.24960931634211356,
+        "change": -0.000009439283111700725
+      },
+      "mae8Bit": {
+        "before": 58.49443932411674,
+        "after": 58.492288786482334,
+        "change": -0.0021505376344066462
+      },
+      "rmse8Bit": {
+        "before": 63.65278268443244,
+        "after": 63.65037566723896,
+        "change": -0.0024070171934766904
+      },
+      "ssimBlock8": {
+        "before": 0.483163380280684,
+        "after": 0.483169344916972,
+        "change": 0.000005964636287991709
+      }
+    },
+    "Scene material/light · ENV-003 Plinth logo mark (interlocking W)": {
+      "pixelDifferencePercent": {
+        "before": 100,
+        "after": 100,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9990512333965844,
+        "after": 0.9990512333965844,
+        "change": 0
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9928842504743833,
+        "after": 0.9928842504743833,
+        "change": 0
+      },
+      "mae": {
+        "before": 0.26367278094033314,
+        "after": 0.2636696803958775,
+        "change": -0.0000031005444556253536
+      },
+      "rmse": {
+        "before": 0.28176900436499674,
+        "after": 0.28176555647023765,
+        "change": -0.000003447894759089909
+      },
+      "mae8Bit": {
+        "before": 67.23655913978494,
+        "after": 67.23576850094877,
+        "change": -0.0007906388361789141
+      },
+      "rmse8Bit": {
+        "before": 71.85109611307416,
+        "after": 71.8502168999106,
+        "change": -0.0008792131635573242
+      },
+      "ssimBlock8": {
+        "before": 0.4640284318837412,
+        "after": 0.4639822140387625,
+        "change": -0.000046217844978713174
+      }
+    },
+    "Scene material/light · ENV-004 Plinth wordmark \"WORA\" (dark navy)": {
+      "pixelDifferencePercent": {
+        "before": 100,
+        "after": 100,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9986842105263158,
+        "after": 0.9986842105263158,
+        "change": 0
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9868421052631579,
+        "after": 0.9868421052631579,
+        "change": 0
+      },
+      "mae": {
+        "before": 0.2614717348927875,
+        "after": 0.2614694415778007,
+        "change": -0.000002293314986800965
+      },
+      "rmse": {
+        "before": 0.27951842573996155,
+        "after": 0.27951642286425554,
+        "change": -0.0000020028757060086555
+      },
+      "mae8Bit": {
+        "before": 66.67529239766081,
+        "after": 66.67470760233918,
+        "change": -0.000584795321628917
+      },
+      "rmse8Bit": {
+        "before": 71.27719856369019,
+        "after": 71.27668783038516,
+        "change": -0.0005107333050347052
+      },
+      "ssimBlock8": {
+        "before": 0.38851241863285035,
+        "after": 0.38842038926468114,
+        "change": -0.00009202936816921081
+      }
+    },
+    "Scene material/light · ENV-005 Central round planter + tree": {
+      "pixelDifferencePercent": {
+        "before": 100,
+        "after": 100,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9942338840298024,
+        "after": 0.9942338840298024,
+        "change": 0
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9565273728539034,
+        "after": 0.9532879818594104,
+        "change": -0.0032393909944929966
+      },
+      "mae": {
+        "before": 0.1876723599492707,
+        "after": 0.1882167470162668,
+        "change": 0.0005443870669961104
+      },
+      "rmse": {
+        "before": 0.23400452923366621,
+        "after": 0.23434733892529952,
+        "change": 0.00034280969163330566
+      },
+      "mae8Bit": {
+        "before": 47.85645178706403,
+        "after": 47.99527048914804,
+        "change": 0.13881870208400926
+      },
+      "rmse8Bit": {
+        "before": 59.671154954584885,
+        "after": 59.75857142595138,
+        "change": 0.08741647136649533
+      },
+      "ssimBlock8": {
+        "before": 0.140096052292455,
+        "after": 0.14258351154568305,
+        "change": 0.002487459253228047
+      }
+    },
+    "Scene material/light · ENV-006 Curved brown sofa (left lounge)": {
+      "pixelDifferencePercent": {
+        "before": 100,
+        "after": 100,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9927272727272727,
+        "after": 0.9927272727272727,
+        "change": 0
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9558441558441558,
+        "after": 0.9558441558441558,
+        "change": 0
+      },
+      "mae": {
+        "before": 0.2283769912005206,
+        "after": 0.22837359590300768,
+        "change": -0.0000033952975129203367
+      },
+      "rmse": {
+        "before": 0.2986420947461093,
+        "after": 0.29863624665182276,
+        "change": -0.000005848094286553529
+      },
+      "mae8Bit": {
+        "before": 58.236132756132754,
+        "after": 58.23526695526696,
+        "change": -0.0008658008657960181
+      },
+      "rmse8Bit": {
+        "before": 76.15373416025787,
+        "after": 76.1522428962148,
+        "change": -0.0014912640430679858
+      },
+      "ssimBlock8": {
+        "before": 0.197797210556913,
+        "after": 0.19775527818352656,
+        "change": -0.00004193237338642741
+      }
+    },
+    "Scene material/light · ENV-009 Brown sofa (right of planter)": {
+      "pixelDifferencePercent": {
+        "before": 100,
+        "after": 100,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9960346070656092,
+        "after": 0.9960346070656092,
+        "change": 0
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9844989185291997,
+        "after": 0.9844989185291997,
+        "change": 0
+      },
+      "mae": {
+        "before": 0.24745418475008366,
+        "after": 0.24745465597919053,
+        "change": 4.712291068742491e-7
+      },
+      "rmse": {
+        "before": 0.3320325285128136,
+        "after": 0.33203260921387456,
+        "change": 8.070106094493212e-8
+      },
+      "mae8Bit": {
+        "before": 63.100817111271326,
+        "after": 63.100937274693585,
+        "change": 0.00012016342225962262
+      },
+      "rmse8Bit": {
+        "before": 84.66829477076747,
+        "after": 84.66831534953802,
+        "change": 0.000020578770545398584
+      },
+      "ssimBlock8": {
+        "before": 0.1723285279568254,
+        "after": 0.1723092767786649,
+        "change": -0.000019251178160512028
+      }
+    },
+    "Scene material/light · ENV-010 Dark grey curved bench": {
+      "pixelDifferencePercent": {
+        "before": 100,
+        "after": 100,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9857777777777778,
+        "after": 0.9855555555555555,
+        "change": -0.00022222222222223476
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9302222222222222,
+        "after": 0.9302222222222222,
+        "change": 0
+      },
+      "mae": {
+        "before": 0.18814901960784314,
+        "after": 0.18814611474219317,
+        "change": -0.0000029048656499663927
+      },
+      "rmse": {
+        "before": 0.23714943429647053,
+        "after": 0.23714641283410132,
+        "change": -0.0000030214623692181863
+      },
+      "mae8Bit": {
+        "before": 47.978,
+        "after": 47.977259259259256,
+        "change": -0.0007407407407455935
+      },
+      "rmse8Bit": {
+        "before": 60.47310574559999,
+        "after": 60.47233527269584,
+        "change": -0.0007704729041506653
+      },
+      "ssimBlock8": {
+        "before": 0.3447120066213018,
+        "after": 0.34466989482807087,
+        "change": -0.00004211179323093672
+      }
+    },
+    "Scene material/light · ENV-014 Lower-left exterior facade (floors below)": {
+      "pixelDifferencePercent": {
+        "before": 100,
+        "after": 100,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9900397940074906,
+        "after": 0.9894779962546817,
+        "change": -0.0005617977528089568
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9621488764044944,
+        "after": 0.9622776217228465,
+        "change": 0.0001287453183520526
+      },
+      "mae": {
+        "before": 0.2611134060365719,
+        "after": 0.2600343932829062,
+        "change": -0.0010790127536657312
+      },
+      "rmse": {
+        "before": 0.3136716902353443,
+        "after": 0.31259630831095886,
+        "change": -0.0010753819243854434
+      },
+      "mae8Bit": {
+        "before": 66.58391853932584,
+        "after": 66.30877028714107,
+        "change": -0.27514825218476346
+      },
+      "rmse8Bit": {
+        "before": 79.9862810100128,
+        "after": 79.71205861929451,
+        "change": -0.27422239071829324
+      },
+      "ssimBlock8": {
+        "before": 0.14710621468033336,
+        "after": 0.14802817286233025,
+        "change": 0.0009219581819968903
+      }
+    },
+    "Scene material/light · ENV-015 Lower-right exterior facade (floors below)": {
+      "pixelDifferencePercent": {
+        "before": 99.99895388735459,
+        "after": 99.99895388735459,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9880952380952381,
+        "after": 0.98830446062432,
+        "change": 0.0002092225290818428
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9425684157670098,
+        "after": 0.9431960833542555,
+        "change": 0.0006276675872457504
+      },
+      "mae": {
+        "before": 0.21461913021408524,
+        "after": 0.21463049386909616,
+        "change": 0.000011363655010920848
+      },
+      "rmse": {
+        "before": 0.2695185865875206,
+        "after": 0.26949835702181885,
+        "change": -0.000020229565701745944
+      },
+      "mae8Bit": {
+        "before": 54.72787820459174,
+        "after": 54.73077593661952,
+        "change": 0.0028977320277832064
+      },
+      "rmse8Bit": {
+        "before": 68.72723957981775,
+        "after": 68.72208104056381,
+        "change": -0.00515853925394083
+      },
+      "ssimBlock8": {
+        "before": 0.26801173959336977,
+        "after": 0.2675879318845813,
+        "change": -0.00042380770878847063
+      }
+    },
+    "Scene material/light · ENV-016 Exterior glazing + outdoor trees (top band)": {
+      "pixelDifferencePercent": {
+        "before": 100,
+        "after": 100,
+        "change": 0
+      },
+      "pixelDifferenceOver8Ratio": {
+        "before": 0.9936929256733326,
+        "after": 0.9936423534851462,
+        "change": -0.00005057218818638187
+      },
+      "pixelDifferenceOver16Ratio": {
+        "before": 0.9484524910414981,
+        "after": 0.9484163680499365,
+        "change": -0.000036122991561637896
+      },
+      "mae": {
+        "before": 0.19670650867367329,
+        "after": 0.19652171005958735,
+        "change": -0.0001847986140859348
+      },
+      "rmse": {
+        "before": 0.24309571699640772,
+        "after": 0.24285565861829292,
+        "change": -0.00024005837811480468
+      },
+      "mae8Bit": {
+        "before": 50.16015971178669,
+        "after": 50.11303606519478,
+        "change": -0.04712364659191337
+      },
+      "rmse8Bit": {
+        "before": 61.98940783408397,
+        "after": 61.9281929476647,
+        "change": -0.06121488641927186
+      },
+      "ssimBlock8": {
+        "before": 0.2968438737692915,
+        "after": 0.2973673955803588,
+        "change": 0.0005235218110672957
+      }
+    }
+  },
+  "viewportDeltas": {
+    "desktop-1920x1080": {
+      "fullFrame": {
+        "pixelDifferencePercent": {
+          "before": 98.51948302469135,
+          "after": 98.51490162037037,
+          "change": -0.0045814043209873034
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.7605174575617284,
+          "after": 0.7588753858024692,
+          "change": -0.0016420717592592338
+        },
+        "mae": {
+          "before": 0.17126258775114983,
+          "after": 0.1685983014605019,
+          "change": -0.002664286290647938
+        },
+        "rmse": {
+          "before": 0.24968533395770695,
+          "after": 0.24613444524791436,
+          "change": -0.003550888709792588
+        },
+        "mae8Bit": {
+          "before": 43.67195987654321,
+          "after": 42.992566872427986,
+          "change": -0.6793930041152265
+        },
+        "rmse8Bit": {
+          "before": 63.669760159215265,
+          "after": 62.764283538218166,
+          "change": -0.9054766209970992
+        },
+        "ssimBlock8": {
+          "before": 0.35720070339000576,
+          "after": 0.3613392414695393,
+          "change": 0.004138538079533516
+        }
+      },
+      "measuredUiRegions": {
+        "pixelDifferencePercent": {
+          "before": 95.22963695077188,
+          "after": 95.2153400031702,
+          "change": -0.014296947601678767
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.25999620820085345,
+          "after": 0.2561842068457515,
+          "change": -0.003812001355101957
+        },
+        "mae": {
+          "before": 0.06557136975097817,
+          "after": 0.0629443411785548,
+          "change": -0.002627028572423376
+        },
+        "rmse": {
+          "before": 0.17694477509937379,
+          "after": 0.17096180336638803,
+          "change": -0.005982971732985759
+        },
+        "mae8Bit": {
+          "before": 16.720699286499435,
+          "after": 16.050807000531474,
+          "change": -0.6698922859679612
+        },
+        "rmse8Bit": {
+          "before": 45.12091765034032,
+          "after": 43.595259858428946,
+          "change": -1.525657791911371
+        },
+        "ssimBlock8": {
+          "before": 0.6829261566504625,
+          "after": 0.6946930908884748,
+          "change": 0.011766934238012228
+        }
+      },
+      "sceneOutsideMeasuredUi": {
+        "pixelDifferencePercent": {
+          "before": 99.99979022533994,
+          "after": 99.99958045067989,
+          "change": -0.0002097746600497885
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.9857332253693083,
+          "after": 0.9850675404480507,
+          "change": -0.0006656849212576255
+        },
+        "mae": {
+          "before": 0.21881966718148751,
+          "after": 0.2161386163166533,
+          "change": -0.0026810508648342224
+        },
+        "rmse": {
+          "before": 0.27623647723369055,
+          "after": 0.2732954260759823,
+          "change": -0.002941051157708263
+        },
+        "mae8Bit": {
+          "before": 55.79901513127931,
+          "after": 55.115347160746595,
+          "change": -0.6836679705327171
+        },
+        "rmse8Bit": {
+          "before": 70.44030169459108,
+          "after": 69.69033364937548,
+          "change": -0.7499680452156099
+        },
+        "ssimBlock8": {
+          "before": 0.21273517393274502,
+          "after": 0.21325219622787586,
+          "change": 0.0005170222951308423
+        }
+      }
+    },
+    "desktop-1440x900": {
+      "fullFrame": {
+        "pixelDifferencePercent": {
+          "before": 99.02114197530864,
+          "after": 99.02391975308642,
+          "change": 0.0027777777777799884
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.8596581790123456,
+          "after": 0.8586057098765432,
+          "change": -0.0010524691358024807
+        },
+        "mae": {
+          "before": 0.20027994533204227,
+          "after": 0.1990873043250222,
+          "change": -0.0011926410070200733
+        },
+        "rmse": {
+          "before": 0.27774822873149674,
+          "after": 0.2761703992471678,
+          "change": -0.0015778294843289409
+        },
+        "mae8Bit": {
+          "before": 51.07138605967078,
+          "after": 50.767262602880656,
+          "change": -0.30412345679012276
+        },
+        "rmse8Bit": {
+          "before": 70.82579832653167,
+          "after": 70.42345180802779,
+          "change": -0.4023465185038759
+        },
+        "ssimBlock8": {
+          "before": 0.24554913034369535,
+          "after": 0.24929299847121741,
+          "change": 0.0037438681275220598
+        }
+      },
+      "measuredUiRegions": {
+        "pixelDifferencePercent": {
+          "before": 96.51753039782788,
+          "after": 96.52768817278101,
+          "change": 0.010157774953128751
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.5325666501030877,
+          "after": 0.5302221258301235,
+          "change": -0.0023445242729641658
+        },
+        "mae": {
+          "before": 0.13058727460294825,
+          "after": 0.1282934871688067,
+          "change": -0.0022937874341415476
+        },
+        "rmse": {
+          "before": 0.2415758326776016,
+          "after": 0.23748851583091435,
+          "change": -0.004087316846687256
+        },
+        "mae8Bit": {
+          "before": 33.29975502375181,
+          "after": 32.71483922804571,
+          "change": -0.5849157957060953
+        },
+        "rmse8Bit": {
+          "before": 61.601837332788406,
+          "after": 60.55957153688316,
+          "change": -1.0422657959052444
+        },
+        "ssimBlock8": {
+          "before": 0.41270961876247714,
+          "after": 0.42488515328197507,
+          "change": 0.012175534519497933
+        }
+      },
+      "sceneOutsideMeasuredUi": {
+        "pixelDifferencePercent": {
+          "before": 99.99989267472823,
+          "after": 99.99978534945645,
+          "change": -0.00010732527178447526
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.9875298766725302,
+          "after": 0.9869825177864807,
+          "change": -0.0005473588860495093
+        },
+        "mae": {
+          "before": 0.22752528595678773,
+          "after": 0.22676312220326914,
+          "change": -0.000762163753518591
+        },
+        "rmse": {
+          "before": 0.2906679872750133,
+          "after": 0.28989257036181004,
+          "change": -0.000775416913203264
+        },
+        "mae8Bit": {
+          "before": 58.01894791898087,
+          "after": 57.82459616183363,
+          "change": -0.1943517571472384
+        },
+        "rmse8Bit": {
+          "before": 74.12033675512839,
+          "after": 73.92260544226156,
+          "change": -0.19773131286683565
+        },
+        "ssimBlock8": {
+          "before": 0.18528484741821868,
+          "after": 0.18650798328884863,
+          "change": 0.0012231358706299433
+        }
+      }
+    },
+    "desktop-1366x768": {
+      "fullFrame": {
+        "pixelDifferencePercent": {
+          "before": 98.53329749267935,
+          "after": 98.52843612737921,
+          "change": -0.004861365300143916
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.7639969192288921,
+          "after": 0.7621820095168375,
+          "change": -0.0018149097120546687
+        },
+        "mae": {
+          "before": 0.17109863067868272,
+          "after": 0.16844191167499212,
+          "change": -0.002656719003690605
+        },
+        "rmse": {
+          "before": 0.24842696383225182,
+          "after": 0.24489085879034336,
+          "change": -0.0035361050419084605
+        },
+        "mae8Bit": {
+          "before": 43.6301508230641,
+          "after": 42.952687477122986,
+          "change": -0.6774633459411135
+        },
+        "rmse8Bit": {
+          "before": 63.348875777224215,
+          "after": 62.44716899153756,
+          "change": -0.9017067856866561
+        },
+        "ssimBlock8": {
+          "before": 0.3035618183710459,
+          "after": 0.3100826886458344,
+          "change": 0.006520870274788482
+        }
+      },
+      "measuredUiRegions": {
+        "pixelDifferencePercent": {
+          "before": 95.28355390421184,
+          "after": 95.26791927627,
+          "change": -0.015634627941835788
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.2727936014518745,
+          "after": 0.2683239372285016,
+          "change": -0.00446966422337286
+        },
+        "mae": {
+          "before": 0.0675820988779715,
+          "after": 0.06498200595181813,
+          "change": -0.0026000929261533606
+        },
+        "rmse": {
+          "before": 0.17636210800887986,
+          "after": 0.17054967517718614,
+          "change": -0.00581243283169372
+        },
+        "mae8Bit": {
+          "before": 17.233435213882732,
+          "after": 16.570411517713623,
+          "change": -0.663023696169109
+        },
+        "rmse8Bit": {
+          "before": 44.97233754226436,
+          "after": 43.49016717018246,
+          "change": -1.482170372081903
+        },
+        "ssimBlock8": {
+          "before": 0.6182762324513198,
+          "after": 0.6311403270543413,
+          "change": 0.012864094603021514
+        }
+      },
+      "sceneOutsideMeasuredUi": {
+        "pixelDifferencePercent": {
+          "before": 99.99972333235117,
+          "after": 99.99972333235117,
+          "change": 0
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.9856492490548342,
+          "after": 0.985032280197928,
+          "change": -0.0006169688569062082
+        },
+        "mae": {
+          "before": 0.2178097981703173,
+          "after": 0.21512752701426774,
+          "change": -0.0026822711560495482
+        },
+        "rmse": {
+          "before": 0.2748264686483267,
+          "after": 0.27186006043125666,
+          "change": -0.00296640821707006
+        },
+        "mae8Bit": {
+          "before": 55.541498533430904,
+          "after": 54.85751938863827,
+          "change": -0.6839791447926302
+        },
+        "rmse8Bit": {
+          "before": 70.08074950532331,
+          "after": 69.32431540997045,
+          "change": -0.7564340953528585
+        },
+        "ssimBlock8": {
+          "before": 0.1579992936020471,
+          "after": 0.1613039384662915,
+          "change": 0.0033046448642444215
+        }
+      }
+    },
+    "mobile-390x844": {
+      "fullFrame": {
+        "pixelDifferencePercent": {
+          "before": 100,
+          "after": 100,
+          "change": 0
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.8189755741888444,
+          "after": 0.818887471138656,
+          "change": -0.00008810305018835951
+        },
+        "mae": {
+          "before": 0.2290992202770848,
+          "after": 0.23421901024354327,
+          "change": 0.005119789966458482
+        },
+        "rmse": {
+          "before": 0.3056295971581365,
+          "after": 0.30930848149685775,
+          "change": 0.0036788843387212666
+        },
+        "mae8Bit": {
+          "before": 58.42030117065662,
+          "after": 59.725847612103536,
+          "change": 1.3055464414469142
+        },
+        "rmse8Bit": {
+          "before": 77.9355472753248,
+          "after": 78.87366278169873,
+          "change": 0.9381155063739328
+        },
+        "ssimBlock8": {
+          "before": 0.3177874966878864,
+          "after": 0.30845803060604304,
+          "change": -0.009329466081843374
+        }
+      },
+      "measuredUiRegions": {
+        "pixelDifferencePercent": {
+          "before": 100,
+          "after": 100,
+          "change": 0
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.9878134607548987,
+          "after": 0.987665296144016,
+          "change": -0.00014816461088273947
+        },
+        "mae": {
+          "before": 0.37101692005962417,
+          "after": 0.370688197986656,
+          "change": -0.00032872207296819056
+        },
+        "rmse": {
+          "before": 0.41757911536278874,
+          "after": 0.41704779505024353,
+          "change": -0.0005313203125452137
+        },
+        "mae8Bit": {
+          "before": 94.60931461520416,
+          "after": 94.52549048659728,
+          "change": -0.08382412860687793
+        },
+        "rmse8Bit": {
+          "before": 106.48267441751113,
+          "after": 106.3471877378121,
+          "change": -0.13548667969902795
+        },
+        "ssimBlock8": {
+          "before": 0.06394900717145319,
+          "after": 0.06308378605608406,
+          "change": -0.0008652211153691303
+        }
+      },
+      "sceneOutsideMeasuredUi": {
+        "pixelDifferencePercent": {
+          "before": 100,
+          "after": 100,
+          "change": 0
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.8038906153301364,
+          "after": 0.8038078785291383,
+          "change": -0.00008273680099812886
+        },
+        "mae": {
+          "before": 0.21641946749124003,
+          "after": 0.2220260592154531,
+          "change": 0.0056065917242130725
+        },
+        "rmse": {
+          "before": 0.2935570765525256,
+          "after": 0.29779152076157184,
+          "change": 0.004234444209046229
+        },
+        "mae8Bit": {
+          "before": 55.186964210266204,
+          "after": 56.61664509994054,
+          "change": 1.4296808896743372
+        },
+        "rmse8Bit": {
+          "before": 74.85705452089402,
+          "after": 75.93683779420081,
+          "change": 1.0797832733067878
+        },
+        "ssimBlock8": {
+          "before": 0.3375308290007215,
+          "after": 0.3277319215097673,
+          "change": -0.00979890749095419
+        }
+      }
+    },
+    "mobile-430x932": {
+      "fullFrame": {
+        "pixelDifferencePercent": {
+          "before": 100,
+          "after": 99.99975047409922,
+          "change": -0.0002495259007844197
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.8133421499151612,
+          "after": 0.8132348537778221,
+          "change": -0.00010729613733906351
+        },
+        "mae": {
+          "before": 0.2366924249155363,
+          "after": 0.23626310989512084,
+          "change": -0.00042931502041546055
+        },
+        "rmse": {
+          "before": 0.3111854062826122,
+          "after": 0.31063196769165086,
+          "change": -0.0005534385909613526
+        },
+        "mae8Bit": {
+          "before": 60.35656835346175,
+          "after": 60.247093023255815,
+          "change": -0.1094753302059388
+        },
+        "rmse8Bit": {
+          "before": 79.35227860206612,
+          "after": 79.21115176137097,
+          "change": -0.1411268406951507
+        },
+        "ssimBlock8": {
+          "before": 0.31903621572123997,
+          "after": 0.31914121091516817,
+          "change": 0.00010499519392820345
+        }
+      },
+      "measuredUiRegions": {
+        "pixelDifferencePercent": {
+          "before": 100,
+          "after": 100,
+          "change": 0
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.9874935806422379,
+          "after": 0.9874935806422379,
+          "change": 0
+        },
+        "mae": {
+          "before": 0.37065854466125636,
+          "after": 0.37044392438021234,
+          "change": -0.0002146202810440201
+        },
+        "rmse": {
+          "before": 0.4171577280904628,
+          "after": 0.416748884719238,
+          "change": -0.00040884337122482073
+        },
+        "mae8Bit": {
+          "before": 94.51792888862036,
+          "after": 94.46320071695415,
+          "change": -0.05472817166621269
+        },
+        "rmse8Bit": {
+          "before": 106.37522066306802,
+          "after": 106.27096560340568,
+          "change": -0.10425505966233573
+        },
+        "ssimBlock8": {
+          "before": 0.07458423379779489,
+          "after": 0.07407233360546456,
+          "change": -0.0005119001923303279
+        }
+      },
+      "sceneOutsideMeasuredUi": {
+        "pixelDifferencePercent": {
+          "before": 100,
+          "after": 99.99972800735468,
+          "change": -0.0002719926453238486
+        },
+        "pixelDifferenceOver8Ratio": {
+          "before": 0.7976619512208389,
+          "after": 0.7975449943833519,
+          "change": -0.00011695683748702557
+        },
+        "mae": {
+          "before": 0.2246304202156596,
+          "after": 0.22418177456926008,
+          "change": -0.00044864564639951476
+        },
+        "rmse": {
+          "before": 0.2998113842193229,
+          "after": 0.29923642860928457,
+          "change": -0.0005749556100383413
+        },
+        "mae8Bit": {
+          "before": 57.280757154993196,
+          "after": 57.16635251516132,
+          "change": -0.11440463983187499
+        },
+        "rmse8Bit": {
+          "before": 76.45190297592734,
+          "after": 76.30528929536757,
+          "change": -0.1466136805597671
+        },
+        "ssimBlock8": {
+          "before": 0.33863277907109096,
+          "after": 0.33901035039155963,
+          "change": 0.0003775713204686726
+        }
+      }
+    }
+  },
+  "rootCauseFindings": [
+    "UI text/shape anti-aliasing, typeface metrics, and colors were conflated in exact pixel counts; Inter is now explicitly embedded because the measured UI CSS requested it but the baseline had no font asset.",
+    "The browser-only gold REFERENCE SNAPSHOT · STATIC line in Live Activity was an invented visible element; removed from the visible layer while retaining the local/static disclosure in the tooltip and screen-reader-only text.",
+    "The top-right reference contains a real portrait; the implementation intentionally uses a neutral circle, so this region cannot be exact without an approved avatar source.",
+    "The measured room and robot ROIs remain near-total pixel mismatch; visual inspection shows broad layout correspondence but substantial differences in room boundaries, windows/environment, robot/desk detail, materials, lighting and shadows. No robot position or building geometry was altered in this pass; identifying a permissible geometry/asset correction needs a separately reviewed plan.",
+    "Mobile has no reference image and is composed as a distinct narrow-screen UI. Letterboxed desktop-reference metrics are recorded solely for transparency and are not a mobile quality score."
+  ],
+  "independentReview": {
+    "status": "not performed",
+    "reason": "No independent reviewer/orchestration service is available in this coding environment; no independent review is claimed."
+  }
+}

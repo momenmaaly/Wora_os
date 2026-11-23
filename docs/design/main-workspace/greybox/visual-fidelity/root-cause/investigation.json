@@ -1,0 +1,6850 @@
+{
+  "generatedAt": "2026-11-22T21:24:45.636Z",
+  "reference": {
+    "path": "docs/design/main-workspace/reference/wora-main-workspace.png",
+    "sha256": "6f91ff3d27f1d69d7189b6d1a599088086bb50048d1c0b492e3ebcdb718036a1",
+    "width": 1672,
+    "height": 941,
+    "pngChunks": {
+      "header": {
+        "bitDepth": 8,
+        "colorType": 2,
+        "colorTypeName": "RGB"
+      },
+      "chunks": [
+        {
+          "type": "IHDR",
+          "length": 13
+        },
+        {
+          "type": "caBX",
+          "length": 23654
+        },
+        {
+          "type": "IDAT",
+          "length": 2671597
+        },
+        {
+          "type": "IEND",
+          "length": 0
+        }
+      ],
+      "colorProfileChunks": []
+    },
+    "alpha": {
+      "nonOpaquePixels": 0,
+      "fullyTransparentPixels": 0
+    }
+  },
+  "currentCapture": {
+    "path": "docs/design/main-workspace/greybox/visual-fidelity/root-cause/current-browser-screenshot.png",
+    "sha256": "29d83fc8e484e04451bd1746312178311c140bb27d925cf2b8b1409ee8fa4960",
+    "byteIdenticalToPreviousAfterCapture": true,
+    "previousAfterCaptureSha256": "29d83fc8e484e04451bd1746312178311c140bb27d925cf2b8b1409ee8fa4960",
+    "width": 1672,
+    "height": 941,
+    "pngChunks": {
+      "header": {
+        "bitDepth": 8,
+        "colorType": 2,
+        "colorTypeName": "RGB"
+      },
+      "chunks": [
+        {
+          "type": "IHDR",
+          "length": 13
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 4096
+        },
+        {
+          "type": "IDAT",
+          "length": 2629
+        },
+        {
+          "type": "IDAT",
+          "length": 6
+        },
+        {
+          "type": "IEND",
+          "length": 0
+        }
+      ],
+      "colorProfileChunks": []
+    },
+    "alpha": {
+      "nonOpaquePixels": 0,
+      "fullyTransparentPixels": 0
+    },
+    "webglCanvas": {
+      "path": "docs/design/main-workspace/greybox/visual-fidelity/root-cause/current-webgl-canvas.png",
+      "width": 1672,
+      "height": 941,
+      "alpha": {
+        "nonOpaquePixels": 0,
+        "fullyTransparentPixels": 0
+      },
+      "pngChunks": {
+        "header": {
+          "bitDepth": 8,
+          "colorType": 6,
+          "colorTypeName": "RGBA"
+        },
+        "chunks": [
+          {
+            "type": "IHDR",
+            "length": 13
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 4096
+          },
+          {
+            "type": "IDAT",
+            "length": 2179
+          },
+          {
+            "type": "IDAT",
+            "length": 6
+          },
+          {
+            "type": "IEND",
+            "length": 0
+          }
+        ],
+        "colorProfileChunks": []
+      }
+    },
+    "browserInfo": {
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.0 Safari/537.36",
+      "viewport": {
+        "innerWidth": 1672,
+        "innerHeight": 941,
+        "outerWidth": 1672,
+        "outerHeight": 941,
+        "devicePixelRatio": 1,
+        "visualViewport": {
+          "width": 1672,
+          "height": 941,
+          "scale": 1,
+          "offsetLeft": 0,
+          "offsetTop": 0
+        }
+      },
+      "document": {
+        "clientWidth": 1672,
+        "clientHeight": 941,
+        "scrollWidth": 1672,
+        "scrollHeight": 941,
+        "backgroundColor": "rgb(22, 24, 27)"
+      },
+      "uiShell": {
+        "x": 0,
+        "y": 0,
+        "width": 1672,
+        "height": 941,
+        "top": 0,
+        "left": 0,
+        "right": 1672,
+        "bottom": 941
+      },
+      "canvas": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1672,
+          "height": 941,
+          "top": 0,
+          "left": 0,
+          "right": 1672,
+          "bottom": 941
+        },
+        "cssWidth": "1672px",
+        "cssHeight": "941px",
+        "bitmapWidth": 1672,
+        "bitmapHeight": 941,
+        "drawingBufferWidth": 1672,
+        "drawingBufferHeight": 941,
+        "drawingBufferColorSpace": "srgb",
+        "contextAttributes": {
+          "alpha": true,
+          "antialias": true,
+          "depth": true,
+          "stencil": false,
+          "premultipliedAlpha": true,
+          "preserveDrawingBuffer": true
+        }
+      },
+      "camera": {
+        "type": "PerspectiveCamera",
+        "fov": 12.0006,
+        "aspect": 1.7768331562167907,
+        "near": 1,
+        "far": 400,
+        "position": [
+          60.675,
+          46.538,
+          61.964
+        ],
+        "quaternion": [
+          -0.2215131438543051,
+          0.3743891198215765,
+          0.09259420776622,
+          0.8956511747031615
+        ],
+        "rotation": [
+          -0.6434830594618849,
+          0.6810671361608673,
+          0.44116055349812583
+        ],
+        "zoom": 1,
+        "matrixWorld": [
+          0.7025181992947426,
+          0,
+          -0.7116657780585436,
+          0,
+          -0.3317284438260942,
+          0.8847164795758561,
+          -0.32746448711825493,
+          0,
+          0.6296224417985672,
+          0.46612954290294006,
+          0.6215294281180144,
+          0,
+          60.675,
+          46.538,
+          61.964,
+          1
+        ],
+        "matrixWorldInverse": [
+          0.7025181992947428,
+          -0.3317284438260942,
+          0.6296224417985673,
+          0,
+          5.551115123125784e-17,
+          0.8847164795758562,
+          0.4661295429029402,
+          0,
+          -0.7116657780585437,
+          -0.327464487118255,
+          0.6215294281180144,
+          0,
+          1.4723665294110877,
+          -0.7543027175573771,
+          -98.40752780764974,
+          1
+        ],
+        "projectionMatrix": [
+          5.354405522439789,
+          0,
+          0,
+          0,
+          0,
+          9.513885264101303,
+          0,
+          0,
+          0,
+          0,
+          -1.005012531328321,
+          -1,
+          0,
+          0,
+          -2.0050125313283207,
+          0
+        ]
+      },
+      "renderer": null,
+      "fonts": {
+        "status": "loaded",
+        "interRegular": true,
+        "interSemibold": true
+      },
+      "selectedView": [
+        "3D View"
+      ]
+    }
+  },
+  "alignment": {
+    "exactNativeDimensions": true,
+    "referenceExtent": {
+      "leftTop": {
+        "x": 0,
+        "y": 0
+      },
+      "rightBottom": {
+        "x": 1672,
+        "y": 941
+      }
+    },
+    "currentExtent": {
+      "leftTop": {
+        "x": 0,
+        "y": 0
+      },
+      "rightBottom": {
+        "x": 1672,
+        "y": 941
+      }
+    },
+    "resize": "none",
+    "crop": "none",
+    "deviceScaleFactor": 1,
+    "viewport": [
+      1672,
+      941
+    ],
+    "cssCanvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1672,
+      "height": 941,
+      "top": 0,
+      "left": 0,
+      "right": 1672,
+      "bottom": 941
+    },
+    "canvasBitmap": [
+      1672,
+      941
+    ],
+    "drawingBuffer": [
+      1672,
+      941
+    ],
+    "uiShellCssRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1672,
+      "height": 941,
+      "top": 0,
+      "left": 0,
+      "right": 1672,
+      "bottom": 941
+    },
+    "cameraPose": {
+      "position": [
+        60.675,
+        46.538,
+        61.964
+      ],
+      "rotation": [
+        -0.6434830594618849,
+        0.6810671361608673,
+        0.44116055349812583
+      ],
+      "quaternion": [
+        -0.2215131438543051,
+        0.3743891198215765,
+        0.09259420776622,
+        0.8956511747031615
+      ],
+      "zoom": 1,
+      "fov": 12.0006,
+      "aspect": 1.7768331562167907,
+      "near": 1,
+      "far": 400,
+      "matrixWorld": [
+        0.7025181992947426,
+        0,
+        -0.7116657780585436,
+        0,
+        -0.3317284438260942,
+        0.8847164795758561,
+        -0.32746448711825493,
+        0,
+        0.6296224417985672,
+        0.46612954290294006,
+        0.6215294281180144,
+        0,
+        60.675,
+        46.538,
+        61.964,
+        1
+      ],
+      "projectionMatrix": [
+        5.354405522439789,
+        0,
+        0,
+        0,
+        0,
+        9.513885264101303,
+        0,
+        0,
+        0,
+        0,
+        -1.005012531328321,
+        -1,
+        0,
+        0,
+        -2.0050125313283207,
+        0
+      ]
+    },
+    "cameraConfigurationCheck": {
+      "source": "docs/design/main-workspace/architecture/data/scene-architecture.json",
+      "expected": {
+        "type": "perspective",
+        "position": [
+          60.675,
+          46.538,
+          61.964
+        ],
+        "target": [
+          -2.186,
+          0,
+          -0.089
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "fov_vertical_deg": 12.0006,
+        "fov_horizontal_deg": 21.158,
+        "aspect": 1.776833,
+        "focal_px_at_941": 4476.3,
+        "focal_mm_35mm_equiv_vertical24": 114.2,
+        "yaw_deg": 225.37,
+        "pitch_down_deg": 27.783,
+        "roll_deg": 0,
+        "principal_point_px": [
+          836,
+          470.5
+        ],
+        "near": 1,
+        "far": 400,
+        "distance_to_origin": 98.42,
+        "fit": {
+          "method": "robust least-squares on vanishing directions of 270 Hough segments (X:170, Z:90, Y:10)",
+          "bootstrap_90pct": {
+            "yaw": [
+              223.88,
+              227.114
+            ],
+            "pitch": [
+              27.563,
+              28.011
+            ],
+            "roll": [
+              -1.075,
+              1.462
+            ],
+            "f": [
+              3975.614,
+              5025.97
+            ]
+          }
+        }
+      },
+      "fieldChecks": {
+        "position": {
+          "actual": [
+            60.675,
+            46.538,
+            61.964
+          ],
+          "expected": [
+            60.675,
+            46.538,
+            61.964
+          ],
+          "absoluteDelta": 0,
+          "within1e6": true
+        },
+        "orientationQuaternion": {
+          "actual": [
+            -0.2215131438543051,
+            0.3743891198215765,
+            0.09259420776622,
+            0.8956511747031615
+          ],
+          "expected": [
+            -0.2215131438543051,
+            0.3743891198215765,
+            0.09259420776622,
+            0.8956511747031615
+          ],
+          "absoluteDelta": 0,
+          "within1e6": true
+        },
+        "verticalFov": {
+          "actual": 12.0006,
+          "expected": 12.0006,
+          "absoluteDelta": 0,
+          "within1e6": true
+        },
+        "aspect": {
+          "actual": 1.7768331562167907,
+          "expected": 1.776833,
+          "absoluteDelta": 1.5621679061439409e-7,
+          "within1e6": true
+        },
+        "near": {
+          "actual": 1,
+          "expected": 1,
+          "absoluteDelta": 0,
+          "within1e6": true
+        },
+        "far": {
+          "actual": 400,
+          "expected": 400,
+          "absoluteDelta": 0,
+          "within1e6": true
+        },
+        "zoom": {
+          "actual": 1,
+          "expected": 1,
+          "absoluteDelta": 0,
+          "within1e6": true
+        }
+      },
+      "approvedCameraMatches": true
+    }
+  },
+  "fullFrameMetrics": {
+    "pixelsCompared": 1573352,
+    "pixelsExactlyIdentical": 23222,
+    "pixelsWithAnyRgbDifference": 1550130,
+    "exactPixelMatchPercent": 1.475957064916179,
+    "changedPixelPercent": 98.52404293508383,
+    "channelsCompared": 4720056,
+    "channelsExactlyIdentical": 296246,
+    "channelsDifferent": 4423810,
+    "sumAbsoluteRgbChannelDifference": 204461426,
+    "sumSquaredRgbChannelDifference": 18758271846,
+    "meanAbsoluteErrorRgb8Bit": 43.31758479136688,
+    "rootMeanSquareErrorRgb8Bit": 63.04096276055859,
+    "thresholds": {
+      "maxChannelAbsoluteDifference": {
+        "gte1": {
+          "pixels": 1550130,
+          "percent": 98.52404293508383
+        },
+        "gte8": {
+          "pixels": 1216475,
+          "percent": 77.31740894599555
+        },
+        "gte16": {
+          "pixels": 1108070,
+          "percent": 70.4273423874632
+        },
+        "gte32": {
+          "pixels": 925103,
+          "percent": 58.798221885503054
+        }
+      },
+      "linearLumaDifference": {
+        "gte1": {
+          "pixels": 1384154,
+          "percent": 87.97484606114843
+        },
+        "gte8": {
+          "pixels": 1100574,
+          "percent": 69.95090736211604
+        },
+        "gte16": {
+          "pixels": 968794,
+          "percent": 61.57515927777128
+        },
+        "gte32": {
+          "pixels": 760446,
+          "percent": 48.332858762692645
+        }
+      },
+      "rgbEuclideanDistance": {
+        "gte1": {
+          "pixels": 1550130,
+          "percent": 98.52404293508383
+        },
+        "gte8": {
+          "pixels": 1254986,
+          "percent": 79.76511295628696
+        },
+        "gte16": {
+          "pixels": 1146293,
+          "percent": 72.85674153018523
+        },
+        "gte32": {
+          "pixels": 1003381,
+          "percent": 63.773459467430044
+        }
+      }
+    }
+  },
+  "repeatCaptureStability": {
+    "pixelsCompared": 1573352,
+    "pixelsExactlyIdentical": 1573352,
+    "pixelsWithAnyRgbDifference": 0,
+    "exactPixelMatchPercent": 100,
+    "changedPixelPercent": 0,
+    "channelsCompared": 4720056,
+    "channelsExactlyIdentical": 4720056,
+    "channelsDifferent": 0,
+    "sumAbsoluteRgbChannelDifference": 0,
+    "sumSquaredRgbChannelDifference": 0,
+    "meanAbsoluteErrorRgb8Bit": 0,
+    "rootMeanSquareErrorRgb8Bit": 0,
+    "thresholds": {
+      "maxChannelAbsoluteDifference": {
+        "gte1": {
+          "pixels": 0,
+          "percent": 0
+        },
+        "gte8": {
+          "pixels": 0,
+          "percent": 0
+        },
+        "gte16": {
+          "pixels": 0,
+          "percent": 0
+        },
+        "gte32": {
+          "pixels": 0,
+          "percent": 0
+        }
+      },
+      "linearLumaDifference": {
+        "gte1": {
+          "pixels": 0,
+          "percent": 0
+        },
+        "gte8": {
+          "pixels": 0,
+          "percent": 0
+        },
+        "gte16": {
+          "pixels": 0,
+          "percent": 0
+        },
+        "gte32": {
+          "pixels": 0,
+          "percent": 0
+        }
+      },
+      "rgbEuclideanDistance": {
+        "gte1": {
+          "pixels": 0,
+          "percent": 0
+        },
+        "gte8": {
+          "pixels": 0,
+          "percent": 0
+        },
+        "gte16": {
+          "pixels": 0,
+          "percent": 0
+        },
+        "gte32": {
+          "pixels": 0,
+          "percent": 0
+        }
+      }
+    }
+  },
+  "regionMaskAudit": {
+    "coordinateSource": "docs/design/main-workspace/analysis/data/measurements.json",
+    "coordinateSystem": "Pixels in the original image; origin (0,0) top-left; x right, y down. Normalised = px / width or px / height.",
+    "rawBoxes": [
+      {
+        "name": "UI Shell",
+        "color": "#ff3b30",
+        "rectangles": [
+          {
+            "id": "REG-01",
+            "name": "Brand header bar (top-left)",
+            "x": 0,
+            "y": 0,
+            "w": 295,
+            "h": 67,
+            "confidence": "Medium",
+            "note": "Right edge is a soft fade between x≈292 and x≈310; overlaps the 3D viewport by ≈60 px",
+            "normalizedCenter": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "id": "REG-02",
+            "name": "Left sidebar panel",
+            "x": 0,
+            "y": 67,
+            "w": 235,
+            "h": 874,
+            "confidence": "High",
+            "note": "Solid panel down to the bottom edge; 1 px edge at x=233–234",
+            "normalizedCenter": {
+              "x": 0,
+              "y": 0.0712
+            }
+          },
+          {
+            "id": "REG-04",
+            "name": "Top-centre cluster (search + status strip)",
+            "x": 550,
+            "y": 10,
+            "w": 590,
+            "h": 117,
+            "confidence": "High",
+            "note": "Union of UI-040 and UI-050",
+            "normalizedCenter": {
+              "x": 0.3289,
+              "y": 0.0106
+            }
+          },
+          {
+            "id": "REG-05",
+            "name": "Top-right cluster (notifications + profile)",
+            "x": 1418,
+            "y": 12,
+            "w": 239,
+            "h": 51,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.8481,
+              "y": 0.0128
+            }
+          },
+          {
+            "id": "REG-07",
+            "name": "Executive Command panel",
+            "x": 481,
+            "y": 829,
+            "w": 852,
+            "h": 112,
+            "confidence": "High",
+            "note": "Runs to the bottom image edge; bottom corners are not visible",
+            "normalizedCenter": {
+              "x": 0.2877,
+              "y": 0.881
+            }
+          },
+          {
+            "id": "REG-08",
+            "name": "View switcher",
+            "x": 1369,
+            "y": 853,
+            "w": 288,
+            "h": 73,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.8188,
+              "y": 0.9065
+            }
+          }
+        ],
+        "rawRectanglePixelUnion": 422822,
+        "rawMaskOverlapWithEarlierCategories": 0,
+        "exclusivePixelCount": 422822
+      },
+      {
+        "name": "Live Activity",
+        "color": "#ffcc00",
+        "rectangles": [
+          {
+            "id": "REG-06",
+            "name": "Live Activity panel",
+            "x": 1420,
+            "y": 83,
+            "w": 236,
+            "h": 266,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.8493,
+              "y": 0.0882
+            }
+          }
+        ],
+        "rawRectanglePixelUnion": 62776,
+        "rawMaskOverlapWithEarlierCategories": 0,
+        "exclusivePixelCount": 62776
+      },
+      {
+        "name": "Robots",
+        "color": "#ff40a6",
+        "rectangles": [
+          {
+            "id": "ROBOT-001",
+            "name": "ROBOT-001 Executive Office",
+            "x": 852,
+            "y": 192,
+            "w": 45,
+            "h": 66,
+            "confidence": "High",
+            "note": "Executive desk, figurine (U-01), wood-slat wall, sign above",
+            "normalizedCenter": {
+              "x": 0.5233,
+              "y": 0.2232
+            }
+          },
+          {
+            "id": "ROBOT-002",
+            "name": "ROBOT-002 Marketing",
+            "x": 416,
+            "y": 237,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Back-row desk monitors, bookshelf, blue bar-chart display",
+            "normalizedCenter": {
+              "x": 0.2578,
+              "y": 0.2657
+            }
+          },
+          {
+            "id": "ROBOT-003",
+            "name": "ROBOT-003 Marketing",
+            "x": 459,
+            "y": 268,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Back-right desk, monitors",
+            "normalizedCenter": {
+              "x": 0.2835,
+              "y": 0.2986
+            }
+          },
+          {
+            "id": "ROBOT-004",
+            "name": "ROBOT-004 Marketing",
+            "x": 503,
+            "y": 267,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Back-right desk, potted plant at right",
+            "normalizedCenter": {
+              "x": 0.3098,
+              "y": 0.2976
+            }
+          },
+          {
+            "id": "ROBOT-005",
+            "name": "ROBOT-005 Marketing",
+            "x": 348,
+            "y": 272,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Middle desk, monitors, wall dashboard screen",
+            "normalizedCenter": {
+              "x": 0.2171,
+              "y": 0.3029
+            }
+          },
+          {
+            "id": "ROBOT-006",
+            "name": "ROBOT-006 Marketing",
+            "x": 305,
+            "y": 292,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front-left desk, large plant at left",
+            "normalizedCenter": {
+              "x": 0.1914,
+              "y": 0.3241
+            }
+          },
+          {
+            "id": "ROBOT-007",
+            "name": "ROBOT-007 Marketing",
+            "x": 323,
+            "y": 312,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Front-left desk, beside ROBOT-006",
+            "normalizedCenter": {
+              "x": 0.2022,
+              "y": 0.3454
+            }
+          },
+          {
+            "id": "ROBOT-008",
+            "name": "ROBOT-008 Marketing",
+            "x": 380,
+            "y": 322,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front desk monitors",
+            "normalizedCenter": {
+              "x": 0.2362,
+              "y": 0.356
+            }
+          },
+          {
+            "id": "ROBOT-009",
+            "name": "ROBOT-009 Marketing",
+            "x": 418,
+            "y": 300,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Centre desk, monitors",
+            "normalizedCenter": {
+              "x": 0.259,
+              "y": 0.3326
+            }
+          },
+          {
+            "id": "ROBOT-010",
+            "name": "ROBOT-010 Engineering",
+            "x": 1165,
+            "y": 222,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Back desk, potted plant behind",
+            "normalizedCenter": {
+              "x": 0.7057,
+              "y": 0.2497
+            }
+          },
+          {
+            "id": "ROBOT-011",
+            "name": "ROBOT-011 Engineering",
+            "x": 1215,
+            "y": 219,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Back desk monitors",
+            "normalizedCenter": {
+              "x": 0.7356,
+              "y": 0.2465
+            }
+          },
+          {
+            "id": "ROBOT-012",
+            "name": "ROBOT-012 Engineering",
+            "x": 1222,
+            "y": 235,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Next to ROBOT-011",
+            "normalizedCenter": {
+              "x": 0.7398,
+              "y": 0.2635
+            }
+          },
+          {
+            "id": "ROBOT-013",
+            "name": "ROBOT-013 Engineering",
+            "x": 1112,
+            "y": 254,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Left desk, monitors",
+            "normalizedCenter": {
+              "x": 0.674,
+              "y": 0.2837
+            }
+          },
+          {
+            "id": "ROBOT-014",
+            "name": "ROBOT-014 Engineering",
+            "x": 1160,
+            "y": 267,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Left desk cluster",
+            "normalizedCenter": {
+              "x": 0.7028,
+              "y": 0.2976
+            }
+          },
+          {
+            "id": "ROBOT-015",
+            "name": "ROBOT-015 Engineering",
+            "x": 1257,
+            "y": 273,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Centre desk, below the large code display",
+            "normalizedCenter": {
+              "x": 0.7608,
+              "y": 0.3039
+            }
+          },
+          {
+            "id": "ROBOT-016",
+            "name": "ROBOT-016 Engineering",
+            "x": 1205,
+            "y": 300,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front-centre desk monitors",
+            "normalizedCenter": {
+              "x": 0.7297,
+              "y": 0.3326
+            }
+          },
+          {
+            "id": "ROBOT-017",
+            "name": "ROBOT-017 Engineering",
+            "x": 1295,
+            "y": 307,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Front desk",
+            "normalizedCenter": {
+              "x": 0.7835,
+              "y": 0.3401
+            }
+          },
+          {
+            "id": "ROBOT-018",
+            "name": "ROBOT-018 Engineering",
+            "x": 1267,
+            "y": 325,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front desk monitors",
+            "normalizedCenter": {
+              "x": 0.7667,
+              "y": 0.3592
+            }
+          },
+          {
+            "id": "ROBOT-019",
+            "name": "ROBOT-019 Engineering",
+            "x": 1371,
+            "y": 292,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Right desk, monitors",
+            "normalizedCenter": {
+              "x": 0.8289,
+              "y": 0.3241
+            }
+          },
+          {
+            "id": "ROBOT-020",
+            "name": "ROBOT-020 Creative Studio",
+            "x": 440,
+            "y": 499,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Monitor with colourful artwork, bookshelf",
+            "normalizedCenter": {
+              "x": 0.2721,
+              "y": 0.5441
+            }
+          },
+          {
+            "id": "ROBOT-021",
+            "name": "ROBOT-021 Creative Studio",
+            "x": 458,
+            "y": 530,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Right desk, monitor",
+            "normalizedCenter": {
+              "x": 0.2829,
+              "y": 0.577
+            }
+          },
+          {
+            "id": "ROBOT-022",
+            "name": "ROBOT-022 Creative Studio",
+            "x": 298,
+            "y": 545,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Left desk",
+            "normalizedCenter": {
+              "x": 0.1872,
+              "y": 0.593
+            }
+          },
+          {
+            "id": "ROBOT-023",
+            "name": "ROBOT-023 Creative Studio",
+            "x": 323,
+            "y": 545,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Monitor with colourful artwork",
+            "normalizedCenter": {
+              "x": 0.2022,
+              "y": 0.593
+            }
+          },
+          {
+            "id": "ROBOT-024",
+            "name": "ROBOT-024 Creative Studio",
+            "x": 363,
+            "y": 577,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front desk, monitors",
+            "normalizedCenter": {
+              "x": 0.2261,
+              "y": 0.627
+            }
+          },
+          {
+            "id": "ROBOT-025",
+            "name": "ROBOT-025 Management",
+            "x": 1349,
+            "y": 485,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Conference table, whiteboard behind",
+            "normalizedCenter": {
+              "x": 0.8158,
+              "y": 0.5292
+            }
+          },
+          {
+            "id": "ROBOT-026",
+            "name": "ROBOT-026 Management",
+            "x": 1383,
+            "y": 514,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Conference table",
+            "normalizedCenter": {
+              "x": 0.8361,
+              "y": 0.56
+            }
+          },
+          {
+            "id": "ROBOT-027",
+            "name": "ROBOT-027 Management",
+            "x": 1465,
+            "y": 504,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Wall screen with charts behind",
+            "normalizedCenter": {
+              "x": 0.8852,
+              "y": 0.5494
+            }
+          },
+          {
+            "id": "ROBOT-028",
+            "name": "ROBOT-028 Management",
+            "x": 1435,
+            "y": 535,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Conference table, laptop",
+            "normalizedCenter": {
+              "x": 0.8672,
+              "y": 0.5824
+            }
+          },
+          {
+            "id": "ROBOT-029",
+            "name": "ROBOT-029 Management",
+            "x": 1517,
+            "y": 540,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Conference table",
+            "normalizedCenter": {
+              "x": 0.9163,
+              "y": 0.5877
+            }
+          },
+          {
+            "id": "ROBOT-030",
+            "name": "ROBOT-030 Research",
+            "x": 708,
+            "y": 629,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Bookshelf, monitors",
+            "normalizedCenter": {
+              "x": 0.4324,
+              "y": 0.6823
+            }
+          },
+          {
+            "id": "ROBOT-031",
+            "name": "ROBOT-031 Research",
+            "x": 742,
+            "y": 667,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Right desk",
+            "normalizedCenter": {
+              "x": 0.4528,
+              "y": 0.7226
+            }
+          },
+          {
+            "id": "ROBOT-032",
+            "name": "ROBOT-032 Research",
+            "x": 680,
+            "y": 659,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Monitor (colourful screen)",
+            "normalizedCenter": {
+              "x": 0.4157,
+              "y": 0.7141
+            }
+          },
+          {
+            "id": "ROBOT-033",
+            "name": "ROBOT-033 Research",
+            "x": 582,
+            "y": 692,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Left desk",
+            "normalizedCenter": {
+              "x": 0.3571,
+              "y": 0.7492
+            }
+          },
+          {
+            "id": "ROBOT-034",
+            "name": "ROBOT-034 Research",
+            "x": 628,
+            "y": 720,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front desk monitors",
+            "normalizedCenter": {
+              "x": 0.3846,
+              "y": 0.779
+            }
+          },
+          {
+            "id": "ROBOT-035",
+            "name": "ROBOT-035 QA & Testing",
+            "x": 1020,
+            "y": 627,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Monitors",
+            "normalizedCenter": {
+              "x": 0.619,
+              "y": 0.6801
+            }
+          },
+          {
+            "id": "ROBOT-036",
+            "name": "ROBOT-036 QA & Testing",
+            "x": 991,
+            "y": 654,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Left desk",
+            "normalizedCenter": {
+              "x": 0.6017,
+              "y": 0.7088
+            }
+          },
+          {
+            "id": "ROBOT-037",
+            "name": "ROBOT-037 QA & Testing",
+            "x": 1085,
+            "y": 657,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Behind monitors, near the server racks",
+            "normalizedCenter": {
+              "x": 0.6579,
+              "y": 0.712
+            }
+          },
+          {
+            "id": "ROBOT-038",
+            "name": "ROBOT-038 QA & Testing",
+            "x": 1062,
+            "y": 687,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Centre desk",
+            "normalizedCenter": {
+              "x": 0.6441,
+              "y": 0.7439
+            }
+          },
+          {
+            "id": "ROBOT-039",
+            "name": "ROBOT-039 QA & Testing",
+            "x": 1152,
+            "y": 687,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Below the large check-mark screen",
+            "normalizedCenter": {
+              "x": 0.698,
+              "y": 0.7439
+            }
+          },
+          {
+            "id": "ROBOT-040",
+            "name": "ROBOT-040 QA & Testing",
+            "x": 1130,
+            "y": 719,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front desk monitors",
+            "normalizedCenter": {
+              "x": 0.6848,
+              "y": 0.7779
+            }
+          },
+          {
+            "id": "ROBOT-041",
+            "name": "ROBOT-041 Atrium / walkway (left)",
+            "x": 605,
+            "y": 332,
+            "w": 37,
+            "h": 60,
+            "confidence": "High",
+            "note": "Between Marketing and the left lounge",
+            "normalizedCenter": {
+              "x": 0.369,
+              "y": 0.3688
+            }
+          },
+          {
+            "id": "ROBOT-042",
+            "name": "ROBOT-042 Atrium lounge",
+            "x": 692,
+            "y": 395,
+            "w": 38,
+            "h": 62,
+            "confidence": "High",
+            "note": "Dark round rug, curved brown sofa",
+            "normalizedCenter": {
+              "x": 0.4228,
+              "y": 0.4357
+            }
+          },
+          {
+            "id": "ROBOT-043",
+            "name": "ROBOT-043 Atrium lounge",
+            "x": 887,
+            "y": 347,
+            "w": 38,
+            "h": 60,
+            "confidence": "High",
+            "note": "Brown sofa ENV-009, central planter",
+            "normalizedCenter": {
+              "x": 0.5419,
+              "y": 0.3826
+            }
+          },
+          {
+            "id": "ROBOT-044",
+            "name": "ROBOT-044 Atrium / walkway (right)",
+            "x": 1050,
+            "y": 342,
+            "w": 30,
+            "h": 58,
+            "confidence": "High",
+            "note": "Near the Engineering glass front",
+            "normalizedCenter": {
+              "x": 0.637,
+              "y": 0.3773
+            }
+          },
+          {
+            "id": "ROBOT-045",
+            "name": "ROBOT-045 Atrium / walkway (right)",
+            "x": 1082,
+            "y": 357,
+            "w": 38,
+            "h": 60,
+            "confidence": "High",
+            "note": "Beside ROBOT-044",
+            "normalizedCenter": {
+              "x": 0.6561,
+              "y": 0.3932
+            }
+          },
+          {
+            "id": "ROBOT-046",
+            "name": "ROBOT-046 Atrium (right of plinth)",
+            "x": 1050,
+            "y": 465,
+            "w": 45,
+            "h": 60,
+            "confidence": "High",
+            "note": "Right of the WORA plinth",
+            "normalizedCenter": {
+              "x": 0.6417,
+              "y": 0.5133
+            }
+          },
+          {
+            "id": "ROBOT-047",
+            "name": "ROBOT-047 Walkway (lower-left of Management)",
+            "x": 1363,
+            "y": 615,
+            "w": 43,
+            "h": 65,
+            "confidence": "High",
+            "note": "Outside the Management glass front",
+            "normalizedCenter": {
+              "x": 0.8254,
+              "y": 0.6716
+            }
+          }
+        ],
+        "rawRectanglePixelUnion": 70295,
+        "rawMaskOverlapWithEarlierCategories": 0,
+        "exclusivePixelCount": 70295
+      },
+      {
+        "name": "Building Geometry",
+        "color": "#50e3c2",
+        "rectangles": [
+          {
+            "id": "ENV-014",
+            "name": "Lower-left exterior facade (floors below)",
+            "x": 236,
+            "y": 597,
+            "w": 250,
+            "h": 344,
+            "confidence": "Medium",
+            "note": "Triangular region below the slab edge from (237,597) to (480,826)",
+            "normalizedCenter": {
+              "x": 0.1411,
+              "y": 0.6344
+            }
+          },
+          {
+            "id": "ENV-015",
+            "name": "Lower-right exterior facade (floors below)",
+            "x": 1333,
+            "y": 597,
+            "w": 339,
+            "h": 344,
+            "confidence": "Medium",
+            "note": "Triangular region below the slab edge from (1333,821) to (1672,597)",
+            "normalizedCenter": {
+              "x": 0.7972,
+              "y": 0.6344
+            }
+          },
+          {
+            "id": "ENV-016",
+            "name": "Exterior glazing + outdoor trees (top band)",
+            "x": 236,
+            "y": 0,
+            "w": 1436,
+            "h": 170,
+            "confidence": "Medium",
+            "note": "Mostly covered by the top overlays",
+            "normalizedCenter": {
+              "x": 0.1411,
+              "y": 0
+            }
+          }
+        ],
+        "rawRectanglePixelUnion": 446736,
+        "rawMaskOverlapWithEarlierCategories": 130833,
+        "exclusivePixelCount": 315903
+      },
+      {
+        "name": "Department Interiors",
+        "color": "#4188ff",
+        "rectangles": [
+          {
+            "id": "DEPT-01",
+            "name": "Executive Office (room)",
+            "x": 660,
+            "y": 120,
+            "w": 410,
+            "h": 210,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.3947,
+              "y": 0.1275
+            }
+          },
+          {
+            "id": "DEPT-02",
+            "name": "Marketing (room)",
+            "x": 236,
+            "y": 150,
+            "w": 420,
+            "h": 270,
+            "confidence": "Low",
+            "note": "Left part hidden behind the sidebar",
+            "normalizedCenter": {
+              "x": 0.1411,
+              "y": 0.1594
+            }
+          },
+          {
+            "id": "DEPT-03",
+            "name": "Engineering (room)",
+            "x": 1060,
+            "y": 150,
+            "w": 380,
+            "h": 280,
+            "confidence": "Low",
+            "note": "Right part hidden behind the Live Activity panel",
+            "normalizedCenter": {
+              "x": 0.634,
+              "y": 0.1594
+            }
+          },
+          {
+            "id": "DEPT-04",
+            "name": "Creative Studio (room)",
+            "x": 236,
+            "y": 420,
+            "w": 400,
+            "h": 290,
+            "confidence": "Low",
+            "note": "Left part hidden behind the sidebar",
+            "normalizedCenter": {
+              "x": 0.1411,
+              "y": 0.4463
+            }
+          },
+          {
+            "id": "DEPT-05",
+            "name": "Management (room)",
+            "x": 1250,
+            "y": 380,
+            "w": 422,
+            "h": 300,
+            "confidence": "Low",
+            "note": "Right part runs off the image edge",
+            "normalizedCenter": {
+              "x": 0.7476,
+              "y": 0.4038
+            }
+          },
+          {
+            "id": "DEPT-06",
+            "name": "Research (room)",
+            "x": 490,
+            "y": 545,
+            "w": 370,
+            "h": 265,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.2931,
+              "y": 0.5792
+            }
+          },
+          {
+            "id": "DEPT-07",
+            "name": "QA & Testing (room)",
+            "x": 960,
+            "y": 545,
+            "w": 380,
+            "h": 265,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5742,
+              "y": 0.5792
+            }
+          }
+        ],
+        "rawRectanglePixelUnion": 699710,
+        "rawMaskOverlapWithEarlierCategories": 156011,
+        "exclusivePixelCount": 543699
+      },
+      {
+        "name": "Lighting and Environment",
+        "color": "#d878ff",
+        "rectangles": [
+          {
+            "id": "ENV-001",
+            "name": "Central atrium plaza (open floor)",
+            "x": 560,
+            "y": 300,
+            "w": 700,
+            "h": 300,
+            "confidence": "Low",
+            "note": "Boundaries blend into the walkway ring",
+            "normalizedCenter": {
+              "x": 0.3349,
+              "y": 0.3188
+            }
+          },
+          {
+            "id": "ENV-002",
+            "name": "WORA logo plinth (circular dais, glowing rim)",
+            "x": 795,
+            "y": 450,
+            "w": 217,
+            "h": 100,
+            "confidence": "High",
+            "note": "Ellipse; centre ≈(903,500)",
+            "normalizedCenter": {
+              "x": 0.4755,
+              "y": 0.4782
+            }
+          },
+          {
+            "id": "ENV-003",
+            "name": "Plinth logo mark (interlocking W)",
+            "x": 867,
+            "y": 467,
+            "w": 68,
+            "h": 31,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5185,
+              "y": 0.4963
+            }
+          },
+          {
+            "id": "ENV-004",
+            "name": "Plinth wordmark \"WORA\" (dark navy)",
+            "x": 842,
+            "y": 502,
+            "w": 120,
+            "h": 19,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5036,
+              "y": 0.5335
+            }
+          },
+          {
+            "id": "ENV-005",
+            "name": "Central round planter + tree",
+            "x": 750,
+            "y": 285,
+            "w": 105,
+            "h": 147,
+            "confidence": "High",
+            "note": "Planter 750–855 × 372–432; canopy 755–845 × 285–378",
+            "normalizedCenter": {
+              "x": 0.4486,
+              "y": 0.3029
+            }
+          },
+          {
+            "id": "ENV-006",
+            "name": "Curved brown sofa (left lounge)",
+            "x": 635,
+            "y": 375,
+            "w": 105,
+            "h": 55,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.3798,
+              "y": 0.3985
+            }
+          },
+          {
+            "id": "ENV-007",
+            "name": "Small white round planter",
+            "x": 630,
+            "y": 420,
+            "w": 25,
+            "h": 30,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.3768,
+              "y": 0.4463
+            }
+          },
+          {
+            "id": "ENV-008",
+            "name": "Dark round rug + dark ottoman",
+            "x": 660,
+            "y": 435,
+            "w": 110,
+            "h": 40,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.3947,
+              "y": 0.4623
+            }
+          },
+          {
+            "id": "ENV-009",
+            "name": "Brown sofa (right of planter)",
+            "x": 867,
+            "y": 370,
+            "w": 73,
+            "h": 38,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5185,
+              "y": 0.3932
+            }
+          },
+          {
+            "id": "ENV-010",
+            "name": "Dark grey curved bench",
+            "x": 930,
+            "y": 397,
+            "w": 90,
+            "h": 50,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5562,
+              "y": 0.4219
+            }
+          },
+          {
+            "id": "ENV-011",
+            "name": "Tree planter group (white rectangular planters)",
+            "x": 1180,
+            "y": 405,
+            "w": 80,
+            "h": 105,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.7057,
+              "y": 0.4304
+            }
+          },
+          {
+            "id": "ENV-012",
+            "name": "Tree in white cylindrical planter (bottom centre)",
+            "x": 870,
+            "y": 715,
+            "w": 80,
+            "h": 110,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5203,
+              "y": 0.7598
+            }
+          },
+          {
+            "id": "ENV-013",
+            "name": "Low grey cabinets/benches with brass handles",
+            "x": 940,
+            "y": 740,
+            "w": 140,
+            "h": 80,
+            "confidence": "Low",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5622,
+              "y": 0.7864
+            }
+          },
+          {
+            "id": "ENV-017",
+            "name": "Outdoor terrace greenery (right)",
+            "x": 1470,
+            "y": 330,
+            "w": 202,
+            "h": 100,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.8792,
+              "y": 0.3507
+            }
+          }
+        ],
+        "rawRectanglePixelUnion": 250975,
+        "rawMaskOverlapWithEarlierCategories": 124695,
+        "exclusivePixelCount": 126280
+      }
+    ],
+    "exclusivePartition": true,
+    "pairwiseExclusiveOverlapPixels": 0,
+    "rawBoxesOutsideCanvas": [],
+    "scenePixelsOutsideUI": 1087754,
+    "categorizedNonUIPixels": 1056177,
+    "uncategorizedNonUIPixels": 31577,
+    "uncategorizedPercentOfScene": 2.9029541605914573,
+    "rawMaskOverlapsAreAssignedByPrecedenceNotDiscarded": true,
+    "priorityOrder": [
+      "UI Shell",
+      "Live Activity",
+      "Robots",
+      "Building Geometry",
+      "Department Interiors",
+      "Lighting and Environment"
+    ],
+    "exclusiveRegionErrorRanking": [
+      {
+        "name": "Department Interiors",
+        "sumAbsoluteRgbChannelDifference": 87551179,
+        "shareOfFullFrameAbsoluteRgbErrorPercent": 42.82038950466872,
+        "pixels": 543699,
+        "meanAbsoluteErrorRgb8Bit": 53.67625530547846
+      },
+      {
+        "name": "Building Geometry",
+        "sumAbsoluteRgbChannelDifference": 52240465,
+        "shareOfFullFrameAbsoluteRgbErrorPercent": 25.55027910252372,
+        "pixels": 315903,
+        "meanAbsoluteErrorRgb8Bit": 55.12289637430899
+      },
+      {
+        "name": "Lighting and Environment",
+        "sumAbsoluteRgbChannelDifference": 19900890,
+        "shareOfFullFrameAbsoluteRgbErrorPercent": 9.733322509449778,
+        "pixels": 126280,
+        "meanAbsoluteErrorRgb8Bit": 52.531121317706685
+      },
+      {
+        "name": "UI Shell",
+        "sumAbsoluteRgbChannelDifference": 18002485,
+        "shareOfFullFrameAbsoluteRgbErrorPercent": 8.80483196864723,
+        "pixels": 422822,
+        "meanAbsoluteErrorRgb8Bit": 14.192327583080665
+      },
+      {
+        "name": "Robots",
+        "sumAbsoluteRgbChannelDifference": 17673797,
+        "shareOfFullFrameAbsoluteRgbErrorPercent": 8.64407401716938,
+        "pixels": 70295,
+        "meanAbsoluteErrorRgb8Bit": 83.80774829883586
+      },
+      {
+        "name": "Live Activity",
+        "sumAbsoluteRgbChannelDifference": 4966963,
+        "shareOfFullFrameAbsoluteRgbErrorPercent": 2.429290990076534,
+        "pixels": 62776,
+        "meanAbsoluteErrorRgb8Bit": 26.374001741642243
+      }
+    ],
+    "layerIsolationAudit": {
+      "uiOnlyLayerAgainstReference": {
+        "pixelsCompared": 485598,
+        "pixelsExactlyIdentical": 23224,
+        "pixelsWithAnyRgbDifference": 462374,
+        "exactPixelMatchPercent": 4.782556765060812,
+        "changedPixelPercent": 95.21744323493918,
+        "channelsCompared": 1456794,
+        "channelsExactlyIdentical": 278539,
+        "channelsDifferent": 1178255,
+        "sumAbsoluteRgbChannelDifference": 23410170,
+        "sumSquaredRgbChannelDifference": 2738400842,
+        "meanAbsoluteErrorRgb8Bit": 16.069650204490134,
+        "rootMeanSquareErrorRgb8Bit": 43.35602297827651,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 462374,
+              "percent": 95.21744323493918
+            },
+            "gte8": {
+              "pixels": 139967,
+              "percent": 28.823636011680442
+            },
+            "gte16": {
+              "pixels": 81984,
+              "percent": 16.883100836494386
+            },
+            "gte32": {
+              "pixels": 61522,
+              "percent": 12.669327303654462
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 308094,
+              "percent": 63.446307439486986
+            },
+            "gte8": {
+              "pixels": 108736,
+              "percent": 22.392184481814176
+            },
+            "gte16": {
+              "pixels": 75306,
+              "percent": 15.507889241718459
+            },
+            "gte32": {
+              "pixels": 57301,
+              "percent": 11.800089786201756
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 462374,
+              "percent": 95.21744323493918
+            },
+            "gte8": {
+              "pixels": 174559,
+              "percent": 35.947223835353526
+            },
+            "gte16": {
+              "pixels": 100128,
+              "percent": 20.619524792111992
+            },
+            "gte32": {
+              "pixels": 72685,
+              "percent": 14.968142372909279
+            }
+          }
+        }
+      },
+      "finalCompositeAgainstReferenceSameUiRoi": {
+        "pixelsCompared": 485598,
+        "pixelsExactlyIdentical": 23215,
+        "pixelsWithAnyRgbDifference": 462383,
+        "exactPixelMatchPercent": 4.780703380162191,
+        "changedPixelPercent": 95.2192966198378,
+        "channelsCompared": 1456794,
+        "channelsExactlyIdentical": 278558,
+        "channelsDifferent": 1178236,
+        "sumAbsoluteRgbChannelDifference": 22969448,
+        "sumSquaredRgbChannelDifference": 2677302104,
+        "meanAbsoluteErrorRgb8Bit": 15.767121501049566,
+        "rootMeanSquareErrorRgb8Bit": 42.86961839067098,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 462383,
+              "percent": 95.2192966198378
+            },
+            "gte8": {
+              "pixels": 140348,
+              "percent": 28.902095972388683
+            },
+            "gte16": {
+              "pixels": 81525,
+              "percent": 16.788578206664774
+            },
+            "gte32": {
+              "pixels": 60749,
+              "percent": 12.510142134028559
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 308168,
+              "percent": 63.46154638198674
+            },
+            "gte8": {
+              "pixels": 108490,
+              "percent": 22.34152529458523
+            },
+            "gte16": {
+              "pixels": 74298,
+              "percent": 15.300310133073035
+            },
+            "gte32": {
+              "pixels": 55958,
+              "percent": 11.523523572996593
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 462383,
+              "percent": 95.2192966198378
+            },
+            "gte8": {
+              "pixels": 175105,
+              "percent": 36.05966251920313
+            },
+            "gte16": {
+              "pixels": 100047,
+              "percent": 20.602844328024414
+            },
+            "gte32": {
+              "pixels": 71899,
+              "percent": 14.806280091763146
+            }
+          }
+        }
+      },
+      "fullCompositeVsUiOnlyLayer": {
+        "pixelsCompared": 485598,
+        "pixelsExactlyIdentical": 457104,
+        "pixelsWithAnyRgbDifference": 28494,
+        "exactPixelMatchPercent": 94.13218341096957,
+        "changedPixelPercent": 5.867816589030433,
+        "channelsCompared": 1456794,
+        "channelsExactlyIdentical": 1396245,
+        "channelsDifferent": 60549,
+        "sumAbsoluteRgbChannelDifference": 1354998,
+        "sumSquaredRgbChannelDifference": 119532562,
+        "meanAbsoluteErrorRgb8Bit": 0.9301232706889238,
+        "rootMeanSquareErrorRgb8Bit": 9.058244562667154,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 28494,
+              "percent": 5.867816589030433
+            },
+            "gte8": {
+              "pixels": 5239,
+              "percent": 1.0788759426521526
+            },
+            "gte16": {
+              "pixels": 5041,
+              "percent": 1.038101474882516
+            },
+            "gte32": {
+              "pixels": 4727,
+              "percent": 0.9734389350862236
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 7767,
+              "percent": 1.599471167508927
+            },
+            "gte8": {
+              "pixels": 5150,
+              "percent": 1.0605480253213564
+            },
+            "gte16": {
+              "pixels": 4975,
+              "percent": 1.0245099856259705
+            },
+            "gte32": {
+              "pixels": 4689,
+              "percent": 0.9656135321809398
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 28494,
+              "percent": 5.867816589030433
+            },
+            "gte8": {
+              "pixels": 5370,
+              "percent": 1.1058529895098415
+            },
+            "gte16": {
+              "pixels": 5123,
+              "percent": 1.0549878706254967
+            },
+            "gte32": {
+              "pixels": 4933,
+              "percent": 1.0158608560990778
+            }
+          }
+        }
+      },
+      "sceneOnlyLayerAgainstReference": {
+        "pixelsCompared": 1087754,
+        "pixelsExactlyIdentical": 7,
+        "pixelsWithAnyRgbDifference": 1087747,
+        "exactPixelMatchPercent": 0.0006435278564822561,
+        "changedPixelPercent": 99.99935647214352,
+        "channelsCompared": 3263262,
+        "channelsExactlyIdentical": 17596,
+        "channelsDifferent": 3245666,
+        "sumAbsoluteRgbChannelDifference": 182050240,
+        "sumSquaredRgbChannelDifference": 16160961698,
+        "meanAbsoluteErrorRgb8Bit": 55.78780986632394,
+        "rootMeanSquareErrorRgb8Bit": 70.37325330727842,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 1087747,
+              "percent": 99.99935647214352
+            },
+            "gte8": {
+              "pixels": 1076308,
+              "percent": 98.94774002210059
+            },
+            "gte16": {
+              "pixels": 1027382,
+              "percent": 94.44984803549332
+            },
+            "gte32": {
+              "pixels": 865246,
+              "percent": 79.54427195854944
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 1076068,
+              "percent": 98.92567620987833
+            },
+            "gte8": {
+              "pixels": 992727,
+              "percent": 91.26392548315152
+            },
+            "gte16": {
+              "pixels": 894752,
+              "percent": 82.25683380617309
+            },
+            "gte32": {
+              "pixels": 705015,
+              "percent": 64.81382739111969
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 1087747,
+              "percent": 99.99935647214352
+            },
+            "gte8": {
+              "pixels": 1080039,
+              "percent": 99.29074036960563
+            },
+            "gte16": {
+              "pixels": 1046830,
+              "percent": 96.23775228590289
+            },
+            "gte32": {
+              "pixels": 932232,
+              "percent": 85.70246581488094
+            }
+          }
+        }
+      },
+      "finalCompositeAgainstReferenceSameSceneRoi": {
+        "pixelsCompared": 1087754,
+        "pixelsExactlyIdentical": 7,
+        "pixelsWithAnyRgbDifference": 1087747,
+        "exactPixelMatchPercent": 0.0006435278564822561,
+        "changedPixelPercent": 99.99935647214352,
+        "channelsCompared": 3263262,
+        "channelsExactlyIdentical": 17688,
+        "channelsDifferent": 3245574,
+        "sumAbsoluteRgbChannelDifference": 181491978,
+        "sumSquaredRgbChannelDifference": 16080969742,
+        "meanAbsoluteErrorRgb8Bit": 55.61673503384037,
+        "rootMeanSquareErrorRgb8Bit": 70.19887391657288,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 1087747,
+              "percent": 99.99935647214352
+            },
+            "gte8": {
+              "pixels": 1076127,
+              "percent": 98.93110023038297
+            },
+            "gte16": {
+              "pixels": 1026545,
+              "percent": 94.37290049036822
+            },
+            "gte32": {
+              "pixels": 864354,
+              "percent": 79.46226812312342
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 1075986,
+              "percent": 98.9181377407024
+            },
+            "gte8": {
+              "pixels": 992084,
+              "percent": 91.20481285290607
+            },
+            "gte16": {
+              "pixels": 894496,
+              "percent": 82.23329907313602
+            },
+            "gte32": {
+              "pixels": 704488,
+              "percent": 64.76537893678166
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 1087747,
+              "percent": 99.99935647214352
+            },
+            "gte8": {
+              "pixels": 1079881,
+              "percent": 99.27621502655931
+            },
+            "gte16": {
+              "pixels": 1046246,
+              "percent": 96.18406367616207
+            },
+            "gte32": {
+              "pixels": 931482,
+              "percent": 85.6335164016864
+            }
+          }
+        }
+      },
+      "fullCompositeVsSceneOnlyLayer": {
+        "pixelsCompared": 1087754,
+        "pixelsExactlyIdentical": 1014798,
+        "pixelsWithAnyRgbDifference": 72956,
+        "exactPixelMatchPercent": 93.29296881464008,
+        "changedPixelPercent": 6.707031185359925,
+        "channelsCompared": 3263262,
+        "channelsExactlyIdentical": 3048901,
+        "channelsDifferent": 214361,
+        "sumAbsoluteRgbChannelDifference": 1462268,
+        "sumSquaredRgbChannelDifference": 50645442,
+        "meanAbsoluteErrorRgb8Bit": 0.4481000912583789,
+        "rootMeanSquareErrorRgb8Bit": 3.9395281764176753,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 72956,
+              "percent": 6.707031185359925
+            },
+            "gte8": {
+              "pixels": 18268,
+              "percent": 1.6794238403168364
+            },
+            "gte16": {
+              "pixels": 7302,
+              "percent": 0.6712914868619192
+            },
+            "gte32": {
+              "pixels": 1171,
+              "percent": 0.10765301713438884
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 65795,
+              "percent": 6.048702188178577
+            },
+            "gte8": {
+              "pixels": 16330,
+              "percent": 1.5012585566221774
+            },
+            "gte16": {
+              "pixels": 6230,
+              "percent": 0.5727397922692079
+            },
+            "gte32": {
+              "pixels": 1145,
+              "percent": 0.10526277081031189
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 72956,
+              "percent": 6.707031185359925
+            },
+            "gte8": {
+              "pixels": 29007,
+              "percent": 2.6666875047115433
+            },
+            "gte16": {
+              "pixels": 13716,
+              "percent": 1.2609468685015177
+            },
+            "gte32": {
+              "pixels": 4664,
+              "percent": 0.42877341751903464
+            }
+          }
+        }
+      }
+    },
+    "regions": {
+      "UI Shell": {
+        "pixelsCompared": 422822,
+        "pixelsExactlyIdentical": 22661,
+        "pixelsWithAnyRgbDifference": 400161,
+        "exactPixelMatchPercent": 5.359465685323848,
+        "changedPixelPercent": 94.64053431467615,
+        "channelsCompared": 1268466,
+        "channelsExactlyIdentical": 255580,
+        "channelsDifferent": 1012886,
+        "sumAbsoluteRgbChannelDifference": 18002485,
+        "sumSquaredRgbChannelDifference": 1976943195,
+        "meanAbsoluteErrorRgb8Bit": 14.192327583080665,
+        "rootMeanSquareErrorRgb8Bit": 39.47823063116073,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 400161,
+              "percent": 94.64053431467615
+            },
+            "gte8": {
+              "pixels": 113827,
+              "percent": 26.920784632776915
+            },
+            "gte16": {
+              "pixels": 67928,
+              "percent": 16.065389218157996
+            },
+            "gte32": {
+              "pixels": 49611,
+              "percent": 11.733306213962377
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 262019,
+              "percent": 61.969102837600694
+            },
+            "gte8": {
+              "pixels": 87811,
+              "percent": 20.767840840826636
+            },
+            "gte16": {
+              "pixels": 61888,
+              "percent": 14.636892120088358
+            },
+            "gte32": {
+              "pixels": 45192,
+              "percent": 10.688185572179309
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 400161,
+              "percent": 94.64053431467615
+            },
+            "gte8": {
+              "pixels": 144310,
+              "percent": 34.130201361329355
+            },
+            "gte16": {
+              "pixels": 82016,
+              "percent": 19.397287747562803
+            },
+            "gte32": {
+              "pixels": 59929,
+              "percent": 14.173576587783984
+            }
+          }
+        },
+        "rectangles": [
+          {
+            "id": "REG-01",
+            "name": "Brand header bar (top-left)",
+            "x": 0,
+            "y": 0,
+            "w": 295,
+            "h": 67,
+            "confidence": "Medium",
+            "note": "Right edge is a soft fade between x≈292 and x≈310; overlaps the 3D viewport by ≈60 px",
+            "normalizedCenter": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "id": "REG-02",
+            "name": "Left sidebar panel",
+            "x": 0,
+            "y": 67,
+            "w": 235,
+            "h": 874,
+            "confidence": "High",
+            "note": "Solid panel down to the bottom edge; 1 px edge at x=233–234",
+            "normalizedCenter": {
+              "x": 0,
+              "y": 0.0712
+            }
+          },
+          {
+            "id": "REG-04",
+            "name": "Top-centre cluster (search + status strip)",
+            "x": 550,
+            "y": 10,
+            "w": 590,
+            "h": 117,
+            "confidence": "High",
+            "note": "Union of UI-040 and UI-050",
+            "normalizedCenter": {
+              "x": 0.3289,
+              "y": 0.0106
+            }
+          },
+          {
+            "id": "REG-05",
+            "name": "Top-right cluster (notifications + profile)",
+            "x": 1418,
+            "y": 12,
+            "w": 239,
+            "h": 51,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.8481,
+              "y": 0.0128
+            }
+          },
+          {
+            "id": "REG-07",
+            "name": "Executive Command panel",
+            "x": 481,
+            "y": 829,
+            "w": 852,
+            "h": 112,
+            "confidence": "High",
+            "note": "Runs to the bottom image edge; bottom corners are not visible",
+            "normalizedCenter": {
+              "x": 0.2877,
+              "y": 0.881
+            }
+          },
+          {
+            "id": "REG-08",
+            "name": "View switcher",
+            "x": 1369,
+            "y": 853,
+            "w": 288,
+            "h": 73,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.8188,
+              "y": 0.9065
+            }
+          }
+        ],
+        "rawRectanglePixelUnion": 422822,
+        "rawMaskOverlapWithEarlierCategories": 0,
+        "exclusivePixelCount": 422822
+      },
+      "Live Activity": {
+        "pixelsCompared": 62776,
+        "pixelsExactlyIdentical": 554,
+        "pixelsWithAnyRgbDifference": 62222,
+        "exactPixelMatchPercent": 0.8825028673378361,
+        "changedPixelPercent": 99.11749713266217,
+        "channelsCompared": 188328,
+        "channelsExactlyIdentical": 22978,
+        "channelsDifferent": 165350,
+        "sumAbsoluteRgbChannelDifference": 4966963,
+        "sumSquaredRgbChannelDifference": 700358909,
+        "meanAbsoluteErrorRgb8Bit": 26.374001741642243,
+        "rootMeanSquareErrorRgb8Bit": 60.98217102284929,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 62222,
+              "percent": 99.11749713266217
+            },
+            "gte8": {
+              "pixels": 26521,
+              "percent": 42.24703708423601
+            },
+            "gte16": {
+              "pixels": 13597,
+              "percent": 21.659551420925194
+            },
+            "gte32": {
+              "pixels": 11138,
+              "percent": 17.74244934369823
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 46149,
+              "percent": 73.51376322161336
+            },
+            "gte8": {
+              "pixels": 20679,
+              "percent": 32.94093284057602
+            },
+            "gte16": {
+              "pixels": 12410,
+              "percent": 19.768701414553334
+            },
+            "gte32": {
+              "pixels": 10766,
+              "percent": 17.14986619090098
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 62222,
+              "percent": 99.11749713266217
+            },
+            "gte8": {
+              "pixels": 30795,
+              "percent": 49.055371479546324
+            },
+            "gte16": {
+              "pixels": 18031,
+              "percent": 28.722760290556902
+            },
+            "gte32": {
+              "pixels": 11970,
+              "percent": 19.06779661016949
+            }
+          }
+        },
+        "rectangles": [
+          {
+            "id": "REG-06",
+            "name": "Live Activity panel",
+            "x": 1420,
+            "y": 83,
+            "w": 236,
+            "h": 266,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.8493,
+              "y": 0.0882
+            }
+          }
+        ],
+        "rawRectanglePixelUnion": 62776,
+        "rawMaskOverlapWithEarlierCategories": 0,
+        "exclusivePixelCount": 62776
+      },
+      "Robots": {
+        "pixelsCompared": 70295,
+        "pixelsExactlyIdentical": 0,
+        "pixelsWithAnyRgbDifference": 70295,
+        "exactPixelMatchPercent": 0,
+        "changedPixelPercent": 100,
+        "channelsCompared": 210885,
+        "channelsExactlyIdentical": 745,
+        "channelsDifferent": 210140,
+        "sumAbsoluteRgbChannelDifference": 17673797,
+        "sumSquaredRgbChannelDifference": 2239008279,
+        "meanAbsoluteErrorRgb8Bit": 83.80774829883586,
+        "rootMeanSquareErrorRgb8Bit": 103.03979944802637,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 70295,
+              "percent": 100
+            },
+            "gte8": {
+              "pixels": 69874,
+              "percent": 99.40109538373996
+            },
+            "gte16": {
+              "pixels": 68074,
+              "percent": 96.84045806956398
+            },
+            "gte32": {
+              "pixels": 62408,
+              "percent": 88.78014083505228
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 69788,
+              "percent": 99.27875382317377
+            },
+            "gte8": {
+              "pixels": 66192,
+              "percent": 94.16316949996444
+            },
+            "gte16": {
+              "pixels": 62352,
+              "percent": 88.70047656305569
+            },
+            "gte32": {
+              "pixels": 54585,
+              "percent": 77.65132655238637
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 70295,
+              "percent": 100
+            },
+            "gte8": {
+              "pixels": 70005,
+              "percent": 99.58745287716054
+            },
+            "gte16": {
+              "pixels": 68822,
+              "percent": 97.90454513123267
+            },
+            "gte32": {
+              "pixels": 65040,
+              "percent": 92.52436161889182
+            }
+          }
+        },
+        "rectangles": [
+          {
+            "id": "ROBOT-001",
+            "name": "ROBOT-001 Executive Office",
+            "x": 852,
+            "y": 192,
+            "w": 45,
+            "h": 66,
+            "confidence": "High",
+            "note": "Executive desk, figurine (U-01), wood-slat wall, sign above",
+            "normalizedCenter": {
+              "x": 0.5233,
+              "y": 0.2232
+            }
+          },
+          {
+            "id": "ROBOT-002",
+            "name": "ROBOT-002 Marketing",
+            "x": 416,
+            "y": 237,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Back-row desk monitors, bookshelf, blue bar-chart display",
+            "normalizedCenter": {
+              "x": 0.2578,
+              "y": 0.2657
+            }
+          },
+          {
+            "id": "ROBOT-003",
+            "name": "ROBOT-003 Marketing",
+            "x": 459,
+            "y": 268,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Back-right desk, monitors",
+            "normalizedCenter": {
+              "x": 0.2835,
+              "y": 0.2986
+            }
+          },
+          {
+            "id": "ROBOT-004",
+            "name": "ROBOT-004 Marketing",
+            "x": 503,
+            "y": 267,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Back-right desk, potted plant at right",
+            "normalizedCenter": {
+              "x": 0.3098,
+              "y": 0.2976
+            }
+          },
+          {
+            "id": "ROBOT-005",
+            "name": "ROBOT-005 Marketing",
+            "x": 348,
+            "y": 272,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Middle desk, monitors, wall dashboard screen",
+            "normalizedCenter": {
+              "x": 0.2171,
+              "y": 0.3029
+            }
+          },
+          {
+            "id": "ROBOT-006",
+            "name": "ROBOT-006 Marketing",
+            "x": 305,
+            "y": 292,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front-left desk, large plant at left",
+            "normalizedCenter": {
+              "x": 0.1914,
+              "y": 0.3241
+            }
+          },
+          {
+            "id": "ROBOT-007",
+            "name": "ROBOT-007 Marketing",
+            "x": 323,
+            "y": 312,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Front-left desk, beside ROBOT-006",
+            "normalizedCenter": {
+              "x": 0.2022,
+              "y": 0.3454
+            }
+          },
+          {
+            "id": "ROBOT-008",
+            "name": "ROBOT-008 Marketing",
+            "x": 380,
+            "y": 322,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front desk monitors",
+            "normalizedCenter": {
+              "x": 0.2362,
+              "y": 0.356
+            }
+          },
+          {
+            "id": "ROBOT-009",
+            "name": "ROBOT-009 Marketing",
+            "x": 418,
+            "y": 300,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Centre desk, monitors",
+            "normalizedCenter": {
+              "x": 0.259,
+              "y": 0.3326
+            }
+          },
+          {
+            "id": "ROBOT-010",
+            "name": "ROBOT-010 Engineering",
+            "x": 1165,
+            "y": 222,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Back desk, potted plant behind",
+            "normalizedCenter": {
+              "x": 0.7057,
+              "y": 0.2497
+            }
+          },
+          {
+            "id": "ROBOT-011",
+            "name": "ROBOT-011 Engineering",
+            "x": 1215,
+            "y": 219,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Back desk monitors",
+            "normalizedCenter": {
+              "x": 0.7356,
+              "y": 0.2465
+            }
+          },
+          {
+            "id": "ROBOT-012",
+            "name": "ROBOT-012 Engineering",
+            "x": 1222,
+            "y": 235,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Next to ROBOT-011",
+            "normalizedCenter": {
+              "x": 0.7398,
+              "y": 0.2635
+            }
+          },
+          {
+            "id": "ROBOT-013",
+            "name": "ROBOT-013 Engineering",
+            "x": 1112,
+            "y": 254,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Left desk, monitors",
+            "normalizedCenter": {
+              "x": 0.674,
+              "y": 0.2837
+            }
+          },
+          {
+            "id": "ROBOT-014",
+            "name": "ROBOT-014 Engineering",
+            "x": 1160,
+            "y": 267,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Left desk cluster",
+            "normalizedCenter": {
+              "x": 0.7028,
+              "y": 0.2976
+            }
+          },
+          {
+            "id": "ROBOT-015",
+            "name": "ROBOT-015 Engineering",
+            "x": 1257,
+            "y": 273,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Centre desk, below the large code display",
+            "normalizedCenter": {
+              "x": 0.7608,
+              "y": 0.3039
+            }
+          },
+          {
+            "id": "ROBOT-016",
+            "name": "ROBOT-016 Engineering",
+            "x": 1205,
+            "y": 300,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front-centre desk monitors",
+            "normalizedCenter": {
+              "x": 0.7297,
+              "y": 0.3326
+            }
+          },
+          {
+            "id": "ROBOT-017",
+            "name": "ROBOT-017 Engineering",
+            "x": 1295,
+            "y": 307,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Front desk",
+            "normalizedCenter": {
+              "x": 0.7835,
+              "y": 0.3401
+            }
+          },
+          {
+            "id": "ROBOT-018",
+            "name": "ROBOT-018 Engineering",
+            "x": 1267,
+            "y": 325,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front desk monitors",
+            "normalizedCenter": {
+              "x": 0.7667,
+              "y": 0.3592
+            }
+          },
+          {
+            "id": "ROBOT-019",
+            "name": "ROBOT-019 Engineering",
+            "x": 1371,
+            "y": 292,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Right desk, monitors",
+            "normalizedCenter": {
+              "x": 0.8289,
+              "y": 0.3241
+            }
+          },
+          {
+            "id": "ROBOT-020",
+            "name": "ROBOT-020 Creative Studio",
+            "x": 440,
+            "y": 499,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Monitor with colourful artwork, bookshelf",
+            "normalizedCenter": {
+              "x": 0.2721,
+              "y": 0.5441
+            }
+          },
+          {
+            "id": "ROBOT-021",
+            "name": "ROBOT-021 Creative Studio",
+            "x": 458,
+            "y": 530,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Right desk, monitor",
+            "normalizedCenter": {
+              "x": 0.2829,
+              "y": 0.577
+            }
+          },
+          {
+            "id": "ROBOT-022",
+            "name": "ROBOT-022 Creative Studio",
+            "x": 298,
+            "y": 545,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Left desk",
+            "normalizedCenter": {
+              "x": 0.1872,
+              "y": 0.593
+            }
+          },
+          {
+            "id": "ROBOT-023",
+            "name": "ROBOT-023 Creative Studio",
+            "x": 323,
+            "y": 545,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Monitor with colourful artwork",
+            "normalizedCenter": {
+              "x": 0.2022,
+              "y": 0.593
+            }
+          },
+          {
+            "id": "ROBOT-024",
+            "name": "ROBOT-024 Creative Studio",
+            "x": 363,
+            "y": 577,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front desk, monitors",
+            "normalizedCenter": {
+              "x": 0.2261,
+              "y": 0.627
+            }
+          },
+          {
+            "id": "ROBOT-025",
+            "name": "ROBOT-025 Management",
+            "x": 1349,
+            "y": 485,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Conference table, whiteboard behind",
+            "normalizedCenter": {
+              "x": 0.8158,
+              "y": 0.5292
+            }
+          },
+          {
+            "id": "ROBOT-026",
+            "name": "ROBOT-026 Management",
+            "x": 1383,
+            "y": 514,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Conference table",
+            "normalizedCenter": {
+              "x": 0.8361,
+              "y": 0.56
+            }
+          },
+          {
+            "id": "ROBOT-027",
+            "name": "ROBOT-027 Management",
+            "x": 1465,
+            "y": 504,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Wall screen with charts behind",
+            "normalizedCenter": {
+              "x": 0.8852,
+              "y": 0.5494
+            }
+          },
+          {
+            "id": "ROBOT-028",
+            "name": "ROBOT-028 Management",
+            "x": 1435,
+            "y": 535,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Conference table, laptop",
+            "normalizedCenter": {
+              "x": 0.8672,
+              "y": 0.5824
+            }
+          },
+          {
+            "id": "ROBOT-029",
+            "name": "ROBOT-029 Management",
+            "x": 1517,
+            "y": 540,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Conference table",
+            "normalizedCenter": {
+              "x": 0.9163,
+              "y": 0.5877
+            }
+          },
+          {
+            "id": "ROBOT-030",
+            "name": "ROBOT-030 Research",
+            "x": 708,
+            "y": 629,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Bookshelf, monitors",
+            "normalizedCenter": {
+              "x": 0.4324,
+              "y": 0.6823
+            }
+          },
+          {
+            "id": "ROBOT-031",
+            "name": "ROBOT-031 Research",
+            "x": 742,
+            "y": 667,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Right desk",
+            "normalizedCenter": {
+              "x": 0.4528,
+              "y": 0.7226
+            }
+          },
+          {
+            "id": "ROBOT-032",
+            "name": "ROBOT-032 Research",
+            "x": 680,
+            "y": 659,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Monitor (colourful screen)",
+            "normalizedCenter": {
+              "x": 0.4157,
+              "y": 0.7141
+            }
+          },
+          {
+            "id": "ROBOT-033",
+            "name": "ROBOT-033 Research",
+            "x": 582,
+            "y": 692,
+            "w": 30,
+            "h": 45,
+            "confidence": "Medium",
+            "note": "Left desk",
+            "normalizedCenter": {
+              "x": 0.3571,
+              "y": 0.7492
+            }
+          },
+          {
+            "id": "ROBOT-034",
+            "name": "ROBOT-034 Research",
+            "x": 628,
+            "y": 720,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front desk monitors",
+            "normalizedCenter": {
+              "x": 0.3846,
+              "y": 0.779
+            }
+          },
+          {
+            "id": "ROBOT-035",
+            "name": "ROBOT-035 QA & Testing",
+            "x": 1020,
+            "y": 627,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Monitors",
+            "normalizedCenter": {
+              "x": 0.619,
+              "y": 0.6801
+            }
+          },
+          {
+            "id": "ROBOT-036",
+            "name": "ROBOT-036 QA & Testing",
+            "x": 991,
+            "y": 654,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Left desk",
+            "normalizedCenter": {
+              "x": 0.6017,
+              "y": 0.7088
+            }
+          },
+          {
+            "id": "ROBOT-037",
+            "name": "ROBOT-037 QA & Testing",
+            "x": 1085,
+            "y": 657,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Behind monitors, near the server racks",
+            "normalizedCenter": {
+              "x": 0.6579,
+              "y": 0.712
+            }
+          },
+          {
+            "id": "ROBOT-038",
+            "name": "ROBOT-038 QA & Testing",
+            "x": 1062,
+            "y": 687,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Centre desk",
+            "normalizedCenter": {
+              "x": 0.6441,
+              "y": 0.7439
+            }
+          },
+          {
+            "id": "ROBOT-039",
+            "name": "ROBOT-039 QA & Testing",
+            "x": 1152,
+            "y": 687,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Below the large check-mark screen",
+            "normalizedCenter": {
+              "x": 0.698,
+              "y": 0.7439
+            }
+          },
+          {
+            "id": "ROBOT-040",
+            "name": "ROBOT-040 QA & Testing",
+            "x": 1130,
+            "y": 719,
+            "w": 30,
+            "h": 45,
+            "confidence": "High",
+            "note": "Front desk monitors",
+            "normalizedCenter": {
+              "x": 0.6848,
+              "y": 0.7779
+            }
+          },
+          {
+            "id": "ROBOT-041",
+            "name": "ROBOT-041 Atrium / walkway (left)",
+            "x": 605,
+            "y": 332,
+            "w": 37,
+            "h": 60,
+            "confidence": "High",
+            "note": "Between Marketing and the left lounge",
+            "normalizedCenter": {
+              "x": 0.369,
+              "y": 0.3688
+            }
+          },
+          {
+            "id": "ROBOT-042",
+            "name": "ROBOT-042 Atrium lounge",
+            "x": 692,
+            "y": 395,
+            "w": 38,
+            "h": 62,
+            "confidence": "High",
+            "note": "Dark round rug, curved brown sofa",
+            "normalizedCenter": {
+              "x": 0.4228,
+              "y": 0.4357
+            }
+          },
+          {
+            "id": "ROBOT-043",
+            "name": "ROBOT-043 Atrium lounge",
+            "x": 887,
+            "y": 347,
+            "w": 38,
+            "h": 60,
+            "confidence": "High",
+            "note": "Brown sofa ENV-009, central planter",
+            "normalizedCenter": {
+              "x": 0.5419,
+              "y": 0.3826
+            }
+          },
+          {
+            "id": "ROBOT-044",
+            "name": "ROBOT-044 Atrium / walkway (right)",
+            "x": 1050,
+            "y": 342,
+            "w": 30,
+            "h": 58,
+            "confidence": "High",
+            "note": "Near the Engineering glass front",
+            "normalizedCenter": {
+              "x": 0.637,
+              "y": 0.3773
+            }
+          },
+          {
+            "id": "ROBOT-045",
+            "name": "ROBOT-045 Atrium / walkway (right)",
+            "x": 1082,
+            "y": 357,
+            "w": 38,
+            "h": 60,
+            "confidence": "High",
+            "note": "Beside ROBOT-044",
+            "normalizedCenter": {
+              "x": 0.6561,
+              "y": 0.3932
+            }
+          },
+          {
+            "id": "ROBOT-046",
+            "name": "ROBOT-046 Atrium (right of plinth)",
+            "x": 1050,
+            "y": 465,
+            "w": 45,
+            "h": 60,
+            "confidence": "High",
+            "note": "Right of the WORA plinth",
+            "normalizedCenter": {
+              "x": 0.6417,
+              "y": 0.5133
+            }
+          },
+          {
+            "id": "ROBOT-047",
+            "name": "ROBOT-047 Walkway (lower-left of Management)",
+            "x": 1363,
+            "y": 615,
+            "w": 43,
+            "h": 65,
+            "confidence": "High",
+            "note": "Outside the Management glass front",
+            "normalizedCenter": {
+              "x": 0.8254,
+              "y": 0.6716
+            }
+          }
+        ],
+        "rawRectanglePixelUnion": 70295,
+        "rawMaskOverlapWithEarlierCategories": 0,
+        "exclusivePixelCount": 70295
+      },
+      "Building Geometry": {
+        "pixelsCompared": 315903,
+        "pixelsExactlyIdentical": 1,
+        "pixelsWithAnyRgbDifference": 315902,
+        "exactPixelMatchPercent": 0.0003165528659113715,
+        "changedPixelPercent": 99.99968344713409,
+        "channelsCompared": 947709,
+        "channelsExactlyIdentical": 4584,
+        "channelsDifferent": 943125,
+        "sumAbsoluteRgbChannelDifference": 52240465,
+        "sumSquaredRgbChannelDifference": 4408661121,
+        "meanAbsoluteErrorRgb8Bit": 55.12289637430899,
+        "rootMeanSquareErrorRgb8Bit": 68.20494392355513,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 315902,
+              "percent": 99.99968344713409
+            },
+            "gte8": {
+              "pixels": 313835,
+              "percent": 99.34536867329528
+            },
+            "gte16": {
+              "pixels": 301735,
+              "percent": 95.5150789957677
+            },
+            "gte32": {
+              "pixels": 260252,
+              "percent": 82.38351645916626
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 312715,
+              "percent": 98.99082946347455
+            },
+            "gte8": {
+              "pixels": 291142,
+              "percent": 92.16183448716853
+            },
+            "gte16": {
+              "pixels": 266017,
+              "percent": 84.20844373114532
+            },
+            "gte32": {
+              "pixels": 205767,
+              "percent": 65.13613355998518
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 315902,
+              "percent": 99.99968344713409
+            },
+            "gte8": {
+              "pixels": 314597,
+              "percent": 99.58658195711975
+            },
+            "gte16": {
+              "pixels": 306391,
+              "percent": 96.98894913945104
+            },
+            "gte32": {
+              "pixels": 278241,
+              "percent": 88.07798596404592
+            }
+          }
+        },
+        "rectangles": [
+          {
+            "id": "ENV-014",
+            "name": "Lower-left exterior facade (floors below)",
+            "x": 236,
+            "y": 597,
+            "w": 250,
+            "h": 344,
+            "confidence": "Medium",
+            "note": "Triangular region below the slab edge from (237,597) to (480,826)",
+            "normalizedCenter": {
+              "x": 0.1411,
+              "y": 0.6344
+            }
+          },
+          {
+            "id": "ENV-015",
+            "name": "Lower-right exterior facade (floors below)",
+            "x": 1333,
+            "y": 597,
+            "w": 339,
+            "h": 344,
+            "confidence": "Medium",
+            "note": "Triangular region below the slab edge from (1333,821) to (1672,597)",
+            "normalizedCenter": {
+              "x": 0.7972,
+              "y": 0.6344
+            }
+          },
+          {
+            "id": "ENV-016",
+            "name": "Exterior glazing + outdoor trees (top band)",
+            "x": 236,
+            "y": 0,
+            "w": 1436,
+            "h": 170,
+            "confidence": "Medium",
+            "note": "Mostly covered by the top overlays",
+            "normalizedCenter": {
+              "x": 0.1411,
+              "y": 0
+            }
+          }
+        ],
+        "rawRectanglePixelUnion": 446736,
+        "rawMaskOverlapWithEarlierCategories": 130833,
+        "exclusivePixelCount": 315903
+      },
+      "Department Interiors": {
+        "pixelsCompared": 543699,
+        "pixelsExactlyIdentical": 4,
+        "pixelsWithAnyRgbDifference": 543695,
+        "exactPixelMatchPercent": 0.0007357011876056421,
+        "changedPixelPercent": 99.99926429881239,
+        "channelsCompared": 1631097,
+        "channelsExactlyIdentical": 10503,
+        "channelsDifferent": 1620594,
+        "sumAbsoluteRgbChannelDifference": 87551179,
+        "sumSquaredRgbChannelDifference": 7801386973,
+        "meanAbsoluteErrorRgb8Bit": 53.67625530547846,
+        "rootMeanSquareErrorRgb8Bit": 69.1585717813736,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 543695,
+              "percent": 99.99926429881239
+            },
+            "gte8": {
+              "pixels": 535833,
+              "percent": 98.5532436145735
+            },
+            "gte16": {
+              "pixels": 504792,
+              "percent": 92.84401847345683
+            },
+            "gte32": {
+              "pixels": 409198,
+              "percent": 75.26186364146338
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 536964,
+              "percent": 98.761263125369
+            },
+            "gte8": {
+              "pixels": 487281,
+              "percent": 89.62330259941622
+            },
+            "gte16": {
+              "pixels": 429338,
+              "percent": 78.96611912105779
+            },
+            "gte32": {
+              "pixels": 332616,
+              "percent": 61.17649655415956
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 543695,
+              "percent": 99.99926429881239
+            },
+            "gte8": {
+              "pixels": 538309,
+              "percent": 99.0086426497014
+            },
+            "gte16": {
+              "pixels": 517162,
+              "percent": 95.11917439612726
+            },
+            "gte32": {
+              "pixels": 446520,
+              "percent": 82.12632357241783
+            }
+          }
+        },
+        "rectangles": [
+          {
+            "id": "DEPT-01",
+            "name": "Executive Office (room)",
+            "x": 660,
+            "y": 120,
+            "w": 410,
+            "h": 210,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.3947,
+              "y": 0.1275
+            }
+          },
+          {
+            "id": "DEPT-02",
+            "name": "Marketing (room)",
+            "x": 236,
+            "y": 150,
+            "w": 420,
+            "h": 270,
+            "confidence": "Low",
+            "note": "Left part hidden behind the sidebar",
+            "normalizedCenter": {
+              "x": 0.1411,
+              "y": 0.1594
+            }
+          },
+          {
+            "id": "DEPT-03",
+            "name": "Engineering (room)",
+            "x": 1060,
+            "y": 150,
+            "w": 380,
+            "h": 280,
+            "confidence": "Low",
+            "note": "Right part hidden behind the Live Activity panel",
+            "normalizedCenter": {
+              "x": 0.634,
+              "y": 0.1594
+            }
+          },
+          {
+            "id": "DEPT-04",
+            "name": "Creative Studio (room)",
+            "x": 236,
+            "y": 420,
+            "w": 400,
+            "h": 290,
+            "confidence": "Low",
+            "note": "Left part hidden behind the sidebar",
+            "normalizedCenter": {
+              "x": 0.1411,
+              "y": 0.4463
+            }
+          },
+          {
+            "id": "DEPT-05",
+            "name": "Management (room)",
+            "x": 1250,
+            "y": 380,
+            "w": 422,
+            "h": 300,
+            "confidence": "Low",
+            "note": "Right part runs off the image edge",
+            "normalizedCenter": {
+              "x": 0.7476,
+              "y": 0.4038
+            }
+          },
+          {
+            "id": "DEPT-06",
+            "name": "Research (room)",
+            "x": 490,
+            "y": 545,
+            "w": 370,
+            "h": 265,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.2931,
+              "y": 0.5792
+            }
+          },
+          {
+            "id": "DEPT-07",
+            "name": "QA & Testing (room)",
+            "x": 960,
+            "y": 545,
+            "w": 380,
+            "h": 265,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5742,
+              "y": 0.5792
+            }
+          }
+        ],
+        "rawRectanglePixelUnion": 699710,
+        "rawMaskOverlapWithEarlierCategories": 156011,
+        "exclusivePixelCount": 543699
+      },
+      "Lighting and Environment": {
+        "pixelsCompared": 126280,
+        "pixelsExactlyIdentical": 0,
+        "pixelsWithAnyRgbDifference": 126280,
+        "exactPixelMatchPercent": 0,
+        "changedPixelPercent": 100,
+        "channelsCompared": 378840,
+        "channelsExactlyIdentical": 1284,
+        "channelsDifferent": 377556,
+        "sumAbsoluteRgbChannelDifference": 19900890,
+        "sumSquaredRgbChannelDifference": 1357370358,
+        "meanAbsoluteErrorRgb8Bit": 52.531121317706685,
+        "rootMeanSquareErrorRgb8Bit": 59.857871071173804,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 126280,
+              "percent": 100
+            },
+            "gte8": {
+              "pixels": 125636,
+              "percent": 99.490022172949
+            },
+            "gte16": {
+              "pixels": 122651,
+              "percent": 97.12622743110548
+            },
+            "gte32": {
+              "pixels": 109831,
+              "percent": 86.97418435223314
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 125390,
+              "percent": 99.29521697814381
+            },
+            "gte8": {
+              "pixels": 119321,
+              "percent": 94.48923028191321
+            },
+            "gte16": {
+              "pixels": 111955,
+              "percent": 88.65616091225847
+            },
+            "gte32": {
+              "pixels": 94228,
+              "percent": 74.61830852074755
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 126280,
+              "percent": 100
+            },
+            "gte8": {
+              "pixels": 125836,
+              "percent": 99.6484003801077
+            },
+            "gte16": {
+              "pixels": 123836,
+              "percent": 98.06461830852075
+            },
+            "gte32": {
+              "pixels": 115483,
+              "percent": 91.44995248653785
+            }
+          }
+        },
+        "rectangles": [
+          {
+            "id": "ENV-001",
+            "name": "Central atrium plaza (open floor)",
+            "x": 560,
+            "y": 300,
+            "w": 700,
+            "h": 300,
+            "confidence": "Low",
+            "note": "Boundaries blend into the walkway ring",
+            "normalizedCenter": {
+              "x": 0.3349,
+              "y": 0.3188
+            }
+          },
+          {
+            "id": "ENV-002",
+            "name": "WORA logo plinth (circular dais, glowing rim)",
+            "x": 795,
+            "y": 450,
+            "w": 217,
+            "h": 100,
+            "confidence": "High",
+            "note": "Ellipse; centre ≈(903,500)",
+            "normalizedCenter": {
+              "x": 0.4755,
+              "y": 0.4782
+            }
+          },
+          {
+            "id": "ENV-003",
+            "name": "Plinth logo mark (interlocking W)",
+            "x": 867,
+            "y": 467,
+            "w": 68,
+            "h": 31,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5185,
+              "y": 0.4963
+            }
+          },
+          {
+            "id": "ENV-004",
+            "name": "Plinth wordmark \"WORA\" (dark navy)",
+            "x": 842,
+            "y": 502,
+            "w": 120,
+            "h": 19,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5036,
+              "y": 0.5335
+            }
+          },
+          {
+            "id": "ENV-005",
+            "name": "Central round planter + tree",
+            "x": 750,
+            "y": 285,
+            "w": 105,
+            "h": 147,
+            "confidence": "High",
+            "note": "Planter 750–855 × 372–432; canopy 755–845 × 285–378",
+            "normalizedCenter": {
+              "x": 0.4486,
+              "y": 0.3029
+            }
+          },
+          {
+            "id": "ENV-006",
+            "name": "Curved brown sofa (left lounge)",
+            "x": 635,
+            "y": 375,
+            "w": 105,
+            "h": 55,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.3798,
+              "y": 0.3985
+            }
+          },
+          {
+            "id": "ENV-007",
+            "name": "Small white round planter",
+            "x": 630,
+            "y": 420,
+            "w": 25,
+            "h": 30,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.3768,
+              "y": 0.4463
+            }
+          },
+          {
+            "id": "ENV-008",
+            "name": "Dark round rug + dark ottoman",
+            "x": 660,
+            "y": 435,
+            "w": 110,
+            "h": 40,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.3947,
+              "y": 0.4623
+            }
+          },
+          {
+            "id": "ENV-009",
+            "name": "Brown sofa (right of planter)",
+            "x": 867,
+            "y": 370,
+            "w": 73,
+            "h": 38,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5185,
+              "y": 0.3932
+            }
+          },
+          {
+            "id": "ENV-010",
+            "name": "Dark grey curved bench",
+            "x": 930,
+            "y": 397,
+            "w": 90,
+            "h": 50,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5562,
+              "y": 0.4219
+            }
+          },
+          {
+            "id": "ENV-011",
+            "name": "Tree planter group (white rectangular planters)",
+            "x": 1180,
+            "y": 405,
+            "w": 80,
+            "h": 105,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.7057,
+              "y": 0.4304
+            }
+          },
+          {
+            "id": "ENV-012",
+            "name": "Tree in white cylindrical planter (bottom centre)",
+            "x": 870,
+            "y": 715,
+            "w": 80,
+            "h": 110,
+            "confidence": "High",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5203,
+              "y": 0.7598
+            }
+          },
+          {
+            "id": "ENV-013",
+            "name": "Low grey cabinets/benches with brass handles",
+            "x": 940,
+            "y": 740,
+            "w": 140,
+            "h": 80,
+            "confidence": "Low",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.5622,
+              "y": 0.7864
+            }
+          },
+          {
+            "id": "ENV-017",
+            "name": "Outdoor terrace greenery (right)",
+            "x": 1470,
+            "y": 330,
+            "w": 202,
+            "h": 100,
+            "confidence": "Medium",
+            "note": "",
+            "normalizedCenter": {
+              "x": 0.8792,
+              "y": 0.3507
+            }
+          }
+        ],
+        "rawRectanglePixelUnion": 250975,
+        "rawMaskOverlapWithEarlierCategories": 124695,
+        "exclusivePixelCount": 126280
+      },
+      "UI Shell + Live Activity (combined)": {
+        "pixelsCompared": 485598,
+        "pixelsExactlyIdentical": 23215,
+        "pixelsWithAnyRgbDifference": 462383,
+        "exactPixelMatchPercent": 4.780703380162191,
+        "changedPixelPercent": 95.2192966198378,
+        "channelsCompared": 1456794,
+        "channelsExactlyIdentical": 278558,
+        "channelsDifferent": 1178236,
+        "sumAbsoluteRgbChannelDifference": 22969448,
+        "sumSquaredRgbChannelDifference": 2677302104,
+        "meanAbsoluteErrorRgb8Bit": 15.767121501049566,
+        "rootMeanSquareErrorRgb8Bit": 42.86961839067098,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 462383,
+              "percent": 95.2192966198378
+            },
+            "gte8": {
+              "pixels": 140348,
+              "percent": 28.902095972388683
+            },
+            "gte16": {
+              "pixels": 81525,
+              "percent": 16.788578206664774
+            },
+            "gte32": {
+              "pixels": 60749,
+              "percent": 12.510142134028559
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 308168,
+              "percent": 63.46154638198674
+            },
+            "gte8": {
+              "pixels": 108490,
+              "percent": 22.34152529458523
+            },
+            "gte16": {
+              "pixels": 74298,
+              "percent": 15.300310133073035
+            },
+            "gte32": {
+              "pixels": 55958,
+              "percent": 11.523523572996593
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 462383,
+              "percent": 95.2192966198378
+            },
+            "gte8": {
+              "pixels": 175105,
+              "percent": 36.05966251920313
+            },
+            "gte16": {
+              "pixels": 100047,
+              "percent": 20.602844328024414
+            },
+            "gte32": {
+              "pixels": 71899,
+              "percent": 14.806280091763146
+            }
+          }
+        }
+      },
+      "Uncategorized Scene (unmapped remainder)": {
+        "pixelsCompared": 31577,
+        "pixelsExactlyIdentical": 2,
+        "pixelsWithAnyRgbDifference": 31575,
+        "exactPixelMatchPercent": 0.006333723912974634,
+        "changedPixelPercent": 99.99366627608703,
+        "channelsCompared": 94731,
+        "channelsExactlyIdentical": 572,
+        "channelsDifferent": 94159,
+        "sumAbsoluteRgbChannelDifference": 4125647,
+        "sumSquaredRgbChannelDifference": 274543011,
+        "meanAbsoluteErrorRgb8Bit": 43.551181767320095,
+        "rootMeanSquareErrorRgb8Bit": 53.83430804964986,
+        "thresholds": {
+          "maxChannelAbsoluteDifference": {
+            "gte1": {
+              "pixels": 31575,
+              "percent": 99.99366627608703
+            },
+            "gte8": {
+              "pixels": 30949,
+              "percent": 98.01121069132597
+            },
+            "gte16": {
+              "pixels": 29293,
+              "percent": 92.76688729138297
+            },
+            "gte32": {
+              "pixels": 22665,
+              "percent": 71.77692624378503
+            }
+          },
+          "linearLumaDifference": {
+            "gte1": {
+              "pixels": 31129,
+              "percent": 98.58124584349368
+            },
+            "gte8": {
+              "pixels": 28148,
+              "percent": 89.140830351205
+            },
+            "gte16": {
+              "pixels": 24834,
+              "percent": 78.64584982740602
+            },
+            "gte32": {
+              "pixels": 17292,
+              "percent": 54.76137695157868
+            }
+          },
+          "rgbEuclideanDistance": {
+            "gte1": {
+              "pixels": 31575,
+              "percent": 99.99366627608703
+            },
+            "gte8": {
+              "pixels": 31134,
+              "percent": 98.59708015327612
+            },
+            "gte16": {
+              "pixels": 30035,
+              "percent": 95.11669886309656
+            },
+            "gte32": {
+              "pixels": 26198,
+              "percent": 82.96544953605472
+            }
+          }
+        }
+      }
+    }
+  },
+  "colorAndAlpha": {
+    "referenceAlpha": {
+      "nonOpaquePixels": 0,
+      "fullyTransparentPixels": 0
+    },
+    "currentAlpha": {
+      "nonOpaquePixels": 0,
+      "fullyTransparentPixels": 0
+    },
+    "webglCanvasAlpha": {
+      "nonOpaquePixels": 0,
+      "fullyTransparentPixels": 0
+    },
+    "currentAndReferenceAreOpaque": true,
+    "referencePngColorProfileChunks": [],
+    "currentScreenshotColorProfileChunks": [],
+    "renderer": null,
+    "rendererConfigurationEvidence": {
+      "runtimeRendererProbeAvailable": false,
+      "outputColorSpace": "SRGBColorSpace inferred from the R3F default branch when gl.outputColorSpace is unspecified; Canvas does not override it",
+      "toneMapping": "ACESFilmicToneMapping inferred from the R3F default branch because WorkspaceCanvas flat defaults false and Canvas has no toneMapping override",
+      "sourceFiles": [
+        "apps/workspace/src/scene/WorkspaceCanvas.tsx",
+        "apps/workspace/node_modules/@react-three/fiber/dist/events-e51d7528.esm.js",
+        "apps/workspace/node_modules/three/src/renderers/WebGLRenderer.js"
+      ]
+    },
+    "webglContext": {
+      "alpha": true,
+      "antialias": true,
+      "depth": true,
+      "stencil": false,
+      "premultipliedAlpha": true,
+      "preserveDrawingBuffer": true
+    },
+    "drawingBufferColorSpace": "srgb",
+    "workingValues": "Stored PNG RGB byte values compared directly, without resizing, crop, or color conversion. The original and screenshot contain no standard sRGB/gAMA/iCCP/cHRM profile chunk; the reference has a private caBX ancillary chunk. Thus these are encoded-byte comparisons, not proof of a shared source color profile. Both full-frame PNGs are fully opaque, so screenshot-level alpha compositing is not causing transparent-pixel mismatches. The 50% overlay is an arithmetic mean in encoded RGB byte space."
+  },
+  "files": [
+    "original-reference.png",
+    "current-browser-screenshot.png",
+    "original-and-current-side-by-side.png",
+    "50-percent-opacity-overlay.png",
+    "absolute-difference.png",
+    "absolute-difference-contrast-x4.png",
+    "current-webgl-canvas.png",
+    "roi-boxes-original-reference.png",
+    "roi-boxes-current-screenshot.png",
+    "region-difference-ui-shell.png",
+    "region-difference-live-activity.png",
+    "region-difference-robots.png",
+    "region-difference-building-geometry.png",
+    "region-difference-department-interiors.png",
+    "region-difference-lighting-and-environment.png"
+  ]
+}

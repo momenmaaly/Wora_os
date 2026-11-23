@@ -61,7 +61,9 @@ export function buildStructureCompletion(): P[] {
   const backEdgeZ = Math.abs(d1.z0) > Math.abs(d1.z1) ? d1.z0 : d1.z1;
   const inner = backEdgeZ + (backEdgeZ < 0 ? 0.08 : -0.08);
   const w = d1.x1 - d1.x0 - 0.6;
-  out.push(box('walnut', [(d1.x0 + d1.x1) / 2, H / 2, inner], [w, H, 0.08], 0, 'WAL'));
+  const walnutWall = box('walnut', [(d1.x0 + d1.x1) / 2, H / 2, inner], [w, H, 0.08], 0, 'WAL');
+  walnutWall.refId = INTERIORS.find(i => i.kind === 'walnut-wall')?.id;
+  out.push(walnutWall);
 
   // Partition frame rhythm on every atrium-facing glass front (analysis/03 §2.2)
   for (const d of DEPARTMENTS) {
@@ -91,7 +93,9 @@ function buildWallPanels(): P[] {
   const panels = INTERIORS.filter((i) => i.kind === 'wall-panel');
   return panels.map((p) => {
     const [w, , h] = p.size!;
-    return box('floor', [p.floor_xz![0], (p.centre_y ?? h / 2) , p.floor_xz![1]], [w, h, 0.06], p.rot_y ?? 0, 'WP');
+    const panel = box('floor', [p.floor_xz![0], (p.centre_y ?? h / 2), p.floor_xz![1]], [w, h, 0.06], p.rot_y ?? 0, 'WP');
+    panel.refId = p.id;
+    return panel;
   });
 }
 
@@ -219,6 +223,10 @@ function buildItem(it: InteriorItem): P[] {
       out.push(box('rug', [x, h / 2, z], [pxW, h, d], yaw, 'OT'));
       break;
     case 'rug':
+      // The measured Executive Office rug is an elongated rectangular textile, not a circular mat:
+      // keep the catalog-derived width and depth rather than using the former width-sized cylinder.
+      out.push(box('rug', [x, 0.011, z], [pxW, 0.022, d], yaw, 'RG'));
+      break;
     case 'rug-round':
       out.push(cyl('rug', [x, 0.011, z], Math.max(pxW, d) / 2, 0.022, 28, 'RG'));
       break;
@@ -287,13 +295,16 @@ function buildItem(it: InteriorItem): P[] {
       break;
     }
     case 'shelf-wall': {
-      // reset: §3 shelves carry small plants/objects — decor pieces EST. within the shelf extents
+      // The catalogue centre_y is measured from the floor; the previous mount=1.2 m offset
+      // displaced these shelves well above their reference boxes (DEPT-01 by up to 65 px).
+      const shelfCentreY = it.centre_y ?? mount + h / 2;
       for (const [fy, fw] of [[0.3, 1], [0.62, 1], [0.9, 0.8]] as const) {
-        out.push(box('deskwood', [x, mount + h * fy, z], [pxW * fw, 0.04, d], yaw, 'SW'));
+        const shelfY = shelfCentreY + h * (fy - 0.5);
+        out.push(box('deskwood', [x, shelfY, z], [pxW * fw, 0.04, d], yaw, 'SW'));
         const n = 3;
         for (let i = 0; i < n; i++) {
           const ox = (i - (n - 1) / 2) * pxW * 0.22;
-          const oy = mount + h * fy + 0.09;
+          const oy = shelfY + 0.09;
           if (i % 2 === 0) out.push(cyl('foliage', [x + Math.cos(yaw) * ox, oy, z - Math.sin(yaw) * ox], 0.055, 0.1, 10, 'SW'));
           else out.push(box('leather', [x + Math.cos(yaw) * ox, oy - 0.02, z - Math.sin(yaw) * ox], [0.07, 0.14, 0.07], yaw, 'SW'));
         }
@@ -312,9 +323,10 @@ function buildItem(it: InteriorItem): P[] {
       break;
     }
     case 'whiteboard': {
-      const cy = mount + h / 2;
-      out.push(box('floor', [x, cy, z], [pxW, h, 0.05], yaw, 'WB'));
-      out.push(box('frame', [x, cy, z], [pxW * 1.02, h * 1.02, 0.03], yaw, 'WB'));
+      // centre_y stores the measured wall-panel centre when present; do not add an estimated mount offset.
+      const cy = it.centre_y ?? mount + h / 2;
+      out.push(box('floor', [x, cy, z], [pxW, h, 0.05], yaw, 'WBS'));
+      out.push(box('frame', [x, cy, z], [pxW * 1.02, h * 1.02, 0.03], yaw, 'WBF'));
       break;
     }
     case 'laptop': {

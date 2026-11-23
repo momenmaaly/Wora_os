@@ -118,7 +118,13 @@ describe('VF-1 per-department floor tones', () => {
       const dept = createDeptMaterials(m, id);
       const hex = (dept.floor as MeshStandardMaterial).color.getHexString();
       if (id === 'DEPT-01') expect(hex).toBe('9c989b'); // neutral floor (review R5 rescale)
-      else expect(hex, id).toBe(expected[id]);
+      else {
+        expect(hex, id).toBe(expected[id]);
+        const floor = dept.floor as MeshPhysicalMaterial;
+        expect(floor, `${id} polished surface`).toBeInstanceOf(MeshPhysicalMaterial);
+        expect(floor.roughness, `${id} roughness`).toBeLessThan(0.4);
+        expect(floor.clearcoat, `${id} clearcoat`).toBeGreaterThan(0.3);
+      }
     }
   });
 

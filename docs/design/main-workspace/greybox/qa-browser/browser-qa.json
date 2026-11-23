@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T14:40:56.589Z",
+  "generatedAt": "2026-11-23T07:48:10.314Z",
   "browser": "Chromium 153 via @sparticuz/chromium; headless + SwiftShader (software WebGL)",
   "baseURL": "http://127.0.0.1:5173",
   "viewports": [
@@ -21,9 +21,9 @@
       "rawPixelDiff": {
         "comparedAgainst": "original 1672x941 source resized with nearest-neighbor; raw diagnostic only",
         "threshold": 0.12,
-        "mismatchedPixels": 1058660,
+        "mismatchedPixels": 1046391,
         "totalPixels": 2073600,
-        "mismatchRatio": 0.51054,
+        "mismatchRatio": 0.50463,
         "diffImage": "docs/design/main-workspace/greybox/qa-browser/desktop-1920x1080-diff.png"
       }
     },
@@ -45,9 +45,9 @@
       "rawPixelDiff": {
         "comparedAgainst": "original 1672x941 source resized with nearest-neighbor; raw diagnostic only",
         "threshold": 0.12,
-        "mismatchedPixels": 697872,
+        "mismatchedPixels": 693336,
         "totalPixels": 1296000,
-        "mismatchRatio": 0.53848,
+        "mismatchRatio": 0.53498,
         "diffImage": "docs/design/main-workspace/greybox/qa-browser/desktop-1440x900-diff.png"
       }
     },
@@ -69,9 +69,9 @@
       "rawPixelDiff": {
         "comparedAgainst": "original 1672x941 source resized with nearest-neighbor; raw diagnostic only",
         "threshold": 0.12,
-        "mismatchedPixels": 536963,
+        "mismatchedPixels": 530635,
         "totalPixels": 1049088,
-        "mismatchRatio": 0.51184,
+        "mismatchRatio": 0.50581,
         "diffImage": "docs/design/main-workspace/greybox/qa-browser/desktop-1366x768-diff.png"
       }
     },
@@ -93,9 +93,9 @@
       "rawPixelDiff": {
         "comparedAgainst": "original 1672x941 source resized with nearest-neighbor; raw diagnostic only",
         "threshold": 0.12,
-        "mismatchedPixels": 225330,
+        "mismatchedPixels": 225515,
         "totalPixels": 329160,
-        "mismatchRatio": 0.68456,
+        "mismatchRatio": 0.68512,
         "diffImage": "docs/design/main-workspace/greybox/qa-browser/mobile-390x844-diff.png"
       }
     },
@@ -117,9 +117,9 @@
       "rawPixelDiff": {
         "comparedAgainst": "original 1672x941 source resized with nearest-neighbor; raw diagnostic only",
         "threshold": 0.12,
-        "mismatchedPixels": 276340,
+        "mismatchedPixels": 276330,
         "totalPixels": 400760,
-        "mismatchRatio": 0.68954,
+        "mismatchRatio": 0.68951,
         "diffImage": "docs/design/main-workspace/greybox/qa-browser/mobile-430x932-diff.png"
       }
     }

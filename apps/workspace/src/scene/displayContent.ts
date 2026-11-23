@@ -145,6 +145,18 @@ function paintExecutiveRug(ctx: CanvasRenderingContext2D, s: number): void {
   }
 }
 
+function paintWhiteboard(ctx: CanvasRenderingContext2D, w: number, h: number, creative: boolean): void {
+  ctx.fillStyle = '#F3F2EB'; ctx.fillRect(0, 0, w, h);
+  const notes: [number, number, number, number, string][] = creative
+    ? [[.12,.17,.22,.2,'#E7D9A5'],[.42,.14,.2,.22,'#CBE2E0'],[.68,.18,.2,.2,'#E8D2D4'],[.18,.58,.24,.2,'#D6E3CF'],[.55,.59,.26,.22,'#E6D6B5']]
+    : [[.1,.14,.22,.2,'#D4EAF0'],[.39,.15,.2,.2,'#E7D9A5'],[.68,.14,.21,.2,'#D3E4D8'],[.16,.59,.25,.22,'#F0E0C9'],[.58,.58,.28,.23,'#D5E5EF']];
+  for(const [x,y,ww,hh,color] of notes){ctx.fillStyle=color;ctx.fillRect(w*x,h*y,w*ww,h*hh);ctx.strokeStyle='rgba(69,91,104,0.42)';ctx.lineWidth=Math.max(1,w*.008);for(let r=0;r<3;r++){ctx.beginPath();ctx.moveTo(w*(x+.04),h*(y+.06+r*.045));ctx.lineTo(w*(x+ww*(.55+(r%2)*.2)),h*(y+.06+r*.045));ctx.stroke();}}
+  // Reference boards carry coloured diagrams/marks. Keep abstract paths only; no text or values.
+  ctx.strokeStyle=creative?'#317AA5':'#2295C8';ctx.lineWidth=Math.max(1.6,w*.018);ctx.beginPath();ctx.moveTo(w*.18,h*.49);ctx.lineTo(w*.38,h*.38);ctx.lineTo(w*.56,h*.49);ctx.lineTo(w*.82,h*.39);ctx.stroke();
+  ctx.fillStyle='#E29A58';ctx.beginPath();ctx.arc(w*.84,h*.52,w*.06,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle='#47A9C2';ctx.lineWidth=Math.max(1.5,w*.015);ctx.beginPath();ctx.moveTo(w*.25,h*.86);ctx.lineTo(w*.25,h*.74);ctx.lineTo(w*.42,h*.74);ctx.lineTo(w*.42,h*.86);ctx.moveTo(w*.47,h*.86);ctx.lineTo(w*.47,h*.68);ctx.lineTo(w*.64,h*.68);ctx.lineTo(w*.64,h*.86);ctx.stroke();
+}
+
 function paintDeskMonitor(ctx: CanvasRenderingContext2D, w: number, h: number, dept: string): void {
   ctx.fillStyle = '#0B1422';
   ctx.fillRect(0, 0, w, h);
@@ -293,6 +305,16 @@ export function displayMaterialFor(refId: string | undefined, key?: string): Mat
     const tex = new CanvasTexture(canvas);
     tex.colorSpace = SRGBColorSpace;
     const mat = new MeshBasicMaterial({ map: tex, toneMapped: false }); // interior-lit: unlit
+    cache.set(refId, mat);
+    return mat;
+  }
+  if ((refId === 'INT-04-BOARD' || refId === 'INT-05-BOARD') && key?.startsWith('WBS-')) {
+    const hit = cache.get(refId);
+    if (hit) return hit;
+    const canvas = document.createElement('canvas'); canvas.width = 256; canvas.height = 160;
+    paintWhiteboard(canvas.getContext('2d')!, 256, 160, refId === 'INT-04-BOARD');
+    const tex = new CanvasTexture(canvas); tex.colorSpace = SRGBColorSpace; tex.anisotropy = 4;
+    const mat = new MeshBasicMaterial({ map: tex, toneMapped: false });
     cache.set(refId, mat);
     return mat;
   }

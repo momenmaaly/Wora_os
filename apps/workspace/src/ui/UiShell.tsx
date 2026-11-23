@@ -347,10 +347,10 @@ export function UiShell({ onTab, employees = [], onEmployee, onCommand }: { onTa
       </div>
 
       {/* ── Live Activity (REG-06) ── */}
-      <div title="Static reference-image sample; not a live operational feed." style={{ ...panel, right: px(16), top: px(83), width: px(236), height: px(266), background: '#0A1422', pointerEvents: 'auto' }}>
-        <div style={{ position: 'absolute', left: px(15), top: px(15), width: px(10), height: px(9), borderRadius: '50%', background: '#11FA73' }} />
-        <Text x={32} y={12} w={120} h={14} s={s} size={16} weight={700}>{UI_STRINGS.activityTitle}</Text>
-        <div style={{ position: 'absolute', left: px(32), top: px(30), fontSize: px(8), color: '#FBB845', letterSpacing: px(0.5) }}>REFERENCE SNAPSHOT · STATIC</div>
+        <div title="Static reference-image sample; not a live operational feed." style={{ ...panel, right: px(16), top: px(83), width: px(236), height: px(266), background: '#0A1422', pointerEvents: 'auto' }}>
+          <span style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>Static reference-image sample; not a live operational feed.</span>
+          <div style={{ position: 'absolute', left: px(15), top: px(15), width: px(10), height: px(9), borderRadius: '50%', background: '#11FA73' }} />
+          <Text x={32} y={12} w={120} h={14} s={s} size={16} weight={700}>{UI_STRINGS.activityTitle}</Text>
         {ACTIVITY_ROWS.map((r, i) => {
           const y = [47, 97, 144, 189][i];
           return (

@@ -17,7 +17,7 @@ export function MobileUiShell({ onTab, employees = [], onEmployee, onCommand }: 
   const choose = (label: string) => { setTab(label); onTab?.(label); };
   const send = () => { if (!command.trim()) return; onCommand?.(command.trim()); setCommand(''); setNotice('Not sent: no connected task runtime.'); };
   const openSection = (label: string) => { setSection(label); setMenu(true); };
-  return <div data-testid="ui-shell" data-mobile-ui-shell style={{ position: 'absolute', inset: 0, zIndex: 10, pointerEvents: 'none', font: '14px/1.4 system-ui, sans-serif' }}>
+  return <div data-testid="ui-shell" data-mobile-ui-shell style={{ position: 'absolute', inset: 0, zIndex: 10, pointerEvents: 'none', font: "14px/1.4 'Inter', 'Roboto', system-ui, sans-serif" }}>
     <header style={{ ...panel, position: 'absolute', top: 'max(8px, env(safe-area-inset-top))', left: 8, right: 8, minHeight: 46, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '4px 10px', pointerEvents: 'auto' }}>
       <button aria-label="Open menu" onClick={() => { setMenu(!menu); setSection(''); }} style={{ background: 'transparent', color: '#edf4fb', border: 0, fontSize: 20 }}>☰</button>
       <strong style={{ letterSpacing: 1.2, color: '#eaf7ff' }}>◉ WORA <small style={{ letterSpacing: 0, color: '#b9c5d5' }}>Enterprise</small></strong>
